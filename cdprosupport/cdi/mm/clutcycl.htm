@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+
+<TITLE>Clut Cycling over a static background</TITLE>
+
+
+</HEAD>
+<BODY>
+<BR>
+<P><CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+
+<H2><CENTER>Clut Cycling over a static background</CENTER></H2>
+<BR>
+You can create the illusion of animation by using clut cycling, rather than having an actual animation play.  This has significantly lower memory requirements than playing an animation.  Additionally, using clut cycling allows you to create dramatic effects by varying the range of the CLUT entries to be cycled and the rate at which they are cycled.
+<P>
+One of the more interesting "tricks" in clut cycling is cycling the CLUT of an image over a static background image.  Normally you can only cycle the CLUT of a foreground image, and you cannot use transparency while the clut cycle is being done.
+<P>
+However, there is a way to do this.  If you convert the image whose CLUT you wish to cycle to a Runlength image, and then make a single frame animation of this image, you can cycle the CLUT of the animation to give the same effect.
+<P>
+First, using a graphics program that will allow manipulation of the palatte, create the image that you wish to use with clut cycle.  Save this image as a CLUT image, either CLUT7 or CLUT4, for testing purposes.
+<P>
+In the Script Writer write a sample test script to make sure that clut cycling produces the effect you desire.  An example test script will look something like this:
+<P>
+<PRE>
+00:00   	Dissolve      	/h0/VIDEO/SAMPIMAG/clut_bg	01:00    
+01:00   	Clutcycle     	2 20    	                00:02    	10:00    
+11:00   	Set_var        A 0
+</PRE>
+<P>
+Once you have the effect that you want, import the CLUT image into graphics program and export it as a Runlength, RL7, image.  If the palette is small enough, 8 colors or less, you can also export this as a RL3 image.
+<P>
+Take the resulting Runlength image and use the animpack utility to create a single frame animation from this file.
+<P>
+You can now use the Runlength Animation output from animpack to do clut cycling over a static background.  In the following example script a static image is placed on screen, transparency is turned on, the animation is displayed over the static image, and the CLUT of the animation is cycled.
+<P>
+<PRE>
+00:00   	Cut           	/h0/VIDEO/SAMPIMAG/baithous.cl7
+00:20   	Transp_on     
+00:20   	Animate5      	/h0/CHUCK/CYCLETEST/myanim.ani	00:00    	00:00    
+00:20   	Clutcycle     	2 19                	        00:02    	10:00    
+10:20   	Dissolve      	/h0/VIDEO/SAMPIMAG/marina.cl7	00:20    
+11:10   	Wait
+</PRE>
+<P>
+
+<P>
+<HR>
+<P>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.4 -->
+</BODY>
+</HTML>

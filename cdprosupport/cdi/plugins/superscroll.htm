@@ -1,0 +1,172 @@
+<HTML><HEAD>
+<TITLE>Super Scroller Supplement</TITLE>
+</HEAD>
+<BODY>
+<H2><CENTER>Super Scroller Supplement</CENTER></H2>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="plugins.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<B>Overview:</B>
+<P>
+
+Super Image Scroller allows you to navigate back-and-forth or up-and-down on an specially prepared scrolling-picture.  The scrolling-picture may be longer or wider than the screen, and is superimposed onto a full-screen picture.  The scrolling-picture itself can have hotspots on it.    Scrolling Control is done via Menu-Editor-created $ hotspots, or hotspots on the scrolling picture, as created by <CODE>makesscr</CODE>.   <CODE>cdi_sccr</CODE> is used as a background plugin and runs until the user clicks a non-$ hotspot (on or off the scrolling-picture), which causes a branch to the script defined by the hotspot.  
+<P>
+
+
+<B>Plug-ins required for operation:</B>
+<P>
+
+
+	<BLOCKQUOTE><CODE>makesscr </CODE>- a utility which manufactures the necessary scroller files for use with MediaMogul. Runs under OS-9 only.
+<P>
+
+	<CODE>cdi_cssr</CODE> - the Mogul plugin which provides the scrolling feature.	
+<P></BLOCKQUOTE>
+
+
+
+
+<B>MediaMogul utilities required to prepare assets:</B>
+<P>
+<CODE><BLOCKQUOTE>makesscr</BLOCKQUOTE></CODE>
+<P>
+<B>Assets to create before using plug-in:</B>
+<P>
+
+
+<UL><LI>Foreground Picture - 384 x 240 or 384 x 280, CLUT7 or CLUT4
+<LI>Background Picture - 384 x 240 or 384 x 280, CLUT7 or CLUT4
+<LI>Menu for hotspots on Foreground Picture (i.e. NOT on scrolling picture). Use Menu Editor.
+<LI>Scrolling Picture - any dimensions as long as less than 100k or 300k bytes (non-DV or DV equipped player).  CLUT7 or CLUT4
+<LI>Picture to define Scrolling Hotspots - same dimensions as Scrolling picture, but with flood-filled areas where hotspots are desired. CLUT7</UL>
+     
+<CENTER><IMG SRC="superscroll1.gif" WIDTH=222 HEIGHT=89></CENTER>
+<P>
+
+<CENTER><IMG SRC="superscroll2.gif" WIDTH=249 HEIGHT=89></CENTER>
+<P>
+
+<CENTER><IMG SRC="superscroll3.gif" WIDTH=243 HEIGHT=120></CENTER>
+<P>
+
+<CENTER><IMG SRC="superscroll4.gif" WIDTH=90 HEIGHT=227></CENTER>
+<P>
+
+<CENTER><IMG SRC="superscroll5.gif" WIDTH=319 HEIGHT=232></CENTER>
+<P>
+
+<P>
+
+
+
+<B>Special preparations:</B>
+
+
+<UL><LI>The menu for the Foreground Picture is created in the MediaMogul Editor, using the $ hotspots as appropriate for $UP_BUTTON, $DOWN_BUTTON, $LEFT_BUTTON, $RIGHT_BUTTON, $WINDOW,  and if you want a scroll bar, $SCROLL_BAR.<BR><BR>
+
+
+
+
+<LI>The scrolling picture FILE size can be up to 100k bytes if the title is played on a base case player, or 300k bytes if a DV cartridge is guaranteed to be present in the player.<BR>
+<BR>
+
+
+
+<LI>The picture being used to define hotspot areas for the scrolling picture has flood-filled rectangles where you desire hotspots.  The flood-filled picture must be a CLUT 7, with the flood color assigned to CLUT Entry 0.   The  <CODE>makesscr</CODE> utility will scan this picture for flooded areas (left-to-right, top-to-bottom) and define hotspots accordingly.  As hot areas are defined by <CODE>makesscr</CODE>, it assigns each a "branch to name" prefix along with a <CODE>.Sxx</CODE> extension.  For example, if you chose the prefix "goof" in <CODE>makesscr</CODE>, it would assign names like "<CODE>goof.s01</CODE>", "<CODE>goof.s02</CODE>", up to "<CODE>goof.s64</CODE>" (Mogul permits up to 64 hotspots per screen).  Note that <CODE>makesscr</CODE> does not CREATE the scripts "<CODE>goof.s01</CODE>", "<CODE>goof.s02</CODE>", etc.  It just tells <CODE>cdi_sscr</CODE> to branch to a script by that name, if clicked.
+
+<BR>
+
+
+<BLOCKQUOTE><H5>Note:  If you are creating MediaMogul titles on a Windows PC, the prefix name MUST be 4 characters or LESS!  If you make the prefix longer,  SuperScroller will work correctly from the ScriptWriter, but NOT in emulation, nor off the CD!</H5></BLOCKQUOTE>
+<BR>
+
+
+
+<LI>The scroll bar itself will be dynamically drawn in the CLUT entry 0 color (of the Foreground Picture), by <CODE>cdi_sscr</CODE> when the title is played. <BR>
+<BR>
+
+
+<LI><CODE>cdi_sscr </CODE>uses the "X" MediaMogul variable to specify where the scroll picture is "scrolled" to.  If you place a value in X, the next time<CODE> cdi_sscr</CODE> attaches (runs), it will "pre-scroll" the picture to that spot.   Also, just before <CODE>cdi_sscr</CODE> detaches (stops running) at a branch, it will record the current scroll position in X, for bookmarking purposes.<BR>
+<BR>
+
+
+<LI><CODE>makesscr</CODE> is a utility that scans the foreground picture, background picture, scroll picture, Foreground menu, and scroll hotspot picture and creates a number of special files to be used in the MediaMogul script:<BR>
+<BR>
+
+
+<UL><LI><CODE>name.0</CODE> -- the file containing scroll picture information.
+<LI><CODE>name.1, .2, .3</CODE> -- the file(s) containing the scroll picture itself.
+<LI><CODE>name.mnu</CODE> -- a menu file manufactured by <CODE>makesscr</CODE>, containing hotspot definitions for both scrolling and non-scrolling hotspots.  Scrolling hotspot definitions are added after the "TIMEOUT" line, where Mogul itself will ignore them, but where <CODE>cdi_sscr</CODE> will "see" them.</UL>
+
+<P>
+</UL>
+<P>
+
+<B>How plug-in works:</B>
+<P>
+A full-screen foreground picture is brought in first via a dissolve, cut, etc.  Next, <CODE>cdi_sscr</CODE> is started up as a background process.  00:20 or so later, it begins to scan the background video plane for files that end in .0, .1, .2 or .3.  As they load, it moves them elsewhere in memory.  After all the .n files have been loaded, the full-screen background picture is loaded.  It has to be loaded last, else it would be obliterated by a .n file.  Finally, the <CODE>makesscr</CODE> manufactured menu file (something.<CODE>mnu</CODE>) is loaded, with WAIT.  When <CODE>cdi_sscr</CODE> sees that a WAIT command has been done, it displays the scrolling picture and draws the scroll bar (if specified).  It also retrieves the contents of variable "X" and scrolls the image to that spot.  Clicking on $ hotspots invoke navigation of the scroller, etc. Clicking non-$ hotspots invoke a branch.  <CODE>cdi_sscr</CODE> quits at the branch, storing the current scroll position in variable "X".<BR>
+<BR>
+
+To properly setup a script to use SuperScroller:
+<P>
+
+
+		<UL><LI>Load the Foreground picture 
+		<LI>Call <CODE>cdi_sscr</CODE>  as a background plugin.
+		<LI>Load the <CODE>.0</CODE>  file as a Background picture.
+		<LI>Load the <CODE>.1, .2, .3 </CODE>file(s) as Background pictures.
+		<LI>Load the Background picture itself.
+		<LI>Load with WAIT, the <CODE>.mnu</CODE> menu file manufactured by <CODE>makesscr</CODE> </UL>
+<P>
+
+<B>Examples:</B><BR>
+<BR>
+
+
+ Typical script:<BR><BR>
+
+<PRE>00:00   	Skip_off      
+00:00   	Dissolve      	/h0/PLUGINS/SCROLL/VIDEO/scrollr.dyu	00:20  
+00:00   	Call_bg       	/h0/SUBROUT/cdi_sscr CURS_DOWN,PAGER,TRANSPARENT 5
+00:20   	Background    	/h0/PLUGINS/SCROLL/VIDEO/vtr.0
+01:10   	Background    	/h0/PLUGINS/SCROLL/VIDEO/vtr.1
+02:00   	Background    	/h0/PLUGINS/SCROLL/VIDEO/scrollr.dyu
+02:00   	Wait          	/h0/PLUGINS/SCROLL/MENUS/vscroll.mnu
+
+;CA 4485479</PRE><BR>
+
+Typical <CODE>makesscr</CODE> manufactured <CODE>.mnu</CODE> file:<BR>
+
+
+<PRE>VIDEO /H0/PLUGINS/SCROLL/VIDEO/SCROLLR.DYU
+REGION $DOWN_BUTTON NO_RETURN D_RECT 396 464 480 544 36
+REGION $UP_BUTTON NO_RETURN D_RECT 402 413 474 465 36
+REGION $WINDOW NO_RETURN D_RECT 494 44 668 546 36
+TIMEOUT / NO_RETURN
+REGION /h0/PLUGINS/SCROLL/SCRIPTS/scroll.s01 RETURN D_RECT 494 0 668 160
+REGION /h0/PLUGINS/SCROLL/SCRIPTS/scroll.s02 RETURN D_RECT 508 182 650 256
+REGION /h0/PLUGINS/SCROLL/SCRIPTS/scroll.s03 RETURN D_RECT 508 872 650 946
+REGION /h0/PLUGINS/SCROLL/SCRIPTS/scroll.s04 RETURN D_RECT 508 970 650 1044
+REGION /h0/PLUGINS/SCROLL/SCRIPTS/scroll.s05 RETURN D_RECT 508 1068 650 1142
+REGION /h0/PLUGINS/SCROLL/SCRIPTS/scroll.s06 RETURN D_RECT 508 1166 650 1240
+REGION /h0/PLUGINS/SCROLL/SCRIPTS/scroll.s07 RETURN D_RECT 508 1264 650 1338
+REGION /h0/PLUGINS/SCROLL/SCRIPTS/scroll.s08 RETURN D_RECT 494 1374 666 1534</PRE>
+
+
+  
+
+
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="plugins.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+
+</BODY>
+</HTML>

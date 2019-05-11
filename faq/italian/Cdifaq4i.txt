@@ -1,0 +1,444 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 4. Lettori CD-i
+
+ 4.1 Quali compagnie hanno venduto lettori CD-i?
+ Lo standard CD-i fu assegnato alla fine degli anni '80 da Philips e Sony,
+ le stesse compagnie che crearono le specifiche per il CD-Audio e il CD-ROM.
+ L'idea fu di stabilire uno standard mondiale che avrebbe potuto essere
+ lincenziato da altri fabbricanti in un modo simile ai precedenti CD-standard.
+ Nella prima fase di sviluppo cio' era sembrato molto promettente per il CD-i:
+ quasi tutte le grosse compagnie di elettronica di consumo annunciarono di
+ fabbricare lettori, o mostrarono modelli di prototipo. Fra quelle compagnie
+ ci furono Pioneer e Matsushita (Panasonic), ma i lettori che esse mostrarono
+ non furono mai in effetti messi in produzione. Sony dal 1991 vendette qualche
+ lettore CD-i portatile ma per un periodo molto breve. Alla fine, Philips
+ divento' il maggiore produttore di sistemi CD-i, supportando il sistema con
+ titoli di software, authoring strument e alcuni (20 all'incirca) modelli di
+ lettori CD-i, che furono prodotti fino al Giugno 1999. Entro allora, il CD-i
+ era gia' sparito dal mercato di consumo da alcuni anni, ma esso fu largamente
+ usato da un'ampia varieta' di compagnie nel campo professionale. Per ulteriori
+ informazioni vedere il capitolo "Applicazioni del CD-i". Negli anni molte
+ compagnie si unirono a Philips nel produrre lettori, o vendendo, modificate,
+ versioni OEM di lettori esistenti, come fecero LG Elettronica, Kyocera, Bang
+ & Olufsen, Grundig, Digital Video System, NBS e Memorex.
+
+ 4.2 Che lettori CD-i sono disponibili?
+ La sola Philips ha prodotto circa 20 modelli di lettori CD-i, inclusi modelli
+ di consumo adattati ad un regolare impianto Hi-Fi, mini lettori CD-i, lettori
+ CD-i portatili con e senza schermo, sistemi stereo con un CD-i integrato,
+ TV con un lettore CD-i integrato, lettori CD-i professionali e speciali
+ lettori CD-i autorizzati. Una lista completa di tutti i lettori CD-i creati
+ incluse le loro sottili differenze e' disponibile nel "Complete CD-i players
+ overview" in questo sito.
+
+ 4.3 Qual'e' la differenza tra un lettore CD-i per consumatore ed uno
+     professionale?
+ Philips ha venduto vari lettori CD-i professionali accanto ai modelli di
+ consumo standard. Entrambi i tipi di lettori accolgono pienamente lo standard
+ CD-i come definito nel Libro Verde e furono basati sulla stessa CPU e audio
+ e video ICs, ma i lettori professionali normalmente offerti possiedono alcune
+ caratteristiche extra. C'erano lettori professionali con un floppy drive
+ integrato, con una porta parallela a cui collegare una stampante o ZIP-drive,
+ con porte SCSI, con collegamenti di rete ethernet o con piu' di 5 MB di extra
+ RAM. Alcuni lettori avevano una caratteristica che abilitava gli utenti a
+ personalizzare lo schermo di startup della shell del lettore. Molti lettori
+ professionali furono specialmente creati per sviluppare titoli CD-i, fin da
+ quando essi ebbero incluse delle porte di input per collegare un emulatore
+ (vedere CD-i authoring) si pote' simulare la riproduzione di un CD CD-i da un
+ hard disk esterno per testarlo. Controllare il capitolo "The Complete CD-i
+ players overview" di questo sito per ulteriori informazioni circa le
+ differenze tra i vari lettori.
+
+ 4.4 L'esecuzione del sistema puo' differire tra i vari lettori?
+ No. Sebbene vi siano vari modelli di lettori CD-i, ogni CD CD-i verra'
+ eseguito precisamente negli stessi termini di velocita' di sistema di audio e
+ di qualita' video su ogni sistema CD-i. Il Libro Verde specifica molto bene
+ come e a che velocita' i dati audio e video dovrebbero essere letti dal
+ sistema e analizzati usando l'appropriata decodifica ICs. Anche se una CPU
+ piu' veloce venisse usata in un lettore CD-i (che sia permessa dal Libro Verde,
+ ma finora, in effetti, non e' mai stata implementata in nessun lettore CD-i),
+ l'esecuzione aumenterebbe solo leggermente perche' il realtime retreival di
+ audio e video preso da un CD non e' influenzato dal processore.
+ Il seektime (orientamento del laser) dell'unita' laser nel lettore CD non puo',
+ conformemente al Libro  Verde, far durare uno stroke(assestamento della testina
+ laser) piu di 3 secondi.
+ E' possibile per un fabbricante di lettori CD-i implementare un drive CD con
+ un tempo di seek piu' veloce, ma a parte la capacita' di leggere piu'
+ velocemente i dati desiderati in effetti non vi sara' differenza di esecuzione.
+ Alcuni lettori CD-i tuttavia sono conosciuti per caricare le applicazioni CD-i
+ piu' velocemente di altri (la startup di un particolare CD CD-i). Cio' e'
+ dovuto alle funzioni interne del sistema che hanno bisogno di essere eseguite
+ su un lettore CD-i con piu' funzionalita' integrata ma tutto questo finisce
+ solo in una questione di pochi secondi.
+
+ 4.5 Quali sono le differenze tra le varie shell dei lettori?
+ La shell del lettore e' l'applicazione di startup di ogni sistema CD-i che
+ viene mostrata quando lo si attiva. La shell del lettore permette la partenza
+ di un'applicazione CD-i, i controlli di CD musicali quando si inserisce un
+ CD-Audio, visualizzare o cancellare voci conservate in NV-RAM e per selezionare
+ i settaggi generali del lettore.
+
+ In essenza, c'erano 3 differenti versioni della shell per i lettori Philips
+ CD-i. La prima versione fu usata solo nel sistema CDI 180, e offriva solo le
+ funzionalita' basilari. La seconda versione fu sviluppata specialmente per i
+ primi lettori CD-i professionali nel 1990, il CDI 601 e CDI 602. Questa shell
+ del sistema fu anche usata in una versione leggermente adattata nel primo
+ batch di lettori CD-i di consumo come il CDI 910, CDI 205, i portatili CDI 310,
+ CDI 350 e CDI 360 e le prime versioni del CDI 210 e CDI 220.
+ La terza versione fu fatta piu' attraente per il consumatore e includeva piu'
+ colori, un'animazione di introduzione del logo CD-i, tasti evidenziati e una
+ interfaccia piu' intuitiva. Questa shell del lettore fu usata in tutti i
+ sistemi CD-i successivi sia professionali che di consumo.
+
+ Philips ha continuato a sviluppare la shell dei lettori. Ecco perche' shell
+ di aspetto simile potrebbero contenere sottili differenze quando comparate
+ da un lettore ad un altro. Nella seconda generazione di shell, lo schermo per
+ la gestione del CD-Audio fu spesso cambiato, venne aggiunto un nuovo controllo
+ come la ricerca veloce. La terza versione apparve in una veste senza immagini
+ di sfondo e con immagini di fondo, come un piccolo drago, una cinepresa e una
+ luna. La versione della terza generazione di shell dei lettori puo' essere
+ trovata sotto l'opzione di Copyright nello schermo di settaggio generale.
+
+ 4.6 Che cosa significa /00, /20, etc. dopo l'indicazione del modello?
+ Philips usa il suo metodo di indicazione di versione per due ragioni: per
+ indicare la regione per cui uno specifico prodotto e' concepito, e per indicare
+ una diversa revisione. La versione e' indicata dietro una barretta dopo il
+ numero di modello iniziale, per esempio CDI 670/00. E' stampato sull'indicazione
+ di numero di tipo sul retro o sul fondo di un dispositivo. Non si puo' mai dire
+ quale versione di lettore si sta guardando basandosi solo sul numero stampato
+ a fronte, bensi' e' indispensabile includere il numero di versione.
+ I numeri al di sotto di 20 indicano la regione per cui un dispositivo fu
+ adattato. Per lo piu', il cambiamento consiste in un differente voltaggio o
+ sistema TV, ma essi potrebbero includere piu' tipi di regione.
+ Le regioni piu' importanti usate sono /00 per Europa, /05 per il UK,
+ /11 per Giappone e /17 per il USA.
+
+ I numeri superiori a 19 indicano la versione. Normalmente il 20 e' aggiunto
+ per ogni versione superiore, per esempio /20, /40 e /60. Le differenze possono
+ per esempio consistere nell'uso di un differente PCB, normalmente non ci sono
+ grossi cambiamenti che si possano definire importanti per il consumatore.
+ Il numero di codice di regione e' aggiunto al numero di versione, risultando
+ in un numero unico che descrive il codice di regione e la revisione. Per
+ esempio /37 significa prima /20 versione adattata per il mercato americano
+ (perche' l'indicazione  USA /17 fu aggiunta in seguito).
+
+ 4.7 Perche' si definisce necessaria una cartuccia Digital Video?
+ Ogni lettore CD-i base e' capace di mostrare immagini di alta qualita',
+ animazioni in stile cartoon e parziali spostamenti di immagini sul video.
+ Tuttavia, quando i lettori CD-i destinati al consumo furono introdotti alla
+ fine del 1991 e' diventato chiaro che possedevano le capacita' per effettuare
+ decodifiche a pieno schermo. Il pieno movimento sul video scaricando i dati
+ di un CD in tempo reale! Presto sarebbe diventato possibile.
+ Philips equipaggo' tutti i lettori CD-i con una cavita' di estensione in cui
+ poter alloggiare una cartuccia Digital Video. Quando tale cartuccia e'
+ installata i CD CD-i che sono creati per sfruttare tale estensione e che
+ includono video in Full Motion possono essere riprodotti. Per ottenere questo
+ risultato la cartuccia e' equipaggiata con un decodificatore audio e video
+ MPEG IC, e di un'espansione di 1.5 MB di RAM di sistema. Questa memoria extra
+ puo' anche essere usata per aumentare le perfomance di certi titoli, per esempio
+ usandola per conservare immagini che altrimenti dovrebbero essere ricaricate
+ ogni volta.
+
+ Sebbene la cartuccia Digital Video non faccia parte delle specifiche base del
+ CD-i ne rimane l'estensione piu' importante che fu mai introdotta nel sistema.
+ L'estensione Full Motion Video e' definita come un'estensione facoltativa dalla
+ versione Marzo 1993 del Libro Verde.
+ Approssimativamente il 75% di tutti i titoli CD-i richiedono l'installazione
+ della cartuccia. Da notare che un titolo che non e' stato creato per la
+ cartuccia Digital Video non mostra differenze di qualita' audio e video
+ quando una cartuccia e' installata nel lettore.
+
+ 4.7.1 C'e' differenza tra le varie cartucce Digital Video?
+ C'erano due modelli della cartuccia Digital Video disponibili: la piu' grande
+ 22ER9141, e quella leggermente piu' piccola 22ER9956. Il primo modello fu
+ usato nella prima partita di lettori (CDI 910, CDI 205, le prime versioni del
+ CDI 210, le prime versioni di CDI 220 e per i lettori portatili CDI 310,
+ CDI 350 e CDI 360), la seconda venne usata in tutti gli altri lettori.
+ La nuova cartuccia fu introdotta alla fine del 1994, per permettere la
+ progettazione di un lettore piu' piccolo (il CDI 450). Da allora fu possibile
+ ridurre la dimensione della cartuccia a causa della grande integrazione di
+ scala dei vari componenti. In termini tecnici c'e' una piccola differenza:
+ il 22ER9141 invia il suo segnale video in un modo analogico al lettore,
+ il 22ER9956 produce un segnale digitale che viene analizzato dal lettore
+ interno DACs. In termini di esecuzione non c'e' assolutamente differenza,
+ tutti i titoli CD-i Digital Video sembrano eseguiti allo stesso modo con
+ entrambe le cartucce.
+
+ A causa di problemi di decodifica MPEG video usando la prima serie di
+ cartucce 22ER9141 (errori in decodifica, display di verde "sprite di spettro"
+ sullo schermo), si dovette creare una seconda versione con una decodifica IC
+ differente che venne introdotta subito dopo. Questa nuova cartuccia aveva il
+ /20 aggiunto all'indicazione di numero di tipo, vedere "Overview of Digital
+ Video Cartridges" su questo sito per ulteriori informazioni circa tutte le
+ cartucce disponibili e le diverse compatibilita' con i lettori. Per controllare
+ quale cartuccia dovrebbe essere installata in un particolare lettore vedere
+ la "Comparision table of all Philips CD-i players" su questo sito.
+
+ 4.7.2 La RAM extra viene usata da titoli non Digital Video?
+ Ogni Digital Video incorpora un'espansione di 1.5 MB di RAM. Questa memoria
+ consiste di 1 MB di RAM standard, e 512 KB di RAM di decodifica per dati di
+ bufferizzazione quando avviene la decodifica MPEG audio e video. Tutta questa
+ memoria puo' essere usata da un'applicazione CD-i per aumentarne le performace.
+ Per esempio, un titolo puo' conservare dati in RAM cosi' da non ricaricarli
+ dal dischetto ogni volta che servono. Fino a quando uno sviluppatore di titoli
+ CD-i deve creare un software per CD-i base non deve porsi il problema se la
+ cartuccia Digital Video e' installata o meno.
+
+ Il miglior esempio dell'uso di questa RAM extra si puo' trovare nelle applicazioni
+ Photo CD. Quando si seleziona la rassegna delle foto di un Photo-CD tutte le
+ preview sono generate da immagini prese dal CD e conservate in RAM.
+ Piu' RAM e' disponibile e piu' dati possono essere conservati senza dover
+ leggere nuovamente le immagini dal CD. In questo caso si puo' affermare che
+ il Photo-CD beneficia della cartuccia Digital Video. Oltre a questo, io so di
+ un solo titolo (il gioco Christmas Crisis) che usa la RAM extra per caricare
+ gli effetti audio. Questi suoni non possono essere sentiti quando non e'
+ installata la cartuccia Digital Video.
+
+ 4.8 Quanta spazio di NV-RAM (immagazzinaggio dati) ha un lettore CD-i?
+ Conformemente al Libro Verde, ogni lettore CD-i dovrebbe essere fornito di
+ almeno 8 KB per conservare i dati. Nella maggior parte dei lettori, questo
+ spazio di immagazzinaggio e' implementato come batteria-powered NV-RAM
+ (Non-volatile Random Access Memory). I dati vengono salvati in questa memoria
+ quando il lettore e' spento. NV-RAM puo' essere usata da un'applicazione per
+ conservare le classifiche dai giochi, settaggi personali, selezioni di traccia
+ audio perferite, selezioni di immagine preferite di Photo-CD, settaggi di
+ linguaggio preferiti, etc. NV-RAM e' anche usata dal sistema per conservare
+ il CSD (vedere Cos'e' il CSD?)
+
+ Sebbene 8 KB sia lo spazio minimo di immagazzinaggio, qualche lettore CD-i
+ ha 4 volte questa capacita', risultando di 32 KB. Rivedere la"Comparision table
+ of all Philips CD-i players" su questo sito per vedere quanta NV-RAM e'
+ disponibile in un particolare CD-i. I file sono conservati usando lo standard
+ OS-9 con nomi dei file con piu' di 28 caratteri in lunghezza con lettere
+ maiuscole e minuscole. Quando la memoria del lettore risulta piena,
+ l'applicazione puo' fornire un modo per cancellare certe voci. La memoria
+ occupata in NV-RAM puo' essere sempre controllata selezionando Memory o
+ Storage dalla shell di startup (schermata opzioni) del lettore.
+
+ 4.8.1 Io non riesco a cancellare voci dalla memoria del mio CD-i, perche'?
+ Probabilmente si e' rotta la NV-RAM del lettore CD-i.
+ Informazioni preziose si trovano negli articoli contenuti nella sezione
+ "Articles" su questo sito per sapere come risolvere questo problema.
+
+ 4.9 Che dispositivi di puntamento possono essere collegati ad un CD-i?
+ Il Libro Verde definisce che ogni sistema CD-i dovrebbe essere in grado di
+ controllare il cursore sullo schermo usando un dispositivo di controllo X/Y
+ che include due tasti di azione. Non e' specificato in che modo e' fatto o in
+ che modo il dispositivo dovrebbe essere collegato o interfacciato ad un lettore.
+ Tuttavia, Philips ha definito un tipo di formato per il connettore e per
+ l'interfaccia dei dispositivi di puntamento compatibili con tutti i lettori
+ Philips CD-i, anche quelli con un controller remoto ad infrarossi (eccetto il
+ primo CDI 180) e in piu' i lettori CD-i degli altri fabbricanti (LG, Grundig,
+ Memorex, DVS,etc.). Questo tipo di collegamento non fa parte del Libro Verde,
+ ma e' solo una creazione Philips. Da notare che il controller remoto ad
+ infrarossi non usa nessun connettore per dispositivi di puntamento o di
+ interfaccia, esso e' completamente indipendente dal lettore (vedere Qual'e'
+ la differenza tra RC5 e RC6?).
+
+ Tutti i tipi di dispositivo di puntamento furono disponibili. Fra essi ci
+ furono mouse, trackerballs, Roller Controller per bambini, game pads, touch
+ pads, touchscreens, joypads e anche una pistola laser. Per una rassegna
+ completa di tutti i dispositivi di puntamento disponibili inclusa un'immagine,
+ vedere la "Philips CD-i Pointing Devices" su questo sito.
+
+ 4.9.1 Quante porte per dispositivi di puntameto puo' avere un lettore?
+ Tutti i lettori Philips CD-i sono forniti di almeno una porta di input per
+ dispositivi di puntamento. Alcuni lettori hanno una porta RS-232 sul retro
+ che puo' anche essere usata per collegare un dispositivo di puntamento
+ (CDI 910, CDI 205, prime versioni di CDI 210, prime versioni di CDI 220, e
+ altri). Alcuni lettori forniscono due porte per dispositivi di input di fianco
+ alla porta RS-232 (CDI 740, CDI 660, CDI 70). Tutti gli altri lettori hanno
+ o solo una porta di input, o una porta di input e un connettore RS-232 che
+ non puo' essere usato per dispositivi di puntamento. In questo caso si deve
+ usare una porta splitter per poter collegare due dispositivi di puntamento
+ come per i giochi a due giocatori (eccetto per i lettori portatili CDI 310,
+ CDI 350 e CDI 360). Per fare le cose ancora piu' complicate questa porta
+ splitter non puo' essere usata su lettori che gia' possiedono porte per i
+ dispositivi di puntameto. Vedere la colonna I/O della "Comparision table of
+ all Philips CD-i players" su questo sito per conoscere come possono essere
+ collegati i diversi dispositivi ad un particolare lettore.
+
+ 4.9.2 Qual'e' la differenza tra RC5 e RC6?
+ Molti lettori Philips CD-i (eccetto il CDI 450, CDI 550 e il CD-i/Hifi
+ combi FW380i) sono forniti di un ricevitore IR per l'uso di un controller
+ senza filo per muovere il cursore sullo schermo e selezionare le opzioni.
+ Il primo batch di lettori usava il Enhanced RC5 system e furono impacchettati
+ con il Thumbstick, un controllo remoto con un piccolo telecomando con sopra
+ un piccolo joystick.
+ Piu' tardi i modelli usarono RC6 e furono impacchettati con il CD-i Commander,
+ un touch pad remoto che verificava le differenti pressioni per velocizzare o
+ rallentare il movimento del cursore. Alcuni lettori accettano entrambi i
+ formati RC. Nella "Comparision table of all Philips CD-i players" si puo'
+ vedere quale controller remoto puo' essere usato. Da notare che entrambi,
+ sia l'Enhanced RC5 e RC6 sono sviluppi specifici Philips, e non fanno parte
+ del Libro Verde.
+
+ 4.10 Si puo' collegare una tastiera ad un lettore CD-i?
+ Si. Philips ha venduto una tastiera per lettori CD-i chiamata CD-i KeyControl.
+ La tastiera si puo' usare per inserire nomi nella selezione di traccia
+ preferita dei CD-Audio nella shell di startup del lettore, per inserire testo
+ in applicazioni Internet del CD-i e per ricerche nei titoli nell'Enciclopedia
+ olandese e nell'Enciclopedia dei medici olandesi. Personalmente non conosco
+ altri titoli che la supportano. Messaggio importante per gli sviluppatori CD-i;
+ fate attenzione che la CD-i KeyControl non e' un terminale tipo tastiera RS-232,
+ non puo' essere usata per input di testo nell'utilizzo per esempio di MediaMogul!
+
+ 4.11 Si puo' usare un lettore CD-i per accedere ad Internet?
+ Si. Un corredo per CD-i per il collegamento ad internet fu venduto da Philips
+ nel Regno Unito, in Olanda e Belgio come CD-Online, e negli Stati Uniti come
+ Web-i. Questo Add-on consisteva in un modem 14.4 Kbps che con appropriati cavi
+ di collegamento, un cd CD-i e i dati di sottoscrizione per il servizio che fu
+ fornito da partner selezionati ne permetteva l'accesso. La confezione utenti
+ permetteva di vedere pagine web, sfogliare notizie, newsgroups, spedire e
+ ricevere posta elettronica. Sui CD CD-i c'era tutto il software necessario,
+ molti video clips che si potevano vedere dalle homepage di CD-Online o Web-i
+ e alcune immagini prese dai piu' popolari siti web. In quel modo, il CD CD-i
+ funzionava come una cache per alcune informazioni. A causa della lenta CPU
+ usata in un lettore CD-i (un 68000 equivalente a 15 MHz) la decodifica di
+ semplici immagini JPEG e GIF prendeva molto tempo e quando era terminata dava
+ un'impressione molto scadente sullo schermo TV. Percio', il corredo CD-i
+ Internet non divento' mai molto popolare fra gli utenti. Fu impossibile
+ velocizzare il processo di decodifica a causa di colli di bottiglia interni
+ al CD-i, ne' fu possibile includere un modem piu' veloce perche' avrebbe
+ dovuto lavorare con tutti i lettori esistenti, tra cui i primi modelli che
+ furono equipaggiati con un UART che non poteva lavorare a velocita' superiori
+ ai 14.4 Kbps.
+ Tutto sommato, il corredo di collegamento CD-i internet fu una divertente ma
+ non molto maneggevole capacita' che si univa alla gia' vasta lista di opportunita'
+ di usi possibili offerti da un lettore CD-i.
+
+ 4.11.1 Cos'era il Tele-CD-i?
+ Tele-CD-i non aveva niente a che fare con il corredo di collegamento CD-i
+ Internet. Tele-CD-i era mirato unicamente ad applicazioni professionali per i
+ produttori che desideravano accedere a dati esterni attraverso un collegamento
+ di rete. Per questo, fu introdotto l'assistente Tele-CD-i, un modem 2400 bps.
+ Tele-CD-i poteva per esempio essere usato per spedire informazioni statistiche
+ circa l'uso di un chiosco di informazioni CD-i agli uffici di controllo, o
+ per ricevere in una posizione centrale l'ultimo prezzo di un prodotto. Una delle
+ compagnie che hanno usato Tele-CD-i era Bose nella sua applicazione di chiosco
+ per i suoi prodotti Dolby Surround. Il chiosco in un magazzino poteva essere
+ controllato da una posizione lontana usando il collegamento di rete.
+ L'accessorio Tele-CD-i non venne mai venduto ai consumatori.
+
+ 4.12 Un lettore CD-i puo' leggere CD-Recordable (CD-R) o CD-ReWritable (CD-RW)?
+ Diversamente da qualche lettore DVD-Video, ogni lettore CD-i puo' leggere
+ CD-Recordable con contenuto compatibile (per esempio CD-Audio, CD-i, Video-CD,
+ Photo-CD,etc.). Il lettore non fa' nessuna differenza tra CD originali e
+ CD-Recordable non c'e' bisogno per di nessun adattatore come accade per la
+ PlayStation. Poiche' i CD-ReWritable non erano ancora disponibili al momento
+ in cui fu introdotto il CD-i, essi non possono venire letti. Tuttavia, noi
+ abbiamo trovato che i lettori CD-i basati su un'unita' di drive con ottica CDM-9
+ (CDI 910, CDI 205, prime versioni di CDI 210, prime versioni di CDI 220)
+ sono in grado di leggere i CD-RW di buona qualita' (abbiamo testato i CD tipo
+ Philips-branded ed e' stato un successo mentre con altri piu' economici
+ abbiamo fallito). Da notare che non facciamo garanzie su queste informazioni,
+ semplicemente consigliamo di provare diverse marche di CD per vedere se il CD-i
+ in vostro possesso e' in grado di leggere i CD-RW.
+
+ 4.13 Un lettore CD-i puo' leggere i CD multi-sessione?
+ Si, diversi lettori possono. La multi-sessione fu definita nella parte Arancio
+ del II Libro per CD-Recordable quando Philips e Kodak stavano lavorando sulle
+ specifiche tecniche del Photo-CD per permettere l'inserimento di nuove immagini
+ in un secondo momento.
+ Fin quando il Photo-CD fu introdotto come una capacita' del CD-i, il CD
+ multisession diventava una caratteristica standard di tutti i lettori CD-i di
+ consumo. Solo qualche vecchio lettore CD-i professionale che venne introdotto
+ prima del Libro Arancio/Photo-CD (CDI 180, CDI 601, CDI 602 e CDI 605/00) e'
+ incapace di leggere i CD multi-sessione, quei lettori hanno il solo accesso e
+ eseguono solo la prima sessione. A causa di questo capacita' multi-sessione
+ la parte audio di alcuni CD-ROM (il cosiddetto CD-Plus o CD-Extra) non puo'
+ essere riprodotta su un lettore CD-i. La parte di CD-ROM contenuta nella
+ seconda sessione che viene ignorata da un regolare lettore CD-Audio non lo e'
+ da un lettore CD-i. Fin quando il TOC nella seconda sessione non rimanda alle
+ tracce CD-Audio un lettore CD-i si deve considerare incapace di eseguirle.
+ La capacita' multi-sessione non fa parte del Libro Verde, ma viene implementata
+ da tutti i fabbricanti di lettori CD-i di consumo.
+
+ 4.14 Come posso collegare un lettore CD-i ad una TV o ad un sistema Hi-Fi?
+ Ci sono molti metodi di collegamento disponibili, cosi' come (che vanno
+ dalla peggiore alla migliore) RF (antenna), CVBS (video composito), Y/C
+ (separando colore e informazioni di luminosita', qualche volta noto come Hi-8
+ o SVHS) e RGB (componente video per i colori del rosso, verde e blu).
+ Consiglio caldamente RGB, che e' disponibile sulla maggior parte dei lettori
+ europei come una SCART o Euroconnector o altrimenti si usi Y/C. Solo in tutte
+ le altre circostanze si usino CVBS o RF, fin quando questi forniscono una
+ insignificante diminuzione di qualita' di riproduzione di colore e sharpness
+ se comparati a RGB e Y/C.
+
+ Diversi lettori CD-i hanno due connettori standard per l'uscita audio.
+ Questi connettori possono essere collegati a qualsiasi sistema stereo
+ (accertarsi che non si stia usando la porta di input per un giradischi, e'
+ migliore quell'altra come tape, aux o TV che e' ottima). Alcuni lettori
+ (tra cui molti portatili) hanno un'uscita mini-jack per l'audio invece
+ di due prese standard. Accertarsi di usare il cavo corretto.
+
+ 4.15 Qual'e' il connettore di uscita digitale usato da alcuni lettori?
+ Alcuni lettori hanno un connettore Digital Ouput (le versioni piu' recenti di
+ CDI 220, CDI 740, CDI 615, CDI 660 e CDI 670). Questo collegamento fornisce
+ un segnale S/PDIF (Sony/Philips Digital Interface Format) standard. Esso puo'
+ essere usato per collegare un lettore CD-i ad un dispositivo di registrazione
+ digitale come un MiniDisc o un registratore CD-Audio. Tuttavia sconsiglio
+ di usare un lettore CD-i per la registrazione digitale, specialmente con CD-R
+ ad una sola scrittura, fin quando la shell del lettore non permette un play
+ ed uno stop di riproduzione molto accurati. Questo normalmente e' ritardato
+ di alcuni centesimi di secondo a causa del fatto che la shell del CD-i deve
+ prima disegnare l'informazione sullo schermo e poi eseguire il comando.
+ E' da notare che il connettore Digital Out fornisce un segnale solo nel
+ momento in cui sta eseguendo un CD-Audio, e non nel momento in cui sta
+ eseguendo un titolo CD-i, perche' qui verra' usato uno schema di codifica
+ audio (ADPCM o MPEG audio) che e' diverso dal formato standard S/PDIF.
+ I connettori di output digitale sui lettori authoring CDI 180 e CDI 605 sono
+ concepiti per collegamenti ad un CD-i authoring system o ad un emulatore e
+ non possono essere usati per l'audio.
+
+ 4.16 C'e' differenza tra PAL, SECAM e NTSC?
+ Da un punto di vista di hardware c'e'. Un lettore CD-i di consumo e' localizzato
+ per uno specifico sistema TV. Il segnale di output dei connettori video e'
+ conforme a questo sistema locale. Si puo' individuare il sistema televisivo
+ supportato guardando l'indicazione della versione che si trova dopo il numero
+ di ID (Vedere Cosa significano lo /00, /20, etc. dopo l'indicazione del
+ modello). Molti lettori CD-i professionali (CDI 180 e CDI 6xx) hanno uno
+ switch sul retro che permette di selezionare il sistema TV appropriato.
+
+ Da un punto di vista di software, non c'e' una vera differenza tra i tre
+ sistemi. Ogni dischetto CD-i puo' essere eseguito su ogni lettore CD-i.
+ Tuttavia, come con il DVD-Video, alcune note riguardano il rapporto di aspetto
+ e l'area di sicurezza e devono essere prese in considerazione.
+ Riguardare il capitolo "Il CD-i fa' differenza tra PAL e NTSC?".
+
+ 4.17 Si puo' usare il CD-i su televisori DTV, IDTV e HDTV?
+ Si'. Tutti i televisori futuri forniscono mezzi per collegare una sorgente
+ video analogica come un lettore CD-i o un videoregistratore. Da notare che
+ non e' possibile fare un collegamento digitale, per esempio con un DTV
+ (Digital TV) o HDTV (High Definition TV) con i lettori odierni, ne' si potra'
+ avere una migliore qualita' di immagine quando si usa un tale televisore.
+
+ 4.18  Un lettore CD-i e' immune al bug Y2K (anno 2000)?
+ Si. Il CD-i e' basato sul sistema operativo OS-9, che e' molto simile a Unix
+ percio' non soffre dei problemi Windows o DOS per l'anno 2000.
+ Fin quando Unix conserva un anno in un campo di 7 bit e inizia a contare
+ dall'anno 1900, i primi problemi (se ne avra') sorgeranno nel 2027 (cosi' per
+ allora noi avremo un problema Y2.027K :-) ). L'unica cosa necessaria ad un
+ lettore CD-i per continuare a contare dopo il passaggio all'anno 2000 e' uno
+ spegnimento precauzionale del lettore che gli permettera' di eseguire i calcoli
+ necessari alla reinizializzazione di sistema. Nel momento in cui sta mostrando
+ una data post-2000 in un file, il lettore fara' alcuni calcoli per stabilizzarla
+ nel sistema (nella maggior parte dei casi, questo implica solo un'aggiunta di
+ un 100 ai risultati prodotti dal sistema). Tuttavia e' molto raro che una
+ applicazione mostri date di creazione di file, e sia la memoria, sia le opzioni
+ immagazzinate nel CD-i sono al sicuro da questo problema.
+ La sola eccezione potrebbe essere data da lettori CD-i equipaggiati con un
+ floppy drive (CDI 310, CDI 180, CDI 602, CDI 605 e CDI 615) nel momento in cui
+ stanno usando dischetti formattati MS-DOS. Affinche' anche questo possa essere
+ risolto, e' disponibile da Philips un driver aggiornato (chiamato PCF).
+ Ulteriori informazioni si possono leggere su un documento distribuito da Philips e
+ che puo' essere scaricato dalla sezione "CD-i technical Documentation" di
+ questo sito.
+
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.

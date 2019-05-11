@@ -1,0 +1,48 @@
+<HTML><HEAD>
+<TITLE> Printing on CD-i Players</TITLE>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+
+<H2><CENTER>Printing on CD-i Players</CENTER></H2>
+
+<UL>
+
+<P>
+ You can print text or graphics from any CD-i player.<BR><BR>
+<LI>On consumer players, you must print to the serial /t2 port on the back of the player.  If you want to print to a parallel printer, you will need to use a serial->parallel converter.  Consult the cables page for the proper printing cable pinouts.
+<P>
+
+<LI>On professional players, you can print to any of  the serial ports(/t2,/t3, or /t4), or the parallel port(/p).  Printing to the parallel port is significantly faster than the serial method.
+<P>
+
+<LI>There is a freeware subroutine in the OS9 file section, <B><I>cdi_mmpr</I></B>, which will do basic printing chores.  For more sophisticated printing options, the Printer Manager Plug-in is required.
+
+<P>
+<LI>There is also a way to print files without either of the subroutines above.  This method does not have any of the error condition checking that <B>cdi_mmpr</B> or the <B>Printer Manager</B> plugin possess.   The steps to follow are thus:
+<P>
+<OL>
+<B><LI></B>Create your output print file with whatever text or graphics program you like on your PC.<BR>
+
+<B><LI></B>Be sure you have the  printer drivers installed for the destination printer.  Choose that printer, but print to a file, e.g. "stuff.txt".<BR>
+
+<B><LI></B>In order to print the file on a CD-i player you will need to use the "<CODE>copy</CODE>"  command in OS9.  The copy command does not alter the file in any way, so text files must have proper line terminations to print correctly.    <BR>
+
+<B><LI></B>Use the "Call" command in MediaMogul to load   <CODE>copy</CODE>.  Use the "filename" as the parameter of the <CODE>copy</CODE> call.  <BR>
+
+<B><LI></B> A simple script might look like this:<BR><BR>
+
+<CODE>00:00		Call			/h0/cmds/copy stuff.txt /t2</CODE><BR><BR>
+
+<B><LI></B>Beware of trying to print large graphics files serially.  These will take a <B>long</B> time to print.
+</OL><BR><BR>
+
+</UL>
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="s2d.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>

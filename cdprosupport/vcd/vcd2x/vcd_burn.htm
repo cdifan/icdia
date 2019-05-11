@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+   <TITLE>VCD and CD-i CDR Recording Under Windows 95/NT</TITLE>
+</HEAD>
+<BODY BGCOLOR="FFFFFF">
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="vcd2x.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+<P><HR></P>
+<H2 ALIGN=Center><FONT COLOR="990099">VCD and CD-i CDR Recording Under Windows 95/NT</FONT></H2>
+
+Both <B>WinOnCD</B> and <B>Gear</B> for Windows 95 work with our disc images, but you do have to follow a certain procedure.  First of all, find in your build folder the file that has a &#34;.cd&#34; extension in its name.  This file is the <I>disc image</I> file.  All the other files in the build directory are either temporary files used during the build, or are associated with the disc image file.  For the purpose of burning a disc, though, the disc image file is the only file to be concerned with.  The disc image file contains everything you included in your project: the assets (stills, motion, audio), the menuing, & other files.  In fact, if you have a CD-i Authoring board, or CD-i Emulator, you can emulate that file just as though you were playing a real VideoCD/CD-i disc.  
+
+
+<P>
+<FONT SIZE=+2>In order to use Gear or WinOnCD to burn a VCD or CD-i disc, there are two kinds of disc images to consider:</FONT>
+
+
+<P>
+<TABLE BORDER=3 CELLSPACING=2 CELLPADDING=1 BGCOLOR="009999">
+<TR>
+	<TH><FONT SIZE=+2 COLOR="FFFFFF">Single-Track Disc Images</FONT>
+</TABLE>
+<TABLE CELLSPACING=2 CELLPADDING=1>
+<TR>
+	<TD WIDTH=200><FONT COLOR="990000"><B>Synopsis</B></FONT><TD WIDTH=400 ALIGN=CENTER><A HREF="#gear_single">(Step-by-step procedure)</A></TR>
+</TABLE>
+ To use the disc image file <I>as is</I> with Gear or WinOnCD, you must build a <B><FONT COLOR="009999">single-track</FONT></B> disc image.   It should be remembered that:
+<FONT SIZE=+2 COLOR="#555555"><UL>
+<LI><B>Standard CD-i disc images are always single-track.<P>
+
+<LI>VCD 1.x discs are always multi-track.<P>
+
+<LI>VCD 2.0 disc images usually have multiple tracks,<BR>
+(though playable single-track discs can be made.)</B>
+</UL></FONT>
+<FONT COLOR="#000033"><U><B>VCD 2.0 Toolkit Considerations:</B></U></FONT><BR>
+ If you are using <FONT COLOR="CC3333"><B>chaptermarks</B></FONT> or desire <FONT COLOR="CC3333"><B>VCD 1.x compatibility</B></FONT> you <B>must</B> place the MPEGAV files on the disc as separate tracks--see the <A HREF="#multitrack">Multitrack disc instructions</A>. To make a single-track VCD 2.0 disc image using the <B>PC</B> Toolkit, you must  <B>uncheck</B> the &#34;Auto include VCD MPEG files as Tracks&#34; option in the Preferences of VCD Toolkit.  Then, all MPEG clips you add to your project will only be added to the first (and only) track.  The Mac version of the Toolkit will not add MPEGAV as tracks automatically, it must be done manually, so there are no added steps for creating single-track images.  If you already have made a project with the &#34;Auto include&#34; option checked, or have manually added tracks, you may need to manually remove the extra MPEGAV tracks in the Tracks Manager.    When you build the project, you will get a warning message about the White Book requiring at least one MPEGAV track: you can safely ignore this message.  Although the disc produced will not be precisely to the VCD specification, it should play fine on all CD-i players, and VCD 2.0 players.  
+<P>
+<HR>
+&nbsp; 
+<P>
+<A NAME="multitrack"></A>
+<TABLE BORDER=3 CELLSPACING=2 CELLPADDING=1 BGCOLOR="CC3333">
+<TR>
+	<TH><FONT SIZE=+2 COLOR="FFFFFF">Multi-Track Disc Images</FONT>
+</TABLE>
+<TABLE CELLSPACING=2 CELLPADDING=1>
+<TR>
+	<TD WIDTH=200><FONT COLOR="990000"><B>Synopsis</B></FONT><TD WIDTH=400 ALIGN=CENTER><A HREF="#gear_multi">(Step-by-step procedure)</A></TR>
+</TABLE>
+ There are four ways currently to burn a <B>multi-track</B> VCD disc with our disc images:
+<OL TYPE="a"><LI> use <B>CD Record</B>.  This is Windows 3.x-only software.  It relies on the &#34;.toc&#34; file, also in the build folder.  The .toc file (Table Of Contents) describes the structure of the disc, including the tracks.
+      <LI>use <B>Toast</B> (or our OEM&#39;d version, <B>CD-IT!ALL</B>).  This is Mac-only software, which interprets our disc images directly.
+<LI>use <B>Disctool</B>(or the command-line version, <B>CDR521</B>) and a CD-i E2 Emulator with recording capability.
+<LI>use our <B><A HREF="tk_split.htm" TARGET="Splitting Multitrack Image Files">Splitter</A></B> utility. This utility splits our multi-track disc images into multiple files, so that Gear or WinOnCD can record them.   Then follow the <A HREF="#gear_multi">Step-by-step procedure</A>.
+</OL>
+
+<P>
+Elektroson, the makers of Gear, are currently working on a version of Gear for Windows 95 which will utilize our .toc files in order to burn multi-track images.   This version may be available in the near future. 
+
+<P>
+The procedures for recording disc images with Gear or WinOnCD follow.  <BR>
+
+<P>
+
+ <TABLE BORDER=3 CELLSPACING=2 CELLPADDING=1 BGCOLOR="000066">
+<TR>
+	<TH><FONT SIZE=+2 COLOR="FFFFFF">Recording Procedures</FONT>
+</TABLE>  
+<P>
+<A NAME="gear_single"></A><HR WIDTH="50%">
+<P>
+<B><CENTER>RECORDING <FONT COLOR="FF6600">SINGLE</FONT>-TRACK VCD or CD-i DISC IMAGES WITH <U>GEAR</U></CENTER></B><BR><CENTER>(goto <A HREF="#gear_multi">Multi-Track</A> Images)</CENTER>
+<OL>
+<LI>Select &#34;External Disc Image&#34; from the <B>CD Type & Settings</B> pulldown menu
+<LI>Click the <B>Open</B> button, browse to the build folder, & select the &#34;<CODE><FILENAME></CODE>.cd&#34; file.  The <B>External Image Parameters</B> dialog should appear.
+<LI>Select &#34;CD-ROM XA sector size 2352 scrambled, with 2 sec pregap&#34; from the <B>Image Type</B> pulldown menu in the dialog, and click OK.
+<LI>Burn the disc.
+</OL>
+
+<A NAME="winoncd_single"></A><HR WIDTH="50%">
+<P>
+
+<B><CENTER>RECORDING <FONT COLOR="FF6600">SINGLE</FONT>-TRACK VCD or CD-i DISC IMAGES WITH <U>WinOnCD</U></CENTER></B><BR><CENTER>(goto <A HREF="#winoncd_multi">Multi-Track</A> Images)</CENTER>
+<OL>
+<LI>Select the &#34;Raw Data&#34; type from the <B>New Project</B> dialog
+<LI>Double-click on the &#34;Raw Data&#34; CD-ROM track in the track window: The <B>Raw File Properties</B> dialog should appear.
+<LI>Click the <B>Select</B> button,  browse to the build folder, & select the &#34;<CODE><FILENAME></CODE>.cd&#34; file.
+<LI>Select &#34;CD-ROM XA&#34; for <B><U>T</U>rack format</B>.
+<LI>Select &#34;2352 bytes data scrambled&#34; for <B><U>F</U>ile format</B>.
+<LI>Enter &#34;150&#34; in the<B>Start writing at <U>b</U>lock offset</B> field and click <B><U>O</U>k</B>.
+<LI>Burn the disc.
+</OL>
+<P>
+<A NAME="gear_multi"></A><HR SIZE="5" WIDTH="75%" NOSHADE>
+
+<P>
+<B><CENTER>RECORDING <FONT COLOR="FF0000">MULTI</FONT>-TRACK VCD DISC IMAGES WITH <U>GEAR</U></CENTER></B><BR><CENTER>(goto <A HREF="#gear_single">Single-Track</A> Images)</CENTER>
+<OL>
+<LI>Use the <A HREF="tk_split.htm" TARGET="Splitting Multitrack disc images">splitter.exe</A> utility to separate a multi-track disc image into multiple individual track files.
+<LI>Create a <B><A HREF="tk_split.htm#cue_sheet">cue sheet</A></B> file listing all the tracks.
+<LI>Select &#34;Cue Sheet&#34; from the <B>CD Type & Settings</B> pulldown menu
+<LI>Click the <B>Open</B> button, browse to the cue sheet file, & select it.   You will not be able to edit this cue sheet within Gear, but it should burn a disc properly.
+<LI>Burn the disc.
+</OL>
+<P>
+<A NAME="winoncd_multi"></A><HR WIDTH="50%">
+<P>
+<B><CENTER>RECORDING <FONT COLOR="FF0000">MULTI</FONT>-TRACK VCD DISC IMAGES WITH <U>WinOnCD</U></CENTER></B><BR><CENTER>(goto <A HREF="#winoncd_single">Single-Track</A> Images)</CENTER>
+<OL>
+<LI>Use the <A HREF="tk_split.htm" TARGET="Splitting Multitrack disc images">splitter.exe</A> utility to separate a multi-track disc image into multiple individual track files.
+<LI>Select the &#34;Raw Data&#34; type from the <B>New Project</B> dialog
+<LI>Double-click on the &#34;Raw Data&#34; CD-ROM track in the track window: The <B>Raw File Properties</B> dialog should appear.
+<LI>Click the <B>Select</B> button,  browse to the build folder, & select the first track file.
+<LI>Select &#34;CD-ROM XA&#34; for <B><U>T</U>rack format</B>.
+<LI>Select &#34;2352 bytes data scrambled&#34; for <B><U>F</U>ile format</B>.
+<LI>Enter &#34;150&#34; in the<B>Start writing at <U>b</U>lock offset</B> field and click <B><U>O</U>k</B>.
+<LI><B>Highlight</B> the last track, then select &#34;I<U>n</U>sert&#34; from the <B><U>E</U>dit</B> menu, or hit the Insert key.
+<LI>Choose &#34;Raw Data&#34; again in the <B>Insert Track</B> dialog, be sure that <B><U>a</U>fter Selection</B> is selected, then click <B><U>O</U>k</B>.
+<LI>Repeat steps 3 through 7 on the newly inserted track, using the <B>next</B> Track file.  
+<LI>Repeat steps 8,9, and 10 using the subsequent Track files until all Track files created by the splitter application have been used.
+<LI>Burn the disc.
+</OL>
+<BR>
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="vcd2x.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+<!-- TRW -->
+

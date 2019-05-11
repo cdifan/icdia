@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+   <TITLE>VCD Compliant MPEG Files</TITLE>
+</HEAD>
+<BODY BGCOLOR="FFFFFF">
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="pink.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+<P><HR></P>
+<H2><CENTER><FONT COLOR="610806">VCD Compliant MPEG Files</FONT></CENTER></H2>
+
+
+
+<B> Q: How do I *confirm* that the MPEG files are *NOT* VCD compliant? Are 
+there some header bytes in the file we can peek into to confirm their specs?</B><BR>
+Of course, looking at the header bytes would only confirm that the header bytes were done correctly, and what the file specs are, not necessarily confirm that the file is fully VCD compliant.  If you want complete info on header bytes, I suggest you pick up the White Book.  It is available from our sales department, sales@optimage.com.  Additionally the MPEG 1 ISO 11172 spec might be helpful. (Available from ANSI, 11 West 42nd St., New York, NY 10036, Tel: (212)642-4900, Fax: (212) 302-1286).  A stream verifier is the only way to look at the compliance of the entire file.
+
+<P> <FONT COLOR="044261"><B><FONT SIZE=+2>Header Info:</FONT></B></FONT>
+<UL>
+<LI>The first 4 bytes of a multiplexed mpeg file should ALWAYS be <CODE><B>00 00 01 ba</B></CODE> hex.<BR>
+ (raw mpeg video streams always have first four bytes == <CODE><B>00 00 01 b3</B></CODE>)<BR> 
+(raw mpeg audio streams always have first byte &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;== <CODE><B>ff</B></CODE>)
+<P><LI>Both Video CD and CD-i are more constrained than the CONSTRAINED parameter set of the 11172 spec, with VCD the most constrained of all.  What this means is that if your multiplexer does not make your mpg files in just the right way, they won't work. 
+<P><LI>The pack/system headers cannot be immediately followed by data, as some mux'ers do it.  There should be 30 or so bytes of header followed by a large number of <CODE>ff</CODE>'s, hexwise, to pad out the sector.
+<P><LI> If you have both audio and video in your mpg file, there will be two headers(each starting with 00 00 01 ba) about 2300 bytes apart(one for audio, one for video), with 2200+ bytes of <CODE>ff</CODE>'s after both. 
+<P><LI> Some multiplexers create only one header for an audio+video mpeg file.  This is not permissible with VCD mpeg.</UL>
+<BR>
+<P>
+
+If you are using the PC version of VCD 2.0TK, the manual is skimpy on the required parameters for VCD2.0TK mpeg.  To remedy that, and to provide a comparison between the requirements for VCD 1.x, 2.x, CD-i, and MediaMogul, a <A HREF="mpeg1_specs.htm">table</A> shows the requirements and differences.
+
+<P>
+There is a PC shareware product called "VMPEG" which is available on various online services and in the FTP section of this site.  It gives basic info on mpeg files, and also plays them.  For compliance testing, though, a stream verifier is the way to go. 
+
+ 
+<P>
+<B>Q: Our files are not working.  How do we convert them into VCD compliant format?</B><BR>
+Assuming your elementary audio and video streams are correct, you would need to re-multiplex them with a VCD-compliant multiplexer. If your mux'er isn't compliant, I would suggest our product <B><FONT COLOR="FF3366">pink</FONT></B> (shameless plug :-}).  It reliably produces VCD-compliant multiplexed mpeg.
+<BR>
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="pink.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+<!-- TRW -->
+

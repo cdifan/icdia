@@ -1,0 +1,276 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>CD-i FAQ 2000 Edition</B><BR><BR><BR>
+
+<B>Section 3. CD-i Techniques</B><BR><BR><BR>
+
+<A NAME="3.1">
+<B>3.1 What are CD-i's basic specs?</B><BR>
+A CD-i player is based on a 68000 CPU running at least at 15 MHz, it is equiped with at least 1 MB of RAM, a single speed CD-drive, dedicated audio and video decoding chips, at least 8 KB of non-volatile storage memory and a dedicated operating system called CD-RTOS. The minimal specifications to which every CD-i player should comply are laid down in the Green Book, which is covered in full detail in <A HREF="cdifaq1.html">section 1</A> of this FAQ. A CD-i player can have extended hardware (such as more RAM or more non-volatile storage space), as long as the minimum requirements of the Green Book are met.
+<BR><BR><BR>
+
+<A NAME="3.2">
+<B>3.2 What CPU does CD-i use?</B><BR>
+A CD-i player is equiped with a Motorola 68000-like processor, similar to the ones used in the original Apple Macintosh, Atari ST and Commodore Amiga. All Philips CD-i players used a Philips-build 68070, which differs from the 68000 in that way that it had some port controlling features build in. The processor runs at 15 MHz. According to the Green Book, the 68000-CPU should at least have a 16 bit external data path, and a 32 bit internal data path, very similar to Intel's 80386SX processor. The CD-i standard allows for a faster CPU, but since CD-i's performance is almost entirely based on the realtime retrieval of audio and video data from the disc, the performance will not be raised that much when a faster CPU is used. This is why CPUs in all CD-i players build to date are based on the minimal Green Book requirements.
+<BR><BR><BR>
+
+<A NAME="3.3">
+<B>3.3 What OS does CD-i use?</B><BR>
+The operating system used in a CD-i player is called CD-RTOS, which stands for Compact Disc Real-Time Operating System. It is hard coded in a ROM of at least 512 KB, along with other player-specific software such as the player's startup shell. CD-RTOS is based on version 2.4 of Microware's OS-9/68K operating system. OS-9 is very similar to Unix, and supports full multitasking and multi-user operation. The original OS-9 was build in the early 80s as a realtime operating system to be used in industrial and embedded applications were real time functionality is a key criteria, such as with robotics, automobile production and set-top boxes. It was slightly adapted to CD-i, for example by including the correct device descriptors for the CD drive, and with drivers for CD-i's specific audio and video decoding ICs. Since OS-9 is a modular operating system with a very small kernel of only about 25 KB, only the parts used by a specific CD-i player have to be preset in ROM. For example, a CD-i player with a floppy disk drive contains additional driver modules, whereas most consumer players do not need them.
+<BR><BR><BR>
+
+<A NAME="3.4">
+<B>3.4 What's a real-time system?</B><BR>
+A real-time computer system is a system in which the timing of events plays a critical role in the operation. For example, in the robotics area, where OS-9 is also extensively used, it is of great importance that different tasks occure at the exact specified moment. In CD-i, real-time behaviour is also important, since audio and video data need to be decoded by the appropriate processors and then send to the appropriate outputs. At the same time, the system should take care of user input.
+<BR><BR><BR>
+
+<A NAME="3.5">
+<B>3.5 What's sector interleaving?</B><BR>
+One of the clever design creteria of CD-i was that the system should be able to retreive audio and video information in realtime from the disc and send this information directly to the appropriate decoder ICs, without putting a heavy load on the over-all system performance. Because of this, a CD-i player does not need much RAM or processing power, since all audio and video decoding is performed in realtime without storing large amounts in RAM for later decoding.<BR><BR>
+
+To enable the simultaneous retreival of both audio and video information, data is interleaved on the CD-i disc. This means that each sector contains a piece of either audio or video information, and that those sectors can be put in consequence next to each other.<BR><BR>
+
+<CENTER><IMG SRC="interleaving.gif" width=449 height=80><BR>
+<I>Figure 3.1 - Example of interleaving audio and video sectors</I>
+</CENTER>
+
+<BR><BR>
+Since a CD-i disc is read at a constant continuing speed, the designer needs to be aware of the load of a certain choice of quality for audio or video in the disc's datastream. When a lower audio quality is used (refer to 3.x for more information about audio coding), fewer sectors will be occupied than with a higer quality. For example, when level A stereo sound is used, only half of the remaining sectors can be used for other information like video.<BR><BR>
+
+It's also possible to read for example only the sectors belonging to one audio channel at a time, and then move back to the beginning of the disc and read the sectors of another audio channel. Since the lowest audio quality only uses one in every sixteen sectors, and a CD-i disc lasts for 74 minutes, the total time for audio can be (16 x 74 min = ) over 19 hours!<BR><BR>
+
+Because of this realtime reading of sectors, every CD-i player reads data at the same speed, sometimes refered to as normal speed or single speed. It would be unnecesary to make a CD-i player with a higher speed CD-drive, since data is to be read in realtime accoring to the specifications (thus single speed) and audio, video and animation would be out of sync when being read at a higher speed. The designers of the CD-i system put more attention to the development of encoding techniques that enable for high quality audio and video within the single data speed and hence resulting in a longer playing time, instead of utilising a high speed drive and by such reducing the playing time. 
+
+<BR><BR><BR>
+
+<A NAME="3.6">
+<B>3.6 What's CD-i's sector format? What about mode 1 and 2, form 1 and 2?</B><BR>
+For CD-ROM, the Yellow Book defines the mode 1 sector format. This format allows for 2048 bytes of user data in every sector, with an accompanying 280 bytes of error correction information in each sector. When data is read at 75 sectors per second (the normal CD speed), this results at a datarate of of 150 KB per second.<BR><BR>
+
+For CD-i it was not always necesary to have error correction in each sector. For example, audio and video need a much lower degree of correction than data or programs. Instead, the 280 bytes used for error correction in mode 1 could be added to the 2048 of user bytes, resulting in 2324 bytes of user data per sector. This larger sector size then results in an improved datarate of about 170 KB per second. The new sector format was called mode 2. Within mode 2, 2 forms were defined: form 1 does incorporate the original error correction and is used for data and programs, and form 2 which lacks the error correction and is to be used for audio, video and other media information.<BR><BR>
+
+Mode 2 added an additional subheader to the header of mode 1, which holds information about the type of data that is contained in a sector (audio, video, data, etc.), the way it is coded (for example which audio level is used), and an indication of the used sector form. This subheader is interpreted by the CD-i system for each sector, which is then processed by the appropriate decoders. Both forms of mode 2 sectors can be interleaved, so that program data and audio and video can be read instantaneously from the disc.
+
+<BR><BR>
+<CENTER><IMG SRC="sectors.gif" width=576 height=299><BR>
+<I>Figure 3.2 - CD-ROM and CD-i sector layout</I>
+</CENTER>
+<BR><BR>
+
+Because of the mixage of both form 1 an form 2 sectors, it is impossible to tell the capacity of a CD-i disc. When all sectors are form 1, the disc wil hold 648 MB. When all sectors are form 2, the capacity is 744 MB. CD-i's disc capacity will hence be between 648 and 744 MB.<BR><BR>
+
+Altough a CD-i disc consitsts of only mode 2 sectors, a CD-i system must be able to read mode 1 sectors on CD-ROM discs, and of course the audio sectors that are defined for CD-Audio in the Red Book. 
+<BR><BR><BR>
+
+<A NAME="3.7">
+<B>3.7 What's CD-i's disc structure?</B><BR>
+Like with all official CD-standards, a CD-i disc is devided into tracks. A CD-i disc contains at least one CD-i track, and my optionally contain additional CD-Audio tracks that may also be played on a standard CD-Audio player. The CD-i track must be the first track on the disc, with the optional CD-Audio tracks hereafter. An exception to this rule is defined in the 'CD-i Ready' format, which is covered in more detail in the <A HREF="cdifaq5.html">Disc types</A> section.<BR><BR>
+
+The first 166 sectors of the CD-i track are message sectors, followed by the Disc Label. Hereafter come an additional 2250 message sectors. Message sectors contain a spoken message in CD-Audio format, which informs users who put the disc in a regular CD-Audio player about the possible damage to equipment or speakers when the disc is not taken out immediately. Usually, a modern CD-Audio player will recognize the CD-i track as a data track and will not play it, so you won't hear the message. It's only included for compatibility with older CD-Audio players. The Disc Label contains some specified fields which offer a lot of information about the disc, such as the title, creator, experiation date, but also the name of the CD-i application file that needs to be run at startup. Most of those fields are not used by most CD-i players, but it allows for example for CD-i players which show the name of a disc on the FTD-display or in the player shell. Furthermore, the Disc Label contains the File Structure Volume Descriptor, which is loaded into RAM at startup. This allows the system to find a certain file on a CD-i disc in only one stroke. After these message sectors and Disc Label, the actual CD-i data starts.
+<BR><BR><BR>
+
+<A NAME="3.8">
+<B>3.8 What filesystem does CD-i use? Is it based on ISO-9660?</B><BR>
+A true CD-i disc uses the OS-9 filesystem, which is not compatible with ISO-9660. It allows for additional information about the files to be stored. This information is very Unix-like, and contains data about execution or read permissions. The filenames can be up to 28 characters in lenght. The system also provides for unlimited depth subdirectories to be used on the disc. Files can contain upper and lower case characters, but files may not exist with excisting names in upper and lower case (for example: when a file 'multimedia' is present, the file 'Multimedia' may not exist).<BR><BR>
+
+Since CD-i uses a dedicated filesystem, it is not possible to see the filenames on a disc using a regular computer with a CD-ROM drive. However, a CD-i filesystem driver has been written for Windows 95/98, that allows you to access a CD-i disc in the same way as a CD-ROM. More information about this driver can be found in section 9 of this FAQ: <A HREF="cdifaq9.html">CD-i on other platforms</A>.<BR><BR>
+
+Altough a CD-i disc is not ISO-9660, the Green Book defines that a CD-i player must be able to read ISO-9660 discs, for example data from a CD-ROM disc. It is also possible to include a CD-i application on a standard ISO-9660 CD-ROM disc to enable playback on a CD-i player. This is defined in the CD-i Bridge format, as explained in further detail in section 5 of this FAQ: <A HREF="cdifaq5.html">Disc types</A>.
+<BR><BR><BR>
+
+<A NAME="3.9">
+<B>3.9 How much RAM does CD-i incorporate?</B><BR>
+The Green Book defines that a CD-i player should at least have 1 MB of Random Access Memory. This memory is devided into two memory banks of 512 KB each. Each of these banks contain one video image of CD-i's two video planes (see <A HREF="#3.13">How does CD-i video work?</A>) Depending on the video encoding type, a picture takes up about 100 KB, leaving the remaining memory for application programs, data, sound samples, and all other kinds of information.<BR><BR>
+
+All consumer CD-i players contain 1 MB of RAM by default, but when a Digital Video cartridge is installed, additional memory is added. Besides the 512 KB of decoding RAM, the cartridge also offers a full 1 MB of extra memory. When no Digital Video is displayed, the decoding RAM can also be used for general purposes. This makes up for a total of 2,5 MB RAM in a CD-i player equiped with a Digital Video cartridge, allowing content developers to use more RAM for more complex programs, additional audio samples,  or faster transition of pictures that are stored in RAM and need not to be loaded from the disc again.<BR><BR>
+
+The additional 1 MB of RAM in the Digital Video cartridge is not defined in the Green Book, nor in the Digital Video extension, but since it is a standard part of every Digital Video equiped CD-i player (from Philips and other manufacturers), a content developer that designs an application for a Digital Video equiped CD-i player can be fairly sure that this extra memory is available.
+<BR><BR><BR>
+
+<A NAME="3.10">
+<B>3.10 What's the CSD?</B><BR>
+Every CD-i player has a piece of non-volatile storage memory (NV-RAM) that is at least 8 KB in size. This memory is kept when the player is turned off. Although this doesn't seem much, it allows for powerfull storage options, such as games scores, test results, names, prefered language settings, etc. The NV-RAM is also used by the system to store the CSD.<BR><BR>
+
+When a CD-i player is turned on, the CD-RTOS kernel is initialized. One of the startup routines includes the creation of the CSD, which stands for Configuration Status Descriptor. The CSD contains information about a certain CD-i system, such as the amount of NV-RAM available, which kind of pointing device is connected, the version of CD-RTOS used, but also wether a floppy disk drive is available, if a printer is connected, etc. All of these variables are stored per device type on one line of the CSD, which are defined in the Green Book. Each of these devicetype settings are called DSD, which stands for Device Status Descriptor (and not Direct Stream Digital as for Super Audio-CD!). Each time the player is turned on or reset (which happens when you eject a disc or exit from a program), the CSD is recopiled. Any newly attached devices will therefore only be recognized and initialized after a reset.<BR><BR>
+
+The CSD can be read by an application program to gather information about a certain CD-i player. For example to load a PAL or NTSC optimized version of the program, to offer storage capabilities when a disk drive is available, to know the seek times of the CD drive, or to know the size of the NV-RAM to show the correct usage percentages when displaying the used space of a certain file. The CSD is stored in an ASCII file called 'csd'.
+<BR><BR><BR>
+
+<A NAME="3.11">
+<B>3.11 What kind of CD-drive is used in a CD-i player?</B><BR>
+A CD-i player contains a CD-drive that runs at normal or single speed, to allow for the correct timing when retreiving realtime data. Speeding up this drive speed would result in the requirement of extra buffer RAM to store audio and video, which would make the CD-i player much more complex. Furthermore, playing time of realtime data would be decreased when a disc would be played at a higher speed.<BR><BR>
+
+CD-i discs are normal CDs, based on the physical definitions as laid down in the Red Book for CD-Audio. It not a special kind of high-denisty CD, such a GD-ROM from the Sega Dreamcast, nor does it use a differently colored reflection layer like Sony Playstation.<BR><BR>
+
+The CD-drive in a CD-i player is physically able to read all normal CD-types, but not high density formats like DVD.
+<BR><BR><BR>
+
+<A NAME="3.12">
+<B>3.12 How does CD-i audio work?</B><BR>
+A Base Case CD-i player should be able to decode standard PCM audio as specified for CD-Audio, as well as a dedicated audio coding scheme called ADPCM, or Adaptive Delta Pulse Code Modulation. The difference with PCM is that audio is not stored individually per time segment, but that only the difference (delta) from the previous sample is recorded. This allows for a significant decrease in the used storage space on the disc, and hence in the datastream being read from the disc. When normal PCM CD-Audio would be used (which occupies all succesive sectors), this would not leave room for video or animations to be read without interrupting the audio playback.<BR><BR>
+
+CD-i provides for 3 levels of ADPCM audio, all of which can be used either in mono or stereo:<BR>
+<LI> CD-Audio PCM, 44.1 KHz, 16 bit, all sectors, up to 74 mintues
+<LI> ADPCM Level A Stereo, 37.8 KHz, 8 bit, 1 in 2 sectors, up to 2.4 hours
+<LI> ADPCM Level A Mono, 37.8 KHz, 8 bit, 1 in 4 sectors, up to 4.8 hours
+<LI> ADPCM Level B Stereo, 37.8 KHz, 4 bit, 1 in 4 sectors, up to 4.8 hours
+<LI> ADPCM Level B Mono, 37.8 KHz, 4 bit, 1 in 8 sectors, up to 9.6 hours
+<LI> ADPCM Level C Stereo, 18.9 KHz, 4 bit, 1 in 8 sectors, up to 9.6 hours
+<LI> ADPCM Level C Mono, 18.9 KHz, 4 bit, 1 in 16 sectors, up to 19.2 hours
+<BR><BR>
+
+So, when ADPCM level C is used, only 1 out of every 16 sectors needs to be used for audio, leaving all other sectors for other data such as video or animation. It's also possible to record different audio channels at once, allowing for the seamless switching between for example various langues. The disc may also be read from the beginning while decoding a different audio channel, allowing for increased audio playing times, as indicated in the table.<BR><BR>
+
+A CD-i player equiped with a Digital Video cartridge is also able to decode MPEG-1 layer I and II audio. MPEG is far more efficient in coding audio, resulting in even further decreased storage needs while providing a highly increased audio quality when compared to ADPCM. This is because of the fact that MPEG audio is based on PASC (Precision Adaptive Subband Coding, the coding technique originally developed for DCC), which uses the characteristics of the human ear to only store those audio signals that are audible, and leaving others out. CD-i offers a very flexible way of using MPEG audio (for example at various bit rates and quality levels). CD-i cannot decode MPEG-1 level III, or MP3 files. A content developer needs to be aware of the fact that MPEG decoding is not supported in a Base Case player, and can only be used on player equiped with a Digital Video cartridge.
+<BR><BR><BR>
+
+<A NAME="3.12.1">
+<B>3.12.1 Does CD-i support Dolby Surround, Dolby Digital or MPEG Multichannel?</B><BR>
+Dolby Surround is an analogue encoding technique that allows for the storage or center and rear audio in addition to the normal left and right stereo signal. Every stereo audio carrier that provides for a high frequency audio reproduction can use Dolby Surround encoding. In CD-i, Dolby Surround can only be used for MPEG audio, since ADPCM does not offer the dynamic range that is necesary for the encoding of the additional channels. Most movies use Dolby Surround, as do several games such as Seventh Guest. Please be aware of the fact that Dolby Surround is an analogue matrixing technique, which does not add extra discrete audio channels.<BR><BR>
+
+Dolby Digital and MPEG Multichannel are audio encoding techniques that allow for discrete surround channels to be encoded individually. Ususally, this includes two front signals, two back signals, a center signal and a low-frequency subwoofer signal. Both techniques are widely used in DVD-Video. CD-i does not support either of them.<BR><BR><BR>
+
+<A NAME="3.12.2">
+<B>3.12.2 Can CD-i play back MP3 files?</B><BR>
+No. The MPEG audio decoder in the Digital Video cartridge is only capable of decoding MPEG layer I (used for example in the former Digital Compact Cassette - DCC) and layer II (used for example in Video-CD). It is not capable of decoding layer III, the one used in the popular MP3 files. The CD-i's normal CPU (an 68000 at 15 MHz) is not capable of doing this in software, so it probably is out of the question :-(<BR><BR><BR>
+
+
+<A NAME="3.13">
+<B>3.13 How does CD-i video work?</B><BR>
+The video image of a CD-i player consits of four 'planes', which are shown on top of each other. The first plane is used by a cursor, it size is limited to 16x16 pixels. The second and third planes are shown beneath the cursor, and are used for full screen images. The fourth plane finally, is used for a single-colored background or for MPEG full motion video (or to display video from an external source on some players). The content of each of both middle planes is placed in one of the two memory banks (see <A HREF="#3.9">How much RAM does CD-i incorporate?</A>).<BR><BR>
+
+Parts of an image on one of the middle two planes can be transparant, so that the underlying plane becomes visible. This can for example be used to show subtitles or menubars on an image. Both planes can also be used to dissolve from one image to the other, using an unlimited variations of wipes, including professional fades in a way that's virtually impossible to achieve with today's modern VGA adapters.<BR><BR>
+
+There are various encoding techniques for video that can be used in CD-i:
+<LI>DYUV<BR>
+DYUV or Delta YUV is used for the encoding of high quality photographs and other natural images. It is based on the fact that the human eye is more sensible for differences in brightness then for differences in color. Therefore, it stores one color for a set of pixels, and a brightness value for each pixel. The result is an image of slightly more than 100 KB, leaving enough space in memory for other information. Due to the complexity of a DYUV image it must be stored on the disc in advance, a DYUV image can not be created nor modified in the player. DYUV is used most often in CD-i titles because of its high quality and efficiant storage.<BR>
+<LI>RGB 555<BR>
+RGB 555 is a professional image format which allows for 5 bits per R, G and B value, resulting in a picture with a maximum of over 32,000 colors. Since RGB 555 uses both planes to display the image, it can not be used in combination with other graphics. An RGB 55 image is roughly 200 KB in size. The image can be altered by the player at runtime. RGB 555 is actually never used in regular CD-i titles because of its inefficiency and limitations in usage.<BR>
+<LI>CLUT<BR>
+CLUT, or Color Look-Up Table, is a way of encoding simple graphics. The colors that should be used in a certain picture are stored in a CLUT-table, which reduces the size of the image dramatically because color values refer to the appropriate CLUT-entry instead of indicating for example a 24-bit color value. In CD-i, a CLUT image can have a 8 bit (256 color), 7 bit (128 color), 4 bit (16 color) or 3 bit (8 color). The latter two can be used in double resolution (see <A HREF="#3.13.1">What is the screen resolution of a CD-i player?</A>).<BR>
+<LI>Run Lenght Encoding<BR>
+RLE or Run Lenght Encoding is a variation of CLUT. Besides storing the CLUT-color table in an image, it further reduces the image size by storing certain 'run lenghts' of repeating horizontal pixels with the same color. The results are usually pictures between 10 and 30 KB in size. This makes RLE ideal for animations. Most of the animations you see on Base Case CD-i titles are RLE.<BR>
+<LI>QHY<BR>
+QHY or Quantized High Y is an encoding technique that is in essence not a part of the Base Case, but it is described in the Green Book and supported by all CD-i players. Its encoding technique is made up of the combination of DYUV and RLE, resulting in a very sharp high quality natural image, that is displayed in CD-i's high resolution mode (see <A HREF="#3.13.1">What is the screen resolution of a CD-i player?</A>). A QHY image is usually about 130 KB in size. Since it consists of a DYUV component, it cannot be modified by the player. QHY is for example used to display the images of a Photo-CD in high resolution on a CD-i player.<BR><BR>
+
+Besides these Base Case video encoding options, a player equiped with a Digital Video cartridge can also display MPEG motion video, and normal and high resolution MPEG still images. The encoding teqniques for MPEG are far more advanced than the ones defined for Base Case CD-i, but images in these formats cannot be viewed on players without a Digital Video cartridge.
+<BR><BR><BR>
+
+<A NAME="3.13.1">
+<B>3.13.1 What is the screen resolution of a CD-i player?</B><BR>
+CD-i can display both main planes in either normal, double or high resolution, which are 384x280, 768x280 and 768x560 respectively. Some encoding techniques are limited to a single resolution, for example a DYUV image is always standard resolution. It is possible for the images on each of the planes to be displayed at once, even if they are in different resolutions. For example double resolution CLUT4 menu bar can be overlayed on a standard resolution DYUV image.<BR><BR>
+
+CD-i highest resolution (768x560), used for QHY images, is the highest resolution that can be made visible on a normal TV set, so CD-i takes TV-technology to its edges.
+<BR><BR><BR>
+
+<A NAME="3.13.2">
+<B>3.13.2 Does CD-i make a difference between PAL and NTSC?</B><BR>
+A CD-i consumer player is usually suitable for a dedicated TV standard, such as PAL or NTSC. Some professional players have a switch at the backpanel to select the appropriate TV standard. A CD-i disc is TV-standard independent: any CD-i disc can be played on any CD-i player where-ever in the world. But due to the characteristics of both TV systems, special care has to be taken into account when designing a CD-i title. An NTSC-display usually displays slightly less lines, with slightly less pixels on each line. Usually the NTSC display is 720x480, compared to 768x560 for PAL. When a full resolution image is displayed on an NTSC-display, the most outersized pixels will drop out of the picture. When an NTSC picture is displayed on a PAL screen, very small black bars are shown at the bottom and top of the screen (these bars are really small and should not be compared to the black bars of a letterboxed movie). For this, the 'safety area' is defined, the size of an image that is expected to be correctly displayed on all TV-sets. This safety area is 640x420, no 'critical' information such as menu buttons should be displayed outside this area.<BR><BR>
+
+The same limitations with respect to the safety area apply today to DVD-Video titles that are to be distributed world-wide.
+<BR><BR><BR>
+
+<A NAME="3.13.3">
+<B>3.13.3 Does CD-i support wide screen (16:9) TV sets?</B><BR>
+Yes, any CD-i title can be viewed on a wide screen TV set using either one of the options offered by the TV itself. No special resolutions adapted to the 16:9 aspect ratio are defined for CD-i, however a picture can be 'squeezed' within a normal 4:3 image that can be 'de-squeezed' at runtime by the TV-set.<BR><BR>
+
+Please be aware of the fact that, in contrast to any DVD-Video player, a CD-i player has no build in facility to correct the display of a widescreen image on a normal 4:3 display by filling the screen with black bars at the top and bottom. When a widescreen title is also to be used on a 4:3 display, the content should also be stored in this aspect ratio on the disc.<BR><BR>
+
+Some consumer CD-i players (like the Philips CDI-220/60 and up) provide for a 16:9 switch in the player shell. This switch records the setting in the CSD (See <A HREF="#3.10">What is the CSD?</A>), which allows for applications to look for the connected TV format. When such a player is set in 16:9 mode, the player's startup shell is displayed in wide screen, but when a CD-i is started, the screen is switched to 4:3 mode. An application that interpretes the aspect ratio setting in the CSD may then turn the screen back to 16:9. This CSD entry is an extension that is not specified by the Green Book, and there are only a few applications that supported it.
+<BR><BR><BR>
+
+<A NAME="3.13.4">
+<B>3.13.4 How does CD-i Full Motion Video work?</B><BR>
+When the term FMV, or Full Motion Video is used, it often refers to the display of MPEG Digital Video. Altough a CD-i player is capable of various full screen animation options and partial screen motion video, it can be extended with a Digital Video cartridge. In some players, this Digital Video cartridge is already built-in. Digital Video is considered a must-have extension to CD-i, and is described as an option in chapter 9 of the Green Book.<BR><BR>
+
+CD-i Digital Video is based on the MPEG-1 standard, which is now extensively used in a wide variety of applications, but it  was initally developed mainly for CD-i. This standard allows CD-i to display full resolution (384x280) moving video images in either 24, 25 or 30 frames per second. The video is not interlaced, like with MPEG-2 used in DVD-Video. Video-quality is roughly comparable to standard VHS. CD-i's standard ADPCM audio features can be used in conjuction with MPEG video, but this is very unlikely since the Digital Video cartridge also provides for some extra audio decoding schemes based on MPEG-1 layer I and II, alowing for very high quality CD-Audio like audio that takes up only a fraction of the storage space and bandwith of CD-Audio.<BR><BR>
+
+MPEG-1 video is based on an encoding technique called DCT, Discrete Cosine Transform. The basis for this encoding is the knowledge that succesive pictures in a video usually do not differ that much from each other. Instead of encoding and storing each picture by its own, MPEG only stores the differences between images. There are three different types of MPEG images: I or Intra frames that consist of a full image that can be displayed without information from other images - this is used for displaying images when performing a fast forward or reverse, P or Progressive frames that need information from previous images and B or Bi-directional frames that need information from both previous and future images to build a picture. As you can see, the images are not stored in chronological order on the disc: the MPEG decoder takes care of the decoding of the information and putting all images in correct order for display.<BR><BR>
+
+Digital Video is displayed on the background plane (see <A HREF="#3.13">How does CD-i video work?</A>), and can be overlayed with images from the CD-i's Base Case video codecs, such as CLUT or RLE.
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

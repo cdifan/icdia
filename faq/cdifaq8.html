@@ -1,0 +1,198 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>CD-i FAQ 2000 Edition</B><BR><BR><BR>
+
+<B>Section 8. CD-i Mysteries</B><BR><BR><BR>
+
+<A NAME="8.1">
+<B>8.1 Can I connect a CD-i player to a terminal display?</B><BR>
+Yes. Every CD-i player from Philips is equiped with a serial port, either as mini-DIN connector at the back of the player, or it can be made available by connecting a port splitter to the input port of CD-i players with only one input port (like CDI 450, CDI 550 and FW380i). On players with only one port for input devices at the front and one at the back, this port at the back can also be used as a serial port.<BR><BR>
+
+The serial port can be used to hook up all kinds of devices to the CD-i player, like a modem, a touchscreen, a serial printer or a display terminal. You can connect a 'real' hardware display terminal like a DEC VT220 or you can use a terminal emulation on the PC (for example Telix or HyperTerm). A detailed description on the layout of the nullmodem cable that should be used can be found at the <A HREF="../docs/index.html">CD-i Technical Documentation</A> download section on this website. Set the port speed to 9600 baud, 8 databits, 1 stopbits, no parity and the terminal emulaton to standard ANSI.<BR><BR>
+
+OK, so what can you use this terminal display for? Well, not <I>that</I> much. Some CD-i players (most notably professional players) display a copyright message and ROM version indication on the terminal when the player is switched on, but most don't. Some CD-i titles show information on the terminal during the execution of the program. Mainly the CD-i applications developed by CapDisc (such as CD-i Pinball) are known to display status information, probably used for debugging during the development stage.<BR><BR>
+
+You cannot give commands to the CD-i player using the terminal, unless you have access to a command shell prompt (this is covered in full detail in the next question: <A HREF="#8.1.1">How can I access a CD-RTOS/OS-9 prompt using a CD-i player?</A>). Otherwise, it's entirely up to the application wether or not it supports the terminal display. Most consumer titles don't.<BR><BR>
+
+You can also use this serial connection to transfer files stored in NV-RAM to a PC, or place NV-RAM files from the PC back into a CD-i player. Refer to <A HREF="#8.1.4">Can I transfer data from the CD-i to my PC?</A> for more information.
+<BR><BR><BR>
+
+<A NAME="8.1.1">
+<B>8.1.1 How can I access a CD-RTOS/OS-9 prompt using a CD-i player?</B><BR>
+CD-i's operating system is called CD-RTOS. It is based on version 2.4 of Microware's OS-9. Every CD-i player resides the kernel of this operating system in ROM, together with other critical system components such as drivers and the player and CD-Audio shell. Usually this ROM is 512 KB in size (some professional players that contain additional tools have double that size).<BR><BR>
+
+To access the roots of the operating system you should use a command prompt shell. OS-9 supports such a shell, which is very Unix-like, but since a consumer CD-i player is not intended to be used in conjuction with a display terminal, this shell is not included in the ROM of consumer CD-i players. If you want to access a shell using a consumer player, you need a CD-i disc that includes such a shell which it should execute during the startup of the disc, or after providing such an option in the CD-i application (since you have no other means of starting the shell on a consumer player).<BR><BR>
+
+I do not know of any CD-i disc to date that provides the OS-9 shell besides the MediaMogul CD, but if you have any other CD that starts up a shell the further description would be the same. MediaMogul is an authoring tool that is intended for authoring players, but it can also be started on any other CD-i system. When the disc is started, select 'CD-RTOS' from the main menu. Now you will see a shell on your normal TV-monitor. To start up a shell on the terminal display, type this: <FONT SIZE=3><TT>ex shell<>>>/t1</TT></FONT> (the name t1 for the terminal descriptor might be different, use <FONT SIZE=3><TT>mdir -t=desc</TT></FONT> to check this out). First load some modules (programs) that might be usefull and which are stored on the CD, so you can use them after the CD has been removed. Do this with the load command, for example <FONT SIZE=3><TT>load dir eject</TT></FONT>. Now you can kill all other programs that are running on the CD-i. Check which programs are running and what their process IDs are with <FONT SIZE=3><TT>procs</TT></FONT>. Then kill the running apps, using for example <FONT SIZE=3><TT>kill 3</TT></FONT> . Now you can remove the CD with the <FONT SIZE=3><TT>eject</TT></FONT> command. Make sure not to press the eject-button on the player, since it will then reset and the running applications (including the shell on the terminal) will be terminated.<BR><BR>
+
+The things you can do next depend on the commands you have loaded in memory or which are available in ROM. Use the command <FONT SIZE=3><TT>mdir -t=prog</TT></FONT> to see which ones are available. You can startup the player shell, load another CD-i disc and execute it. You still have full control of the system on the terminal. For example it is possible at all times to check which modules a particular CD-i application is running using <FONT SIZE=3><TT>procs</TT></FONT>. Some CD-i discs contain extra applications that cannot be accessed using the regular CD-i program that is executed using disc start up. Refer to <A HREF="#8.1.3">What hidden information is available on some CD-i titles?</A>.<BR><BR>
+
+If you have access to a professional CD-i player, things are usually less complicated. The CDI 601, CDI 602 and CDI 605 have the command shell build in ROM and best of all, you can access it in the Settings screen of the player shell. Just connect a terminal display and select the System option in the Settings. A prompt will be displayed on the terminal. To use any commands beside the very few that are internal shell commands, you still need an external source to load them. If the player has a floppy disk drive (CDI 602 and CDI 605) you can load the commands from a floppy disk, otherwise you need a CD with the commands such as MediaMogul. If you have a CDI 180/181/182 system you can load the command prompt from the player shell, but you need a floppy which contains it since it is not available in ROM. It allows you the choice of terminating the player shell or leave it running (the difference between the Chain and Fork options). The professional players CDI 615, CDI 660 and CDI 670 have no command prompt access build in the player shell, the procedure for a consumer player as described above applies.<BR><BR>
+
+For an overview of OS-9 command shell commands and their (more well-known) Unix counterparts, please refer to <A HREF="../unixos9.html">OS-9 and Unix commands</A> on this web site.
+<BR><BR><BR>
+
+<A NAME="8.1.2">
+<B>8.1.2 What hidden applications are burnt into the CD-i player's system ROM?</B><BR>
+Most CD-i players have additional programs and other modules stored in ROM that you can check out using a terminal connection. If a Digital Video cartridge is installed, which contains its own ROM, even more modules will be available.<BR><BR>
+
+One of the things I discovered using some of the early CD-i players based on the Mini-MMC board (CDI 910, CDI 205 and CDI 220/00) is that a service maintenance tool is available in ROM. Just start it by typing <FONT SIZE=3><TT>sv</TT></FONT> at the prompt (make sure the player shell and other applications have been terminated, since this program needs the CD-i's video display). A screen will show up with a nice cursor in the form of a open end fork! You can check system functions and audio and video features. This program is probably used in the factory to test a player. It's realy amazing to see a program appear on your screen that's litteraly hidden in the player!<BR><BR>
+
+Other things that are known to be available in the ROM of the Digital Video cartridge are tools to play a Video-CD using a command prompt and some diagnostic tools. Please note that the availability of modules in ROM varies between the various CD-i players and Digital Video cartridges.
+<BR><BR><BR>
+
+<A NAME="8.1.3">
+<B>8.1.3 What hidden information is available on some CD-i titles?</B><BR>
+Some CD-i discs contain extra applications that cannot be accessed using the regular CD-i program that is executed using disc start up. You can check for other executables by providing a <FONT SIZE=3><TT>dir -e</TT></FONT> command at the shell. Every module that has the latest attribute set to x (execute) can be run. Make sure to change the active program directory to the appropriate directory on the CD using <FONT SIZE=3><TT>chx /cd/xxx</TT></FONT> , where xxx is the name of the directory. Remeber that OS-9 makes a difference between upper and lower case letters.<BR><BR>
+
+For example using the game Escape from Cybercity, there is a version on the disc that allows for unlimited lifes.
+<BR><BR><BR>
+
+<A NAME="8.1.4">
+<B>8.1.4 Can I transfer data from the CD-i to my PC?</B><BR>
+Yes. You can use the CD-i application CD-i'nterlink (which is available for free download as a CD-i Disc Image at the <A HREF="../sw_disc/index.html">CD-i Disc Images</A> section on this website) to transfer files that are stored in the player's NV-RAM to a PC. Make sure that your terminal emulator can receive files using the X-Modem or Z-Modem protocol. Just load the CD-i'nterlink disc in the CD-i player and follow the instructions on screen.<BR><BR>
+
+The CD-i'nterlink application can even display a shell prompt on the terminal display, but this is not the standard OS-9 command prompt shell. Only a very limited set of instructions is provided (use the command <FONT SIZE=3><TT>cmds</TT></FONT> to get an overview of available commands).
+<BR><BR><BR>
+
+<A NAME="8.2">
+<B>8.2 How can I enable/disable the open/close function of the drawer?</B><BR>
+Some CD-i players equiped with the first generation player shell (refer to the <A HREF="../players/comparison.html">CD-i Players comparison overview</A> on this site for more information) can disable the open/close function of the drawer. When this function is active, the open/close button at the front of the player will not work, and the Open function is not displayed on the player shell's screen. But beware: the open/close function is still working in the player shell when you point the cursor at the usual location of the hotspot! Besides this, the lock mode is not very suitable in critical situations, because the drawer can still be "pulled" out of the player. To set or disable the lock function, turn the player on while holding the Stop-button at the front. <BR><BR>
+
+On the CDI 660 and CDI 670, a lock mode is available when you hold the Play and Open buttons while turning the player on. The same conditions apply with respect to the functionality of the open/close hotspot as described above.
+<BR><BR><BR>
+
+<A NAME="8.3">
+<B>8.3 How can I enter the features of the CDI 660/670 key-disc?</B><BR>
+The CDI 660 and 670 can be customized in several ways using a dedicated 'Key Disc' that was developed for these players. When you have this Key Disc (which is available for free download as a CD-i Disc Image at the <A HREF="../sw_disc/index.html">CD-i Disc Images</A> section on this website), use the following PIN-codes to access the player's special features (the codes apply to version 1.3 of the Key Disc):<BR><BR>
+
+<LI>2410<BR>
+Delay the start up time of the player, so that pointing devices that require a longer initialization time (such as touch screens) work correctly.<BR>
+<LI>8252<BR>
+Set the player to lock out the playback of CD-Audio discs or just allow for the playback of certain CD-i titles that are mastered in a special way. Refer to the Technical Manual for more information about this feature.<BR>
+<LI>3094<BR>
+Disable or enable the start up animation of the player shell, set it to neutral (remove the 'Philips' logo) or enter a customized message that should appear each time the player is turned on.
+<BR><BR><BR>
+
+<A NAME="8.4">
+<B>8.4 How can I access an X-rated CD-i title?</B><BR>
+Some CD-i titles with X-rated or adult material are protected from unauthorized usage of children by means of an access code. You need to enter this code, which is usually described in the booklet, to access the disc. In some circumstances you can change this code which is then stored in NV-RAM.<BR><BR>
+
+Just in case you hid the booklet of a particular title too well, I give you the access codes for some of the adult CD-i titles that have been produced:<BR><BR>
+
+<LI>Loving for a Lifetime (Dutch: Sex, je lust en je leven)<BR>
+6969<BR>
+<LI>Girls - Serge Jacques<BR>
+019<BR>
+<LI>Strip Poker Live<BR>
+QQQQK<BR>
+<LI>Uncover featuring Tatjana<BR>
+1492 - Hereafter you must enter your own code. If you forgot this, just erase the appropriate entry from the Memory or Storage screens in the player shell.<BR>
+<LI>Voyeur<BR>
+3333 - Hereafter you have the option to enter your own code. If you forgot this, just erase the appropriate entry from the Memory or Storage screens in the player shell.
+<LI>Vegas Girls<BR>
+1234
+<BR><BR><BR>
+
+<A NAME="8.5">
+<B>8.5 What hidden features are there in other CD-i titles?</B><BR>
+Some CD-i titles have hidden features build in. Sometimes they were used for testing, for example so that the tester should not play the whole game to reach a certain point. It's beyond the scope of this FAQ to mention all cheats and hidden options in CD-i titles (especially the ones which give you unlimited lives and the like in games), but some of them are usefull for demonstrating a certain title.<BR><BR>
+
+<LI>Hotel Mario<BR>
+Start a new game and make sure you lose all lives in hotel 1, level 1. Then save as 'B_ ' (bee, underscore, space). When you load this game, you can access all hotels, including the spectacular end-level.<BR>
+<LI>Dark Castle<BR>
+Start a new games, and perform the following movements with the remote in the 'Great Hall': down, down, down, up, up, up, down, down. Now you can access all levels. The numbers at the bottom of the screen mean: 0-2 'Trouble'-levels, 3-6 'Fireball'-levels, 7-10 'Shield'-levels, 11-13 'Black Knight'-levels.<BR>
+<LI>The Seventh Guest<BR>
+When you save a game under the name 'badger', you can select the chattering teeth in one of the corners of the screen. Press an action button to see an overview of all scenes of the game to which you can jump instantaneously.<BR>
+<LI>Burn:Cycle<BR>
+Save a game under the name 'JOHN_WHO'. Immediately after you stored this name, all video sequences from the game will be showed after each other.<BR>
+<LI>Lucky Luke<BR>
+Pause the game, then press the following keys exactly in this order: up, right, down, left. Now you can select which level to play.<BR>
+<LI>Space Ace<BR>
+At the continue-screen at the end of all levels, move the cursor in the upper left corner and press action button 2 for four times. Then move the cursor in the upper right corner and press button 2 for three times. Finally, move the cursor in the upper left corner and press buton 1 once. Now you can select a level to play.
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

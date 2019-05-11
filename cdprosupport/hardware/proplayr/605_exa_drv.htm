@@ -1,0 +1,81 @@
+<HTML>
+
+<HEAD>
+
+<TITLE> Exabyte Drivers for the CD-i 605 Player</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#ffffff">
+
+  <H2><CENTER>Exabyte Drivers for the CD-i 605 Player</CENTER></H2>
+
+<P> The documentation that comes with the diskette is a bit dispersed.</P>
+
+<P> The table indicates what tape format will be written given the tape drive and descriptor used. A drive can READ any format it can WRITE. i.e. an 8205 can write LOW and MED density tapes, and can therefore read ONLY LOW and MED density tapes.</P>
+
+<TABLE BORDER=1 WIDTH=100%>
+    <TR>
+        <TD></TD>
+        <TH ALIGN=CENTER> mt00</TH>
+        <TH ALIGN=CENTER> mt7c</TH>
+        <TH ALIGN=CENTER> mt7f</TH>
+        <TH ALIGN=CENTER> mt14</TH>
+        <TH ALIGN=CENTER> mt15</TH>
+        <TH ALIGN=CENTER> mt90</TH>
+    </TR>
+    <TR>
+        <TH ALIGN=CENTER> 8200</TH>
+        <TD ALIGN=CENTER> LOW</TD>
+        <TD ALIGN=CENTER> NO</TD>
+        <TD ALIGN=CENTER> NO</TD>
+        <TD ALIGN=CENTER> NO</TD>
+        <TD ALIGN=CENTER> NO</TD>
+        <TD ALIGN=CENTER> NO</TD>
+    </TR>
+    <TR>
+        <TH ALIGN=CENTER> 8205</TH>
+        <TD ALIGN=CENTER> LOW</TD>
+        <TD ALIGN=CENTER> NO</TD>
+        <TD ALIGN=CENTER> LAST</TD>
+        <TD ALIGN=CENTER> LOW</TD>
+        <TD ALIGN=CENTER> NO</TD>
+        <TD ALIGN=CENTER> MED</TD>
+    </TR>
+    <TR>
+        <TH ALIGN=CENTER> 8500</TH>
+        <TD ALIGN=CENTER> LOW</TD>
+        <TD ALIGN=CENTER> NO</TD>
+        <TD ALIGN=CENTER> LAST</TD>
+        <TD ALIGN=CENTER> LOW</TD>
+        <TD ALIGN=CENTER> HIGH</TD>
+        <TD ALIGN=CENTER> NO</TD>
+    </TR>
+    <TR>
+        <TH ALIGN=CENTER> 8505</TH>
+        <TD ALIGN=CENTER> LOW</TD>
+        <TD ALIGN=CENTER> VHIGH</TD>
+        <TD ALIGN=CENTER> LAST</TD>
+        <TD ALIGN=CENTER> LOW</TD>
+        <TD ALIGN=CENTER> HIGH</TD>
+        <TD ALIGN=CENTER> MED</TD>
+    </TR>
+</TABLE>
+
+<P> <B>NO</B> - causes 249 errors<BR>
+<B> LOW</B> - low density 8200 format<BR>
+ <B>MED</B> - medium density 8205 or 8505 compressed format (also called 8200C) HIGH - high density 8500 format<BR>
+ <B>VHIGH</B> - very high density 8505 format<BR>
+<B> LAST</B> - writes in whatever mode last set - dangerous! </P>
+
+<P> Notes:<BR>
+ mt00 - forces LOW density 8200 readable format, IF tape is rewound. This is the SAFEST descriptor to use as it writes 8200 format tapes readable by all machines.</P>
+<BR>
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="proplayr.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>

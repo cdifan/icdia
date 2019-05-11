@@ -1,0 +1,224 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>CD-i FAQ 2000 Edition</B><BR><BR><BR>
+
+<B>Section 7. CD-i Authoring</B><BR><BR><BR>
+
+<A NAME="7.1">
+<B>7.1 How is CD-i authoring generally done?</B><BR>
+CD-i authoring involves several steps, most of which should be followed in order, some of which can be done at the same time. Generally, one starts with the design phase. The producer of a disc decides what it should be all about, how the interactivity will take place, what screens the user will see, what audio will be used, etcetera. Then, the assets (audio and video material) will be created. These are usually made using regular video and audio editing software, and then converted into CD-i's audio and video formats. Now, the program code should be written, or -in case a high-level authoring tool is being used- the assets should be placed in their correct order. The program code or scripts then need to be converted to CD-i's real time disc format, this process is usually called disc building (see <A HREF="#7.2">What is disc building?</A>). This disc building then results in a disc image which can be played back using an Emulator (see <A HREF="#7.4">What is a CD-i Emulator?</A>), burned onto a CD-Recordable or sent to a manufacturing plant for replication.
+<BR><BR><BR>
+
+<A NAME="7.2">
+<B>7.2 What is disc building?</B><BR>
+A critical step in the development of a CD-i title is the so-called disc building process. Because of the fact that CD-i almost entirely depends on its real time behaviour (see <A HREF="cdifaq3.html#3.4">What is a real-time system?</A> in section 3 of this FAQ), it is very important that the audio and video are placed in the correct way on the disc. Unlike other non-realtime systems like PCs with a CD-ROM drive which can store large amounts of audio and video data in memory for later playback (and hence requiring more complicated and expensive systems), a CD-i player reproduces the audio and video data in realtime when it is being read from the disc. To accomplish the seamingly similar retreival of audio and video at the same time, CD-i uses a clever sector format (see <A HREF="cdifaq3.html#3.5">What is sector interleaving?</A> in section 3 of this FAQ).<BR><BR>
+
+Naturally, this process of placing all the information bits at the correct order is not done manually (although it remains the CD-i producer's responsibility to investigate wether the choice on amount and quality of audio and video will fit in the data stream). The process of the creation of a file that represents the contents of a CD-i disc is called disc building. The resulting file is usually called a CD-i Disc Image. The Disc Image can be played back using an Emulator (see <A HREF="#7.4">What is a CD-i Emulator?</A>) or burned on a CD-R to check wether its behaviour on an actual CD-i player is as expected.
+<BR><BR><BR>
+
+<A NAME="7.3">
+<B>7.3 What is a CD-i authoring or development player?</B><BR>
+A CD-i authoring player is a CD-i player that can play CD-i discs in a normal way, but which has some extensive features especially added for CD-i authoring studios. An authoring player can for example be connected to an Emulator (see <A HREF="#7.4">What is a CD-i Emulator?</A>) for the retreival of data as if it was being read from a CD. Furthermore, an authoring player provides for a SCSI-port to connect SCSI devices like harddisks and a CD-Recorder and a coaxial ethernet connector to hook it up in a local network.<BR><BR>
+
+There were two different models of CD-i authoring players from Philips. The first model was the CDI 180/181/182 modular CD-i system (which was also the first CD-i system ever released). The CDI-182 Expansion Module added the authoring facilities (the SCSI port, the ethernet port, a parallel port and 1 MB of extra RAM) to the generic system. Later, the CDI 605/00 replaced this system as an all-in-one authoring player. The CDI 605 consisted of 5 MB of RAM, ethernet, SCSI, parallel, extra serial ports and several diagnostic and emulation tools build in ROM. Since both of these players could not be expanded with a Digital Video cartridge, a new version of the CDI 605 was released as CDI 605T/20 which provided space for a Digital Video extension.<BR><BR>
+
+Refer to <A HREF="../players/professional.html">Philips professional and authoring CD-i players</A> in the Complete CD-i Players Overview on this web site for a comparison.
+<BR><BR><BR>
+
+<A NAME="7.4">
+<B>7.4 What is a CD-i Emulator?</B><BR>
+A CD-i Emulator is a piece of hardware that contains a large harddisk and control circuitry to provide a stream of audio, video and program data to a CD-i authoring player in exactly the same way as if it was being read from a CD. The Emulator takes care of interleaving the data, creating the sector format and contiuning the feed of data according to the specification as laid down in the Green Book. When a CD-i Disc Image is being created, it can be read by the Emulator and played trough the CD-i authoring player for testing purposes. You need either to do this, or make a one-off on CD-R for testing, because you can't test CD-i's realtime behaviour at programming level (the audio, video and program data is not interleaved yet at that time). Since CD-R was just beginning to appear when this CD-i authoring hardware became available (early 90s), and a CD-R disc costed around US$ 50 a piece, a CD-i Emulator was a very economical solution for studios.
+<BR><BR>
+Two versions of the Emulator were being sold by OptImage. Both of them contained at least a 1.2 GB harddisk (enough to keep all data of a disc in its original form and the required space for a full CD-i Disc Image). The Emulator was based on the same version of OS-9 that is used in CD-i players, and they contained 2 MB of memory. The first model was generally refered to as E1 (probably Edition 1), it runs on a 20 MHz 68020 and contained a floppy disk drive which needed a suitable floppydisk to boot the system up, and a lot of confusing connector types at the back. The E2, which was released some years later and runs on a 24 MHz 68340, lacked the floppy disk drive since all required software was build in ROM, and it had a more convenient way of connecting to the CD-i authoring player.
+<BR><BR>
+Both versions of the Emulator can also be used for the emulation of other CD-i compatible disc formats like Photo-CD and Video-CD. Some Video-CD studios are known to use a CD-i development player and and Emulator in their quality checks.
+<BR><BR><BR>
+
+<A NAME="7.5">
+<B>7.5 Do I need special hardware to make a CD-i title?</B><BR>
+In therory: no. If you have the approriate CD-i authoring software that runs on a PC (like the Presentation CD package that can be downloaded from the <A HREF="../sw_pc/index.html">PC/Windows downloads</A> page at this website, or Philips' ShowBuilder package for Windows), you can produce a CD-i title entirely without any additional hardware besides your PC. Bear in mind however, that the results from these authoring tools are very linear and without much interactive features. Even if you had a tool that provides you a way of creating a more complex CD-i title on a PC, you still wouldn't be able to test the behaviour of it on a CD-i player, since CD-i cannot be "emulated" in any way on a PC. A one-off CD-R would need to be pressed at the various development stages, which would be very inconvenient.<BR><BR>
+
+All CD-i titles that you see around are created with either low level authoring tools on a PC, Macinthosh, Sun or OS-9 system which was connected to a CD-i development player and emulator, or entirely on a CD-i development player using a high-level authoring tool like MediaMogul. Refer to <A HREF="#7.7">What CD-i authoring tools were available?</A> for more information about the available tools.
+<BR><BR><BR>
+
+<A NAME="7.6">
+<B>7.6 What is OptImage?</B><BR>
+OptImage was the name of the largest company that selled CD-i authoring solutions in the form of hardware and software products and development support. It was set up by Philips, Microware (the creator of the OS-9 operating system used in CD-i) and Sun Microsystems (creator of high-end workstations that were used in CD-i development a lot) in the late 80s. They developed various tools, and from the early 90s Philips and Microware became the owners of the company. In 1995, OptImage became a wholy owned subsidary of Philips Media, owning 100% of the company.<BR><BR>
+
+OptImage created the tools with which nearly all of the currenly available CD-i titles were created. Although other companies created CD-i tools as well (such as ABCD-i from Script Systems), none of them became as popular and widely used as OptImage's Balboa Runtime Libraries and MediaMogul. The most well-known company that created CD-i authoring software besides OptImage was Multimedia Technology Center. Their CDMotion for CD-i and ViaCD-i are fully Windows-based and need no special hardware nor premastering or conversion software.
+<BR><BR><BR>
+
+<A NAME="7.7">
+<B>7.7 What CD-i authoring tools were available?</B><BR>
+A wide variety of authoring tools were available from OptImage alone. The authoring software was devided in high-level and low-level tools. High-level meaning that a whole lot of the technical aspects is being taken care of by the system leaving the developer only to concentrate on the creative part of the development process, and low-level tools which require a lot more technical knowledge of the programmer but which allow for a much wider variety of possibilities. Besides these tools, a lot of additional software was available, such as tools for converting PC audio and video formats into CD-i format.<BR><BR>
+
+Some of the best-known authoring tools are:<BR><BR>
+
+<LI>Balboa Runtime Libraries<BR>
+OptImage created the Balboa Runtime Libraries for programmers who use C. Balboa provides lot of custom written parts of software for CD-i, such as routines for accessing CD-i's video and audio features, visual effects, and MPEG Digital Video. The libraries could be included in own developments. Using a combination of a C compiler for OS-9 and the Balboa libraries, the most advanced CD-i titles (such as highly interactive and complicated games) can be created. Most of the consumer CD-i titles that were available were made using Balboa.<BR><BR>
+
+<LI>MediaMogul<BR>
+MediaMogul was a high-level authoring tool that was especially designed with the non-programmer in mind. It runs entirely on a authoring CD-i player like the CDI 180 and the CDI 605, equiped with a harddisk. No additional hardware or software (besides some video or audio conversion utilities on the PC) was needed to make CD-i titles with MediaMogul. MediaMogul is based on a timeline which has rows for audio, video and program commands, so that the user can build his application using a very intuitive chronological interface, much like Macromedia Director works nowadays. The software could be extended with a literally unlimited amount of plug-ins, which were available from OptImage as well as from other companies (of which Interactive Resources, Inc. of Iowa was the most well-known) to provide for such features as playing MPEG Digital Video, conrolling other devices like printers or bar code readers, etcetera. Although MediaMogul does not allow for the same complexity to be used as Balboa, excellent highly interactive titles could be produced with it. MediaMogul is especially usefull for professional applications.<BR><BR>
+
+<LI>CDMotion for CD-i<BR>
+CDMotion from Multimedia Technology Center was positioned as a competing product against MediaMogul. It was entirely Windows-based. No special hardware was required, and all video, audio and image conversion tools were built-in. Some people claim it was much more powerfull and easier to use than MediaMogul.
+<BR><BR>
+
+Other programming tools were available (such as Media Show Case from OptImage, HAL90 from Philips Media Italia and ABCD-i from Script Systems), but they were not widely used.<BR><BR>
+
+Besides the authoring tools, OptImage also produced some utilities that could be used in conjuction with the programming tools, such as the Image and Audio Conversion Utilities for Windows and Macintosh (available on the <A HREF="../sw_pc/index.html">PC/Windows downloads</A> page at this website), MediaStockroom (which replaced the conversion utilities as a all-in-one package) and the CD-i plugins for Adobe Photoshop.
+<BR><BR><BR>
+
+<A NAME="7.8">
+<B>7.8 Where can I get CD-i authoring tools?</B><BR>
+Most of the CD-i authoring tools from Philips and OptImage are now being sold and supported by <A HREF="http://www.cmgroup.co.uk/cml/prodindex.htm" target="other">Cambridge Multimedia Ltd.</A> from the UK and <A HREF="http://www.riseintl.com" target="other">Rise International</A> from the US. Cambridge Multimedia is a Philips value added reseller of CD-i players and authoring tools for Europe. Apart from selling tools and players, Cambridge delivers various services such as disc labeling and reproduction. Rise International is a Philips value added reseller of CD-i players and authoring tools for the Americas. They sell all OptImage CD-i authoring packages. The Windows-based CDMotion for CD-i and ViaCD-i are available from <A HREF="http://www.mtc2000.com" target="other">Multimedia Technology Center</A>.
+<BR><BR><BR>
+
+<A NAME="7.9">
+<B>7.9 What is the easiest way to make a CD-i title?</B><BR>
+One of the employees of Cambridge Multimedia, Robin Burrows, is currently working on a Windows application, MoguLike,  that allows for the creation of MediaMogul compatible scripts without the need for MediaMogul itself. A demo version of this program can be downloaded at the <A HREF="../sw_pc/index.html">PC/Windows downloads</A> page at this website. Unfortunately, you still need Script2Disc, the software that is needed to build a CD-i Disc Image from a MediaMogul script. This software is not publicly available, so MoguLike is essentially only of use to people who already use MediaMogul.
+<BR><BR>
+Another easy way of producing a CD-i compatible title is using the Presentation CD driver for Windows that can be downloaded at the <A HREF="../sw_pc/index.html">PC/Windows downloads</A> page at this website. Presentation CD is in essence a (Windows 3.x) printer driver that allows you to 'print' to a CD-i disc image format. All 'pages' will be added in sequence and are combined with a CD-i application. The created file can then be burned onto a CD using most popular CD-Recording tools. The resulting disc is playable on a CD-i player. Please keep in mind that the driver only supports up to 16 colors due to a limitation in the Windows 3.x printer driver system, but it is fun for presentations on CD-i.
+<BR><BR>
+The best way to make a decent looking CD-i title using a Windows systems however is probably the ShowBuilder package from Philips, that can be downloaded at the <A HREF="../sw_pc/index.html">PC/Windows downloads</A> page at this website. It allows you to create CD-i presetions using stills, audio and even MPEG Digital Video directly on a PC. The scripts you provide on the disc can even be changed at runtime on the CD-i player, allowing the user to create his own presentations using the audio, stills and video on the disc. ShowBuilder does not provide for interactive features besides creating a slideshow and browsing through its contents.
+<BR><BR>
+Of course, you can also make a Video-CD title to play on a CD-i player. Video-CD creation tools are much more widely available than dedicated CD-i creation tools, and a true White Book Video-CD disc can always be played on a CD-i player. Refer to <A HREF="#7.11">How can I make a Video-CD?</A> for more information.
+<BR><BR><BR>
+
+<A NAME="7.10">
+<B>7.10 How can I write a CD-i Disc Image file?</B><BR>
+In essence, a CD-i disc image can be written using any CD-Recording application that supports writing Mode 2 CD-ROM/XA sectors (which is the sector format that was originally developped for CD-i). However, several different Disc Image file formats exist in the CD-i development comunity, because some of them include header information for all of the disc's sectors, while others leave the creation of such headers up to the CD-R software. Another issue is the fact wether the authoring tool produces a scrabled or unscrabled Disc Image format. This can result in the fact that a particular CD-R tool can write CD-i Disc Images from one authoring package, but not from the other.<BR><BR>
+
+One tool that is known to support most of the CD-i Disc Image formats is Gear from Gear Software, Inc. Using version 4.2 of Gear for Windows, you should use the following settings when writing a CD-i disc:<BR><BR>
+
+<LI>CDI 2352 bytes per sector - 2 sec pregap - scrambled<BR>
+for Disc Images generated by Script2Disc from MediaMogul and ShowBuilder Disc Images<BR><BR>
+
+<LI>CDXA 2352 bytes per sector - 2 sec pregap - scrambled<BR>
+for Disc Images generated by Video-CD Toolkit
+<BR><BR><BR>
+
+<A NAME="7.11">
+<B>7.11 How can I make a Video-CD?</B><BR>
+There are lots of tools available that let you create Video-CDs that can be played back on CD-i players among others. Many standard CD-Recording tools nowadays include a module to create Video-CDs, including Adaptec Easy CD Creator, CeQuadrat WinOnCD and Ahead Nero Burning Rom.<BR><BR>
+
+For CD-i playback, it is very important that the Video-CD includes a CD-i application. Although this is a mandatory requirement of the White Book that should be obtained by all Video-CDs, some tools let you create a Video-CD without a CD-i application, although most supply one with the package. For example the deafult setting of Adaptec Easy CD Creator is to <I>not</I> include the CD-i application. Remember to tick the appropriate box in one of the settings screens to include the application.<BR><BR>
+
+Other things to bear in mind while developing a Video-CD are:<BR><BR>
+
+<LI>Make sure to what version of the White Book your disc should comply. Do you want to include Video-CD 2.0 interactive features and if so: does your playback device or software (e.g. the CD-i application) support this added functionality?<BR>
+<LI>What version of the CD-i application is included? Does it support the functions you want it to, for example Video-CD 2.0 menus and playlists?<BR>
+<LI>Do you want to customize the CD-i application by providing scan entrypoint files, subtitling, menu screens, backgrounds, etcetera? Does the Video-CD creation tool support for the adaptation of the CD-i application?<BR><BR>
+
+A good tool to use while making full White Book compliant Video-CDs is Nero Burning Rom version 5.0 and up (available from <A HREF="http://www.ahead.de" target="ander">Ahead Software</A>). Nero alows you to create Video-CD 2.0 titles that can even include still pictures (see question <A HREF="cdifaq7.html#7.13">How can I play my pictures on my CD-i player?</A> for more info). Bundled with Nero 5 is version 4.1.1 of the Philips Video-CD on CD-i application, resulting in full Video-CD 2.0 compatibility on CD-i players.<BR><BR>
+
+For more information about the various versions of the White Book Video-CD standard, the various CD-i applications, its versions, the customizations of the application and all other questions related to Video-CD on CD-i, please refer to section 6 of this FAQ: <A HREF="cdifaq6.html">Video-CD on CD-i</A>.
+<BR><BR><BR>
+
+<A NAME="7.12">
+<B>7.12 How can I make a Photo-CD?</B><BR>
+The Photo-CD specification is closely guarded by Kodak. The system was set up to provide extra sales opportinuties for Kodak photo finishers, and not as a home-made system. Partly because of contractual difficulties in obtaining a license for Photo-CD, most CD-Recording tools do not let you create a true Photo-CD that can be played on Photo-CD players and CD-i players among others. Especially the disc's layout format is a heavily patented standard. This is why some tools let you place images in Photo-CD's picture format (Photo-YCC) on a CD-R, but they do not make these discs compatible with the Photo-CD standard (see <A HREF="cdifaq5.html#5.10">Will CD-i play Picture-CD?</A> in section 5 of this FAQ).<BR><BR>
+
+Kodak sold a CD-Recording application to create Photo-CDs once, called Kodak Arange-it!, but this software is no longer available. It seems like Kodak is rapidly replacing Photo-CD with their new Picture-CD format which is not compatible with Photo-CD players nor CD-i players.<BR><BR><BR>
+
+<A NAME="7.13">
+<B>7.13 How can I play my pictures on my CD-i player?</B><BR>
+As you can read in question 7.12, it is nearly impossible for the home user to make Photo-CDs. Fortunately, there is good alternative alowing you to place your pictures on CD and view them on a CD-i player. Using Nero Burning Rom version 5.0 and up (available from <A HREF="http://www.ahead.de" target="ander">Ahead Software</A>), you can include still images in a Video-CD compilation. Such a disc with your photos can then be played on CD-i players (it includes the Philips Video-CD on CD-i 4.1.1 application), but also on PCs, on Video-CD 2.0 players and on most (Video-CD 2.0 compatible) DVD-Video players. This makes your investment in time even more worthfull than making Photo-CDs (which cannot be played on your current or future DVD player and most other equipment).
+<BR><BR>
+Just drag your JPG-files to the Video-CD section on the disc and they will be converted to MPEG stills. From version 5.5 onwards, Nero will include an index screen with thumbnails of all pictures that can be selected on the disc!<BR><BR>
+
+The MPEG still pictures are encoded in high TV resolution (as long as the source pictures are in a high resolution), but they will be showed in a lower resolution when viewing the disc on a CD-i player. The pictures can then still be viewed in a higher resolution on for example DVD players. Note that the CD-i player needs to be equiped with a Digital Video cartridge to view the MPEG stills, even though the disc might not contain moving video.<BR><BR>
+
+CeQuadrat/Roxio WinOnCD 3.7 and up offers similar functionality called the 'Photobook' feature, but although the program claims to make a Video-CD compliant disc, it does not include a CD-i application capable of showing these Video-CD 2.0 enhanced pictures. Future version will allow you to replace the CD-i application by the Philips application that can be downloaded from www.icdia.org.<BR><BR>
+
+Remember that in contrast to making a Photo-CD, placing pictures on a Video-CD is not a good solution for storing your archives of pictures. A Photo-CD contains pictures in a very high resolution (over 3000 x 2000 pixels) alowing you to make pefect prints of them, a Video-CD only stores the pictures in TV resolution. Always preserve the original files!
+<BR><BR><BR>
+
+<A NAME="7.14">
+<B>7.14 How can I make a CD+Graphics?</B><BR>
+Using CD+G Creator (which can be downloaded from the <A HREF="../sw_pc/othertools.html">Other CD-i tools</A> page in the PC/Windows download section), you can create a CD-Audio disc with a background picture for each audio track according to the CD+G specification. The tool does not allow you to create moving graphics or colour loops, these features may possibly be included in a future version. Please note that you need a CD-Recorder capable of writing subcode to record CD+G data. Most Plextor models can do this.
+
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

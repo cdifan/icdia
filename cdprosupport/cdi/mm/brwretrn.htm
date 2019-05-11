@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>Return after Branch requires Menu with Wait
+</TITLE>
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+<P><H2><CENTER>Return after Branch requires Menu with Wait</CENTER></H2>
+<P>
+<P>
+Something to know about setting the <CODE>Return after Branch</CODE> option to Yes for a hotspot is that the menu must be a Menu with Wait (On with Wait selected) in order for this to work properly.  If you attempt use this option with a Menu without Wait (On without Wait selected,) your title will not return from the branch.
+<P>
+While this appears to work when played in Simulation from ScriptWriter, once the title is built it will not work in either Emulation or on a finished disc.
+<P>
+The reason for this has to do with the way CD-i works.  When script2disc is creating the realtime files used for building your disc image, it also creates preambles for each realtime file.  These preambles contain information about the realtime file that is used by the player.  One of the things included in this preamble is where to return to in the file when a hotspot that has the Return after Branch option set to Yes is selected.  Since a hotspot in a Menu without Wait may be selected at any point in the script where the menu is active, there is no definitive place for the title to return to.  The result is that the title branches but never returns.
+<P>
+The solution is to not set the Return after Branch option for a hotspot to Yes unless the hotspot is in a Menu with Wait.
+<P>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit Lite 3.5.1 -->
+<P>
+</BODY>
+
+</HTML>
+

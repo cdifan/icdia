@@ -1,0 +1,20 @@
+                        lftocr                              10/18/94
+
+lftocr is an OS-9 program that takes a text file made on a Sun or PC
+containing Line Feed or Carriage Return + Line Feed characters
+as end-of-line, and converts those to Carriage Return characters as
+required by OS-9. lftocr does NOT make a copy of your text file.
+Instead, it ALTERS the original text file for OS-9 end-of-line
+characters.
+
+lftocr can take wild cards and perform the conversion on multiple files.
+The conversion should not be done on utility, plugin or other OS-9
+files, as it can render them useless.  Text files only.
+
+
+The syntax:         lftocr filename
+
+wildcard example:   lftocr *.txt
+
+
+

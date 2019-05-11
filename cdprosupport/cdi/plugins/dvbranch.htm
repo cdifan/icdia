@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+
+<TITLE>Branching during digital video</TITLE>
+
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+<P><H2><CENTER>Branching during digital video</CENTER></H2>
+<P>
+<BR>
+<BR>
+<B>Branching to the same script</B>
+<P>
+When using a menu while digital video is playing, you should not use a hotspot that branches to the same script it is in.  Even if your script contains a video transition command, transparency will not be cleared correctly. When it is re-established with the <CODE>DV_Transp</CODE> command and a DV transition, it will not function properly.
+<P>
+The work around for this is to have the hotspot branch to an intermediate script. This script needs to have a <CODE>Cut</CODE>, <CODE>Curtain</CODE>, or <CODE>Wipe</CODE> video transition to clear the transparency, and a branch to the original script.
+<P>
+If you want to allow the user to simply replay the digital video and not the entire script, you should use a hotspot with the <CODE>$DV_JUMP_</CODE><I>timecode</I> digital video command, rather than the intermediate script method described above.  Use the <CODE>SMPTE</CODE> <I>timecode</I> where you want play to begin, typically <CODE>00:00:00:00</CODE> or the <CODE>INTIME</CODE> used, and the command will start play of the digital video at that point.  Since the original transparency is still enabled, you should not experience problems with it.
+<P>
+<BLOCKQUOTE><B>NOTE</B>: You must use the <CODE>EPLoad</CODE> command to load an entrypoint file when you use the <CODE>$DV_JUMP_</CODE><I>timecode</I> command.</BLOCKQUOTE>
+<P>
+<BR>
+<B>Branching to a different script</B>
+<P>
+If you have a menu with a hotspot that branches to another script while digital video is playing, you need to ensure that transparency is cleared, by using a <CODE>Cut</CODE>, <CODE>Curtain</CODE>, or <CODE>Wipe</CODE> video transition, before attempting to establish any type of transparency again.  This includes not only the <CODE>DV_Transp</CODE> command for digital video, but also highlighting hotspots, the <CODE>Transparency</CODE> command for animations, or any other effect or Plug-In that uses transparency.
+<P>
+Failure to clear the transparency established via <CODE>DV_Transp</CODE> will result in problems with transparency in your title.  While such problems may not be evident at first, they will occur.  If you are using a menu with a hotspot that branches to another script while digital video is playing, you need to check that transparency will always be cleared, no matter how the flow of your title goes.
+<P>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.1 -->
+</BODY>
+</HTML>

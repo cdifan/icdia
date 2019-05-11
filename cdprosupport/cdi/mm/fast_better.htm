@@ -1,0 +1,179 @@
+<HTML>
+<HEAD>
+    <TITLE>Faster Is Better</TITLE>
+</HEAD>
+<BODY>
+<BR>
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="mm.htm">Up
+One Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map </A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send
+Us email</A> </CENTER>
+<P>
+<HR>
+<P>
+<H2><CENTER>Faster is Better</CENTER></H2>
+<P>
+
+Many MediaMogul titles are scripted for function, without much attention
+to optimizing performance. In many titles, the symptoms of &quot;slow branching&quot;,
+&quot;menus slow to get a cursor&quot;, &quot;slow plug-ins&quot; and other
+performance issues are often due to what we call &quot;loose&quot; scripting.
+Many times, too much time is given for still images to load, for menus to
+load, plug-ins to load and become active, etc. There are a number of things
+that can be done to improve performance. Here are a few of the top &quot;improvers&quot;<BR>
+<BR>
+<BR>
+<B>The first line in the script should start at 00:00.</B> <BR>
+<BR>
+As simple as this may sound, we have seen a fair number of titles where
+the first line in a script was inadvertently at 00:20, 01:00, and even 04:00.
+Since MediaMogul takes time LITERALLY, it quickly enters the script, only
+to be told to sit and wait. 
+<BLOCKQUOTE>Good Example:<BR>
+<BR>
+<CODE>00:00 Cut /h0/VIDEO/booboo.d<BR>
+00:00 Play /h0/MUSIC/boo.cm</CODE><BR>
+<BR>
+Bad Example:<BR>
+<BR>
+<CODE>00:20 Cut /h0/VIDEO/booboo.d<BR>
+00:20 Play /h0/MUSIC/boo.cm</CODE></BLOCKQUOTE>
+<BR>
+<BR>
+<BR>
+<B>When presenting menu s or other sequences where the user is waiting to
+interact, use the SHORTEST load times that pass analysis. <BR>
+</B><BR>
+Note that the load table (laminated card) is based on DYUV or CLUT images
+that are about 100k bytes. For Run-Length images, the load times can be
+significantly shorter. We use the rule of one frame (00:01) for every 5k
+for an audio level of NONE or C, or two frames (00:02) per 5k up through
+ASTEREO. A 20k RL7 image with no audio would need just 00:04 to load. 
+<BLOCKQUOTE>Good Example:<BR>
+<BR>
+<CODE>00:00 Cut /h0/VIDEO/booboo.rl7<BR>
+00:04 Background /h0/MUSIC/booback.rl7<BR>
+00:04 Wait /h0/MENUS/boomenu.m</CODE><BR>
+<BR>
+Bad Example:<BR>
+<BR>
+<CODE>00:00 Cut /h0/VIDEO/booboo.rl7<BR>
+00:20 Background /h0/MUSIC/booback.rl7<BR>
+01:10 Wait /h0/MENUS/boomenu.m</CODE></BLOCKQUOTE>
+<BR>
+<BR>
+<BR>
+<B>The &quot;Load Time&quot; for a command and asset is in the column PRECEDING
+(Script Writer).<BR>
+</B><BR>
+MediaMogul must have sufficient time to load the asset BEFORE the desired
+presentation time. For example, a DYUV still image that is to begin a dissolve
+at 04:00, must begin loading into the machine by 03:13. An that's if there
+was no audio playing WHILE the still was loading (not during the dissolve).
+MediaMogul looks ahead in the script to assure things arrive on time, but
+it must be given sufficient time by YOU to accomplish this. 
+<BLOCKQUOTE>Example:</BLOCKQUOTE>
+<P><CENTER><IMG SRC="../../cdi/mm/fast_better1.gif" WIDTH="320" HEIGHT="192" ALIGN="BOTTOM"
+NATURALSIZEFLAG="3"></CENTER>
+<BLOCKQUOTE>Script File Produced:<BR>
+<BR>
+<CODE>00:00 Cut /h0/VIDEO/baithouse.d<BR>
+00:02 Change_crsr /h0/CURSORS/mycursor.c<BR>
+00:22 Cut /h0/VIDEO/townfor.cl7 <BR>
+00:27 Background /h0/VIDEO/townbck.rl7<BR>
+00:27 Wait /h0/MENUS/mymenu.m</CODE><BR>
+baithouse.d is at the front of the script, so Mogul just waits until it's
+loaded before starting the timer. cool_strm.cm requires no load time. mycursor.c
+is a small file (under 10k), so we allowed 00:02 of time for it to load
+from the CD. Note that the 00:02 was specified in the column BEFORE mycursor.c.<BR>
+<BR>
+townfor.cl7 is loaded after mycursor.c loads, and is allowed 00:20 to get
+off the CD, given its size (about 100k) and the fact that CMONO audio is
+now playing while it's loading. Again, the 00:20 is specified in the column
+BEFORE.<BR>
+<BR>
+Lastly, townbck.rl7 and mymenu.m are loaded, one after the other. Since
+townbck.rl7 is smaller (less than 20k), it only needs about 00:05 after
+townfor.cl7 to get off the CD. mymenu.m has all the time in the world, since
+it's at the end. That's why it can be scripted at the same start time as
+townbck.rl7.</BLOCKQUOTE>
+<BR>
+<B><BR>
+<BR>
+&quot;Hide&quot; subroutine loading, if possible. Call Customer Support
+is you are unsure how to accomplish any of the following.</B> 
+<BLOCKQUOTE>- Load as many background plug-ins as possible (Call_bg) in
+an init or splash-screen script when the title is started.<BR>
+- If memory permits, make often used plug-ins &quot;sticky&quot; so they
+do not have to be loaded over and over again. <BR>
+- Some plug-ins may be scripted as background calls (Call_bg), even though
+the documentation recommends a foreground call. <BR>
+- If you can anticipate where plug-ins are going to be used, you may be
+able to script them as background calls during preceding scripts.<BR>
+- Many plug-ins can be scripted back-to-back with NO time between columns
+(Script Writer). This especially applies if the plug-ins are not related
+or related but not dependent on each other. <BR>
+- When the documentation recommends that a background plugin be given a
+certain amount of time to load and &quot;wake-up&quot; (00:20 is common),
+you can script it just before a branch and use the branch delay for wake-up.</BLOCKQUOTE>
+<BR>
+<BR>
+<BR>
+<B>Any script command that does not load an asset (audio, video, menu or
+data file), can be scripted for a COLUMN duration time of 00:00. </B>
+<BLOCKQUOTE>Example<B>:</B></BLOCKQUOTE>
+<P><CENTER><IMG SRC="fast_better2.gif" WIDTH="320" HEIGHT="192" ALIGN="BOTTOM"
+NATURALSIZEFLAG="3"></CENTER>
+<BLOCKQUOTE>Script File Produced:<BR>
+<BR>
+<CODE>00:00 Cut /h0/VIDEO/baithouse.d<BR>
+00:00 Set_var A 1<BR>
+00:00 Cursor_off<BR>
+00:05 Background /h0/townfor.cl7<BR>
+00:05 Wait /h0/MENUS/mymenu.m</CODE><BR>
+<BR>
+Note that set_var and cursor_off require nothing from the CD, and are set
+to execute at the same start time as the cut to baithouse.d. Mogul will
+execute them in order, without any scripted time delays between them. townfor.cl7
+however, is loaded from the CD and requies about 00:05 to load.</BLOCKQUOTE>
+<B><BR>
+Menu files require no additional SCRIPTED time to load. </B><BR>
+For example, for a menu with a foreground, background and menu file, the
+background and menu file can be loaded in the same column (same time).<BR>
+<BR>
+<BR>
+<BR>
+<B>Calls do NOT require load time, but may require &quot;wake-up&quot; time.</B><BR>
+During a branch, MediaMogul scans the upcoming script for Call and Call_bg
+commands. It preloads the plugin(s) needed BEFORE time 00:00 in that script
+commences. The individual plugin is not attached and RUN until the appropriate
+Call command is reached in the script. Once called, the plug-in may or may
+not require a wake-up period to prepare for work--follow documentation recommendations.<BR>
+<BR>
+<BR>
+A script demonstrating many of the above techniques might look like: 
+<BLOCKQUOTE><CODE>00:00 Dissolve /h0/VIDEO/mine.d 00:15<BR>
+00:00 Skip_off<BR>
+00:00 Call_bg /h0/SUBROUT/cdi_sgmn<BR>
+00:00 Play /h0/AUDIO/mine.cm<BR>
+00:00 Cursor_pos 300 200<BR>
+00:00 Set_var A 3<BR>
+00:10 Call_bg /h0/SUBROUT/cdi_dimr 20 30<BR>
+00:18 Background /h0/VIDEO/mineback.d<BR>
+00:18 Wait /h0/MENUS/mine.m</CODE></BLOCKQUOTE>
+<BR>
+In this example a number of asset-less commands are hidden during the dissolve
+and audio play. The foreground and background pictures are enough apart
+to still pass analysis. Notice that cdi_sgmn (signal manager for plug-ins)
+and cdi_dimr (screen dimmer) are 00:10 apart to permit proper wake-up for
+the signal manager. The dimmer is started up 00:08 before the menu is loaded
+to permit to wake-up in time and see that a menu is active.
+<P>
+<HR>
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="mm.htm">Up
+One Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map </A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send
+Us email</A> </CENTER>
+
+
+</BODY>
+</HTML>
+

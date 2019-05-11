@@ -1,0 +1,32 @@
+                             Ident for the Sun
+
+
+
+Ident is a Sun4 executable that can be used to display the header
+
+information on an OS-9 module.  This is useful for Script2Disc users in
+
+identifying the correct edition and version, sticky and sharable modes,
+
+etc. and for programmers who wish to check modules in libraries.
+
+
+
+This Sun version of ident does not support the abbreviated report mode
+
+with the -q option.  It only displays the long report.
+
+
+
+Help and syntax can be displayed by typing "ident' without options or a
+
+filename.
+
+
+
+See OS-9 Technical reference manuals for further details on
+
+ident.
+
+
+

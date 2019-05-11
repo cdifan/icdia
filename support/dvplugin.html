@@ -1,0 +1,181 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>MediaMogul - Digital Video plugin</B><BR><BR><BR>
+
+<P>
+The Digital Video Plug-In provides a method for playing MPEG full motion video in a CD-i title created with MediaMogul.
+
+<P>
+<BR>
+<I>Plug-ins required for operation:</I>
+<P>
+  <TT><FONT SIZE=2>cdi_sgmn</TT></FONT> - The &quot;Signal Manager&quot; plug-in.<BR>
+ <TT><FONT SIZE=2>cdi_dvpl</TT></FONT> - The &quot;Digital Video Play&quot; plug-in.  Allows playing of
+digital video.
+
+<P>
+<BR>
+<I>MediaMogul Utilities required to prepare assets:</I>
+<P>
+
+<LI> <TT><FONT SIZE=2>Entrypoint Assist</TT></FONT> ( <TT><FONT SIZE=2>epassist</TT></FONT>) is used to make entrypoint files.  Entrypoint files are required to use some functions such as Scan (both forward and back), INTIME, OUTTIME, STILL, JUMP, Bookmarking, etc.  Functions which require entrypoint files are identified in the Digital Video Plug-In manual.
+<P>
+<LI>The  <TT><FONT SIZE=2>ImageMaker</TT></FONT> utility software for Macintosh and Windows is used to make  <TT><FONT SIZE=2>.rtf</TT></FONT> files and disc images of MPEG files for playing scripts using the Digital Video Plug-In in Simulation from Script Writer.   <TT><FONT SIZE=2>ImageMaker</TT></FONT> requires  <TT><FONT SIZE=2>master</TT></FONT> software, available as part of <TT><FONT SIZE=2>script2disc</TT></FONT>, in order to work.</UL>
+<P>
+ If you are using a Philips development CD-i player and/or an OS-9 Emulator, you will need to create a  <TT><FONT SIZE=2>master</TT></FONT> script for converting each  <TT><FONT SIZE=2>.mmd/.mpg</TT></FONT> file to an  <TT><FONT SIZE=2>.rtf</TT></FONT> file and also to build a disc image.  Then a disc must be written prior to Simulation.
+ 
+<P>
+<BR>
+<I>Assets to create before using plug-in:</I>
+<P>
+
+<LI>MPEG  <TT><FONT SIZE=2>.mmd (.mpg)</TT></FONT> files of the required video must be encoded and multiplexed. 
+<LI>Entrypoint files may need to be created for use of some functions.
+<LI>Foreground and background pictures may need to be created for use with menus.
+<LI>Menu file(s) need to be created if menus will be used with the Digital Video.
+<LI>MPEG  <TT><FONT SIZE=2>.rtf</TT></FONT> (Real Time Files) must be made if you wish to play the MPEG in Simulation from the Script Writer.
+<LI>A disc containing the  <TT><FONT SIZE=2>.rtf</TT></FONT> files of the MPEG will need to be created if you wish to play scripts using the plug-in in Simulation from the Script Writer.
+
+
+<P>
+<BR>
+<I>Special preparations:</I>
+<P>
+ No additional preparation required. 
+
+<P>
+<BR>
+<I>How plug-in works:</I>
+<P>
+<LI>You should call the digital video plug-in,  <TT><FONT SIZE=2>cdi_dvpl</TT></FONT>, in TEST mode early in your title.  The plug-in will check for the presence of a digital video card, and set the Z variable to 500 if none is found.  Then have a  <TT><FONT SIZE=2>Br_ifeq_nr</TT></FONT> if Z is 500 to a script that alerts the user that the title requires a digital video card.
+<P>
+<LI>Calling the digital video plug-in will automatically start the signal manager plug-in,  <TT><FONT SIZE=2>cdi_sgmn</TT></FONT>, so make sure you do not call this more than once.
+<P>
+<LI>Digital Video is displayed on the background video plane in CD-i.  The foreground video planes must be made transparent, either partially or completely, in order for it to be seen.  Use the  <TT><FONT SIZE=2>DV_Transp</TT></FONT> video command to set up the type of transparency you want, and then use a Cut, Curtain, or Wipe video transition with the DV checkbox checked to establish the defined transparency once decoding of the digital video starts.
+<P>
+<LI>After the digital video has been played, you must turn off the transparency that had been established by using a Cut, Curtain, or Wipe video transition without the DV checkbox checked.
+<P>
+<LI>If you want to change transparency parameters, e.g. go from a CLUT 0 to a matte transparency, or vice versa, you must first turn off the existing transparency before establishing the new one.
+
+<P>
+<BR>
+<I>Example:</I>
+<P>
+In the following example, the digital video plug-in is called in TEST mode
+to check for the presence of a Digital Video card.  Then an entrypoint file
+is loaded and a 9 second portion of MPEG is played at full screen CLUT 0 transparency
+ with a hidden, toggleable menu.
+<P>
+
+ <TT><FONT SIZE=2>dvtest.scr<BR>
+00:00	Skip_off		</TT></FONT>(Skip off ensures that the user cannot skip over anything
+required for the plug-in.) <TT><FONT SIZE=2><BR>
+00:00	Call	/h0/SUBROUT/cdi_dvpl	TEST 	</TT></FONT>(Check for presence of a DV
+card.) <TT><FONT SIZE=2><BR>
+00:20	Br_ifeq_nr	/h0/SCRIPTS/nodv.scr	Z	500 </TT></FONT>(Branch if no DV card
+present.) <TT><FONT SIZE=2><BR>
+00:20	Br_always_nr	/h0/SCRIPTS/playdv.scr <TT><FONT SIZE=2>
+<P>
+
+playdv.scr<BR>
+00:00	EPLoad	/h0/DVFILES/mympeg.mm		</TT></FONT>(Entrypoint file is loaded.) <TT><FONT SIZE=2><BR>
+00:00	DV_Transp	ck3/HIDE		0 0 0 0 	</TT></FONT>(Transparency is
+defined.) <TT><FONT SIZE=2><BR>
+00:20	DV_Cut	/h0/VIDEO/dvmnufg.cl7	</TT></FONT>(Foreground image is loaded and
+transition defined) <TT><FONT SIZE=2><BR>
+01:10	Background	/h0/VIDEO/dvmnubg.cl7		</TT></FONT>(Background image for menu
+is loaded.) <TT><FONT SIZE=2><BR>
+01:10	Menu	/h0/MENUS/dv.mnu		</TT></FONT>(Menu is loaded.) <TT><FONT SIZE=2><BR>
+01:10	Call	/h0/SUBROUT/cdi_dvpl	/cd/DV/mympeg.rtf
+	INTIME=00:00:01:15,OUTTIME=00:00:10:15	</TT></FONT>(Digital video is
+played.) <TT><FONT SIZE=2><BR>
+01:10	Cut		/h0/VIDEO/mystill.cl7	</TT></FONT>(Transparency is cleared.) <TT><FONT SIZE=2><BR>
+01:10	Br_always_nr	/h0/SCRIPTS/nextscr.scr</TT></FONT>
+<P>
+ </tt><I>Note:</I> Times in the above example are approximate.
+ </FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

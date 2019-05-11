@@ -1,0 +1,141 @@
+<HTML><HEAD>
+<TITLE>Supplement for Font Catcher</TITLE>
+</HEAD>
+<BODY>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="fcatcher.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<H2><CENTER>Supplement for Font Catcher</CENTER></H2>
+
+<B>Overview:</B><P>
+
+</P>
+
+Font Catcher takes a CLUT7 or RL7 picture and converts defined rectangular glyphs into individual characters for a PRL format font module.   The character set is one of a half dozen available for the IBM PC and Windows.   The resulting font module can be used in MediaMogul or Balboa applications.<P>
+
+</P>
+
+A glyph in this context is simply a rectangular section of pixels, where the pixel pattern forms a character.   The character can be ANYTHING, including icons, antialiased language letters, small pictures, etc.   Each glyph is assigned to a particular keyboard character in a character set.  Normally, there is coherent correspondence between the glyphs and the assigned keyboard character.  
+For example:  <P>
+
+<BLOCKQUOTE></P>The glyph <IMG SRC="fcatchsup1.gif" ALIGN=MIDDLE WIDTH="20" HEIGHT="24"> would normally be associated with the "A" character  (keyboard key) in the character set.  It is equally possible to assign the glyph <IMG SRC="fcatchsup2.gif" ALIGN=MIDDLE WIDTH="25" HEIGHT="24"> to the "A" character.<P></BLOCKQUOTE>
+
+</P>
+
+<B>Plug-ins required for operation:</B><P>
+
+</P>
+
+	<BLOCKQUOTE>NONE.  The Font command in MediaMogul can load the PRL font module produced by Font catcher.</BLOCKQUOTE><P>
+
+</P>
+	
+<B>MediaMogul utilities required to prepare assets:</B><P>
+
+</P>
+
+	<BLOCKQUOTE>NONE</BLOCKQUOTE><P>
+
+</P>
+
+<B>Assets to create before using Font Catcher:</B><P>
+
+</P>
+
+CLUT 7 or RL7 picture containing the glyphs of all the characters you desire to be in the font.
+CLUT 4, CLUT7 or CLUT8 pictures you intend to use the font with.<P>
+<CENTER><IMG SRC="fcatchsup3.gif" ALIGN=MIDDLE WIDTH="492" HEIGHT="84"></CENTER><P>
+<BR>
+<CENTER><IMG SRC="fcatchsup4.gif" ALIGN=MIDDLE WIDTH="319" HEIGHT="139"></CENTER>
+</P>
+</P>
+<BLOCKQUOTE>Important:  The picture containing the glyphs and the display pictures MUST share the same Palette.  This is usually referred to as using a SUPER PALETTE for both the glyph picture and display pictures.   It is also important that the background color in the glyph picture match the display area color in all pictures.  Failure to do this will cause the characters placed on the display pictures to have random coloring, or "outlines" that are off color.</BLOCKQUOTE><P>
+
+</P>
+
+<B>Special preparations:</B><P>
+
+</P>
+
+	<BLOCKQUOTE>NONE ADDITIONAL</BLOCKQUOTE><P>
+
+</P>
+
+<B>How Font Catcher works:</B><P>
+
+</P>
+
+<UL TYPE=DISC>
+	<LI>The CLUT7 or RL7 glyph picture is IMPORTED into Font Catcher.  The glyph picture can have as many or few glyphs as desired.   For example, maybe only upper case A-Z, the _, and 0-9 are required in your MediaMogul title.  The glyphs can be any size, with practical limits of 10 - 120 point sizes.<P>
+
+
+	<LI>A character set is chosen for mating characters on the keyboard with the glyphs--actually mates an ASCII code to a particular glyph.  It is not necessary to mate all the characters in the character set to glyphs.<P>
+
+</P>
+
+	<LI>The upper, lower, left and right boundary markers are positioned around the first glyph to define its rectangular area.<P>
+
+</P>
+
+	<LI>The rectangular glyph is mated to a character (ASCII code) by clicking on a character in the character set.<P>
+
+</P>
+
+	<LI>The next glyph is defined with the boundary markers, and mated to an appropriate character.<P>
+
+</P>
+
+	<LI>The procedure is repeated for each glyph in the picture.<P>
+
+</P>
+
+	<LI>Note that once the first glyph is defined, Font Catcher can automatically place the boundary markers for subsequent glyphs (CTRL-N).  It does this by finding  the background color around a group of pixels and positions the markers on those boundaries.  The automatic feature also advances to the next character in the character set and mates for each new glyph it finds.<P>
+
+</P>
+
+	<LI>After all glyphs have been mated to characters, a PRL font can be EXPORTED from Font Catcher.   Font Catcher takes each glyph, analyzes the pixels in the rectangular area, notes the CLUT table position, dimensions and other information.  The resulting font file can be loaded into MediaMogul for use with it's TEXT and TEXTFILE commands.  The font can also be used by plug-ins that display text on CLUT pictures.<P>
+
+</P>
+</UL>
+
+<B>Gotchas:</B><P>
+
+</P>
+
+<UL TYPE=DISC>
+	<LI>If there is not sufficient space around adjacent glyphs in the glyph picture, the automatic marker feature in Font Catcher will not function correctly.  Time has revealed that most people will create the glyphs by using the anti-aliased text tool in a paint package.  Adequate spacing can be accomplished by simply using a space character between desired characters.  For example, in the paint text tool, you would type:  A B C D E F G H I..., instead of ABCDEFGHI...<P>
+
+</P>
+
+	<LI>The PRL font format maps the pixels in the glyph based on the CLUT table in the glyph picture.   When the font is EXPORTED, only the CLUT entry numbers are stored in the font, and NOT the color of the pixels themselves.   When the font is used in MediaMogul, it uses the corresponding CLUT entry numbers from the picture the characters are displayed onto.  If the display picture has a CLUT different than that of the original glyph picture--even if it contains the same color but in a different CLUT order--, the pixels in the characters will look very odd.  The use of a SUPER PALETTE for both glyph picture and display pictures cannot be emphasized enough.   The consequences of unmatched palettes (CLUTs) is demonstrated below:<P>
+
+</P>
+
+<CENTER> <IMG SRC="fcatchsup5.gif" ALIGN=MIDDLE WIDTH="296" HEIGHT="148"></CENTER><P>
+
+</P>
+
+	<LI>When created in the paint package, glyphs should be laid down onto a background color similar to that used in the display area of the display pictures.  This is especially true for glyphs made by an anti-aliased text tool.  If the background colors differ much in hue or brightness, the anti-alias pixels will become obvious, creating an undesirable "shadow" around displayed characters.  This implies careful planning of the background pictures and font.
+</UL>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<HR>
+<P>
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="fcatcher.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+</BODY>
+</HTML>

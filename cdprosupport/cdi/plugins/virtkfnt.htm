@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+
+<TITLE>Changing fonts with Virtual Keyboard Plug-In</TITLE>
+
+
+</HEAD>
+<BODY>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+<P><H2><CENTER>Changing fonts with Virtual Keyboard Plug-In</CENTER></H2>
+<P>
+There are a few things you should be aware of if you wish to change the font for use with the Virtual Keyboard Plug-In.  First, the selected font must fit into the <CODE>$DISPLAY</CODE> hotspot.  If the hotspot is not large enough vertically to display the font, nothing is displayed.  You will have to adjust the size of the <CODE>$DISPLAY</CODE> hotspot in order to ensure that it is large enough for the selected font.
+<P>
+Additionally, if you wish to change the font used for display, besides using the <CODE>Font</CODE> command in your MediaMogul script, the font module name of the currently active font must be entered as Parameter 2 in the Call to <CODE>cdi_virt</CODE>.  This is not the name of the font file, but rather the name of the module contained in the file.  To find out the name of the font module, use the <CODE>ident</CODE> command in CD-RTOS.  The command line for this is:
+<P>
+<BLOCKQUOTE>ident filename</BLOCKQUOTE>
+<P>
+where <CODE>filename</CODE> is the name of the font file.  The result of the <CODE>ident</CODE> command will list information about the font module contained in the file.
+<P>
+<B>EXAMPLE</B>:
+<P>
+
+<PRE>$ ident OP10t.fnt
+Header for:      cdi_OP10t.fnt
+Module size:     $13E8       #5096    
+Owner:           0.0
+Module CRC:      $DC3732     Good CRC
+Header parity:   $25A9       Good parity
+Edition:         $1          #1       
+Ty/La At/Rev     $400        $8001    
+Permission:      $777        -----ewr-ewr-ewr
+Data Mod, Sharable</PRE>
+<P>
+In the above example the <CODE>ident</CODE> command is used on a font file named <CODE>OP10t.fnt</CODE>.  This returns information about the font module contained in the file.  The name of the font module is located in the <CODE>Header for:</CODE> field.  In this example, the font module is named <CODE>cdi_OP10t.fnt</CODE>.  This is what should be entered into Parameter 2 in the Call to <CODE>cdi_virt</CODE>.
+<P>
+For additional information on changing fonts for display with the Virtual Keyboard Plug-In, please refer to your Kiosk Plug-in Pak manual.
+
+<P>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.1 -->
+
+</BODY>
+</HTML>

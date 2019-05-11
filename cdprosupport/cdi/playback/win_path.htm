@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+
+<TITLE>Pathing issues with CDi Playback for Windows</TITLE>
+
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="playback.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P><H2><CENTER>Pathing issues with CDi Playback for Windows</CENTER></H2>
+<FONT SIZE=+2>
+<UL>
+<LI>CD-i Playback <B>must</B> be installed on C:\ drive, or it won't work.<P>
+
+<LI>The MediaMogul directory can be on any drive.<P>
+
+<LI>When specifying OS9 virtual drives within CDi Playback, you <B>cannot</B> specify an entire PC drive with an OS9 device descriptor.  You can only associate the driver name with a <B>folder</B>.  For example, you can specify &quot;d:\dir_name\&quot; as your "h1" drive, but not d:\ itself.<P>
+
+<LI>MediaMogul will not install correctly if the path to /h0 is incorrectly set in C:\Windows\wcdiplay.ini.
+<P>
+All OS9 path aliases in wcdiplay.ini must end with a trailing slash , e.g.<P>
+[RBFM]<BR>
+H0=C:\MM<B><FONT COLOR="#FF0000">\</FONT></B><BR>
+H1=D:\FILES<B><FONT COLOR="#FF0000">\</FONT></B><BR>
+DD=A:<B><FONT COLOR="#FF0000">\</FONT></B><P>
+
+If a trailing slash is left out of the H0 line, all MediaMogul files will be installed at the root, and have a name starting with &quot;MM&quot;! 
+</UL>
+</FONT>
+<BR>
+<BR>
+<P>
+
+</BODY>
+</HTML>

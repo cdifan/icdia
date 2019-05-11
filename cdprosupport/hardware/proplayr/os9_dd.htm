@@ -1,0 +1,156 @@
+<HTML>
+<TITLE>Creating OS9 Device Descriptors </TITLE>
+<BODY>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="proplayr.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+<H2>Creating OS9 Device Descriptors</H2>
+<A NAME="CD-i 605 Player"><FONT SIZE=5>CD-i 605 Player</FONT></A> &nbsp;&nbsp;&nbsp;&nbsp; (or <A HREF="#CD-i Emulator">CD-i Emulator</A>)<BR>
+Only /h0, /h1, and /h2 (+formatting descriptors) are provided in ROM.
+If you would like to make /h3,  /h4, /h6, or /h7(the player is at ID#5)  you can use the OS9 utility <tt><B>moded</B></tt> to hack one of the existing device descriptors.  For example, "h4":<BR>
+Follow these steps:<BR>
+At an OS9 prompt:<BR>
+Type    <tt>chd /h0/cmds/bootobjs</tt><BR>
+Type    <tt>save &lt<I>device descriptor</I>&gt</tt>  (e.g. "save h2")<BR>
+Type    <tt>rename h2  &lt<I>new descriptor name</I>&gt</tt>  (e.g. "rename h2 h4")<BR>
+Type    <tt>moded  h2 -f=h4</tt><BR>
+Type    <tt>?</tt>     (to get a list of options)<BR><BR>
+moded: <tt>?</tt><BR>
+ <BR>
+e(dit)   - edit the current module<BR>
+f(ile)   - open a new file of modules<BR>
+l(ist)   - list contents of module<BR>
+m(odule) - find a module in the current file<BR>
+w(rite)  - update module crc and write to file<BR>
+q(uit)   - leave the module editor<BR>
+$        - call the os-9 shell<BR>
+?        - print this help message<BR>
+<BR>
+For example, if you typed "l" to list descriptors h2 and h0 you would get this:<BR>
+moded:<tt> l</tt><BR>
+ <BR>
+descriptor name                :        h2<BR>
+file manager name              :       RBF<BR>
+device driver name             :    rbscsi<BR>
+port address                   : $00000000<BR>
+irq vector                     :         0<BR>
+irq level                      :         0<BR>
+irq priority                   :         0<BR>
+device mode capabilities       :       $a7<BR>
+device class                   :       $01<BR>
+drive number                   :         2<BR>
+(etc)<BR>
+control word                   :     $000b<BR>
+(etc)<BR>
+scsi controller id             :       $02<BR>
+(etc)<BR>
+<BR>
+<BR>
+moded:<tt> f</tt><BR>
+filename to use:<tt> h0</tt><BR>
+<BR>
+moded:<tt> l</tt><BR>
+name of module to use (return if same as file name) : <BR>
+<BR>
+descriptor name                :        h0<BR>
+file manager name              :       RBF<BR>
+device driver name             :    rbscsi<BR>
+port address                   : $00000000<BR>
+irq vector                     :         0<BR>
+irq level                      :         0<BR>
+irq priority                   :         0<BR>
+device mode capabilities       :       $a7<BR>
+device class                   :       $01<BR>
+drive number                   :         0<BR>
+(etc)<BR>
+control word                   :     $000f<BR>
+(etc)<BR>
+scsi unit number of drive      :         0<BR>
+(etc)<BR>
+scsi controller id             :       $00<BR>
+(etc)<BR>
+<BR>
+As you can see, the only differences between these two modules are:
+<DL><LI> descriptor name.
+<LI>drive number  
+<LI>control word and 
+<LI>scsi controller id</DL>
+You will need to change a, b, and d.  c is optional depending on whether you want to change certain i/o parameters.  For h4, change them like this:<BR>
+At the moded: prompt, type "e"
+<DL>
+<LI> change the device descriptor name to h4
+<LI> change the drive number to 4
+<LI> optionally, change the control_word (below).
+<LI> change the SCSI controller id to $04.
+<LI>Then, at the moded: prompt, type "w" to write the changes, and q to quit.</DL>
+You'll need to load the device driver, e.g. <tt>load /h0/cmds/bootobjs/h4</tt>,  before you can use it. You could put this in mm_cust if you like, so that the drivers are loaded at startup.<BR><BR>
+<EM>Control Word modification</EM><BR>
+ When you get to the control word: prompt, you can type "??" to see all available options. You'll get a printout like this:<BR>
+control word                   :     $000b = ??<BR>
+<FONT COLOR="0000DD">---------------------------</FONT><BR>
+ PD_Cntl:  This is the descriptor control word.<BR>
+ <BR>
+ bit 0 -- 0 = media is format enabled.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 = media is format protected.<BR>
+<I> Normally, hard disks are format "protected" to prevent accidental<BR>
+ erasure.  When this is done, a "format enabled" version of the<BR>
+ descriptor is used to allow hard disk formatting.  When using<BR>
+ non-volatile ramdisks, this flag is set to prevent re-formatting<BR>
+ of the ramdisk.</I><BR>
+<BR>
+ bit 1 -- 0 = driver/controller can perform single-sector i/o.<BR>
+          1 = driver/controller can perform multi-sector i/o.<BR>
+ <I>If the controller and device driver can support multi-sector i/o<BR>
+ transfers, much faster disk operations can be achieved.</I><BR>
+ <BR>
+ bit 2 -- 0 = device does not have stable id.<BR>
+          1 = device has stable id.<BR>
+<I> This flag indicates that the media cannot be changed, or that the<BR>
+ driver can keep the media id updated when the media is changed.</I><BR>
+ <BR>
+ bit 3 -- 0 = device size determined from device descriptor.<BR>
+          1 = device size determined by asking the drive itself.<BR>
+ <I>Media that supports "read capacity" to determine the media size<BR>
+ should set this bit.</I><BR>
+<BR>
+ bit 4 -- 0 = device cannot format a single track<BR>
+          1 = device can format a single track<BR>
+<I> This flag signals whether the media can be formatted on a track<BR>
+ by track basis (e.g. disk repair utilities).</I><BR>
+<FONT COLOR="0000DD">---------------------------</FONT><BR><BR>
+<FONT COLOR="1B198F">Explanation:</FONT><BR>
+The $000b is the hex version of the above.  This is the typical control word for a hard drive device descriptor.  Only the "b" part is important. The rest of numbers should always be "0", essentially.  "b" translates to the binary number 1011.   This means:
+<TABLE BORDER CELLSPACING=2 WIDTH="50%" CELLPADDING=1>
+<TR ALIGN=Center>
+<TH>bit3      <TH>    bit2      <TH>     bit1    <TH>     bit0 
+<TR ALIGN=Center>
+<TD>  1     <TD>        0        <TD>       1    <TD>     1   
+</TABLE><BR>
+(For h0, the control word is $000f.  This sets bit2 to 1, indicating stable id. Usually save and rename h1 or h2, so that you won't have to change the control word.)<BR>
+<BR>
+On the other hand, the control word for a FORMAT device descriptor (e.g. h1fmt) is typically  $000a.  This translates to binary 1010.
+<TABLE BORDER CELLSPACING=2  WIDTH="50%" CELLPADDING=1>
+<TR ALIGN=Center>
+<TH>bit3    <TH>     bit2      <TH>     bit1      <TH>   bit0 
+<TR ALIGN=Center>
+	<TD> 1       	<TD>      0          	<TD>     1      	<TD>     0   
+</TABLE>
+<BR>
+<A NAME="CD-i Emulator"><FONT SIZE=5>CD-i Emulator</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     (back to <A HREF="#CD-i 605 Player">CD-i 605 Player</A>)<BR>
+The steps for creating additional drivers for the emulator are similar to those for the player, but <STRONG>not</STRONG> exactly the same.  To wit:
+<UL>
+<LI>You must save and use an <EM>emulator</EM> device driver to modify, not a 605 player equivalent.
+<LI>You should change the <EM>port address</EM> of the drive, <STRONG>rather</STRONG> than the drive number.  You do this by <BR>changing the last digit only.  For example,  if you save the <tt>h0</tt> device descriptor, it would have the port address of <tt>$01f00000</tt>.  In order to make the port address for <tt>h4</tt>, change it to $01f00004.
+</UL>
+<P>
+<HR>
+<P>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="proplayr.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+</BODY>
+</HTML>
+

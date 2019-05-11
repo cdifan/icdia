@@ -1,0 +1,495 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 5. Tipi di CD
+
+ 5.1 Cos'e' un CD CD-i?
+ Un CD CD-i e' un tipo di CD contenente un programma con dati audio e video che
+ possono essere riprodotti da un lettore CD-i. Un CD puo' essere definito per
+ CD-i solo quando funziona attenendosi pienamente alla CD-i Full Functional
+ Specification (Piena Funzionale Specificazione)cosi' com'e' descritta nel Libro
+ Verde. Quando un CD e' non pienamente conforme a queste specifiche (anche se
+ puo' essere eseguito su un lettore CD-i come accade per un Photo-CD o un Video-CD),
+ esso non e' un CD CD-i. Si puo riconoscere un CD CD-i dal suo logo ufficiale
+ che dovrebbe essere stampato sulla confezione e sul CD stesso. Per ulteriori
+ informazioni circa il sistema CD-i, il logo e il Libro Verde, vedere la
+ sezione 1 di questo FAQ: Il sistema CD-i.
+
+ 5.2 Cos'e' un CD-i Ready?
+ Un CD-i Ready e' un tipo speciale di CD CD-i. Seguendo i dettami del Libro
+ Verde, un CD CD-i puo' contenere tracce audio. Queste dovrebbero essere messe
+ dopo la traccia CD-i che e' sempre la prima. Tuttavia, su qualche vecchio
+ lettore CD-Audio questa traccia CD-i potrebbe venire eseguita con possibile
+ danno all'equipaggiamento o agli altoparlanti. Per impedire questo fu creato il
+ formato CD-i Ready. Su un CD CD-i Ready, il programma CD-i (incluse tutte le
+ sue informazioni audio e video) e' conservato nei settori di pausa precedenti
+ la traccia 1. Normalmente, le interruzioni di settore precedenti alla traccia
+ 1 vengono saltati dalla maggior parte dei lettori CD-Audio ma possono essere
+ letti benissimo da un CD-i. Questo ha permesso una grande compatibilita' di
+ lettura di CD-Audio che contengono informazioni extra quando vengono eseguiti
+ da un lettore CD-i. In essenza, un CD-i Ready non e' un vero CD CD-i, fin
+ quando non segue le regole del Libro Verde per l'immissione di tracce CD-Audio
+ e di dati, ma possono essere comunque letti correttamente da tutti i lettori
+ CD-i prodotti.
+
+ I CD CD-i Ready sono normalmente CD musicali (si possono riconoscere dalla
+ indicazione CD-i Ready o CD-i Music nell'angolo in alto a sinistra della
+ confezione), ma possono anche essere di altri tipi. Per esempio, alcuni giochi
+ (da notare i giochi prodotti da SPC Group/The Vision Factory) sono conosciuti
+ per essere stati creati nel formato CD-i Ready. I lettori CD-i equipaggiati
+ con la shell di seconda generazione (vedere la "Comparision Table of all Philips
+ CD-i Players" contenuta in questo sito) possono eseguire opzionalmente le
+ tracce audio di un CD CD-i usando lo schermo standard CD-Audio.
+
+ 5.3 Cos'e' il CD-Digital Audio o CD-DA?
+ Compact-Disc Digital Audio e' il nome ufficiale della musica CD originale.
+ Fu definito da Philips e Sony nei primi anni '80 e le sue specificazioni
+ furono inserite nel Libro Rosso. Tutti i CD ed i lettori CD dovrebbero essere
+ in conformita' con questa specificazione e permettere il rilevamento del logo
+ Compact-Disc Digital Audio. Questa specificazione assicura che ogni CD CD-Audio
+ puo' essere riprodotto su ogni lettore CD-Audio dovunque nel mondo.
+
+ Il Libro Verde definisce che qualsiasi lettore CD-i dovrebbe essere in grado
+ di riprodurre l'audio di CD-Digitali. Per questo, un lettore CD-i crea uno
+ schermo di scelta quando si inserisce un CD-Audio nel lettore. Questa shell
+ permette la selezione diretta delle tracce, si usa per programmare quelle
+ preferite, per effettuare una ricerca standard su un brano, etc.
+ E' compito di ogni fabbricante scegliere a cosa assomigliera' la shell del
+ lettore e le caratteristiche che offrira', affinche' tutto il contenuto di
+ un CD-Audio possa essere eseguito su un lettore CD-i.
+
+ Vedere l'annotazione speciale circa il CD-Extra (CD-Plus o Enhanced CD) al
+ punto 5.18.
+
+ 5.4 Cos'e' un  CD+Grafica?
+ CD+Grafica o CD+G e' un'estensione al Libro Rosso, definito da Philips e JVC.
+ CD+G permette l'immagazzinaggio semplice della grafica nei canali subcode di
+ ogni settore di un CD-Audio. Ogni settore ha 8 canali subcode di 1 bit,
+ risultando in 75 (settori per secondo) x 1 byte = 75 byte per secondo.
+ A causa di questa bassa velocita' di bit e' possibile inserire solo una grafica
+ molto semplice. I CD+Grafica possono mostrare 16 colori in una sola volta
+ sullo schermo, presi da una palette di 64 colori con una risoluzione 192x288.
+ Qualsiasi font usato deve essere codificato nel flusso di grafica.
+ CD+G permette anche il cambiamento dei colori usati sullo schermo, cosicche'
+ le parole possono essere evidenziate per diversi scopi come ad esempio il
+ karaoke. Il CD+G fu principalmente usato in Giappone per applicazioni karaoke,
+ e non guadagno' mai molta popolarita' al di fuori di questo Paese.
+ Cosicche' in Giappone diversi CD-Audio vennero creati con dati CD+Grafica.
+
+ CD+G possono essere eseguiti su lettori CD-Audio con un'uscita digitale
+ collegato ad un decoder CD+G, come alcune delle console da gioco primi anni '90
+ (come CDTV e 3DO) e su lettori CD+G dedicati. Sebbene il sistema CD+Grafica 
+ non sia tecnicamente attinente al CD-i, la Philips ha incluso la possibilita'
+ riprodurli su tutti i suoi lettori CD-i di consumo (la riproduzione dei CD+G
+ non e' inclusa nei lettori professionali CDI 180 e serie CDI 6xx).
+ Esiste anche una variante molto rara di CD+G esistenti, ed e' chiamata
+ CD+Enhanced Graphics. La grafica presente in questo CD non puo' essere mostrata
+ su nessun lettore CD-i.
+
+ 5.5 Cos'e' un CD-BGM?
+ CD-BGM o CD-BackGround Music e' un tipo di CD definito da Philips, Sanyo e
+ Shinano-Kenshi alla meta' degli anni '80. Qualche volta il sistema viene anche
+ definito BMS (BackGround Music System). CD-BGM viene usato per conservare
+ piu' di 10 ore di audio e viene utilizzato come musica di sottofondo nei
+ grandi magazzini, shopping malls, cantri commerciali, etc.
+ CD-BGM per realizzare questo usa il formato ADPCM livello B con audio mono.
+ La musica viene conservata in 8 tracce, le quali vengono divise in titoli.
+ Normalmente c'erano circa 15 titoli per traccia, risultando circa 120 canzoni
+ per CD (circa 8 ore). Sebbene i lettori CD-BGM fossero dedicati a scopi
+ professionali furono resi disponibili per l'esecuzione (noto e' il Philips
+ BMS 3000), aggiungendo un'applicazione particolare, che ne permetteva la
+ riproduzione sui lettori CD-i.
+
+ Questa applicazione non e' definita tra le caratteristiche che DEVE avere un
+ CD-BGM percio' non e' detto che un determinato CD possa funzionare su CD-i.
+ Questo accadde perche' i primi CD-BGM prodotti da Sanyo mostravano uno schermo
+ diviso in due meta', che nella parte superiore mostrava 'partenza', e in
+ quella inferiore mostrava 'fermata'!
+ In effetti, questi dischetti furono i primi CD che vennero rilasciati
+ commercialmente per il CD-i. Fortunatamente, Philips mise piu' attenzione alle
+ sue applicazione CD-i per CD-BGM. Creo' una shell che mostra la lista di tutte
+ le tracce disponibili e che da qui possono essere selezionate per la
+ riproduzione. Molte centinaia di titoli CD-BGM furono fatti solo da Philips.
+ Nota: CD-BGM non possono essere acquistati ma solo 'affittati' da utenti
+ professionali selezionati da Philips.
+
+ Un articolo descrive la storia di CD-BGM e le caratteristiche della
+ applicazione per Philips CD-i ed e' disponibile nella sezione relativa alle
+ tecnologie in questo sito.
+
+ 5.6 Cos'e' un CD CD-i Bridge?
+ Un CD-i Bridge e' un CD CD-ROM/XA che include un'applicazione CD-i per la
+ riproduzione su un lettore CD-i. Un CD-i Bridge e' formattato nel file-system
+ ISO-9660 per permetterne l'uso su altre piattaforme come PC o Macintosh.
+ Non e' obbligatorio che conservi applicazioni per altre piattaforme, ma queste
+ possono essere incluse nel CD. Normalmente, audio e video sono codificati
+ usando le tecniche di codifica CD-i come ADPCM per l'audio o MPEG per il video.
+
+ Esempi ben noti di CD CD-i Bridge sono Photo-CD, Karaoke-CD e Video-CD, ma
+ l'utilizzo di questi CD-i Bridge si basa sul fatto che  la 'specificazione'
+ del CD sia basata sull'ISO-9660 filesystem e che includa un'applicazione per
+ la riproduzione su lettori CD-i.
+
+ 5.7 Cos'e' il Video-CD?
+ Un Video-CD e' un compact-disc con piu' di 75 minuti di qualita' VHS video
+ con allegato un'audio di qualita' CD. Audio e video sono codificati conformemente
+ allo standard MPEG-1 e il CD e' basato sulle specifiche del CD-i Bridge per
+ permettere la riproduzione su una varieta' di dispositivi playback come lettori
+ CD-i e lettori Video-CD dedicati. La prima versione delle specifiche Video-CD
+ fu chiamata Karaoke-CD (vedere Cos'e' il Karaoke-CD?) e fu assegnato da
+ Philips e JVC nel 1993. Presto fece seguito la versione 1.1 spec, dove il
+ nome del sistema venne cambiato in Video-CD e agli editori spec si unirono
+ da Sony e Matsushita. Alcuni anni piu' tardi, la versione 2.0 aggiunse la
+ possibilita' di conservare ancora piu' immagini sul dischetto e anche permettere
+ una limitata interattivita' nella forma di schermi di menu' e voci di selezione.
+
+ Il Video-CD e' diventato molto popolare principalmente in Asia, dove furono
+ venduti dall'inizio di 2000 circa 40 milioni di lettori. Fuori dall'Asia, il
+ Video-CD venne principalmente usato come uno strumento di prototipo o come un
+ modo economico per produrre CD DVD-Video compatibil. Sebbene la compatibilita'
+ Video-CD non sia richiesta dai lettori DVD-Video e' probabile che la capacita'
+ di riprodurli sia inclusa in ogni lettore DVD-Video essendo la decodifica
+ MPEG-1 la cosiddetta decodifica iniziale.
+
+ Per ulteriori informazioni circa il Video-CD, la differenza tra Digital Video
+ su CD-i e Video-CD, le varie versioni Video-CD versioni, le varie applicazioni
+ Video-CD per CD-i e altre questioni, vi rimando alla sezione 6 di questo FAQ:
+ Video-CD su CD-i.
+
+ 5.8 Cos'e' un Karaoke-CD?
+ Karaoke-CD e' il vecchio nome dello standard Video-CD. Venne dato al sistema
+ nel 1993 quando lo standard fu assegnato da Philips e JVC e il supporto di
+ Sony e Matsushita non c'era ancora (in seguito quando loro si unirono il nome
+ fu cambiato in Video-CD). Karaoke-CD fu -come si vede dal nome- principalmente
+ concepito per applicazioni karaoke in Giappone. Il sistema usa MPEG-1 audio e
+ video ed e' basato sulle specifiche CD-i Bridge.
+ Percio', il Karaoke-CD e' completamente compatibile con i lettori CD-i e gli
+ altri dotati di decompressore MPEG-1. 
+
+ 5.9 Cos'e' il Photo-CD?
+ Il sistema Photo-CD venne definito da Philips e da Kodak nel 1991. Il sistema
+ permette l'immagazzinaggio di immagini fotografiche di qualita' molto alta su
+ un compact-disc. Il sistema e' basato sulle specifiche CD-i Bridge per
+ permettere la riproduzione di CD Photo-CD su lettori CD-i, lettori Photo-CD
+ (una rassegna di tutti i lettori Photo-CD e' disponibile nella sezione
+ Related Technologies di questo sito) e altri sistemi.
+
+ Photo-CD fu introdotto come un prodotto di servizio completo al consumatore.
+ I consumatori sono in grado di richiedere un Photo-CD quando portano il loro
+ film 35mm o un rullino in un Kodak-finisher per lo sviluppo. Il dischetto che
+ ne risulta contiene tutte le foto in diverse varieta' di qualita' e di
+ risoluzione di immagine. Il dischetto puo' essere riportato al Photo-finisher
+ per aggiungerci foto per un totale, di poco superiore, alle 100 immagini.
+ Per questo motivo la caratteristica di multi-sessione fu aggiunta alla
+ definizione CD-Recordable nel Libro Arancio.
+
+ Le immagini su un Photo-CD sono codificate in conformita' ad una specifica
+ Kodak; la tecnica di compressione Photo e' chiamata YCC. Questo algoritmo
+ utilizza il fatto che l'occhio umano e' meno sensibile alle differenze di
+ colore in un'immagine che non ai cambiamenti di luminosita'. Questo riduce la
+ dimensione di un'immagine esaminata da 18 MB a 3 o a 6 MB per 'Image Pack'.
+ Ogni immagine e' conservata in un'Image Pack, che contiene un'immagine in
+ 5 risoluzioni: Base/16 (192 x 128), Base/4 (384 x 256), Base (768 x 512),
+ 4Base (1536 x 1024) e 16Base (3072 x 2048). Queste differenti risoluzioni
+ possono essere usate per una varieta' di scopi: quelle piu' piccole possono
+ essere usate per produrre una rassegna thumbnail sullo schermo, la risoluzione
+ di mezzo puo' essere usata per mostrare l'immagine in alta qualita' su uno
+ schermo TV, la risoluzione 4Base e' usata per zoomare su una particolare area
+ di un'immagine e la piu' alta risoluzione puo' essere usata per fare stampe
+ con qualita' fotografica. Il Photo-CD e' comunque un eccellente e duraturo
+ sistema di immagazzinaggio di foto.
+
+ 5.9.1 Che varianti del Photo-CD sono disponibili? Sono tutte compatibili CD-i?
+ Kodak e Philips hanno definito 5 differenti varianti di Photo-CD mirate a vari
+ tipi di uso. Tutti questi tipi furono basati sulle specifiche base del Photo-CD
+ e sono in conformita' con le specificazioni di CD-i Bridge.
+ Comunque tutte possono essere eseguite su tutta la gamma di lettori Photo-CD
+ ed anche su altri dispositivi abilitati alla riproduzione come un lettore CD-i.
+
+ *Photo-CD Master
+ Si tratta del Photo-CD destinato al consumatore e creato dai (photo-finisher)
+ negozi specializzati. Il Photo-CD Master contiene solitamente immagini con una
+ risoluzione superiore a 16Base.
+ *Pro Photo-CD Master
+ Il Pro Photo-CD e' mirato a soddisfare fotografi professionisti. Questo sistema
+ permette l'immagazzinaggio di un film in formato superiore al 35mm, come per
+ esempio il 70mm. Per questo motivo viene aggiunta una risoluzione extra alla
+ Image Pack: 64Base che e' 6144 x 4096.
+ Come risultato, queste immagini consistono di 25.165.824 pixel, 32 volte tanto
+ quanto le foto di una fotocamera digitale. Un lettore Photo-CD e un lettore CD-i
+ possono eseguire questi dischetti in modo regolare, tuttavia essi solitamente
+ non fanno uso di questa altissima risoluzione.
+ *Photo-CD Portfolio
+ Un Photo-CD Portfolio contiene immagini in piu' risoluzioni di Base, che sono
+ perfettamente convenienti per la visione su uno schermo TV e permettono uno 
+ zoom funzionale. Photo-CD Portfolio viene dunque usato come un prerecorded
+ medio per distribuire grandi quantita' di immagini (piu' di 800) in un modo
+ conveniente. Un Photo-CD Portfolio puo' includere suono di qualita' CD-Audio,
+ playlists pre-registrate e anche voci di selezione su una foto che rimandano
+ alle altre foto o playlists. Queste caratteristiche interattive possono essere
+ visitate con un lettore Photo-CD o un lettore CD-i quando una certa applicazione
+ CD-i appropriata e' conservata sul dischetto.
+ *Catalog Photo-CD
+ Una foto di Catalog-CD conserva solo immagini di risoluzione di Base. Questo
+ permette l'immagazzinaggio di molte migliaia di immagini in risoluzione TV.
+ Catalog Photo-CD viene usato raramente.
+ *Medical Photo-CD
+ Un'altra variante Photo-CD professionale mirata ad un uso medico. Un Medical
+ Photo-CD puo' essere usato dai dottori per conservare scan CT o MRI per usarle
+ in seguito(per esempio in conferenze o dibattiti).
+
+ 5.9.2 Quali sono le differenze tra le varie applicazioni Photo-CD per CD-i?
+ A causa delle specificazione di CD-i Bridge su cui fu basato il Photo-CD
+ ogni Photo-CD deve includere un'applicazione CD-i per permettere la totale
+ riproduzione del CD su un lettore CD-i. Finora, Philips e' la sola compagnia
+ che ha prodotto una tale applicazione CD-i. Una versione e' inclusa in diversi
+ strumenti autorizzati Photo-CD, essa e' inclusa sul Kodak PIW Workstation che
+ viene usata dai Photo-finishers per creare Photo-CD.
+
+ Naturalmente, Philips ha continuato a sviluppare l'esecuzione e le diverse
+ caratteristiche di questa applicazione, ecco perche' ne esistono varie
+ versioni. La versione usata su un particolare dischetto viene mostrata quando
+ si seleziona l'uscita dal menu' principale. Sebbene esistano molte versioni
+ interim che furono usate internamente da Philips, solo alcune di esse furono
+ in effetti rilasciati agli sviluppatori e a Kodak. Le piu' importanti di esse
+ furono:
+
+ *Versione 1.x
+ La prima versione dell'applicazione CD-i per Photo-CD aveva un'impaginazione
+ piuttosto grossolana, e usava tasti piuttosto piccoli che erano messi tutti
+ insieme sullo schermo, tutti in una volta quando il menu' veniva richiesto.
+ Questa versione permetteva la programmazione di foto come qualsiasi altro,
+ permetteva la rotazione di immagini, lo zoom e lo fissava in memoria.
+ Inoltre poteva mostrare una rassegna di immagini sul dischetto su uno schermo
+ in piccole immagini di preview.
+ *Versione 2.3
+ Come dalla versione 2 in avanti, lo stile dello schermo mostrato e sopratutto
+ l'aspetto dell'applicazione furono drasticamente cambiati. Il menu' che e'
+ mostrato sullo schermo quando una foto e' visionata ora mostra solo le funzioni
+ principali, un menu' extra puo' essere richiesto per accedere alla funzione di
+ zoom e per cambiare dall'alta alla bassa risoluzione. Questo switch fu
+ aggiunto per velocizzare il caricamento di un'immagine. Questo settaggio della
+ risoluzione alta/bassa fu valido per tutti i Photo-CD (con questa versione
+ dell'applicazione) che venivano caricati in un particolare lettore CD-i.
+ Questa versione 2.3 fu completata con la versione 3.0 del Kodak PIW software
+ di Workstation per foto-finishers che fu rilasciata alla fine del '92.
+ *Versione 3.1
+ Alla versione 3.1 fu aggiunta qualche funzione e permormance sviluppate se
+ comparata alla 2.3. Per iniziare con questa fu supportata la playlists e la
+ riproduzione di audio come definito per il Photo-CD Portfolio. Questo ha cosi'
+ permesso agli utenti CD-i l'accesso alle limitate caratteristiche interattive
+ offerte da questo tipo di dischetto.
+ L'utente puo' ora interrompere il caricamento di un'immagine e leggerne nuove
+ senza ripulire la cima della precedente immagine, e senza riportare lo schermo
+ nero iniziale. La bassa o l'alta risoluzione settata ora viene memorizzata
+ per ogni singola foto. Questa versione 3.1 fu completata con la versione 4.1
+ del Kodak PIW software di Workstation per foto-finishers che fu rilasciato nel
+ Agosto 1993.
+ *Versione 3.2
+ La versione 3.2 include alcuni aumenti di velocita' di esecuzione e permette
+ la generazione dell'indice thumbnail schermo piu' velocemente. Questa fu
+ l'ultima versione dell'applicazione rilasciata commercialmente.
+
+ E' chiaro che un'applicazione Photo-CD con versione 3.x del CD-i offre un
+ grande miglioramento in termini di usabilita' e esecuzione. Se progetti di
+ fare Photo-CD, accertati che questa versione o seguenti sia inclusa nella tua
+ confezione authoring. C'era anche una versione 3.2.1 della Photo-CD su CD-i
+ application, che possedeva una variabile nello zoom, permettendoti di zumare
+ in un'area molto piccola di un'immagine. Dato che questa versione non venne
+ mai rilasciata ufficialmente da Kodak, Photo-CD con questa versione della
+ applicazione CD-i sono da considerarsi molto rari.
+
+ Come alternativa esiste una piccola (63 KB) singola applicazione di file per
+ lettori CD-i. Essa non permette la selezione di immagini preferite, ne il
+ supporto della playlists, ma permette di usare una variabile dello zoom per
+ l'ingrandimenti di una piccola area dell'immagine.
+
+ L'ultima versione commerciale dell'applicazione Photo-CD su CD-i (3.2) come
+ pure l'applicazione alternativa sono disponibili per il download alla sezione
+ "CD-i Appliction Download" su questo sito.
+
+ Un documento che spiega come usare tutte le funzioni di menu' del Philips
+ Photo-CD su applicazioni CD-i 3.x puo' essere trovato nella sezione "CD-i
+ Technical Documentation" su questo sito.
+
+ 5.10 Il CD-i esegue il Picture-CD?
+ Ci sono due sistemi completamente differenti disponibili attualmente, entrambi
+ sono chiamati Picture-CD. Uno definito da Kodak, l'altro da Corel e Adaptec.
+ Un Kodak Picture-CD e' usato nello stesso modo di un Photo-CD, ma il formato
+ del file e' diverso, e c'e' un'applicazione per Microsoft Windows conservata
+ sul CD e nessuna per CD-i. Come risultato, un Kodak Picture-CD non e'
+ compatibile con i lettori Photo-CD o CD-i.
+
+ Tuttavia, ci sono progetti per rendere compatibile il Kodak Picture-CD con il
+ lo standard Video-CD 2.0 per lettori Video-CD, lettori DVD-Video e lettori CD-i
+ includendo tutte le immagini come un file MPEG.
+ Il Nero Burning ROM CD-R authoring creato da Ahead GmbH e' conosciuto per il
+ supporto a questa caratteristica dalla versione 5.0 e seguenti; include una
+ applicazione compatibile CD-i per mostrare le immagini in alta risoluzione
+ sul televisore usando un lettore CD-i (vedere sezione "Come posso eseguire
+ le mie immagini sul mio lettore CD-i?" per ulteriori informazioni).
+ Da notare che la compatibilita' Video-CD o CD-i non e' richiesta obbligatoria
+ di un Picture-CD, e quindi non puo' essere garantita. E' probabile che Kodak
+ sostituira' il servizio di creazione Photo-CD della sua foto-finishers con un
+ servizio Picture-CD.
+
+ L'altra variante Picture-CD e' definita da Corel per il suo Corel CD Creator
+ CD-R, e fu piu' tardi adattato da Adaptec quando il prodotto fu venduto
+ a questa compagnia e rinominato in Adaptec Easy CD Creator. Un Adaptec
+ Picture-CD e' un tipo di dischetto con immagini in formato Kodak Photo-CD,
+ ma i file non sono messi alle posizioni del settore specificato dalle Photo-CD
+ specification, i file richiesti sono mancanti e un'applicazione CD-i non e'
+ disponibile. Quindi, un Adaptec Picture-CD non puo' essere eseguito su un
+ lettore Photo-CD o un lettore CD-i. Adaptec probabilmente usa questa strategia
+ per bypassare le costose tasse di concessione richieste da Kodak.
+
+ 5.11 Il CD-i puo' eseguire i dischetti di CD-ROM?
+ Il termine CD-ROM e' usato per tutti i tipi di CD da utilizzare in applicazioni
+ di computer. Un CD-ROM puo' contenere vari filesystems (come ISO-9660, Joliet,
+ Apple HFS, Unix, etc.) o programmi per un'ampia varieta' di sistemi di computer
+ (Microsoft Windows, Apple Macintosh, Linux, Free BSD, Solaris, BeOS, etc.).
+ Un CD-ROM creato per un particolare sistema operativo non puo' essere usato
+ su un altro sistema (se non sotto emulazione). Non c'e' qualcosa come un
+ "CD-ROM system". La differenza tra la specificazione di CD-ROM nel Libro
+ Giallo e tutti gli altri CD-system e' che solo il formato di settore fisico
+ e' definito, e non l'applicazione di un dischetto. Quindi, un CD-ROM puo'
+ essere eseguito solo su un lettore CD-i quando un programma di applicazione
+ CD-i e' conservato sul CD. In questo caso, un CD-ROM e' chiamato un CD-i Bridge
+ (vedere Cos'e' un CD-i Bridge?), ma normalmente questi tipi di CD non sono
+ chiamati CD-ROM sulla confezione.
+
+ 5.12 Il CD-i esegue i CD Sony Electronic Book (Data Discman)?
+ Sony nel 1991 ha venduto un dispositivo di riproduzione portatile di dati
+ chiamato Discman. Un dispositivo con una cartuccia che contiene un CD di 8 cm
+ con informazioni espresse in forma di testo e con grafica molto semplice.
+ L'applicazione per mostrare queste informazioni sullo schermo LCD in bianco e
+ nero era installata nella ROM del lettore. Questi cosiddetti Libri Elettronici
+ furono usati come guida da viaggio, dizionari e altri tipi di informativi da
+ usare sulla strada.
+
+ Quando Sony annuncio' l'Electronic Book dichiaro' che nel futuro lo avrebbe
+ reso compatibile con il sistema CD-i. Per questo, un'applicazione CD-i sarebbe
+ inclusa sui dischetti. Ma alcuni anni piu' tardi, Sony annuncio' ufficialmente
+ a Philips che questo non sarebbe successo. Questo annuncio non fu mai di fatto
+ reso disponibile al pubblico. Quindi, un CD dell'Electronic Book e' da
+ considerarsi non eseguibile su un lettore CD-i.
+
+ 5.13 Il CD-i esegue il Super Video-CD?
+ Super Video-CD e' un'estensione alla specificazione Video-CD, assegnata
+ dall'originale licenza Video-CD (Philips, Sony, JVC e Matsushita) nel 1999.
+ Il Super Video-CD usa qualita' video DVD-video MPEG-2 su un CD standard che
+ funziona a velocita' di bit variabile superiore alla doppia velocita'(2.8 kbps).
+ Questo permette dai 35 ai 70 minuti di video ad alta qualita' su un regolare CD.
+ Super Video-CD e' un modo economico di fare dischetti che sono leggibili su
+ lettori DVD-Video compatibili usando un regolare CD-Recorder.
+
+ Fin quando il Super Video-CD usa la compressione video MPEG-2 invece della
+ MPEG-1 usata dal CD-i, e a causa del fatto che il CD puo' essere eseguito ad
+ una  velocita' doppia di cui un lettore CD-i non e' capace, il Super Video-CD
+ si deve considerare non eseguibile su lettori CD-i. Percio', l'applicazione
+ CD-i che e' obbligatoria per i Video-CD non e' disponibile su un Super
+ Video-CD.
+
+ 5.14 Il CD-i puo' eseguire Super Audio-CD?
+ Il Super Audio-CD fu introdotto da Philips e Sony in 1999 come il succesore
+ del popolare Audio-CD. Il sistema usa una nuova tecnica di codifica audio
+ chiamata DSD (Direct Stream Digital), che viene ad essere un modo molto piu'
+ vicino all'originale codifica anlogica che non il PCM usato per i normali CD
+ audio. Per conservare grandi quantita' di dati desiderati per DSD, un Super
+ Audio-CD usa un DVD come CD ad alta densita'.
+
+ Una delle grandi caratteristiche di Super Audio-CD e' che permette di
+ implementare sul CD uno strato CD-AUDIO compatibile. Quando un tale strato CD e'
+ disponibile sul dischetto lo si puo' leggere su qualsiasi lettore CD, inclusi
+ sistemi CD-i(naturalmente in qualita' standard CD). Da notare che la creazione
+ di questo strato CD-Audio e' a totale discrezione del produttore, e non e'
+ richiesto per nessun Super Audio-CD.
+ Solo dischetti con questo strato Audio-CD-compatibile possono essere letti da
+ un CD-i.
+ Cercare queste informazione sul case CD.
+
+ 5.15 Posso con il CD-i leggere HDCD, CD-Video, CD-MIDI o CD-Text?
+ HDCD (High Density Compatible Digital) e' un'estensione al CD-Audio che eleva
+ la profondita' di bit del samples da 16 ai 20 bit, permettendo una maggiore
+ qualita' di suono su lettori provvisti di un HDCD decoder. Nessun HDCD-CD puo'
+ essere letto dai normali lettori CD, inclusi i sistemi CD-i. Ad ora nessun
+ lettore CD-i utilizza questa applicazione extra HDCD-information.
+
+ CD-Video (da non confondere con il Video-CD dato che e' un sistema totalmente
+ diverso) e' un CD di 12 cm che contiene 20 minuti di CD-Audio e piu' di 6 min.
+ in formato LaserDisc-analogue video. Il video puo' essere eseguito solamente
+ su lettori LaserDisc, l'audio puo' essere eseguito su qualsiasi lettore CD,
+ incluso il CD-i.
+
+ Il CD-MIDI e' un CD-Audio con tracce MIDI (Musical Instrument Digital Interface)
+ con informazioni nei canali subcode. Questo permette ai dispositivi MIDI come
+ i sintetizzatori di eseguire la musica come da CD. Le applicazioni di CD-MIDI
+ sono molto rare. L'audio di un CD-MIDI puo' essere letto su qualsiasi lettore
+ CD incluso il CD-i.
+
+ Il CD-Text e' un CD-Audio che conserva i nomi di canzoni e artisti nei suoi
+ canali subcode. Questa informazione puo' essere evidenziata sulle schermate
+ di lettori CD compatibili al formato. E' probabile che in futuro i CD-Audio
+ conterranno informazioni CD-Text. Per ora nessun lettore CD-i e' in grado di
+ mostrare informazioni CD-Text. L'audio di un CD CD-Text puo' essere riprodotto
+ su qualsiasi lettore CD, inclusi i lettori CD-i.
+
+ 5.16 Il CD-i legge i DVD?
+ No. Un DVD e' un tipo diverso di CD, basato su un formato ad alta densita'.
+ Per leggere i DVD e' richiesta un'unita' laser di nuova concezione. Un CD-i
+ puo' leggere solo dischetti basati sulla normale tecnica di laser ad infrarossi:
+ compact-disc o CD. E' improbabile che un dispositivo di riproduzione che possa
+ combinare tecnologia CD-i e DVD possa mai diventare disponibile, ne' sara'
+ possibile migliorare un lettore CD-i per poter eseguire DVD fin quando questo
+ debba richiedere la sostituzione dell'intero meccanismo di lettura.
+
+ 5.17 Un lettore DVD puo' eseguire CD CD-i?
+ Un lettore DVD-Video non puo' ripodurre CD CD-i, fin quando esso non includera'
+ tutte le specifiche CD-i quali il sistema operativo richiesto in ROM, la CPU
+ e l'appropriato sistema di decodifica audio e video IC. Molti lettori DVD-Video
+ tuttavia possono eseguire Video-CD, ma usano un'applicazione di riproduzione
+ interna invece dell'applicazione CD-i conservata su ogni CD Video-CD.
+ Quindi, le specifiche addizionali CD-i cosi' come schermi di menu' o sottotitoli
+ non verranno mostrate.
+
+ Un drive DVD-ROM per PC e' fisicamente in grado di leggere CD CD-i, ma fin
+ quando un normale PC e' incapace di eseguire titoli CD-i non si potra' comunque
+ riprodurli. Vedere la sezione 9 di questo FAQ: CD-i su altre piattaforme per
+ ulteriori informazioni.
+
+ 5.18 Sto avendo problemi ad eseguire un CD-Extra (CD-Plus, Enhanced CD).Perche'?
+ Un CD-Audio puo' contenere tracce di dati, per esempio contiene programmi di
+ CD-ROM con info addizionali circa l'artista. Tuttavia, quando un tale CD e'
+ riprodotto su un vecchio lettore CD-Audio, la traccia di dati non sarebbe
+ riconosciuta come tale, risultando nella riproduzione come rumore. Eseguendo
+ questa traccia rumorosa si puo' arrecare danno agli altoparlanti.
+
+ Per evitare questo problema, Philips, Sony e Microsoft stabilito uno standard
+ che fu chiamato inizialmente CD-Plus ma che fu piu' tardi rinominato in CD-Extra
+ a causa del marchio di nomi attinenti. Alcune volte si puo' anche chiamare
+ Enhanced (Music) CD. Il logo e' costituito dal regolare simbolo CD-Digital
+ Audio con un segno '+' vicino a esso. Lo standard e' descritto nel Libro Blu.
+
+ Un CD-Extra e' un detto "stamped multi-session" disc. In essenza si tratta di
+ un CD multi-sessione come quelli che si possono creare con un CD-Recorder, con
+ la musica in sessione 1, e i dati in sessione 2. Ogni lettore CD-Audio puo'
+ leggere solo la prima sessione e quindi riprodurre la musica senza il rischio
+ di eseguire i dati rumorosi. Un computer con un drive CD-ROM multisessione
+ (tutti i drive fabbricati dopo 1992) puo' accedere ai dati nel modo usuale.
+ E questo fu il "problema" del CD-i: fin quando virtualmente tutti i lettori
+ CD-i (con l'eccezione di alcuni vecchi modelli professionali) contengono un
+ multi-session drive, il lettore legge l'ultima sessione (nella quale suppone
+ di trovare applicazioni conformi alla multi-session specification) ma dove
+ non trova nessun dato CD-i ne' tracce audio. Come risultato, il dischetto non
+ funziona. Il CD-i e' troppo intelligente per cadere nel trucco del CD-Extra!
+ Questo problema non puo' essere risolto in nessun modo :-(
+
+ Da ricordare che un lettore CD-i puo' riprodurre tracce CD-Audio di CD-ROM
+ che contengono i dati di CD-ROM in una traccia regolare. Cercare il logo del
+ CD-Extra (CD-Digital Audio+) su un CD per verificare che sia un vero CD-Extra
+ e che quindi non sia utilizzabile su un lettore CD-i.
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.

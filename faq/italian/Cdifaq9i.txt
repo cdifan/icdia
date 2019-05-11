@@ -1,0 +1,166 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 9. CD-i su altre piattaforme
+
+ 9.1 Posso eseguire un titolo CD-i interattivo sul mio PC?
+ No. Diversamente da altri formati CD come CD-Audio e Video-CD, non solo il
+ modo di codificare il materiale audiovisuale sul dischetto e' stato descritto
+ nello standard, ma anche l'intero ambiente di riproduzione. Questo include il
+ sistema operativo, la CPU, i chip di decodifica audio-video, etcetera.
+ Si deve pensare il CD-i come un sistema completamente progettato invece che
+ soltanto un formato CD. Si incontreranno le stesse difficolta' tentando di
+ riprodurlo sia su Macintosh che su un PC Windows.
+
+ E' possibile tuttavia accedere ai contenuti di un disco CD-i su un PC.
+ Vedere la sezione "Posso vedere i contenuti di un CD CD-i sul mio PC?" per
+ ulteriori informazioni.
+
+ 9.2 Il CD-i puo' essere emulato su altre piattaforme come un PC?
+ Un lettore CD-i e' molto difficile da emulare al 100% conformemente al suo
+ standard su un'altra piattaforma. Questo e' dovuto principalmente alle
+ caratteristiche video CD-i molto complesse, che sono eseguite dal hardware di
+ un vero lettore CD-i. Per esempio un hardware base puo' sfumare due immagini
+ invece cio' non e' possibile con un sistema VGA. La CPU di un lettore CD-i
+ (un 68000 a 15 MHz) puo' naturalmente essere emulata sui PC odierni che
+ funzionano a piu' di molte centinaia di megahertzes, ma questo non rigurda
+ l'intero lettore CD-i. Per fare in modo che gli utenti CD-i potessero usare
+ le speciali applicazioni del sistema sul loro PC venne sviluppata una scheda
+ PC/CD-i. Vedere "Cos'e' la scheda PC/CD-i e per cosa venne usata?".
+
+ Naturalmente e' possibile usare i dischi CD-i Bridge su un PC (come Video-CD
+ o Photo-CD), ma in questo caso si necessita di applicazioni per PC separate
+ per accedere ai dati sul dischetto. Un PC non usera' mai l'applicazione CD-i
+ di tali dischetti per eseguirne il contenuto.
+
+ Alcune persone e siti web su Internet dichiarano di lavorare su un emulatore
+ CD-i, ma nessun vero prodotto ne' un esempio beta e' stato mostrato a tutt'oggi.
+ Dubito seriamente che questo possa davvero essere fatto, ma significherebbe
+ comunque un enorme balzo per il sistema CD-i se esistesse un emulatore per PC.
+ Se stai lavorando per questo e hai bisogno di qualche informazione, non esitare
+ a contattarmi.
+
+ 9.3 Cos'era la scheda PC/CD-i e per cosa venne usata?
+ Esisteva una scheda di interfaccia CD-i per Macintosh e PC, permetteva il
+ pieno funzionamento CD-i su qualsiasi computer. La scheda fu fabbricata da
+ International Interactive Media (I2M) in Israele, e venduto sia da Philips che
+ dalla stessa I2M. Conteneva tutti i componenti che sono anche disponibili su
+ qualsiasi lettore CD-i, e non usa nessun componente del PC (come RAM, mouse,
+ etc.). Non integra il normale sistema operativo disponibile sul PC.
+ Fu creata una versione speciale che permetteva l'uso condiviso di un hard disc
+ da parte del sistema CD-i e del computer, questo fu l'ideale per gli sviluppatori
+ CD-i.
+ Essi poterono per esempio creare assets (audio e video) usando i loro strumenti
+ PC, e poi integrarli in un'applicazione CD-i usando per esempio MediaMogul nel
+ modo CD-i.
+
+ La scheda PC/CD-i fu poco richiesta, ne furono fabbricate solo una piccola
+ quantita'. La scheda PC/CD-i fu piu' costosa di un lettore CD-i a-se-stante.
+
+ 9.4 Posso vedere i contenuti di un dischetto CD-i sul mio PC?
+ Un dischetto CD-i e' basato su un filesystem diverso da quelli usato per i
+ sistemi PC. Mentre per gli elaboratori elettronici il formato ISO-9660 e la
+ sua variante Joliet sono i piu' noti e ampiamente usati, i dischetti CD-i
+ usano il formato filesystem basato sul sistema operativo CD-i OS-9.
+ Il filesystem OS-9 permette di avere nomi dei file piu' lunghi di 28 caratteri,
+ e l'uso miscelato di lettere maiuscole e minuscole e fornisce opzioni per
+ indicare i parametri di lettura in OS-9 con uno stile di esecuzione Unix.
+
+ A causa di questo filesystem diverso i file contenuti in un CD CD-i non si
+ possono visitare con un PC equipaggiato con un drive di CD-ROM standard.
+ Questo non fu un problema, fin quando un programma CD-i non ha avuto necessita'
+ di essere usato su un PC con un suo sistema operativo, CPU e codifiche audio e
+ video diverse.
+ Tuttavia, in alcune circostanze sarebbe pratico anche solo per controllare i
+ contenuti di un dischetto, in particolare in ambienti di sviluppo CD-i.
+ Con riconoscenza e' ora disponibile una soluzione a questo problema nella
+ forma del CD-i Filesystem Driver per Windows 95/98, scritto da Vahur Sinijarv
+ della Estonia. Questo driver e' disponibile per il download gratuito nella
+ sezione "PC download for CD-i development" in questo sito.
+
+ Una volta installato, un dischetto CD-i puo' essere visitato in un modo simile
+ ad un dischetto CD-ROM, usando per esempio Windows Explorer. Si puo' vedere il
+ nome dei CD, sfogliare le directory e vedere i nomi dei file.
+
+ Ci sono attualmente alcune limitazioni nel Filesystem Driver, a questo proposito
+ si dovrebbe leggere l'articolo che ho scritto e che e' contenuto in questo sito.
+ Vahur sta ancora continuando a sviluppare il driver, attendiamo una nuova
+ versione che dovrebbe essere rilasciata presto. Controllate questo sito
+ regolarmente, fin quando sara' il sito di distribuzione ufficiale per il CD-i
+ Filesystem Driver.
+
+ 9.5 Cos'e' un file IFF?
+ Normalmente tutte le informazioni conservate su un CD CD-io dischetto si
+ trovano in un grande file in Real Time. Quando, come in questo caso, non e'
+ possibile usare questo file su un PC. Ma qualche volta, file audio e video
+ individuali sono conservati sul dischetto in formato CD-i IFF (Interchangable
+ Format of file). Questo e' il formato usato nelle confezioni CD-i authoring
+ e negli studios. Normalmente e possibile riconoscere questi file dalle seguenti
+ estensioni: .d .cl3 .cl4 .cl7 .cl8 .rl3 .rl7 per il video (dove d rappresenta
+ DYUV, cl per CLUT e rl per Run Lenght Encoding), e .aas .asm .abm .abs .acm
+ .acs per l'audio (dove la seconda lettera indica il livello di ADPCM usato, e
+ la seguente indica m per mono e s per stereo).
+
+ 9.6 Come posso osservare le immagini di un disco CD-i sul mio PC?
+ Quando le immagini contenute su un disco CD-i sono conservate in formato IFF
+ sul dischetto invece di un unico file in realtime (vedere "Cos'e' un file
+ IFF?"), e' possibile vedere le immagini usando Robin Burrow's CDiView, o
+ convertendo le immagini in formato PC standard usando l'OptImage Image
+ Conversion Utilities (entrambi disponibili nella sezione "PC downloads for
+ CD-i development" in questo sito).
+
+ Da notare che il CD-i Filesystem Driver per Windows (Rivedere "Posso vedere
+ i contenuti di un dischetto CD-i sul mio PC?") ha bisogno di essere installato
+ sul PC per poter accedere ad un dischetto CD-i!
+
+ 9.7 Come posso ascoltare l'audio di un dischetto CD-i sul mio PC?
+ Quando i clips audio ADPCM sono conservati sul CD in formato IFF invece che
+ in un file in realtime (vedere "Cos'e' un file IFF?"), e' possibile convertire
+ questi in un formato PC standard usando l'OptImage Audio Conversion Utilities
+ (entrambi disponibili nella sezione "PC downloads for CD-i development" su
+ questo sito).
+ Attualmente non c'e' nessuna utility di riproduzione disponibile che permetta
+ di eseguire immediatamente i file senza convertirli.
+
+ Se l'audio conservato sul dischetto e' in formato MPEG (normalmente allegato
+ ad un MPEG video, ma questo non e' obbligatorio), e' possibile eseguirlo
+ direttamente o convertendolo in altri formati usando un'ampia varieta' di
+ strumenti disponibili sulla piattaforma PC.
+ Per riprodurre l'audio MPEG su PC si puo' utilizzare Microsoft Media Player
+ 6.0 o versioni seguenti.
+
+ Da notare che il CD-i Filesystem Driver per Windows (rivedere "Posso vedere il
+ contenuto di un dischetto CD-i sul mio PC?") ha bisogno di essere installato
+ sul PC per permettere di accedere ad un qualsiasi dischetto CD-i!
+
+ 9.8 Come posso vedere sequenze Digital Video di un dischetto CD-i sul mio PC?
+ E' possibile vedere i clips in Full Screen conservati su un dischetto CD-i
+ usando un'ampia varieta' di strumenti, come il Microsoft Media Player per
+ Windows nella versione 6.0 o seguenti. Questa applicazione e' disponibile per
+ il download gratuito dal sito della Microsoft. Media Player permette di vedere
+ un'ampia varieta' di formati Media, inclusi l'audio ed il video in formato MPEG
+ utilizzato tra gli altri anche dal CD-i. Il CD-i permette una grande varieta'
+ di possibili combinazioni di velocita' di dati audio e video, e quindi audio
+ e video di diversa qualita', ma nel contempo riesce a riprodurre per esempio i
+ Video-CD dove il bitrate (velocita' di trasferimento dati) audio e video sono
+ fissati nella masterizzazione. Media Player esegue la maggior parte dei video
+ tuttavia, qualche volta, quando una sequenza MPEG e' allacciata con altro
+ materiale, l'immagine puo' sembrare disturbata.
+
+ Spesso si puo' riconoscere una sequenza MPEG dalla directory in cui e' contenuta,
+ per esempio FMV o VIDEOS. Anche cercando l'estensione .rtf, che rappresenta
+ Real Time File (e non Rich Text Format!). I file .rtf potrebbero essere delle
+ sequenze video MPEG, ma anche altro, non-playable media file.
+ Bisogna semplicemente provare a caricare il file nel Media Player. Da notare
+ che in questo modo e' possibile vedere film che furono rilasciati nel formato
+ CD-i prima del Video-CD, ma anche sequenze Video di altri titoli come i giochi.
+
+ Da notare che il Driver CD-i Filesystem per Windows (Vedere "Posso vedere i
+ contenuti di un dischetto CD-i sul mio PC?") ha bisogno di essere installato
+ nel PC per permettere l'accesso ai dischetti CD-i!
+
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.

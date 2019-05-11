@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+
+<TITLE>Tech Note : TT-5</TITLE>
+
+
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<BR>
+<BR>
+
+					<H2><CENTER>Tech Note : TT-5</CENTER></H2>
+					   <CENTER>11/1/94</CENTER>
+<P>
+<BR>
+
+<B>TOPIC:</B>
+<P>
+How to set the sticky attribute on Plugin or other OS-9 modules.
+<P>
+<B>OVERVIEW:</B>
+<P>
+OS-9 looks to memory FIRST to find a module.  If it fails to find it in memory, OS-9 attempts to load it from the disc.
+<P>
+There are four ways to use a module in MediaMogul:
+<P>
+&nbsp;&nbsp;Foreground Call, Non-sticky module: 
+<P>
+A "Call" to the module loads it from the disc, runs it, then after running offloads the module from memory and continues on in the script.  The module must be loaded from the disc EVERY time it is used.
+<P>
+&nbsp;&nbsp;Background Call, Non-Sticky module:
+<P>
+A "Call_bg" loads the module in memory, runs the module, LEAVES it running in memory, then returns to the script. The module usually stays running in memory until the player is shutoff, or until you return to the Script Writer.
+<P>
+&nbsp;&nbsp;Foreground Call, Sticky module:
+<P>
+A "Call" to the module loads it from the disc, runs it, but does NOT offload it.  The module is not running at this point but is IN memory.  The next time a "Call" to the same module is done, OS-9 looks to memory for the module, finds it and runs it.  It does not have to go through loading it from the disc. 
+<P>
+&nbsp;&nbsp;Background, Sticky Module:
+<P>
+A "Call_bg" loads the module in memory, runs the module, LEAVES it running, then returns to the script. The module usually stays running in memory until the player is shutoff, or until you return to the Script Writer.  Setting "sticky" has no real advantage here.
+<P>
+<BR>
+In many of the Plugin manuals they refer to setting the "sticky" bit in order 
+to keep a normally "foreground called" module around in memory after it is loaded for the title.  Being sticky speeds the response of the Plugin as it does not have to load the modules from the CD every time they are required. It can however occupy enough memory to prevent other Plugins from running properly.  See the MediaMogul or Script2Disc documentation for details on when and where 'sticky' is desirable.
+<P>
+Since many developers do not feel comfortable in "playing" with modules, what 
+follows are specific instructions for setting the sticky bit.
+<P>
+<B>DISCUSSION:</B>
+<P>
+1. Make a backup copy of the module.  For example:
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>copy no_pointer_menu no_pointer_menu.bak</CODE>
+<P>
+2. Perform an ident on the original copy.  For example:
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>ident no_pointer_menu</CODE>
+<P>
+The results will look something like:
+
+<PRE><CODE>	Header for:      no_pointer_menu
+	Module size:     $2376       #9078
+	Owner:           0.0
+	Module CRC:      $F7B1B3     Good CRC
+	Header parity:   $134D       Good parity
+	Edition:         $12C        #300
+	Ty/La At/Rev     $101        $8009  &lt;--------------------line of interest
+	Permission:      $555        -----e-r-e-r-e-r
+	Exec off:        $58         #88
+	Data size:       $EE8        #3816
+	Stack size:      $C00        #3072
+	Init. data off:  $2210       #8720
+	Data ref. off:   $235A       #9050
+	Prog Mod, 68000 obj, Sharable</PRE></CODE>        
+<P>
+The number At/Rev number is what we are after (8009 in this case).  The first 
+two digits (80) represent the module attribute (shareable, sticky...) and the 
+last two digits (09) the revision level as set by the programmer.  We will 
+alter ONLY the attribute.  For the attribute versus value:
+
+<PRE><CODE>	Shareable (most common) =          80
+	Sticky =                           40
+	Shareable + Sticky =               C0</PRE></CODE>
+<P>
+2. To alter the attribute use 'fixmod' and the -ua option. For example:
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>fixmod -ua=C009 no_pointer_menu</CODE>
+<P>
+changes the attribute to Shareable + Sticky.  We leave the revision portion of 
+the number the same (09 in this example).
+<P>
+Feel free to do an ident on the module to verify that the change took.  The 
+last line of the ident should say:
+
+<PRE><CODE>	Prog Mod, 68000 obj, Sharable Sticky</PRE></CODE>
+<P>
+or something to that effect, and the At/Rev number should have changed (to 
+C009 in this example)
+<P>
+<BR>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.4 -->
+<!-- Original Tech Note by OptImage Support -->
+</BODY>
+</HTML>

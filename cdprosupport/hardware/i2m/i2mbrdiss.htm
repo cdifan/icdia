@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+
+<TITLE>Some issues with I2m Authoring boards</TITLE>
+
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="i2m.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<BR>
+<P>
+<H2><CENTER>Some issues with I2m Authoring boards</CENTER></H2>
+<P>
+<BR>
+<B>Overview:</B>
+<P>
+<BR>
+This page contains information regarding use of the I2m Authoring boards for Macintosh and PC.  It will be updated as new or additional information becomes available.
+<P>
+<HR>
+<B>Macintosh issues</B>
+<P>
+If your Macintosh hangs during startup when the icon for the !CDIPlaybackINIT extension appears during startup, make sure that 32-bit Addressing is turned On in the Memory Control Panel.  This MUST be on for the !CDIPlaybackINIT extension to load correctly.
+<P>
+<B> NOTE</B>: You may need to remove the I2m board from your Macintosh in order to start it up to make this change in the Memory Control Panel.
+<P>
+<BR>
+CDIPlayback 2.2.1 for the Macintosh has been tested and found to work with an Apple 4x CD600 CD-ROM drive.  Using a Power Macintosh 7100/66, the test was conducted running System 7.5.3 and an Apple CD600e external CD-ROM drive.  Users attempting to use previous versions of the CDIPlayback software and/or older versions of the Mac OS reported problems installing MediaMogul from the CD when using 4x CD-ROM drives.
+<P>
+<B> NOTE</B>: This has not been tested with other 4x CD-ROM drives or with other versions of the Macintosh operating system.  You must have Apple CD-ROM drivers v. 5.1.2 or newer to use the CD600.  The current version of these is 5.1.7.
+<P>
+<BR>
+If you are using CD-i mouse emulation on a Macintosh, you may find that the cursor on your CD-i monitor will sometimres appear to be constrained, e.g., it will not reach certain areas of the screen.  This is caused by the cursor on the Macintosh monitor reaching the edge of the screen.  Simply move the mouse so the cursor on the Macintosh screen is not "running into" the edge of the screen, and the CD-i cursor will now function correctly.
+<P>
+<HR>
+<B>PC issues</B>
+<P>
+In general, using a PC mouse to emulate a CD-i mouse does not work well.  We recommend that you use a CD-i mouse or trackerball, rather than the emulation function.
+<P>
+<HR>
+<B>Issues affecting both platforms</B>
+<P>
+Due to changes in the software, mixing versions of CDIPlayback and MediaMogul is not recommended, especially using an older CDIPlayback with a newer version of MediaMogul.  Newer CDIPlayback software may work with older versions of MediaMogul, but some menu selections may not function and/or macros may need to be edited to make them work.
+<P>
+<BR>
+If Start MediaMogul does not work, make sure your /h0 directory has been correctly set.  You may need to reset this.
+<P>
+<BR>
+When you start MediaMogul, if debug messages are turned on in CDIPlayback, you will see a 216 error referencing a file named startup.  This is normal.  The startup file is not provided.  You may create one if you wish.  This file allows you to execute OS-9 commands from the terminal window prior to MediaMogul starting.
+<P>
+<BR>
+If no command prompt appears in the CDIPlayback terminal wimndow on your computer monitor, check that the serial cable connecting the I2m board and your computer is firmly plugged in at both ends, and that it is connected to the correct port(s).  This cable is required for communication between the CDIPlayback terminal window and the board.
+<P>
+<BR>
+If you are unable to type in MediaMogul, make sure you have an active cursor in the CDIPlayback window on your computer monitor.  This is required before the keyboard is recognized by the I2m board.  If you do not have an active cursor, click your computer mouse with the cursor in the terminal window to get an active cursor.
+<P>
+<BR>
+<BR>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="i2m.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.2 -->
+</BODY>
+</HTML>

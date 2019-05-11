@@ -1,0 +1,171 @@
+<HTML>
+<TITLE>Adding Miscellaneous Files to VCD 2.0 Toolkit Discs</TITLE>
+
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="vcd2x.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+
+<HEAD><CENTER><TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#66CC99">
+<TR>
+	<TH><FONT SIZE=+3>Adding Miscellaneous Files to VCD 2.0 Toolkit Discs</FONT></TH>
+</TR>
+</TABLE></CENTER></HEAD><P>
+<BODY BGCOLOR="FFFFFF">
+Philips' VCD 2.0 Toolkits were designed to allow easy GUI and drag-and-drop creation of VCD titles, and as such are not equipped to allow adding custom files and applications to a VCD disc.   Such files <B>can</B> be added, but require the use of a second tool, <B>VCDMaster</B>, in order to accomplish it.  VCDMaster comes with the Toolkits, but there are no instuctions in how to use it.  Documentation may be purchased, but at extra cost.  The procedure below explains how to add files to a Toolkit disc, but is <B>unsupported</B> (unless support for VCDMaster is purchased).  Most of the procedure applies to both Mac and PC Toolkits, with the following exceptions:<BR>
+<FONT SIZE=+3>Mac:</FONT>
+<OL>
+<LI>VCDMaster is contained in the Drivers folder within the VCD2TK folder.
+<LI>There are 3 ways to put a Mac <I>application</I> on a VCD disc.  In order of difficulty:
+<OL TYPE="a">
+<LI>Binhex or MacBinary encode the application before putting it on the disc.   Then the encoded files are referenced in the<I> master script</I>, as described in Step 3. This method requires the end-user to decode the application first, using StuffIt Expander, etc.   This is by far the easiest and the recommended procedure.
+<LI>Create a Mac HFS/CD-ROM XA hybrid, with the Mac applications on the HFS volume.  A VCD disc is basically an implemenation of the CD-ROM XA standard.  Technically, a disc made this way is not a true VCD disc.  This method is not easy to implement, however, as recording packages are not equipped to make a VCD hybrid disc, and may require a special extension in order to read the HFS volume.
+<LI>Use the <I>Apple Extensions</I> to the CD-ROM standard to put the Mac application on the XA volume.  This is possible, but requires custom programming and is completely unsupported by us.</OL>
+<FONT COLOR="#333399">
+Note:Creating a Mac HFS/CD-ROM XA <I>multivolume</I>(i.e. multisession) disc has been found <B>not</B> to work.  Only the first session is accessible.  Even if it did work,  in order to read the HFS session the end-user would need the <I>Multisession Mounter</I>, or similar, extension installed on their Mac, and thus this method would not be practical for wide distribution.</FONT>
+<LI>Text and other files containing only a data fork may be placed in the XA volume by modifying the <B><I>master script</I></B> produced during the VCD 2.0 Toolkit build process. This procedure is described below.
+</OL>
+<FONT SIZE=+3>PC:</FONT>
+<OL>
+<LI>The VCDMaster front-end application itself is not included with VCD 2.0 Toolkit for PC, only the dll.  The
+front-end may be downloaded in the PC file section in the FTP area of this website.
+
+<LI>Data, text, and application files may be placed in the XA volume by modifying the <B><I>master script</I></B> produced during the VCD 2.0 Toolkit build process. This procedure is described below.
+</OL>
+
+<FONT SIZE=+4>Procedure:</FONT>
+<OL>
+<B><LI></B>Create your VCD title using the Toolkit in the normal manner.
+<B><LI></B>Start the build process.  When the status window indicates that it has finished writing the <I>master script</I>, stop the build process.
+<B><LI></B>There should now be a master script in the destination folder.  The name of this script file should be the same as the VCD volume name, with a <B>.msc</B> extension attached.  This script file is a normal text file that may be edited in any text editor.
+<B><LI></B>Using a text editor, follow the example below to add additional lines to the master script, representing the desired files to be added. Basically the procedure can be broken down as:
+<OL TYPE="a">
+<B><LI></B>Associate a file on a hard drive with an internal <B>identifier</B> in the files definition section.
+<B><LI></B>Later, in the directory structure section, cross-reference that identifier with a file to be created <I>on the cd.</I>
+</OL>
+<B><LI></B>Start VCDMaster, and Open the newly edited master script under the File menu.  This will create the .cd disc image.
+</OL>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#FF99CC">
+<TR>
+	<TD><FONT SIZE=+3 COLOR="#663333">Sample master script, new_trak.msc</FONT><BR></TD>
+</TR>
+</TABLE>
+options: -vcd2<BR>
+define<BR>
+  album	"NEW_TRAK"<BR>
+  publisher	""<BR>
+  preparer	""<BR>
+  volume	"NEW_TRAK_1" in "H:/CDIMAGES/NEW_TRAK_1.cd"<BR>
+  1 of 1<BR>
+  disc_restrict 0<BR>
+<BR>
+  copyright	 file _copyright_ from "D:/VCD2TK/CDI_APP/copyrght.txt"<BR>
+  abstract	 file _abstract_ from "D:/VCD2TK/CDI_APP/abstract.txt"<BR>
+  biblio	 file _biblio_ from "D:/VCD2TK/CDI_APP/bibliogr.txt"<BR>
+<BR>
+  green file CDI_IMAG_RTF_1  from "D:/VCD2TK/CDI_APP/CDI_IMAG.RTF"<BR>
+  yellow file CDI_TEXT_FNT_1  from "D:/VCD2TK/CDI_APP/CDI_TEXT.FNT"<BR>
+  application file CDI_VCD_APP_1 rounded  from "D:/VCD2TK/CDI_APP/CDI_VCD.APP"<BR>
+  yellow file CDI_VCD_CFG_1  from "D:/VCD2TK/CDI_APP/custom.txt"<BR>
+<BR><BR>
+<FONT COLOR="#333399">!Custom additional files defined here.  Notice that the forward slash is used as the directory separator.</FONT><BR>
+<FONT COLOR="#FF0000">  yellow file FILE01 from "C:/FILES/CATS.JPG"<FONT COLOR="#333399"> !See the<A HREF="../../cdi/s2d/cdi_xabr_scr.htm"> XA script example</A> for information on identifier naming.</FONT><BR>
+  yellow file FILE02 from "C:/FILES/MICE.JPG"<BR>
+  yellow file FILE03 from "C:/FILES/DOGS.JPG"<BR>
+  yellow file FILE04 from "C:/FILES/FLEAS.JPG"</FONT><BR>
+<FONT COLOR="#333399">!End of additional files</FONT><BR>
+<BR><BR>
+<FONT COLOR="#333399">!On a Mac, the script would look like this.  Notice that a colon (:) is used as the directory separator.</FONT><BR>
+<FONT COLOR="#FF0000">  yellow file FILE01 from "HD:FILES:CATS.JPG"<FONT COLOR="#333399"> !See the<A HREF="../../cdi/s2d/cdi_xabr_scr.htm"> XA script example</A> for information on identifier naming.</FONT><BR>
+  yellow file FILE02 from "HD:FILES:MICE.JPG"<BR>
+  yellow file FILE03 from "HD:FILES:DOGS.JPG"<BR>
+  yellow file FILE04 from "HD:FILES:FLEAS.JPG"</FONT><BR>
+<FONT COLOR="#333399">!End of additional files</FONT><BR>
+<BR><BR>
+  avseq_dat file alaska_mmd from mpeg "r:/samples/assets/mpeg/alaska.mmd"<BR>
+  avseq_dat file alaskaof_mmd from mpeg "r:/samples/assets/mpeg/alaskaof.mmd"<BR>
+  avseq_dat file jamaica_mmd from mpeg "r:/samples/assets/mpeg/jamaica.mmd"<BR>
+  avseq_dat file kauai_mmd from mpeg "r:/samples/assets/mpeg/kauai.mmd"<BR>
+  avseq_dat file orlando_mmd from mpeg "r:/samples/assets/mpeg/orlando.mmd"<BR>
+  avseq_dat file orlandof_mmd from mpeg "r:/samples/assets/mpeg/orlandof.mmd"<BR>
+  avseq_dat file russia_mmd from mpeg "r:/samples/assets/mpeg/russia.mmd"<BR>
+  avseq_dat file russiaof_mmd from mpeg "r:/samples/assets/mpeg/russiaof.mmd"<BR>
+  avseq_dat file stlucia_mmd from mpeg "r:/samples/assets/mpeg/stlucia.mmd"<BR>
+<BR>
+  seg_play_item file _malta_menu_pi_ from wb_still "H:/CDIMAGES/jamaica.mms"<BR>
+<BR>
+<BR>
+!1<BR>
+  play_list Sequence_1<BR>
+	next	 Menu_1<BR>
+	previous Menu_1<BR>
+	return	 Sequence_1<BR>
+ 	play_item alaska_mmd<BR>
+ 	play_item alaskaof_mmd<BR>
+ 	play_item jamaica_mmd<BR>
+ 	play_item kauai_mmd<BR>
+ 	play_item orlando_mmd<BR>
+ 	play_item orlandof_mmd<BR>
+ 	play_item russia_mmd<BR>
+ 	play_item russiaof_mmd<BR>
+ 	play_item stlucia_mmd<BR>
+!2<BR>
+  sel_list Menu_1 play_item _malta_menu_pi_<BR>
+	repeat 1 then wait forever then Menu_1<BR>
+	default 	Sequence_1 	1, 0, 1, 0<BR>
+	next	 	Sequence_1 	1, 0, 1, 0<BR>
+	previous 	Menu_1 	1, 0, 1, 0<BR>
+	return	 	Menu_1 	1, 0, 1, 0<BR>
+	none <BR>
+<BR>
+<BR>
+! disc file structure definition <BR>
+ {<BR>
+   "COPYRIGH.TXT;1"	protection 0x111 from _copyright_<BR>
+   "ABSTRACT.TXT;1"	protection 0x111 from _abstract_<BR>
+   "BIBLIOGR.TXT;1"	protection 0x111 from _biblio_<BR><BR>
+<FONT COLOR="#333399">!Directory structure for the additional files defined here.   This method puts the files at the root of the cd. <BR>!See below if putting the files in their own directory is desired.</FONT><BR>
+<FONT COLOR="#FF0000"> "CATS.JPG"  from   FILE01</FONT>  <FONT COLOR="#333399">!See the<A HREF="../../cdi/s2d/cdi_xabr_scr.htm"> XA script example</A> for information on file naming.</FONT><BR>
+<FONT COLOR="#FF0000"> "MICE.JPG"  from   FILE02<BR>
+ "DOGS.JPG"  from  FILE03<BR>
+ "FLEAS.JPG" from  FILE04</FONT><BR>
+<FONT COLOR="#333399">!End of additional files</FONT><BR>
+<BR>
+  "CDI" {<BR>
+    "CDI_IMAG.RTF;1" 	from CDI_IMAG_RTF_1<BR>
+    "CDI_TEXT.FNT;1" 	from CDI_TEXT_FNT_1<BR>
+    "CDI_VCD.APP;1" 	from CDI_VCD_APP_1<BR>
+    "CDI_VCD.CFG;1" 	from CDI_VCD_CFG_1<BR>
+   }<BR>
+<BR>
+  "MPEGAV" {<BR>
+    "AVSEQ01.DAT;1"	 from alaska_mmd<BR>
+    "AVSEQ02.DAT;1"	 from alaskaof_mmd<BR>
+    "AVSEQ03.DAT;1"	 from jamaica_mmd<BR>
+    "AVSEQ04.DAT;1"	 from kauai_mmd<BR>
+    "AVSEQ05.DAT;1"	 from orlando_mmd<BR>
+    "AVSEQ06.DAT;1"	 from orlandof_mmd<BR>
+    "AVSEQ07.DAT;1"	 from russia_mmd<BR>
+    "AVSEQ08.DAT;1"	 from russiaof_mmd<BR>
+    "AVSEQ09.DAT;1"	 from stlucia_mmd<BR>
+  }<BR><BR>
+<FONT COLOR="#333399">!Or the files may be placed here.  This method will place the additional files in their own directory, "FILES".</FONT><BR>
+<FONT COLOR="#FF0000">"FILES" {<BR>
+ "CATS.JPG"  from   FILE01  </FONT><FONT COLOR="#333399"> !See the<A HREF="../../cdi/s2d/cdi_xabr_scr.htm"> XA script example</A> for information on file naming.</FONT><BR>
+<FONT COLOR="#FF0000"> "MICE.JPG"  from   FILE02<BR>
+ "DOGS.JPG"  from  FILE03<BR>
+ "FLEAS.JPG" from  FILE04<BR>
+}</FONT><BR>
+<FONT COLOR="#333399">!End of additional files</FONT><BR>
+<BR>
+  }<BR>
+<P>
+<HR>
+<P>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="vcd2x.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+</BODY>
+</HTML>

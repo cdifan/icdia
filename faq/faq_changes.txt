@@ -1,0 +1,5 @@
+vroeg: 9.2
+26/4: 6.1
+4/6: 6.4 opgedeeld in 6.4 en 6.4.1
+18/6: toegevoegd: 6.3.4
+23/7: 6.3.4 VCDimage easy erbij

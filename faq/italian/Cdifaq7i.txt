@@ -1,0 +1,391 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 7. CD-i Authoring
+
+ 7.1 Generalmente com'e' fatto un CD-i authoring?
+ La creazione di un CD per CD-i autorizzato implica molte operazioni di cui
+ alcune vanno compiute in una certa sequenza mentre altre contemporaneamente.
+ Generalmente si inizia con la fase di progettazione. Il produttore di un
+ dischetto decide come dovrebbe essere, con che tipo di interattivita',
+ che schermi vedra' l'utente, che audio sara' utilizzato, etc.
+ Quindi si passa alla creazione del materiale, i dati (audio e video).
+ Questi normalmente sono fatti usando software di editing video e audio, e poi
+ convertiti in formato audio e video CD-i.
+ Ora, si dovrebbe scrivere il codice del programma o, in caso di strumenti di
+ authoring di alto livello, le parti audio e video del programma si dovrebbero
+ assestare per il giusto funzionamento del suddetto.
+ Il codice di programma o script ha quindi bisogno di essere convertito nel
+ formato CD-i, questo processo e' normalmente chiamato disc building (vedere
+ "Cos'e' un disc building?). Questo dischetto costruito risulta quindi in una
+ immagine di dischetto (Disc Image) che puo' essere eseguito usando un'emulatore
+ (vedere Cos'e' un emulatore CD-i?), masterizzato su un CD-Recorder o spedito
+ ad una fabbrica per la duplicazione.
+
+ 7.2 Cos'e' un disc building?
+ Un passo critico nello sviluppo di un titolo CD-i e' il cosiddetto processo di
+ disc building. A causa del fatto che il CD-i dipende quasi interamente dal
+ suo comportamento in real-time(vedere "Cos'e' un sistema in real-time" nella
+ sezione 3 di queste FAQ), e' molto importante che l'audio e il video siano
+ messi sul CD nel modo corretto. Diversamente da altri sistemi non-realtime
+ come i PC che sono dotati di un drive di CD-ROM che puo' conservare grandi
+ quantita' di dati audio e video in memoria per riprodurli in seguito (e quindi
+ richiedendo sistemi piu' complicati e costosi), un lettore CD-i riproduce
+ i dati audio e video in tempo reale mentre li sta leggendo dal CD.
+ Per realizzare simultaneamente la riproduzione audio-video e l'acquisizione
+ di dati il CD-i usa un formato a settori intelligenti (vedere "Cos'e' un
+ settore interleaving?" nella sezione 3 di queste FAQ).
+
+ Naturalmente, il processo di mettere tutti i bit di informazione nel corretto
+ ordine non e' fatto manualmente (sebbene la responsabilita' di creare un CD
+ per CD-i con il giusto flusso di dati audio e video sia obbligo del produttore)
+ Il processo della creazione di un file che rappresenta i contenuti di un CD
+ CD-i viene chiamato disc building. Il file risultante e' normalmente detto CD-i
+ Imagine of Disc. Il Disc Imagine puo' essere eseguito usando un emulatore
+ (vedere "Cos'e' un CD-i Emulator?") o creato con un CD-R e poi inserito in
+ un vero lettore CD-i per testarne il comportamento.
+
+ 7.3 Cos'e' un CD-i authoring o lettore per lo sviluppo?
+ Un lettore CD-i authoring e' un lettore CD-i che puo' eseguire CD CD-i in modo
+ normale, ma che ha alcune vaste caratteristiche aggiunte per authoring studios
+ CD-i. Un lettore authoring puo' essere per esempio collegato ad un emulatore
+ (vedere "Cos'e' un CD-i Emulator?") per il controllo dei dati cosi' come sono
+ letti dal CD. Inoltre, un lettore authoring e' fornito di una porta SCSI
+ per collegare dispositivi SCSI come hard-disc o un CD-Recorder o un connettore
+ ethernet coassiale per un aggancio ad una rete locale.
+
+ C'erano due differenti modelli di lettori CD-i authoring marchiati Philips.
+ Il primo modello fu il CDI 180/181/182 sistema modulare CD-i (che fu anche il
+ primo sistema CD-i rilasciato). Il CDI-182 Modul of Expansion aggiunse le
+ utilita' authoring (la porta SCSI, la porta ethernet, una porta parallela e
+ 1 MB di extra RAM) al sistema generico. Piu' tardi, il CDI 605/00 sostitui'
+ questo sistema come un lettore authoring all-in-one. Il CDI 605 consiste di
+ 5 MB di RAM, con porte ethernet, SCSI, parallele, extra seriali e contenente
+ molti strumenti di diagnosi e di emulazione costruite in ROM. A causa del fatto
+ che entrambe questi lettori non hanno potuto essere espansi con una cartuccia
+ Digital Video venne rilasciata una nuova versione del CDI 605 denominata
+ CDI 605T/20 che forniva lo spazio per un'espansione Digital Video.
+
+ Vedere i lettori Philips professionali e authoring contenuti nella sezione
+ "Complete CD-i Players Overview"  in questo sito web per un paragone.
+
+ 7.4 Cos'e' un CD-i Emulator?
+ Un CD-i Emulator e' un sistema che contiene una grande hard disc ed una
+ circuiteria di controllo che fornisce un flusso di dati audio, video di
+ programma contenuto in un lettore CD-i authoring e che simula la stessa lettura
+ prodotta da un CD. L'emulatore si prende cura dell'interleaving dei dati,
+ crea il formato del settore e continua l'avanzamento di dati conformemente
+ alla specificazione come dettata nel Libro Verde. Quando un CD-i Imagine of
+ Disc sta per essere creato, esso puo' essere letto dall'emulatore ed eseguito
+ su un lettore CD-i authoring per testarne i risultati. Comunque sia per poter
+ fare questi test si necessita di questo sistema o di un CD-R perche' se non
+ si puo' testare un CD CD-i nel comportamento in realtime a livello di programma
+ non si puo' essere certi dei risultati durante il lavoro (i dati audio, video
+ e di programma in questo momento non sono ancora interagenti).
+ Quando questo sistema CD-i authoring divenne disponibile (primi anni '90),
+ la tecnologia CD-R era agli inizi ed un CD masterizzabile CD-R costava circa
+ 50 dollari al pezzo, e quindi un CD-i Emulator fu la soluzione piu' economica
+ per gli studios.
+
+ Due versioni dell'Emulatore furono vendute da OptImage. Entrambe contengono
+ un 1.2 GB di hard disc (abbastanza per contenere tutti i dati di un CD nella
+ sua forma originale e lo spazio richiesto per un CD-i Imagine of Disc pieno).
+ L'emulatore era basato sulla stessa versione di OS-9 usata nei lettori CD-i,
+ ed aveva lo stesso contenuto di 2 MB di memoria. Il primo modello fu generalmente
+ ricordato come E1 (probabilmente Edition 1), lavorava con un 68020 a 20 MHz e
+ conteneva un floppy drive, i creatori consideravano piu' conveniente l'avvio
+ da floppy disc, possedeva parecchi tipi di connettori "confusi" sul retro.
+ Il E2, che fu rilasciato alcuni anni piu' tardi lavorava con un 68340 a 24 MHz,
+ mancava il floppy drive dato che tutto il software richiesto era contenuto in
+ ROM, aveva un connettore piu' semplice per i collegamenti a lettori CD-i
+ authoring.
+
+ Entrambe le versioni dell'Emulator possono anche essere usate per l'emulazione
+ di altri CD CD-i compatibili come Photo-CD e Video-CD. Qualche studios per
+ Video-CD e' anche conosciuto per usare un lettore CD-i di sviluppo o un
+ emulatore nel loro controllo qualita'.
+
+ 7.5 Ho bisogno di un hardware speciale per creare un titolo CD-i?
+ In teoria: no. Se si possiede il CD-i authoring software adeguato che esegue
+ su un PC (come la confezione Presentation CD che puo' essere scaricata dalla
+ pagina PC/Windows download in questo website, o la confezione della Philips
+ ShowBuilder for Windows), chiunque puo' produrre un titolo CD-i interamente
+ senza hardware addizionale oltre al PC. Bisogna comunque tenere a mente, che
+ i risultati ottenuti da questi strumenti authoring sono molto lineari e senza
+ molte caratteristiche interattive. Anche se si possiede uno strumento che
+ fornisce un modo di creare un titolo CD-i molto complesso su un PC, non si e'
+ ancora in grado di testarne il comportamento su un lettore CD-i, fin quando
+ il CD-i non puo' essere "emulato" da qualsiasi PC. Diversi CD-R dovrebbero
+ essere masterizzati nelle varie fasi di sviluppo, ma cio' non sarebbe
+ conveniente.
+
+ Tutti i titoli CD-i disponibili sono creati con strumenti di authoring di
+ basso livello su un PC, Macinthosh, Sun o sistema OS-9 che fu collegato a un
+ lettore CD-i per sviluppo e emulazione, o interamente su un lettore CD-i di
+ sviluppo usando uno strumento di authoring di alto livello come MediaMogul.
+ Rivedere "Quali strumenti di authoring furono disponibili per CD-i?" per
+ ulteriori informazioni circa gli strumenti disponibili.
+
+ 7.6 Cos'e' OptImage?
+ OptImage fu il nome della piu' grande compagnia che ha venduto CD-i authoring
+ e soluzioni nella forma di hardware e prodotti di software e supporti per lo
+ sviluppo.
+ Fu creata da Philips, Microware (il creatore del sistema operativo OS-9 usato
+ nel CD-i) e Sun Microsystems (creatore delle workstation che furono usate nello
+ sviluppo dei titoli CD-i) alla fine degli anni '80.
+ Essi hanno sviluppato vari strumenti, e dai primi anni '90 Philips e Microware
+ sono diventate proprietarie della compagnia. Nel 1995 OptImage divento' una
+ sussidiaria posseduta totalmente da Philips Media, che da allora possiede il
+ 100% della compagnia.
+
+ OptImage creo' gli strumenti con cui furono creati quasi tutti i titoli CD-i
+ disponibili. Sebbene altre compagnie crearono strumenti CD-i (cosi' come la
+ ABCD-i di Script System), nessuno di essi divenne popolare e ampiamente usato
+ come OptImage Balboa Runtime Library e MediaMogul. Altra compagnia ben nota
+ per aver creato CD-i authoring software oltre a OptImage fu Multimedia Technology
+ Center. Il loro CDMotion per CD-i e ViaCD-i sono pienamente basati su Windows
+ e non hanno bisogno di nessun hardware speciale ne' premastering o software
+ di conversione.
+
+ 7.7 Quali strumenti di authoring furono disponibili per CD-i?
+ Un'ampia varieta' di strumenti authoring furono disponibili ma solamente da
+ OptImage. Il software authoring fu sviluppato in alto livello e gli strumenti
+ in basso livello. Alto livello significa che un'intera quantita' degli aspetti
+ tecnici viene curata dal sistema lasciando lo sviluppatore il solo compito di
+ concentrarsi sulla parte creativa del processo di sviluppo, e strumenti di
+ basso livello che richiedono molta piu' conoscenza tecnica da parte del
+ programmatore ma che permettono una molto piu' vasta varieta' di possibilita'.
+ Inoltre per questi strumenti fu disponibile parecchio software addizionale,
+ cosi' come strumenti per convertire audio e video dal formato PC al CD-i.
+
+ Gli strumenti di authoring piu' conosciuti sono:
+
+ *Balboa Runtime Library
+ OptImage ha creato il Balboa Runtime Library per programmatori che usano il C.
+ Balboa fornisce quantita' di parti personali scritte in software per CD-i,
+ cosi' come routine per accedere alle caratteristiche audio e video CD-i,
+ effetti video, e MPEG Digital Video. Le librerie hanno potuto essere incluse
+ nei propri sviluppi. Usando una combinazione di un compilatore C per OS-9 e le
+ librerie Balboa, si poterono creare i titoli CD-i piu' avanzati (cosi' come
+ piu' spettacolari ed altamente interattivi. La maggior parte dei titoli CD-i
+ di consumo che furono disponibili furono fatti usando Balboa.
+
+ *MediaMogul
+ MediaMogul fu uno strumento di authoring di alto livello che fu progettato
+ senza ricordarsi dei programmatori. Funziona interamente su lettori authoring
+ CD-i come il CDI 180 e il CDI 605, equipaggiati con un hard disc. Nessun
+ hardware o software addizionale (oltre qualche video o utilities di conversione
+ di audio sul PC) era richiesto per creare titoli CD-i con MediaMogul.
+ MediaMogul e' basato su un timeline che ha file per audio, video e comandi di
+ programma, cosicche' l'utente puo' costruire la sua applicazione usando una
+ interfaccia cronologica molto intuitiva, lavora in modo simile all'attuale
+ Macromedia Director. Il software ha potuto essere esteso con un'illimitata
+ quantita' di connessioni che furono disponibili da OptImage come pure dalle
+ altre compagnie (delle quali la Interactive Resources, Inc. dell'Iowa fu la
+ piu' nota) per fornire caratteristiche come l'esecuzione di MPEG Digital
+ Video, il controllo di altri dispositivi come stampanti o lettori di codice
+ a barre, etcetera.
+ Sebbene MediaMogul non permetta la stessa complessita' richiesta per Balboa,
+ con esso hanno potuto essere prodotti eccellenti titoli altamente interattivi.
+ MediaMogul e' specialmente utilizzato per applicazioni professionali.
+
+ *CDMotion per CD-i
+ CDMotion di Multimedia Technology Center fu posizionato come un prodotto
+ concorrente a MediaMogul. Fu interamente basato su Windows. Nessun hardware
+ speciale fu richiesto, e tutto; audio, video e strumenti di conversione di
+ immagine furono costruiti internamente. Alcune persone dichiarano che fu molto
+ piu' potente e piu' facile da usare che MediaMogul.
+
+ Furono disponibili altri strumenti di programmazione (cosi' come  Media Show
+ Case da OptImage, HAL90 di Philips Media Italia e ABCD-i di Script System),
+ ma essi non furono mai molto usati.
+
+ Oltre agli strumenti authoring, OptImage ha anche prodotto alcune utilities
+ che hanno potuto essere usate in congiunzione con gli strumenti di programmazione,
+ cosi' come l'Image and Audio Conversion Utilities per Windows e Macintosh
+ (disponibile alla pagina PC/Windows download in questo sito), MediaStockroom
+ (che sostitui' le utilities di conversione con una confezione all-in-one)
+ e il CD-i plugins per Adobe Photoshop.
+
+ 7.8 Dove posso acquistare gli strumenti di CD-i authoring?
+ La maggior parte degli strumenti CD-i authoring di Philips e OptImage sono
+ ora venduti e supportati da Cambridge Multimedia Ltd. in UK e Rise International
+ in USA. Cambridge Multimedia e' il rivenditore Philip di lettori CD-i e di
+ strumenti di authoring per l'Europa. A parte vendere strumenti e lettori,
+ Cambridge fornisce vari servizi cosi' come l'etichettatura e la riproduzione
+ di CD. Rise International e' il rivenditore Philips di lettori CD-i e di
+ strumenti di authoring per l'America. Entrambe vendono tutte le confezioni di
+ CD-i authoring di OptImage. I CDMotion per Windows per lo sviluppo CD-i e
+ ViaCD-i sono disponibili da Multimedia Technology Center.
+
+ 7.9 Qual'e' il modo piu' facile modo per creare un titolo CD-i?
+ Uno degli impiegati di Cambridge Multimedia, Robin Burrows, sta attualmente
+ lavorando su un'applicazione di Windows, MoguLike, che permette la creazione
+ di script MediaMogul compatibili senza il bisogno di MediaMogul stesso. Una
+ versione dimostrativa di questo programma puo' essere scaricata alla pagina
+ PC/Windows download di questo sito. Sfortunatamente, si ha ancora bisogno di
+ Script2Disc, il software utilizzato per costruire un CD-i Imagine di Disc da
+ uno script MediaMogul. Questo software non e' disponibile pubblicamente, cosi'
+ MoguLike e' essenzialmente usato solo da persone che gia' usano MediaMogul.
+
+ Un altro modo facile di produrre un titolo CD-i compatibile sta nell'usare
+ il driver Presentation CD per Windows che puo' essere scaricato alla pagina
+ PC/Windows download in questo sito. Presentation CD e' in essenza un driver
+ (Windows 3.x) della stampante che ti permette di 'stampare' un'immagine del
+ disco in formato CD-i. Tutte le 'pagine' saranno aggiunte in sequenza e saranno
+ combinate con un'applicazione CD-i. Il file creato puo' allora essere masterizzato
+ su un CD usando i normali strumenti di CD-Recorder. Il dischetto risultante
+ e' eseguibile su un lettore CD-i. Attenzione c'e' da ricordare che il driver
+ non supporta piu' di 16 colori a causa di una limitazione del sistema di driver
+ Windows 3.x  nella gestione della stampante, ma esso rimane comunque divertente
+ per presentazioni su CD-i.
+
+ Il miglior modo per creare un titolo CD-i con un aspetto decente si trova
+ usando, con un sistema Windows, il software ShowBuilder di Philips che puo'
+ essere scaricato alla pagina PC/Windows download di questo sito. Esso permette
+ di creare presentazioni CD-i usando fermo-immagine, audio e anche MPEG Digital
+ Video direttamente su un PC. Gli script che si forniscono sul dischetto
+ possono anche essere cambiati nel corso dell'esecuzione sul lettore CD-i,
+ permettendo all'utente di creare le sue proprie presentazioni usando l'audio,
+ i fermo-immagine e il video contenuti sul dischetto. ShowBuilder non fornisce
+ caratteristiche interattive oltre alla creazione di uno slideshow ed allo
+ sfogliare i suoi contenuti.
+
+ Naturalmente si puo' anche creare un titolo Video-CD eseguibile su un lettore
+ CD-i. Gli strumenti di creazione dei Video-CD sono molto piu' disponibili
+ degli strumenti dedicati alla creazione di CD CD-i, e un vero Video-CD
+ descritto nel Libro Bianco puo' essere sempre eseguito su un lettore CD-i.
+ Vedere "Come posso creare un Video-CD?" per ulteriori informazioni.
+
+ 7.10 Come posso masterizzare un file di Imagine of Disc per CD-i?
+ In essenza, un CD-i "immagine di dischetto" puo' essere scritto usando una
+ qualsiasi applicazione CD-Recorder che supporta la masterizzazione in Modo 2
+ a settori CD-ROM/XA (che e' il formato del settore che fu originalmente
+ sviluppato per CD-i). Tuttavia, nella comunita' dello sviluppo CD-i esistono
+ molti formati di file di Imagine of Disc differenti, perche' alcuni di essi
+ includono informazione di header per tutti i settori del dischetto, mentre
+ altri lasciano la creazione di tali header al software CD-R.
+ Un'altra eccezione e' il fatto che lo strumento di authoring produce un
+ formato dell'immagine di disco che puo' risultare leggibile da una confezione
+ di authoring, ma non da un'altra.
+
+ Uno strumento che e' conosciuto per supportare la maggior parte dei formati
+ CD-i dell'immagine di Dischetto e' Gear della Gear Software, Inc. Usando
+ la versione 4.2 di Gear per Windows, si dovrebbero usare i seguenti settaggi
+ nel momento in cui sta scrivendo un CD CD-i:
+
+ *CDI 2352 byte per settore - 2 sec pregap - scrambled
+ per Image of Disc generate da Script2Dischetto da MediaMogul e ShowBuilder
+ Disc Image
+
+ *CDXA 2352 byte per settore - 2 sec pregap - scrambled
+ per Disc Image generate da Video-CD Toolkit (strumenti per la creazione di
+ Video-CD)
+
+ 7.11 In che modo posso creare un Video-CD?
+ Ci sono parecchi strumenti disponibili che permettono di creare Video-CD che
+ possono essere eseguiti su lettori CD-i e da altri. Oggigiorno molti strumenti
+ per il CD-Recorder standard includono un modulo per creare Video-CD, inclusi
+ Adaptec Easy CD Creator, CeQuadrat WinOnCD e Ahead Nero Burning ROM.
+
+ Per la riproduzione su CD-i e' molto importante che il Video-CD includa una
+ applicazione CD-i. Sebbene questa sia una richiesta obbligatoria del Libro
+ Bianco, che dovrebbe essere disponibile in tutti i Video-CD, alcuni strumenti
+ permettono di creare un Video-CD senza un'applicazione CD-i, sebbene alcuni
+ lo "supportino" sulla confezione.
+ Per esempio il settaggio predefinito di Adaptec Easy CD Creator e' di non
+ includere l'applicazione CD-i. Ricordate di modificare l'apposito interruttore
+ nel box appropriato negli schermi di settaggio per includere l'applicazione.
+
+ Altre cose da tenere a mente mentre si sviluppa un Video-CD sono:
+
+ *Accertarsi della versione del Libro Bianco che il Video-CD dovrebbe accogliere.
+  Se si vogliono includere le caratteristiche interattive Video-CD 2.0 accertarsi
+  che il dispositivo di riproduzione o il software (per esempio l'applicazione
+  CD-i) supportino questa funzione aggiunta.
+ *Che versione dell'applicazione CD-i e' inclusa? Supporta le funzioni volute,
+  per esempio il menu' e la playlists del Video-CD 2.0?
+ *Se si vuol personalizzare l'applicazione CD-i fornita in esame con file di
+  entrypoint, sottotitoli, schermi di menu', sfondi, etcetera controllare che
+  lo strumento di creazione supporti l'adattamento dell'applicazione CD-i?
+
+ Un buon strumento per creare Video-CD in piena compatibilita' con le specifiche
+ dettate dal Libro Bianco  e' il software Nero Burning versione di ROM 5.0 e
+ seguenti (disponibile da Ahead Software). Nero permette di creare Video-CD 2.0
+ che possono anche includere immagini (vedere "Come posso vedere le mie
+ immagini con il mio lettore CD-i?" per ulteriori informazioni).
+ Nel software Nero 5 e' inclusa l'applicazione Video-CD per CD-i versione 4.1.1
+ della Philips, risultante in piena compatibilita' Video-CD 2.0 su lettori CD-i.
+
+ Per ulteriori informazioni circa le varie versioni del Libro Bianco Video-CD
+ standard, le varie applicazioni CD-i, le sue versioni, le personalizzazioni
+ dell'applicazione e tutte le altre questioni attinente al Video-CD su CD-i,
+ rivedere la sezione 6 di questo FAQ: Video-CD su CD-i.
+
+ 7.12 Come posso creare un Photo-CD?
+ La specificazione Photo-CD e' strettamente connessa a Kodak. Il sistema fu
+ assegnato per fornire opportunita' extra a Kodak ed ai suoi foto finishers,
+ e non come un sistema home-made. A causa delle difficolta' contrattuali
+ nell'ottenere una licenza per Photo-CD gli strumenti di CD-Recorder non
+ permettono di creare un vero Photo-CD che possa essere eseguito su lettori
+ Photo-CD e CD-i.
+ Specialmente il software di formattazione per Photo-CD e' pesantemente coperto
+ da una patente di copyright. Alcuni programmi permettono di posizionare immagini
+ in formattare di immagine Photo-CD (Photo-YCC) su un CD-R, ma non creano un
+ CD compatibile con lo standard Photo-CD(vedere Il CD-i esegue Imagine-CD? in
+ sezione 5 di questo FAQ).
+
+ Kodak ha venduto un'applicazione CD-Recorde per creare Photo-CD chiamata Kodak
+ Arange-now!, ma questo software non e' piu' disponibile. Adesso sembra che
+ Kodak stia rapidamente sostituendo il Photo-CD con il nuovo formato Imagine-CD
+ che non e' compatibile con i lettori Photo-CD ne' con i lettori CD-i.
+
+ 7.13 Come posso vedere le mie immagini con il mio lettore CD-i?
+ Come si puo' leggere in questione 7.12, cio' e' quasi impossibile per l'utente
+ di casa creare Photo-CD. Fortunatamente, c'e' una buona alternativa perche' si
+ possano posizionare immagini su un CD e vederle poi con un lettore CD-i.
+ Usando Nero Burning versione di ROM 5.0 e superiore (disponibile da Ahead
+ Software), si possono includere altre immagini in una compilation Video-CD.
+ Un tale dischetto possiede foto che possono quindi essere eseguite su CD-i
+ (includendo l'applicazione Philips Video-CD per CD-i 4.1.1), ma anche su PC,
+ su lettori Video-CD 2.0 e sulla maggior parte dei (Video-CD 2.0 compatibili)
+ lettori DVD-Video. Questo si puo' considerare un "investimento per tempo"
+ con una resa superiore ad un Photo-CD (che non puo' essere riprodotto dai
+ lettori DVD attuali o futuri o da altri sistemi non PC).
+
+ Sebbene Nero non possa codificare film in MPEG (e' necessario un video encoder
+ MPEG separato), esso include la codificazione delle immagini all'interno del
+ programma (necessario per salvare le immagini). Semplicemente trascinando il
+ file JPG (il file immagine) sulla sezione Video-CD verra' convertita in un
+ file MPEG still (fermo-immagine). La versione corrente di Nero non fa' niente
+ altro che riprodurre semplicemente tutte le immagini una dopo l'altra, ma una
+ versione futura includera' anche uno schermo di indice con thumbnails (piccole
+ preview) di tutte le immagini che possono essere selezionate sul dischetto!
+
+ Le immagini MPEG sono codificate in alta risoluzione video (finche' le
+ immagini di sorgente sono in un'alta risoluzione), ma qualche volta vengono
+ mostrate in una risoluzione inferiore nel momento in cui sta riproducendo il
+ dischetto su un lettore CD-i.
+ Le immagini possono allora essere viste in una risoluzione piu' alta usando per
+ esempio un lettore DVD. Da notare che il lettore CD-i ha bisogno di essere
+ equipaggiato con una cartuccia Digital Video per mostrare gli MPEG stills,
+ anche se il dischetto potrebbe non contenere file Full Motion.
+
+ CeQuadrat's WinOnCD 3.7 e superiori offre una funzione simile chiamata 'Photobook',
+ ma sebbene il programma dichiari di fare una compilazione Video-CD non include
+ nessuna applicazione CD-i capace di riprodurre queste immagini Video-CD 2.0 di
+ alta qualita'. Percio', e' meglio evitare questo software (per favore CeQuadrat,
+ inserite il Philips 4.1 app!).
+
+ Da ricordare che in contrasto con un Photo-CD, inserire immagini su un Video-CD
+ non e' una buona soluzione per conservare gli archivi delle immagini.
+ Un Photo-CD contiene immagini in una risoluzione molto piu' alta (piu' di
+ 3000 x 2000 pixel) che permette di farne stampe perfette, un Video-CD conserva
+ solo le immagini in risoluzione TV. Ricordarsi di preservare i file originali!
+
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.
+

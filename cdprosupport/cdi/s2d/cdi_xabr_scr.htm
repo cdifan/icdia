@@ -1,0 +1,75 @@
+<html>
+<TITLE>Making a CD-i/CD-ROM XA Bridge Disc using Master</TITLE>
+
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+<head><P><H2>Making a CD-i/CD-ROM XA Bridge Disc using Master</H2></head>
+<body>! <b>Example Input File for the 'MASTER' Disc Builder</b><BR>
+!<b>========================================</b><BR>
+!  CDi - XA Bridge Disc Image<BR>
+<BR>
+! 1) Define the Various Files that are Involved in the Disc Image<BR>
+!    ------------------------------------------------------------<BR>
+!  <i>Bold names below indicate changeable items. ! = comments.   Be sure to use quotes wherever they are indicated.</i><BR>
+!  <i>Type in non-bold items <b>exactly</b> as shown below.  Easy way:  save <b>copy</b> of this file ,  then type in the changes to</i><BR>
+!  <i>the bold text as needed.  Script <b>must</b> be saved in basic ASCII format.</i><BR>
+<BR>
+<tt>options: -xa</tt><BR>
+<BR>
+<tt>path = "<b>/h0/yellowfiles</b>/" &#160;&#160;&#160;&#160;&#160;</tt> ! <i>The directory containing the files. Be sure to include final /.  </i><BR>
+<tt>define album "<b>YELLOW FILES</b>"		&#160;&#160;&#160;&#160;</tt>! <i>Album name can be anything, 32 characters max.</i> <BR>
+<tt>publisher  "<b>Acme</b>"</tt><BR>
+<tt>preparer   "<b>John Doe</b>"</tt><BR>
+<tt>volume "<b>XA Disc</b>" in "<b>XA.cd</b>"&#160;&#160;&#160;&#160;&#160;</tt>! <i>Volume name can be anything, 32 characters max. </i> <BR>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tt>! <i>Disk image named according to OS9 naming conventions.</i><BR>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tt>! <i>Use absolute path for image file if you do not want it placed in current directory.</i><BR>
+<BR>
+&#160 &#160 <tt>copyright   file Copyright&#160;&#160;from	"<b>/h0/yellowfiles/</b>copyright.txt"	&#160;&#160;&#160;&#160;	</tt>! <i>Define the REQUIRED files. Copy these files</i><BR>
+&#160 &#160 <tt>abstract    file Abstract&#160;&#160;&#160;&#160;from "<b>/h0/yellowfiles/</b>abstract.txt" &#160;&#160;&#160;&#160;&#160;	</tt>! <i>from the CDIMAGES directory to the directory</i><BR>
+&#160 &#160 <tt>biblio      file Biblio&#160;&#160;&#160;&#160;&#160;&#160&#160;&#160;from	"<b>/h0/yellowfiles/</b>bibliographic.txt"&#160;&#160;</tt>! <i>containing the yellow files.</i><BR>
+&#160 &#160 <tt>application file appl&#160;&#160;&#160;&#160;&#160;from	"<b>/h0/yellowfiles/</b>cdi_appl.xa"</tt><BR>
+<BR>
+! Define YOUR Files Here<BR>
+<BR>
+&#160 &#160 <tt>yellow file <b>identifier_1</b> from "<b>file_1</b>"	&#160;&#160;&#160;&#160;</tt>! <i>identifiers can have upper/lower case letters, underscore, numbers (but</i><BR>
+&#160 &#160 <tt>yellow file <b>identifier_2</b> from "<b>file_2</b>"	&#160;&#160;&#160;&#160;</tt>! <i>cannot start with a number), no other characters allowed, 32 characters</i>  <BR>
+&#160 &#160 <tt>yellow file <b>identifier_3</b> from "<b>file_3</b>"	&#160;&#160;&#160;&#160;</tt>! <i>max, case-sensitive. Remember quotes.</i><BR>
+&#160 &#160 <tt>yellow file <b>identifier_4</b> from "<b>file_4</b>"</tt><BR>
+&#160 &#160 <tt>yellow file <b>identifier_5</b> from "<b>file_5</b>"</tt><BR>
+<BR>
+! 2) Define the Directory Structure on the Disc<BR>
+!    ------------------------------------------------------------<BR>
+<BR>
+<tt>{<BR>
+&#160;&#160;"COPYRGHT.TXT;1"	protection 0x111 from Copyright<BR>
+&#160;&#160;"ABSTRACT.TXT;1"	protection 0x111 from Abstract<BR>
+&#160;&#160;"BIBLIOGR.TXT;1"	protection 0x111 from Biblio<BR>
+    <BR>
+"CMDS"<BR>
+{<BR>
+&#160;&#160;"<b>CDI_APPL.XA</b>;1" from appl		</tt>! <i>CDi app on disc.  Must conform to same naming</i> <BR>
+}&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160&#160;&#160;! <i>conventions as XA_FILEs listed below.</i><BR>
+<BR>
+"<b>YELLOW</b>"				!<i>Caps. Directory name, 8 characters max.</i><BR>
+<tt>{<BR></tt>
+&#160;&#160;<tt>"<b>XA_FILE.1</b>;1" from <b>identifier_1</b>	 &#160;&#160;&#160;&#160;	</tt>! <i>List files on cd. There must be a corresponding entry for all the files listed</i><BR>
+&#160;&#160;<tt>"<b>XA_FILE.2</b>;1" from <b>identifier_2</b>		&#160;&#160;&#160;&#160; </tt>! <i>above.  XA_FILE files must use all caps, must conform to 8.3 naming, </i><BR>
+&#160;&#160;<tt>"<b>XA_FILE.3</b>;1" from <b>identifier_3</b>		&#160;&#160;&#160;&#160; </tt>! <i>must have filename extension, and ;1 and quotes are required!  Use the same</i><BR>
+&#160;&#160;<tt>"<b>XA_FILE.4</b>;1" from <b>identifier_4</b>  &#160;&#160;&#160;&#160; </tt>! <i>names for identifiers as those used above. An alternative is to use def and dir</i><BR>
+&#160;&#160;<tt>"<b>XA_FILE.5</b>;1" from <b>identifier_5</b>  &#160;&#160;&#160;&#160; </tt>! <i>files in place of listing them here. See the <A HREF="cdi_xa_scr.htm">xa-only</A> script for an example of this.</i><BR>
+    <tt>}<BR>
+}</tt><BR>
+! &gt;&gt;&gt; End of Master Script &lt;&lt;&lt;		&#160;&#160;&#160;&#160;	!<i>Save the script, type the command </i>&#160;&#160;<tt>master <b>scriptname </b></tt>&#160;&#160;<i>to build the image.</i><BR>
+<P>
+<HR>
+<P>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+</body>
+</html>
+

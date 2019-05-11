@@ -1,0 +1,237 @@
+<HTML><HEAD>
+<TITLE>MediaMogul Plug-in Memory Usage</TITLE>
+</HEAD>
+<BODY BGCOLOR="FFFFFF">
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="plugins.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<H1><CENTER>MediaMogul Plug-in Memory Usage</CENTER></H1>
+
+<FONT SIZE=+2>Preface:</FONT><BR>
+We've had a number of requests to publish memory usage information about our MediaMogul Plug-ins.  This information is especially important if your title must run on a player without a DV cartridge, which severely limits the memory available for plug-ins to 212Kbytes.
+<P>
+For any plug-in module, the <B>FIXED</B> memory requirement can be determined within 2Kbytes or so, using the OS-9 <CODE>ident</CODE> command.  An <CODE>ident</CODE> of plug-in cdi_sgmn reveals:<BR>
+<P>
+
+<CODE>
+CD-i>ident cdi_sgmn</CODE>
+<TABLE BORDER=0 CELLSPACING=2 CELLPADDING=1>
+
+<TR>
+	<TD WIDTH=150><CODE>Header for:</TD>
+	<TD COLSPAN=2><CODE>cdi_sgmn</TD>
+</TR>
+<TR>
+	<TD><CODE><B>Module size:</B></TD>
+	<TD WIDTH=100><CODE><B>$1A5E</B></TD>
+	<TD WIDTH=100><CODE><B>#6750</B></TD>
+</TR>
+<TR>
+	<TD><CODE>Owner</TD>
+	<TD COLSPAN=2><CODE>0.0</TD>
+</TR>
+<TR>
+	<TD><CODE>Module CRC:</TD>
+	<TD><CODE>$8C5E41</TD>
+	<TD><CODE>Good CRC</TD>
+</TR>
+<TR>
+	<TD><CODE>Header Parity:</TD>
+	<TD><CODE>$2AC3</TD>
+	<TD><CODE>Good Parity</TD>
+</TR>
+<TR>
+	<TD><CODE>Edition:</TD>
+	<TD><CODE>$190</TD>
+	<TD><CODE>#400</TD>
+</TR>
+<TR>
+	<TD><CODE>Ty/La At/Rev</TD>
+	<TD><CODE>$101</TD>
+	<TD><CODE>$8013</TD>
+</TR>
+<TR>
+	<TD><CODE>Permission:</TD>
+	<TD><CODE>$555</TD>
+	<TD><CODE>e-r-e-r</TD>
+</TR>
+<TR>
+	<TD><CODE>Exec off:</TD>
+	<TD><CODE>$52</TD>
+	<TD><CODE>#82</TD>
+</TR>
+<TR>
+	<TD><CODE><B>Data size:</B></TD>
+	<TD><CODE><B>$E1A</B></TD>
+	<TD><CODE><B>#3610</B></TD>
+</TR>
+<TR>
+	<TD><CODE><B>Stack size:</B></TD>
+	<TD><CODE><B>$C00</B></TD>
+	<TD><CODE><B>#3072</B></TD>
+</TR>
+<TR>
+	<TD><CODE>Init. data off:</TD>
+	<TD><CODE>$18F4</TD>
+	<TD><CODE>#6388</TD>
+</TR>
+<TR>
+	<TD><CODE>Dat ref. off:</TD>
+	<TD><CODE>$1A42</TD>
+	<TD><CODE>#6722</TD>
+</TR>
+<TR>
+	<TD><CODE>Prog Mod, 68000 obj, Sharable</TD>
+	<TD><CODE>&nbsp;</TD>
+	<TD><CODE>&nbsp;</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR>
+To get total FIXED memory usage, add the Module size, Data size, and Stack size. <BR>
+ In this case: 6750 + 3610 + 3072 = 13432 bytes.
+<P>
+<UL>
+<LI>In the listing below, the total FIXED memory amount, as obtained from an ident, is shown with the module name.  
+<LI>DYMAMIC memory amounts not shown in an ident (or sound, video, or other data) are indicated in a separate column.
+<LI>The total memory use for a plug-in is : FIXED + DYNAMIC. 
+<LI> The TITLE plug-in memory requirement is the total of all plug-ins that will run CONCURRENTLY.  
+<LI> The <A HREF="../s2d/s2dmem.htm">script2disc memory page</A> describes other memory issues.</UL>
+
+<P>
+Listing of common plug-in memory usages:<BR>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1>
+<TR BGCOLOR="#31CE9C">
+	<TH WIDTH=100>Plug-in</TH>
+	<TH WIDTH=50>Fixed Memory</TH>
+	<TH>Dynamic Memory</TH>
+</TR>
+<TR>
+	<TD>cdi_sgmn</TD>
+	<TD ALIGN=RIGHT>13K</TD>
+	<TD>500bytes (program data)</TD>
+</TR>
+<TR>
+	<TD>cdi_cnss</TD>
+	<TD ALIGN=RIGHT>14K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_dmr</TD>
+	<TD ALIGN=RIGHT>15K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_irrm</TD>
+	<TD ALIGN=RIGHT>23K</TD>
+	<TD>size of hotspot data file created by makeiff</TD>
+</TR>
+<TR>
+	<TD>cdi_ptls</TD>
+	<TD ALIGN=RIGHT>15K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_tlkm</TD>
+	<TD ALIGN=RIGHT>16K</TD>
+	<TD>total size of sound files created by makeiff, that are loaded for the largest (sound-wise) menu.</TD>
+</TR>
+<TR>
+	<TD>cdi_dv</TD>
+	<TD ALIGN=RIGHT>43K</TD>
+	<TD>140K for MPEG buffers</TD>
+</TR>
+<TR>
+	<TD>cdi_dvpl</TD>
+	<TD ALIGN=RIGHT>25K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_hscr</TD>
+	<TD ALIGN=RIGHT>30K</TD>
+	<TD>size of scroll bar image (width x height = bytes) + 500 bytes for program data.</TD>
+</TR>
+<TR>
+	<TD>cdi_menm</TD>
+	<TD ALIGN=RIGHT>12K</TD>
+	<TD>500 bytes for program data</TD>
+</TR>
+<TR>
+	<TD>cdi_sv</TD>
+	<TD ALIGN=RIGHT> 9K</TD>
+	<TD>size of string variables (number of variables  x allocated length)</TD>
+</TR>
+<TR>
+	<TD>cdi_svbr</TD>
+	<TD ALIGN=RIGHT>22K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_svdu</TD>
+	<TD ALIGN=RIGHT>10K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_svstr</TD>
+	<TD ALIGN=RIGHT>20K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_unlk</TD>
+	<TD ALIGN=RIGHT> 9K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_virt</TD>
+	<TD ALIGN=RIGHT>21K</TD>
+	<TD>size of scroll bar image (width x length = bytes)</TD>
+</TR>
+<TR>
+	<TD>cdi_popm</TD>
+	<TD ALIGN=RIGHT>29K</TD>
+	<TD>sizes of foreground and background pop-up images</TD>
+</TR>
+<TR>
+	<TD>cdi_pops</TD>
+	<TD ALIGN=RIGHT>13K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_qhyh</TD>
+	<TD ALIGN=RIGHT>17K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_qhyz</TD>
+	<TD ALIGN=RIGHT>31K</TD>
+	<TD>39K for read buffer</TD>
+</TR>
+<TR>
+	<TD>cdi_rlhs</TD>
+	<TD ALIGN=RIGHT>17K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_rlvs</TD>
+	<TD ALIGN=RIGHT>17K</TD>
+	<TD>&nbsp;</TD>
+</TR>
+<TR>
+	<TD>cdi_rlan</TD>
+	<TD ALIGN=RIGHT>19K</TD>
+	<TD>&nbsp;</TD>
+</TABLE>
+<P>
+
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="plugins.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+</BODY>
+</HTML>

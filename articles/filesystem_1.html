@@ -1,0 +1,124 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>CD-i Filesystem Driver for Windows 95/98
+</B><BR><BR>
+
+A CD-i disc is based on a different filesystem than the ones used for PC systems. Where in personal computing the ISO-9660 format and its Joliet-variant are the most well known and widely used systems, CD-i discs use the filesystem format that is based on CD-i's operating systems OS-9. The OS-9 filesystem allows for filenames up to 28 characters in lenght, for the mixed usage of upper and lowercase letters and it provides options to indicate OS-9's Unix-style execution or read permission parameters.<BR><BR>
+
+Because of this different filesystem, the files on a CD-i disc can not be accessed in a regular way on a PC equiped with a CD-ROM drive. This was not a problem, since a CD-i program could after all not be used on a PC due to its different operating system, CPU and audio and video codecs. However, in some circumstances it would be practical just to check out the contents of a disc, particulary in CD-i development environments. Thankfully, a solution is now available in the form of the CD-i Filesystem Driver for Windows 95/98, written by Vahur Sinijarv from Estonia.<BR><BR>
+
+Once installed, a CD-i disc can be accessed in a similar way as a CD-ROM disc, using for example the Windows Explorer. You can view the discs name, browse trough directories and view the file names. In addition to this, the filesystem driver allows for the following features:<BR><BR>
+
+<LI>Viewing MPEG video<BR>
+You might actually view the full motion video clips that are stored on a CD-i disc using version 6.0 or later of Microsoft Windows Media Player. This application is available for free download at <A HREF="http://www.microsoft.com" target="ander">Microsoft</A>. Media Player allows you to view a wide variety of media formats, including the MPEG audio and video formats used in CD-i among others. CD-i allows for a much broader variety in combining audio and video rates, and hence audio and video quality, than for example Video-CD where the audio and video bitrates are fixed. Media Player plays most of them, however sometimes when an MPEG sequence is interleaved with other material on the disc, the picture may look disturbed. You can often recognize an MPEG sequence on the directory in which it is placed, for example FMV or VIDEOS. Also, look for the extension .rtf, which stands for Real Time File (and not Rich Text Format!). .rtf-files might be MPEG-video sequences, but also other, non-playable media files. Just try this out by loading the file in Media Player. Note that it is possible in this way to view movies that were released in the pre-Video-CD CD-i format, but also video sequences from other titles like games.<BR><BR>
+
+<LI>Viewing stills and hearing audio<BR>
+Usually, all media information on a CD-i disc is stored in one large Real Time File. When this is the case, you cannot use this file on a PC. But sometimes, individual audio and video files are stored on the disc in CD-i's IFF (Interchangable File Format) format. This is the format that is used in CD-i authoring packages and studios. You can usually recognize these files from the following extensions: .d .cl3 .cl4 .cl7 .cl8 .rl3 .rl7 for video (where d stands for DYUV, cl for CLUT and rl for Run Lenght Encoding), and .aas .asm .abm .abs .acm .acs for audio (where the second letter indicates the level of ADPCM used, and the latter one indicates m for mono and s for stereo). You can view images using Robin Burrow's CDiView, or convert video and audio files to standard PC formats using the OptImage Conversion Utilities (both available at the <A HREF="../sw_pc/index.html">PC/Windows downloads</A> page on this site).<BR><BR>
+
+<LI>Viewing text files<BR>
+You can view text files on a CD-i disc using a regular text editor or word processor. On most CD-i discs, you can find files which are named something like copyright, abstract and bibliography. These files give more information about the content of a CD-i title and the people that developed it. On some CD-i titles, you can find additional production notes, hidden features or cheats explained in a text file, since the developers did not need to care about people outside other CD-i studios, since they were unable to access this information. Please be aware of the limitations of reading text files that are explained below.<BR><BR>
+
+Although the current version of the CD-i Filesystem Driver for Windows 95/98 (version 1.01) offers you all of these great features, there are currently some important limitations:<BR><BR>
+
+<LI>Errors in reading form 1 sectors<BR>
+CD-i uses two sector formats: form 1 for text and program data, and form 2 for audio, video and other media information. Form 1 includes additional error correction information, which reduces the sector size with 280 bytes to 2048 bytes (the same as CD-ROM). The CD-i Filesystem Driver reads all sectors as mode 2, and hence it can read audio and video without any problems, but it reads the 280 bytes of error correction in text and program files as data. So when you view a text file that is over 2 KB in size, it includes this information as garbage.<BR><BR>
+
+<LI>Unable to access CD-i discs with CD-Audio tracks<BR>
+The Filesystem Driver cannot interprete the TOC (Table Of Contents) of a CD-i disc with CD-Audio files correctly. This is why such a disc is displayed as empty. When you try to view a CD-i Ready disc (a CD-Audio disc where the CD-i data is placed in the pause sectors preceeding track 1), you will only see the audio-tracks in a similar way as when a normal CD-Audio disc is loaded.<BR><BR>
+
+<LI>Sometimes unable to search in an MPEG file using Media Player<BR>
+As explained before, CD-i allows for a great diversity in using MPEG audio and video in a broad range of combinations. Usually, Media Player plays these files as normal MPEG or Video-CD files. But in some circumstances, it is impossible to search forward and backward within a file use the slidebar. This is probably due to the existence of other information interleaved through the MPEG data.<BR><BR>
+
+<LI>Incompatible with SCSI CD-ROM drives<BR>
+At present, it is impossible to use the CD-i Filesystem Driver in combination with a SCSI CD-ROM drive, because of the coplex way in which Windows reads raw-data from a SCSI device. The Filesystem Driver works okay with normal IDE drives.<BR><BR>
+
+Besides these minor drawbacks, the CD-i Filesystem Driver for Windows 95/98 can be of great use to (former) CD-i developers, CD-i enthousiasts and everyone with a curiosity on what the true contents of a CD-i disc are. Please note that this driver is still in development, and that Vahur Sinijarv is still working on the software to improve its performace and eliminate the limitations shown above. The latest version of this software will always be available on this site at the <A HREF="../sw_pc/index.html">PC/Windows downloads</A> page.<BR><BR>
+
+If you found some really interesting stuff on a parcticular CD-i disc, or you find a new way of using it, or if you have just a question or comment about this driver, please <A HREF="/contact/index.html">contact me</A>.
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

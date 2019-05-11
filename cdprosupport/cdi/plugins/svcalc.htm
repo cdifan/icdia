@@ -1,0 +1,65 @@
+<HTML>
+
+<HEAD>
+<TITLE>Calculations with String Variables
+</TITLE>
+</HEAD>
+
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+<P><H2><CENTER>Calculations with String Variables</CENTER></H2>
+<P>
+<BR>
+<BR>
+One of the many things that the String Variables Plug-In may be used for is performing calculations in your title.  String Variables can be used for addition, subtraction,. multiplication, and division.  However, String Variables may only be used for Integer Math functions, they do not support decimals.
+<P>
+This does not mean that you cannot perform some operations that are usually considered decimal functions.  For example when you calculate a percentage your result is normally expressed to the right of the decimal point, e.g. .8 for 80&#37;.  The way to use String Variables to perform percent calculations is to multiply your dividend (the number to be divided) by 100 before dividing it.  This has the effect of moving your result two decimal places to the left, thus making it an integer rather than a decimal.
+<P>
+Example:
+<P>
+<BLOCKQUOTE><CODE>
+80/100=0.8 or 80&#37;</CODE><BR>
+rather, use this<BR><CODE>
+(80*100)/100=80, </CODE>which can be directly used as a percentage.
+<P>
+<B>NOTE</B>: the expression used for this as a parameter in <CODE>cdi_svst</CODE> would be <CODE>&#92;&#91;&#40;&#92;sn&#42;100&#41;&#64;&#92;sx&#93;</CODE>, where <CODE>sn</CODE> and <CODE>sx</CODE> are string variables.
+</BLOCKQUOTE>
+<P>
+Another thing to be aware of when using calculations in String Variables is that if the value of a String Variable is used in a calculation, there must have been a value set in the variable.  If you use a String Variable that does not have a value in it, your calculation will fail to work.
+<P>
+If a calculation performed with String Variables fails to work, or works in an unexpected fashion, you should check to see what is happening.  You can check by using Play with Debug in ScriptWriter.  Once you have reached a place in your title where the fault has taken place, quit from Simulation and check the contents of the Mogul.log file.  There may be an error message that can help you in figuring out where the problem lies.  Look for is a line similar to this&#58;
+<P>
+<BLOCKQUOTE>
+<CODE>
+&quot;cdi_svst evaluating:&quot;3&#43;&#43;4&quot;&quot;
+</CODE>
+</BLOCKQUOTE>
+<P>
+followed by the error message.  This shows the calculation that String Variables is attempting to perform.  If one the numbers in the calculation is not what should be there, or one or more is missing, as in the example above where the middle number is not there (shown by the &#43;&#43; between the two numbers), the calculation will not work correctly.  Based on this and/or the error message you should check your scripting, or your calculation, to see where the problem lies.
+<P>
+If you have difficulty in determining a solution, you may want to put a Call to <CODE>cdi_svdu</CODE> in your script before and after the point where the error occurs.  Then use Play with Debug again.  The Call to <CODE>cdi_svdu</CODE> will put the contents of every string variable into the Mogul.log file.  Examining these can assist you in determining what is happening.  Check that each of these contains the expected value at that point in your title.  Remember you must remove any Calls to <CODE>cdi_svdu</CODE> before building your title.
+<P>
+When you make changes to your scripting to resolve a difficulty with calculations in string variables, you will also want to clear out the values already in your existing string variables.  You can do this by Exiting MediaMogul, or you can go to CD-RTOS and enter the following command:
+<P>
+<BLOCKQUOTE>
+<CODE>
+cdi_unlk cdi_string_data
+</CODE>
+</BLOCKQUOTE>
+<P>
+This command will remove the data module for String Variables from memory.  This means that you will need to run your initialization script, or the script where you call <CODE>cdi_sv</CODE>, in order to create a new data module for String Variables.
+<P>
+It is important that you remember that any calculation performed by String Variables will fail if one or more of the strings either do not contain a value, e.g. are null, or contain non-numeric values.  Because of this it is a good idea to put an initial numeric value of 0 (zero) in any string variable that will be used in a calculation.  You do this by calling <CODE>cdi_svst</CODE> once for each variable that must be set and entering zero (0) in parameter 2 for each one.
+<P>
+<P>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit Lite 3.5.1 -->
+
+
+</BODY>
+
+</HTML>
+

@@ -1,0 +1,158 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>CD-i FAQ 2000 Edition</B><BR><BR><BR>
+
+<B>Section 9. CD-i on other platforms</B><BR><BR><BR>
+
+<A NAME="9.1">
+<B>9.1 Can I run an interactive CD-i title on my PC?</B><BR>
+No. Unlike other CD-formats like CD-Audio and Video-CD, not only the way of encoding the audiovisual material on the disc has been described in the standard, but also the entire playback environment. This includes the operating system, the CPU, the audio and video decoding chips, etcetera. You should think of CD-i as a completely designed computer system instead of just a disc format. You will encounter the same difficulties when you try to run Macintosh software on a Windows PC.<BR><BR>
+You can however access the contents of a CD-i disc on a PC. Refer to <A HREF="#9.4">Can I view the contents of a CD-i disc on my PC?</A> for more information. Furthermore, a CD-i emulator for Windows is in the works. Refer to <A HREF="#9.2">Can CD-i be emulated on other platforms like a PC?</A> for more information.
+
+<BR><BR><BR>
+
+<A NAME="9.2">
+<B>9.2 Can CD-i be emulated on other platforms like a PC?</B><BR>
+It is very difficult to emulate a CD-i player 100% according to the standard on another platform. This is mainly due to CD-i's complex video features, which are all performed in hardware on a real CD-i player. To let people still use CD-i applications on their PC, a PC/CD-i board was developed, refer to <A HREF="#9.3">What was the PC/CD-i card used for?</A> for more information.<BR><BR>
+
+However, in March 2001, Pete Dabbs, a former CD-i programmer from the UK, has begon work on the development of a CD-i emulator for Windows, called CD-iCE (CD-i Console Emulator). The goal of the project is to create a complete CD-i emulation product including support for Digital Video, that allows one to run interactive CD-i titles on a PC. For more information about this exciting project, including news about its progress, screenshots and downloads, visit the <A HREF="http://cdice.emuhq.com/" target="ander">official CD-iCE website</A>.
+<BR><BR>
+
+Of course you can use CD-i Bridge discs (like Video-CDs or Photo-CDs) on a PC without using an emulator or extra hardware, but then you still need a seperate PC application to access the data on the disc. A PC shall never use the CD-i application on such discs to run its contents.
+<BR><BR><BR>
+
+<A NAME="9.3">
+<B>9.3 What was the PC/CD-i card used for?</B><BR>
+A CD-i interface board for both Macintosh and PCs existed, which allowed for full CD-i functionality on a computer system. The card was manufactured by International Interactive Media (I2M) from Israel, and sold by Philips and I2M itself. It contained all of the components that are also available on a dedicated CD-i player, and it did not use any component of the PC itself (like RAM, mouse, etc.). It did not integrate att all with the normal operating system running on the PC. A special version was made that allowed for the shared usage of a harddrive by the CD-i system and the computer, so this one was ideal for CD-i developers. They could for example create assets (audio and video) using their PC tools, and then integrate it into a CD-i application using for example MediaMogul in the CD-i mode.<BR><BR>
+
+The PC/CD-i board was very rear, only a very small quantity of these boards were manufactured. It was more expensive than a stand-alone CD-i player.
+<BR><BR><BR>
+
+<A NAME="9.4">
+<B>9.4 Can I view the contents of a CD-i disc on my PC?</B><BR>
+A CD-i disc is based on a different filesystem than the ones used for PC systems. Where in personal computing the ISO-9660 format and its Joliet-variant are the most well known and widely used systems, CD-i discs use the filesystem format that is based on CD-i's operating systems OS-9. The OS-9 filesystem allows for filenames up to 28 characters in lenght, for the mixed usage of upper and lowercase letters and it provides options to indicate OS-9's Unix-style execution or read permission parameters.<BR><BR>
+
+Because of this different filesystem, the files on a CD-i disc can not be accessed in a regular way on a PC equiped with a CD-ROM drive. This was not a problem, since a CD-i program could after all not be used on a PC due to its different operating system, CPU and audio and video codecs. However, in some circumstances it would be practical just to check out the contents of a disc, particulary in CD-i development environments. Thankfully, a solution is now available in the form of the CD-i Filesystem Driver for Windows 95/98/Me (not 2000 or XP), written by Vahur Sinijarv from Estonia. This driver is available for free download from the <A HREF="../sw_pc/index.html">PC downloads for CD-i development</A> page at this site.<BR><BR>
+
+Once installed, a CD-i disc can be accessed in a similar way as a CD-ROM disc, using for example the Windows Explorer. You can view the discs name, browse trough directories and view the file names.<BR><BR>
+
+There are currently some limitations in the Filesystem Driver, please refer to the <A HREF="../articles/filesystem.html">article</A> I wrote about it on this site. <BR><BR>
+
+If you don't run a Windows 95/98/Me based system, but a Windows NT based OS (Windows NT, 2000, XP), you may have a look at <A HREF="http://www.isobuster.com">ISO Buster</A> to extract audio and video from a CD-i disc.
+<BR><BR><BR>
+
+<A NAME="9.5">
+<B>9.5 What is an IFF file?</B><BR>
+Usually, all media information on a CD-i disc is stored in one large Real Time File. When this is the case, you cannot use this file on a PC. But sometimes, individual audio and video files are stored on the disc in CD-i's IFF (Interchangable File Format) format. This is the format that is used in CD-i authoring packages and studios. You can usually recognize these files from the following extensions: .d .cl3 .cl4 .cl7 .cl8 .rl3 .rl7 for video (where d stands for DYUV, cl for CLUT and rl for Run Lenght Encoding), and .aas .asm .abm .abs .acm .acs for audio (where the second letter indicates the level of ADPCM used, and the latter one indicates m for mono and s for stereo). 
+<BR><BR><BR>
+
+<A NAME="9.6">
+<B>9.6 How can I watch pictures of a CD-i disc on my PC?</B><BR>
+When pictures on a CD-i disc are stored in IFF format on the disc instead of in realtime files (see <A HREF="#9.5">What is an IFF file?</A>, you can view images using Robin Burrow's CDiView, or convert the images to standard PC formats using the OptImage Image Conversion Utilities (both available at the <A HREF="../sw_pc/index.html">PC downloads for CD-i development</A> page on this site). <BR><BR>
+
+Please note that the CD-i Filesystem Driver for Windows (refer to <A HREF="#9.4">Can I view the contents of a CD-i disc on my PC?</A>) needs to be installed on the PC to allow it to access a CD-i disc, or the file needs to be extracted from the disc using ISO Buster.
+<BR><BR><BR>
+
+<A NAME="9.7">
+<B>9.7 How can I listen to audio of a CD-i disc on my PC?</B><BR>
+When ADPCM audio clips are stored in IFF format on the disc instead of in realtime files (see <A HREF="#9.5">What is an IFF file?</A>, you can convert these into standard PC formats using the OptImage Audio Conversion Utilities (both available at the <A HREF="../sw_pc/index.html">PC downloads for CD-i development</A> page on this site). There is no playback utility available to date that allows you to play them back immediately without converting.<BR><BR>
+
+If audio is stored on the disc in MPEG format (usually accompanying MPEG video, but this is not mandatory), you can play it back or convert it into other formats using a wide variety of tools available on the PC platform. You could for example use Microsoft Media Player 6.0 or higher to play the MPEG audio.<BR><BR>
+
+Please note that the CD-i Filesystem Driver for Windows (refer to <A HREF="#9.4">Can I view the contents of a CD-i disc on my PC?</A>) needs to be installed on the PC to allow it to access a CD-i disc, or the file needs to be extracted from the disc using ISO Buster.
+<BR><BR><BR>
+
+<A NAME="9.8">
+<B>9.8 How can I view Digital Video sequences of a CD-i disc on my PC?</B><BR>
+You can view the full motion video clips that are stored on a CD-i disc using a wide variety of tools, like version 6.0 or later of Microsoft Windows Media Player. This application is available for free download at Microsoft. Media Player allows you to view a wide variety of media formats, including the MPEG audio and video formats used in CD-i among others. CD-i allows for a much broader variety in combining audio and video rates, and hence audio and video quality, than for example Video-CD where the audio and video bitrates are fixed. Media Player plays most of them, however sometimes when an MPEG sequence is interleaved with other material on the disc, the picture may look disturbed. <BR><BR>
+
+You can often recognize an MPEG sequence on the directory in which it is placed, for example FMV or VIDEOS. Also, look for the extension .rtf, which stands for Real Time File (and not Rich Text Format!). .rtf-files might be MPEG-video sequences, but also other, non-playable media files. Just try this out by loading the file in Media Player. Note that it is possible in this way to view movies that were released in the pre-Video-CD CD-i format, but also video sequences from other titles like games.<BR><BR>
+
+Please note that the CD-i Filesystem Driver for Windows (refer to <A HREF="#9.4">Can I view the contents of a CD-i disc on my PC?</A>) needs to be installed on the PC to allow it to access a CD-i disc, or the file needs to be extracted from the disc using ISO Buster.
+
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

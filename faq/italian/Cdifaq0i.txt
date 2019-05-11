@@ -1,0 +1,64 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 0. Circa questo CD-i FAQ (Frequently Asked Question-Domande Frequenti)
+
+ 0.1 Qual'e' il traguardo di questo CD-i FAQ?
+ Questo FAQ e' stato scritto all'inizio del 2000 per rispondere alla maggior
+ parte delle domande che ancora vengono poste da parecchie persone circa il
+ sistema Compact-disc Interattivo. Ci sono altri siti e FAQ elencati e
+ disponibili sul web circa il CD-i, ma la maggior parte di essi sono incompleti
+ o contengono informazioni imprecise. Questo FAQ prova a ripulire la maggior
+ parte dei miti che aleggiano attorno al CD-i. Inoltre, questo lavoro e' un
+ tributo a cio' che io sento come la piu' importante e nuova tecnologia che
+ fu mai introdotta sul mercato multimediale.
+
+ 0.2 Chi l'ha scritto e chi lo mantiene?
+ Questo CD-i FAQ venne scritto ed e' mantenuto da Jorg Kennis. Jorg, che sta
+ attualmente studiando tecnologie interattive in Olanda, ha strettamente
+ seguito lo sviluppo del CD-i durante il periodo dal tardo '80 agli anni '90 e
+ fu attivamente implicato in dimostrativi del sistema per Philips in Olanda
+ nei primi anni '90. Inoltre, ha scritto articoli sul CD-i per varie riviste e
+ siti web, ha creato software CD-i ed ha scritto valutazioni e raccomandazioni
+ per Philips per il nuovo hardware e i prodotti di software del CD-i.
+
+ 0.3 Chi lo ha aiutato lungo la stesura?
+ Questo CD-i FAQ non avrebbe potuto essere scritto se non fosse stato per
+ dozzine di persone che hanno condiviso la loro conoscenza con me nel corso
+ degli ultimi anni. Naturalmente c'erano di mezzo gli uomini e le donne dei
+ Sistemi Interattivi Philips (localizzati in Eindhoven). Gli olandesi che mi
+ hanno introdotto al sistema. Fra essi ci furono Gerard Smelt, Frans Speijer,
+ Pari Custers, Loek Sanders e molti altri. E poi naturalmente ci sono due
+ amici carissimi, Stefan Peters e Wouter Robers, grazie ai quali ho scoperto
+ quasi tutto sulle grandi caratteristiche del CD-i gia' dai primi momenti.
+ Durante gli anni ho incontrato parecchio altri appassionati entusiasti del
+ CD-i che hanno condiviso il mio amore per il sistema. Noi principalmente
+ abbiamo usato Internet per discutere del sistema e delle sue caratteristiche.
+ Fra quegli uomini ci furono Bo Raun Nielsen dalla Danimarca e Stephane Cazat
+ dalla Francia. Questo FAQ fu anche ispirato da una prima versione del CD-i
+ FAQ realizzato Erik Eiselstadt, e il CD-i FAQ di Philips Interactive Media
+ Americana e l'Associazione Internazionale CD-i. I miei piu' calorosi
+ ringraziamenti a voi tutti!!
+
+ 0.4 Come posso contattare l'autore?
+ Se hai commenti, domande o suggerimenti, per piacere non esitare a contattarmi
+ a jorg@kennisonline.com. Comunque ti rimando alla mia pagina di "CONTACTS"
+ per ulteriori informazioni su come raggiungermi con altri mezzi quali il
+ telefono, il fax oppure ICQ.
+
+ 0.5 Questo FAQ e' ufficiale?
+ NO! Questo FAQ e' interamente non-ufficiale. Esso non e' approvato ne
+ supportato da Philips o qualsiasi altra compagnia. Tutte le opinioni
+ menzionate nel FAQ sono unicamente mie. Io non garantisco correttezza, ne'
+ sono responsabile per qualsiasi conseguenza avvenuta dall'uso di
+ informazioni ivi contenute in questo FAQ. Sebbene questo FAQ sia
+ reindirizzato da varie posizioni all'interno del sito web Philips (cosi' come
+ il Philips System Standards & Licensing), l'ultima versione puo' sempre
+ essere trovata sul mio sito web a www.icdia.org/faq/.
+ Controllare la data di revisione sulla pagina di indice FAQ.
+
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.

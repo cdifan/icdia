@@ -1,0 +1,168 @@
+<HTML>
+<TITLE>VCD 2.0 Toolkit Scandata Error</TITLE>
+
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="vcd2x.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+
+<HEAD><CENTER><TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#00CEFF">
+<TR>
+	<TH><FONT SIZE=+3>VCD 2.0 Toolkit Scandata Error</FONT></TH>
+</TR>
+</TABLE></CENTER></HEAD><P>
+<BODY BGCOLOR="FFFFFF">
+Some people have gotten an error when attempting to build a VCD disc image: <B>"Overran space for SCANDATA.DAT"</B>.  This is caused by having too many entrypoints, in the disc's MPEG assets, for VCD Toolkit to handle.   The number of entrypoints exceeds the size allowed for the default scanlist file, SCANDATA.DAT.  The cure is to manually specify scanlist files for VCDMaster to use in the build process.  <P>
+
+  To do this, scanlist files must be added to the <B>master script</B>, and hence to the disc image itself. Such files are added through the use of a second tool, <B>VCDMaster</B>.  VCDMaster comes with the Toolkits, but there are no instuctions in how to use it.  Documentation may be purchased, but at extra cost.  The procedure below explains how to add scanlist files to a Toolkit disc, but is <B>unsupported</B> (unless support for VCDMaster is purchased).  Most of the procedure applies to both Mac and PC Toolkits, with the following exceptions:<P>
+
+<FONT SIZE=+3>Mac:</FONT>
+<UL>
+<LI>VCDMaster is contained in the Drivers folder within the VCD2TK folder.
+</UL><P>
+
+<FONT SIZE=+3>PC:</FONT>
+<UL>
+<LI>The VCDMaster front-end application itself is not included with VCD 2.0 Toolkit for PC, only the dll.  The
+front-end may be downloaded in the PC file section in the FTP area of this website.
+</UL>
+
+<FONT SIZE=+4>Procedure:</FONT>
+<OL>
+<B><LI></B>Create your VCD title using the Toolkit in the normal manner.
+<B><LI></B>Start the build process.  When the status window indicates that it has finished writing the <I>master script</I>, stop the build process.
+<B><LI></B>There should now be a master script in the destination folder.  The name of this script file should be the same as the VCD volume name, with a <B>.msc</B> extension attached.  This script file is a normal text file that may be edited in any text editor.
+<B><LI></B>Using a text editor, follow the example below to add additional lines to the master script, representing the scanlist files to be added. Basically the procedure can be broken down as:
+<OL TYPE="a">
+<B><LI></B>Add a scan_list line with scanlist identifier for every avseq_dat line.
+<B><LI></B>In the directory structure section, create a scanlist directory.
+<B><LI></B>Within that new directory, cross-reference the scanlist identifiers with a scanlist files to be created <I>on the cd.</I>
+<B><LI></B>Save the modified master script <I>as plain text.</I>
+</OL>
+<B><LI></B>Start VCDMaster, and Open the newly edited master script under the File menu.  This will create the .cd disc image.
+</OL>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#FF99CC">
+<TR>
+	<TD><FONT SIZE=+3 COLOR="#663333">Sample master script, new_trak.msc</FONT><BR></TD>
+</TR>
+</TABLE>
+options: -vcd2<BR>
+define<BR>
+  album	"NEW_TRAK"<BR>
+  publisher	""<BR>
+  preparer	""<BR>
+  volume	"NEW_TRAK_1" in "H:/CDIMAGES/NEW_TRAK_1.cd"<BR>
+  1 of 1<BR>
+  disc_restrict 0<BR>
+<BR>
+  copyright	 file _copyright_ from "D:/VCD2TK/CDI_APP/copyrght.txt"<BR>
+  abstract	 file _abstract_ from "D:/VCD2TK/CDI_APP/abstract.txt"<BR>
+  biblio	 file _biblio_ from "D:/VCD2TK/CDI_APP/bibliogr.txt"<BR>
+<BR>
+  green file CDI_IMAG_RTF_1  from "D:/VCD2TK/CDI_APP/CDI_IMAG.RTF"<BR>
+  yellow file CDI_TEXT_FNT_1  from "D:/VCD2TK/CDI_APP/CDI_TEXT.FNT"<BR>
+  application file CDI_VCD_APP_1 rounded  from "D:/VCD2TK/CDI_APP/CDI_VCD.APP"<BR>
+  yellow file CDI_VCD_CFG_1  from "D:/VCD2TK/CDI_APP/custom.txt"<BR>
+ 
+<BR><BR>
+<FONT COLOR="#333399">! Note:  PC file paths are shown here.  On a Mac, a colon (:) is used as the directory separator.</FONT><BR>
+
+<BR><BR>
+  avseq_dat file alaska_mmd from mpeg "r:/samples/assets/mpeg/alaska.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn1 spaced 3.000</FONT><BR><FONT COLOR="#333399"> ! Each avseq_dat line should be followed by its own scan_list line.  Each scan_list line <BR>! will have its own unique identifier.  See the<A HREF="../../cdi/s2d/cdi_xabr_scr.htm"> XA script example</A> for information <BR>! on identifier naming. The 3.00 value may be made even larger, to further reduce<BR> ! the number of entrypoints.  Values should be in .125 increments.</FONT><BR><BR>
+  avseq_dat file alaskaof_mmd from mpeg "r:/samples/assets/mpeg/alaskaof.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn2 spaced 3.000</FONT><BR>
+  avseq_dat file jamaica_mmd from mpeg "r:/samples/assets/mpeg/jamaica.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn3 spaced 3.000</FONT><BR>
+  avseq_dat file kauai_mmd from mpeg "r:/samples/assets/mpeg/kauai.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn4 spaced 3.000</FONT><BR>
+  avseq_dat file orlando_mmd from mpeg "r:/samples/assets/mpeg/orlando.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn5 spaced 3.000</FONT><BR>
+  avseq_dat file orlandof_mmd from mpeg "r:/samples/assets/mpeg/orlandof.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn6 spaced 3.000</FONT><BR>
+  avseq_dat file russia_mmd from mpeg "r:/samples/assets/mpeg/russia.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn7 spaced 3.000</FONT><BR>
+  avseq_dat file russiaof_mmd from mpeg "r:/samples/assets/mpeg/russiaof.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn8 spaced 3.000</FONT><BR>
+  avseq_dat file stlucia_mmd from mpeg "r:/samples/assets/mpeg/stlucia.mmd"<BR>
+<FONT COLOR="#FF0000">scan_list file scn9 spaced 3.000</FONT><BR>
+<BR>
+  seg_play_item file _malta_menu_pi_ from wb_still "H:/CDIMAGES/jamaica.mms"<BR>
+<BR>
+<BR>
+!1<BR>
+  play_list Sequence_1<BR>
+	next	 Menu_1<BR>
+	previous Menu_1<BR>
+	return	 Sequence_1<BR>
+ 	play_item alaska_mmd<BR>
+ 	play_item alaskaof_mmd<BR>
+ 	play_item jamaica_mmd<BR>
+ 	play_item kauai_mmd<BR>
+ 	play_item orlando_mmd<BR>
+ 	play_item orlandof_mmd<BR>
+ 	play_item russia_mmd<BR>
+ 	play_item russiaof_mmd<BR>
+ 	play_item stlucia_mmd<BR>
+!2<BR>
+  sel_list Menu_1 play_item _malta_menu_pi_<BR>
+	repeat 1 then wait forever then Menu_1<BR>
+	default 	Sequence_1 	1, 0, 1, 0<BR>
+	next	 	Sequence_1 	1, 0, 1, 0<BR>
+	previous 	Menu_1 	1, 0, 1, 0<BR>
+	return	 	Menu_1 	1, 0, 1, 0<BR>
+	none <BR>
+<BR>
+<BR>
+<FONT COLOR="#333399">! disc file structure definition </FONT><BR>
+ {<BR>
+   "COPYRIGH.TXT;1"	protection 0x111 from _copyright_<BR>
+   "ABSTRACT.TXT;1"	protection 0x111 from _abstract_<BR>
+   "BIBLIOGR.TXT;1"	protection 0x111 from _biblio_<BR><BR>
+<FONT COLOR="#333399">!Directory structure defined here.  </FONT>
+<BR>
+  "CDI" {<BR>
+    "CDI_IMAG.RTF;1" 	from CDI_IMAG_RTF_1<BR>
+    "CDI_TEXT.FNT;1" 	from CDI_TEXT_FNT_1<BR>
+    "CDI_VCD.APP;1" 	from CDI_VCD_APP_1<BR>
+    "CDI_VCD.CFG;1" 	from CDI_VCD_CFG_1<BR>
+   }<BR>
+<BR>
+  "MPEGAV" {<BR>
+    "AVSEQ01.DAT;1"	 from alaska_mmd<BR>
+    "AVSEQ02.DAT;1"	 from alaskaof_mmd<BR>
+    "AVSEQ03.DAT;1"	 from jamaica_mmd<BR>
+    "AVSEQ04.DAT;1"	 from kauai_mmd<BR>
+    "AVSEQ05.DAT;1"	 from orlando_mmd<BR>
+    "AVSEQ06.DAT;1"	 from orlandof_mmd<BR>
+    "AVSEQ07.DAT;1"	 from russia_mmd<BR>
+    "AVSEQ08.DAT;1"	 from russiaof_mmd<BR>
+    "AVSEQ09.DAT;1"	 from stlucia_mmd<BR>
+  }<BR><BR>
+<FONT COLOR="#333399">!Place the scanlist files in their own directory, "SCANLISTS".</FONT><BR>
+<FONT COLOR="#FF0000">"SCANLISTS" {<BR>
+"SCAN1.DAT;1"	from scn1 </FONT><FONT COLOR="#333399">!See the<A HREF="../../cdi/s2d/cdi_xabr_scr.htm"> XA script example</A> for information on file naming.</FONT><BR>
+<FONT COLOR="#FF0000">
+"SCAN2.DAT;1"	from scn2<BR>
+"SCAN3.DAT;1"	from scn3<BR>
+"SCAN4.DAT;1"	from scn4<BR>
+"SCAN5.DAT;1"	from scn5<BR>
+"SCAN6.DAT;1"	from scn6<BR>
+"SCAN7.DAT;1"	from scn7<BR>
+"SCAN8.DAT;1"	from scn8<BR>
+"SCAN9.DAT;1"	from scn9
+<BR>
+}</FONT><BR>
+<FONT COLOR="#333399">!End of additional files</FONT><BR>
+<BR>
+  }<BR>
+<P>
+<HR>
+<P>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="vcd2x.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+</BODY>
+</HTML>

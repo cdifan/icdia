@@ -1,0 +1,356 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 6. Video-CD su CD-i
+
+ 6.1 Su CD-i qual'e' la differenza tra un CD Video-CD e un Digital Video?
+ In congiunzione con l'introduzione della cartuccia Digital Video per i lettori
+ CD-i nel 1993, Philips pubblico' alcuni film su CD che possono venire eseguiti
+ sui CD-i equipaggiati con una tale cartuccia. Sebbene la specificazione Video-CD
+ gia' esisteva in quel momento, per qualche ragione di politica di vendite i
+ film furono rilasciati in formato CD-i invece del Video-CD. Questo significa
+ che potevano essere eseguiti solo su lettori CD-i e non su sistemi Video-CD
+ dedicati, console da gioco e lettori DVD-Video.
+
+ Sebbene i CD sembrassero molto simili ai 'normali' Video-CD, Philips aveva
+ usato per la creazione due tecniche diverse: le posizioni dei settori fisici
+ del file video differiscono dal Video-CD e sono come il File-System usato dal
+ CD-i e cosi' che la formattazione non e' in ISO-9660 come richiesto per i CD-i
+ Bridge. Come risultato, entrambe i dispositivi di riproduzione cercano il file
+ MPEG nel tentativo di riprodurlo (cosi' come nei PC). I dispositivi di riproduzione
+ che sono basati su semplici circuiti microcontroller iniziano ad eseguire i
+ video che si trovano in una posizione di settore ben definita (come accade nei
+ lettori Video-CD e DVD-Video) e quindi non possono eseguire i Video-CD CD-i
+ only.
+
+ Per identificare il formato in cui un film e' stato pubblicato bisogna guardare
+ il testo nell'angolo in basso a sinistra sulla copertina. Quando c'e' scritto
+ Digital Video on CD-i il CD e' in formato CD-i mentre quando c'e' scritto
+ Video-CD e' in formato Video-CD. Non si deve prestare attenzione a cio' che e'
+ stampato sulla confezione in plastica perche' qualche Video-CD ha la scritta
+ 'CD-i'. Il formato corretto e' tuttavia sempre chiaramente indicato sulla
+ confezione. Qualche film, all'incirca 20, furono pubblicati nel formato Digital
+ Video CD-i, ma furono ristampati in formato Video-CD qualche giorno dopo.
+
+ Alcuni lettori Video-CD asiatici furono in grado di riprodurre parte dei CD
+ Digital Video su CD-i come se fossero Video-CD. Da notare che questi lettori
+ sono solo in grado di eseguire parte dei titoli indicati come Digital Video
+ CD-i, ma non i titoli CD-i (ne' le sequenze MPEG video contenute in essi) in
+ quelli che normalmente sono indicati come titoli CD-i Digital Video.
+
+ Per bypassare il problema di formato del file su Windows 95/98 si e' trovata
+ una soluzione alla fine del 1999 con la creazione del Driver CD-i Filesystem.
+ Quando questo driver e' installato si puo' accedere ad un CD CD-i in un modo
+ simile ad un CD-ROM qualsiasi e si possono eseguire le sequenze MPEG contenute.
+ Il Driver CD-i Filesystem e' disponibile per il download al PC per lo sviluppo
+ CD-i alla prima pagina di questo sito. Per ulteriori informazioni circa l'uso
+ del driver, rivedere la sezione 9 di questo FAQ: CD-i su altre piattaforme.
+
+ 6.2 Quali sono le differenze tra le varie versioni di Video-CD?
+ Esistono molte versioni delle specifiche Video-CD  e sono tutte descritte nel
+ Libro Bianco. Tutte le versioni sono intercambiabili in quanto le sequenze
+ prettamente video non variano (il video di qualsiasi Video-CD puo' essere
+ eseguito su qualsiasi lettore Video-CD senza tener conto della sua versione),
+ ma alcuni dischetti possono contenere caratteristiche che sono descritte in
+ versioni piu' recenti e accessibile solo a lettori di ultima generazione.
+ Le seguenti versioni di Video-CD sono quelle esistenti a tutt'oggi:
+
+ *Karaoke-CD 1.0
+ La prima versione di Video-CD era chiamata Karaoke-CD. Venne creata da Philips
+ e JVC nel 1992 per essere usata principalmente in Giappone in applicazioni
+ Karaoke. Solo le caratteristiche video base (come la divisione di varie
+ canzoni in tracce) furono specificate in questa versione.
+ *Video-CD 1.1
+ Il sistema fu rinominato Video-CD nel 1993 per mostrare la gamma di applicazioni
+ in cui poteva essere usato. Il sistema stavolta venne definito con la collaborazione
+ di Sony e Matsushita. Furono aggiunte alcune caratteristiche come la suddivisione
+ di una traccia (una video sequenza MPEG) in capitoli. Questo permise oltre
+ alla riproduzione continuata di un video anche la possibilita' di saltare
+ direttamente ad un capitolo specifico in un film.
+ *Video-CD 2.0
+ Nel 1994 venne introdotto il Video-CD 2.0. Nato da un progetto comprendente
+ tutte le compagnie del Video-CD 1.1 il 2.0 aveva caratteristiche molto
+ interessanti, come una limitata interattivita' nello schermo di menu' con
+ voci di selezione capitoli (paragonabile al DVD-Video), l'uso di MPEG ad alta
+ risoluzione, la possibilita' di mostrare slideshow con o senza audio e
+ l'inclusione possibile di tracce CD-Audio.
+
+ Da rivedere "Quale applicazione CD-i dovrebbe essere usata per le differenti
+ versioni del Video-CD?" per ulteriori informazioni circa l'uso di applicazioni
+ CD-i con riguardo alle varie versioni delle specifiche Video-CD.
+
+ 6.3 Che applicazioni CD-i furono disponibili per il Video-CD?
+ Per permettere la riproduzione di un titolo Video-CD su un lettore CD-i, ogni
+ Video-CD deve includere un'applicazione CD-i. Questa e' una richiesta
+ obbligatoria in tutte le versioni delle specifiche Video-CD. Esistono molte
+ applicazioni, le piu' importanti sono:
+
+ *Video-CD su CD-i
+ Questo software creato da Philips e' probabilmente l'applicazione per Video-CD
+ su CD-i piu'conosciuta. Qualche volta e' chiamata in codice "Franklin".
+ Viene usato per la maggior parte dei (non Americani) Video-CD, ed e'incluso
+ in vari strumenti di CD-Recorder (come Ahead Nero e Adaptec Easy CD Creator).
+ Esso permette una vasta personalizzazione, ma puo' anche essere usato cosi'
+ com'e', dato che si adatta completamente ai contenuti del CD.
+ Esistono molte versioni di questa applicazione e sono descritte piu'
+ dettagliatamente in "Quali sono le differenze tra le varie versioni di Video-CD
+ su CD-i?".
+ *Edison
+ Edison, sviluppato da Philips Interactive Media of America, fu per lo piu'
+ usato in Video-CD Philips creati in America. L'applicazione ha bisogno di
+ essere adattata dallo sviluppatore di software per un particolare Video-CD
+ per poter essere riprodotta da un lettore CD-i, e cosi' si deve fare un lavoro
+ extra per creare un Video-CD compatibile CD-i. E' possibile riconoscere
+ l'applicazione Edison dalla sua opzione di volume che mostra una freccia
+ verde sullo schermo.
+ *OmniMedia
+ OmniMedia venne sviluppato in UK per applicazioni Video-CD dalla Castle
+ Multimedia e dalla EMI Records, per citare i piu' importanti. Come con Edison,
+ esso ha bisogno di essere completamente adattato per poter lavorare su un
+ particolare titolo Video-CD.
+ *CeQuadrat
+ L'applicazione CD-i inclusa nelle versioni piu' recenti del CeQuadrat
+ CD-Recording di WinOnCD 3.6 e' stata sviluppata da CeQuadrat stessa.
+ Non ha bisogno di essere personalizzata fin quando lascia un'adattamento
+ dinamico al contenuto di un CD, ma sembra piuttosto monotona e offre solo
+ caratteristiche limitate (come l'avanzamento alla prossima traccia).
+ Non si sa cosa succedera' a questa applicazione ora che CeQuadrat e' stata
+ comprata da Adaptec e che futuro avra' l'applicazione Philips Video-CD su
+ CD-i e i suoi prodotti CD-R.
+
+ 6.3.1 Quali sono le differenze tra le varie versioni di Video-CD su CD-i?
+ Come stabilito sopra, l'applicazione CD-i piu' usata per i Video-CD e' il
+ Video-CD on CD-i. Di questa applicazione esisitono molte versioni. Il numero
+ di versione dell'applicazione viene mostrato sullo schermo quando se ne esce.
+ Le piu' importanti sono:
+
+ *Versione 1.0
+ La prima versione fu creata per il Karaoke-CD. Ha inizio con una breve
+ animazione che mostra il testo 'Karaoke-CD'. Adatta se stessa al contenuto del
+ CD mostrando il nome del dischetto e un box di selezione con numeri pari alle
+ tracce disponibili. L'applicazione puo' essere adattata in modo limitato,
+ sostituendo l'immagine di sfondo dello schermo di menu', o sostituendo i box
+ di numero con box contenenti il titolo della canzone.
+ *Versione 2.0
+ Il programma fu cambiato per permettere altre applicazioni oltre alla musica
+ video o karaoke. Il layout dei tasti fu cambiato, dai colori giallo e rosso
+ si passo' ai piu' quieti toni di grigio. Qualche terminologia fu cambiata
+ (come il switch "Vocals on/off" dello schermo di settaggi venne sostituito in
+  "Canale 1/2").
+ *Versione 3.0
+ Completo restyling del layout dell'applicazione; venne in seguito usato in
+ tutte le versioni 3.x. L'applicazione ora supporta pienamente il Video-CD 1.1,
+ per esempio esso permette l'avanzamento ad un capitolo contenuto in una traccia.
+ La schermata mostra il numero di traccia, il numero del capitolo ed un timer.
+ Vennero introdotte alcune nuove caratteristiche di riproduzione, come sistemi
+ frame-by-frame quando si preme velocemente il tasto di pausa. L'applicazione
+ venne personalizzata in vari modi, per esempio sostituendo lo sfondo del menu',
+ implementando hot-spot entro schermi di menu' che mostrano sequenze video o
+ altri schermi di menu'. Vi furono novita' minori come il diverso colore del
+ cursore, il tempo di interruzione prima di ricominciare il video, e processi
+ che non permettevano l'interruzione della sequenza di introduzione che poteva
+ anche essere definita dallo sviluppatore del video contenuto.
+ *Versione 3.01
+ Questa versione permetteva la continuazione del timer di schermata sul
+ prossimo CD come per esempio per un film piu' lungo dei canonici 74 minuti
+ invece di ricominciare daccapo. Permette per CD-i l'introduzione di sottotitoli.
+ Permetteva l'abilitazione o disabilitazione di diverse funzioni.
+ *Versione 3.1
+ In questo caso la funzione di ricerca e' continua dopo che si e' tenuto
+ premuto il tasto per un certo periodo di tempo. Si arrivo' ad includere 7
+ velocita' di slow-motion e si svilupparono vari fonts per CD-i da usare nei
+ vari testi per capitolo. Venne sviluppato un comando che permetteva al CD-i
+ di far uscire il carrello per richiedere l'inserimento del CD seguente, nel
+ caso di Video-CD con piu' CD, senza essere costretti a resettare il lettore.
+ *Versione 3.11
+ Permette la selezione del canale audio nello schermo di menu' in un modo simile
+ alla scelta possibile per un titolo DVD-Video.
+ Da segnalare alcuni cambiamenti e migliorie minori.
+ *Versione 3.2
+ Piccola versione ottimizzata, miglioramenti minori di esecuzione e aumenti di
+ correzione di errore.
+ *Versione 4.0
+ Questa versione dell'applicazione si attiene pienamente al Video-CD 2.0.
+ La personalizzazione degli schermi di menu' ora si attiene al Libro Bianco 2.0
+ (immagini di sfondo, selezioni di menu', etc.). Supporto per la schermata di
+ alta risoluzione MPEG. Supporto per la riproduzione di tracce CD-Audio su un
+ Video-CD. Mantiene intatta la disponibilita' per sottotitoli su CD-i.
+ La specifica personalizzazione CD-i di immagini di sfondo e menu' come visto
+ nell'applicazione 3.x e' stata rimossa.
+ *Versione 4.1
+ Questa versione continua il supporto dello standard Video-CD 2.0. Ora include
+ il supporto di file con estensione PSD, permette la selezione di hot-spot
+ in immagini di schermo come con l'applicazione 3.x (ma ora supportando il
+ Video-CD 2.0), invece di permettere solo la selezione dal numero contenuto
+ nella barra di menu'.
+
+ Oltre alla versione 4.1 e' anche disponibile qualche versione intermedia
+ (da 4.1.1 alla 4.1.7). Furono corretti difetti minori e il recupero automatico
+ di riproduzione video in caso di un errore di lettura fu aggiunto in ambienti
+ dove il controllo dell'utente non arriva(cosi' come con i display dei negozi).
+
+ Sia l'ultima versione Video-CD 1.1 ottimizzata (3.2) come pure l'ultima
+ Video-CD 2.0 compliant (4.1.1) sono disponibili per il download su questo sito
+ nella sezione "CD-i Application Download".
+
+ Un documento concepito per lo sviluppo di Video-CD descrive come installare e
+ personalizzare il Video-CD su CD-i con l'applicazione 4.1 e si puo' trovare
+ nella sezione "CD-i Technical Documentation / Software ".
+
+ 6.3.2 Che versione dell'applicazione CD-i dovrebbe essere usata per le diverse
+       versioni del Video-CD?
+ Quando si crea un Video-CD ci si dovrebbe accertare che contenga almeno la
+ versione 3.0 dell'applicazione Video-CD su CD-i, fin quando le versioni
+ precedenti non saranno adattate ai contenuti del CD. A livello di programma
+ si deve personalizzare l'applicazione per farla girare su un particolare
+ dischetto. Incominciando dalla versione 3.0, quando l'applicazione viene messa
+ su un Video-CD senza personalizzazione, essa cerca il file di contenuti
+ (tracce, capitoli, nome del dischetto, etc.) e presenta un menu' conforme.
+
+ Le versioni 3.x dell'applicazione sono progettate per Video-CD 1.1 perche'
+ riconoscono le tracce e i numeri di un capitolo. Le versioni 4.x sono
+ progettate per Video-CD 2.0, questa versione mostra dei Video-CD le strutture
+ di menu', gli stili, etc. Quando si crea un Video-CD 2.0 che include speciali
+ caratteristiche 2.0(come il menu' e lo stile) bisogna essere in grado di
+ svilupparle su un lettore CD-i, e si deve usare almeno la versione 4.0
+ dell'applicazione.
+ Quando si posiziona un'applicazione 3.x su un Video-CD 2.0 si sara' ancora
+ in grado di accedere a tracce e capitoli, ma non si vedranno schermi di menu'.
+ Questo accade perche' i menu' in un'applicazione 3.x hanno bisogno di essere
+ sviluppati specialmente per CD-i, e questo non accade nei pacchetti per la
+ creazione di Viodeo-CD disponibili oggigiorno.
+ D'altra parte, quando si posiziona un'applicazione 4.x su un CD Video-CD 1.1,
+ o su un CD Video-CD 2.0 senza schermi di menu' o di pausa si vedra' la
+ versione standard dell'applicazione, adattata ai contenuti del dischetto.
+
+ In conlusione: si possono scambiare entrambi le applicazioni 3.x e 4.x su
+ entrambi i Video-CD 1.1 e 2.0, ma per usare le caratteristiche migliori di un
+ Video-CD 2.0 su un lettore CD-i il CD deve includere un'applicazione 4.x.
+ Se si crea un Video-CD 1.1, o un Video-CD 2.0 senza le speciali caratteristiche
+ 2.0, si consiglia, se possibile, l'utilizzo dell'applicazione 3.x.
+ L'applicazione 3.x e' la piu' stabile e generalmente ha un aspetto migliore
+ dell'applicazione 4.x.
+
+ Da notare: qualche software CD-R con funzioni di creazione Video-CD include
+ una versione di Video-CD su CD-i che puo' non essere adatta alla versione
+ Video-CD creata. Per esempio: Adaptec Easy CD Creator 4 crea Video-CD 2.0
+ con menu' ma include un'applicazione 3.x. Come spiegato sopra questo lavora
+ in modo ottimo, ma in questo caso si applicano condizioni speciali.
+
+ 6.3.3 Come posso personalizzare il Video-CD su un'applicazione CD-i 3.x?
+ La versione 3.x dell'applicazione Video-CD su CD-i puo' essere largamente
+ personalizzata nella schermata esclusivamente su lettori CD-i. Questo permette
+ la sostituzione dell'immagine di sfondo default, per la creazione di menu'
+ con scelta capitoli ed indirizzamento ad altri menu' o sequenze video e per
+ la regolazione di tutti i tipi di settaggi dell'applicazione.
+
+ Molti programmi per la creazione di Video-CD non permettono di masterizzare
+ questi specifici adattamenti CD-i. Specialmente la modifica degli schermi di
+ menu' implica un'ottima conoscenza del formato dei file di immagine e degli
+ schermi di menu'.
+ Il metodo per creare questi schermi e menu' e' definito nel Product Information
+ e nel manuale Installation Note fornito con l'applicazione a seguito dello
+ acquisto di una licenza da Philips.
+ Richiedete al venditore una copia del software all'acquisto del masterizzatore.
+
+ Oltre agli schermi di menu', c'e' anche un file di configurazione generale
+ chiamato CDI_VCD.CFG che e' inserito nella directory /CDI sul Video-CD.
+ Si tratta di un semplice file di testo ASCII che viene letto dall'applicazione
+ nella startup, che allora si adatta alla configurazione data. Il file contiene
+ settaggi per cambiare il colore del cursore, il tipo di sfondo, la barra di
+ menu' che dovrebbe essere in grado di riportare il timer sull'inizio di un
+ secondo dischetto, il numero di traccia iniziale (su un secondo dischetto in
+ un dischetto multi-assegnato), l'iniziale linguaggio per sottotitoli e colore,
+ il tempo di interruzione di bumper, il valore di interruzione le opzioni di
+ esame. L'ultimo potrebbe essere importante, rivedere "Perche' su alcuni CD non
+ posso fare l'avanzamento o il ritorno veloce?".
+
+ 6.4 Ho un CD Video-CD. Perche' non funziona sul mio CD-i?
+ Conosco l'esistenza di molti cosiddetti Video-CD che non funzionano su un
+ lettore CD-i. Questo e' principalmente il caso di certi titoli cinesi e del
+ lontano oriente. Per lo piu', questo e' dovuto all'assenza di un'applicazione
+ CD-i. Come menzionato prima, una tale applicazione e' una richiesta obbligatoria
+ per un Video-CD, e un dischetto che non la include viola i termini di licenza
+ (ma questo accade spesso con Video-CD illegali per i quali nessuna tassa di
+ concessione e' mai stata pagata!). Quando nessun tasto 'Play CD-I' appare
+ dopo l'inserimento del dischetto in un lettore CD-i, o quando esso appare ma
+ il lettore si resetta pochi istanti dopo che lo si e' selezionato, si puo'
+ essere piuttosto sicuri che questa e' la ragione per cui il dischetto non
+ viene eseguito. Questo CD non ha niente a che fare con il CD-i non potendone
+ essere riprodotto come accade in qualche Video-CD (2.0).
+
+ Quando un CD include un'applicazione CD-i e mostra i numeri di traccia, ma
+ non esegue la sequenza video quando la si seleziona o "hang on" sul lettore,
+ questo e' dovuto probabilmente al fatto che il MPEG video sul CD non e'
+ conforme alle specifiche Video-CD. Lo standard e' spiegato dettagliatamente
+ nel Libro Bianco su come si dovrebbe codificare correttamente il video e l'audio
+ in un Video-CD. Quando il video fosse codificato in un formato diverso potrebbe
+ essere riprodotto su un PC usando un'applicazione video molto "indulgente" ma,
+ questo non e' considerato un vero Video-CD finche' non funzionera' su CD-i.
+ Questo spesso e' anche il caso di Video-CD illegali provenienti dall'oriente.
+
+ 6.5 Perche' in alcuni CD non posso fare l'avanzamento o il ritorno veloce?
+ Nelle versioni 3.x di Video-CD su CD-i per velocizzare l'esecuzione della
+ ricerca in avanti e indietro Philips ha definito un nuovo tipo di file.
+ Un tale file contiene i numeri di indirizzo assoluti dei settori che contengono
+ fotogrammi MPEG I che sono creati per mostrare un'immagine nel momento in cui
+ si sta eseguendo una ricerca. Per ciascuno dei file MPEG sul CD vi e' un file
+ ASCII simile chiamato MPEG-file (cosi' come AVSEQ01.DAT) contenuto nella
+ directory /CDI. Quando tali file non sono presenti, l'applicazione disabilita
+ di default le funzioni di ricerca.
+
+ Attenzione normalmente il software di creazione Video-CD non genera questi
+ file e quindi la ricerca veloce su CD-i e' disabilitata. Se si vuol essere in
+ grado di usare la funzione in esame senza inserire nel CD file appositi si
+ deve inserire nel file CDI_VCD.CFG contenuto nella directory /CDI la linea
+ SCAN=ALWAYS. In questo caso e' estremamente importante che il flusso MPEG sia
+ conforme al 100% con le specifiche del Libro Bianco. Se 2 fotogrammi MPEG 
+ hanno uno spazio di due secondi l'uno dall'altro (che non e' permesso dal
+ Libro bianco) la ricerca veloce blocchera' l'applicazione.
+
+ Attenzione: con molti strumenti di CD-Recorder e' impossibile aggiungere file
+ alla directory /CDI, o modificare il file CDI_VCD.CFG.
+
+ 6.6 Cos'e' il Video-CD 3.0?
+ Il Video-CD 3.0 ufficialmente non esiste. Le sole versioni del Video-CD
+ rilasciate a tutt'oggi dai creatori ufficiali del Video-CD Philips, Sony, JVC
+ e Matsushita sono 1.0, 1.1 e 2.0. Alcuni lettori Video-CD Cinesi si dichiarano
+ compatibili con il Video-CD 3.0. Non e' ancora chiaro come questo sia possibile
+ o come alcuni lettori cosiddetti Video-CD 3.0 si riferiscano allo stesso
+ sistema. Comunque sia dovrebbero almeno essere in grado di eseguire il 'vero'
+ Video-CD.
+
+ 6.7 Cos'e' CVD o Chao-Ji?
+ CVD e Chao-Ji sono due delle estensioni Video-CD che furono sviluppate in Cina.
+ Entrambe i sistemi usano la codifica video MPEG2 e quindi i CD non sono
+ compatibili con i lettori Video-CD o CD-i. Entrambe i sistemi non sono
+ intercambiabili l'un con l'altro. Per realizzare uno standard mondiale in
+ MPEG-2 su CD, le compagnie originarie del Video-CD hanno creato il Super Video-CD.
+ Un vero Super Video-CD puo' tuttavia essere riprodotto sia su CVD che su
+ lettori Chao-Ji, fin quando usano subsets in entrambe i sistemi. Per ulteriori
+ informazioni vedere "Cos'e' il Super Video-CD?"
+
+ 6.8 Cos'e' il Super Video-CD?
+ Super Video-CD e' un'estensione alle specifiche Video-CD, assegnata nel 1999
+ dalle compagnie licenziatarie dell'originale Video-CD (Philips, Sony, JVC e
+ Matsushita). Il Super Video-CD usa una qualita' video DVD MPEG-2 su un
+ CD standard che funziona a velocita' di bit variabili superiori alla doppia
+ (2.8 kbps). Questo permette da 35 a 70 minuti di video in alta qualita' su un
+ lettore CD standard. Il Super Video-CD permette un modo economico di fare
+ CD leggibili su lettori DVD-Video compatibili usando un normale CD-Recorder.
+
+ Fin quando il Super Video-CD usa la compressione video MPEG-2 invece della
+ MPEG-1 usata nel CD-i, e a causa del fatto che il CD deve essere riprodotto
+ ad una velocita' superiore alla doppia di cui un lettore CD-i non e' capace,
+ un Super Video-CD non puo' essere riprodotto su un lettore CD-i.
+ Percio' anche l'applicazione CD-i obbligatoria per i Video-CD non e' disponibile
+ per il Super Video-CD.
+
+ Un sito molto bello(tra gli altri disponibili con ulteriori informazioni circa
+ il  Super Video-CD) si puo' trovare a www.iki.fi/znark/video/svcd/rassegna.
+
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.

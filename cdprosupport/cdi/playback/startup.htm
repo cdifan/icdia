@@ -1,0 +1,64 @@
+<HTML><HEAD>
+<TITLE>Starting MediaMogul Automatically</TITLE>
+</HEAD>
+<BODY>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="playback.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<CENTER><H2>Starting MediaMogul Automatically from CDIPlayback</H2>
+</CENTER>
+CDIPlayback looks for the file <CODE>startup</CODE> just after it resets in the CD-RTOS mode.  If it finds <CODE>startup</CODE>, it executes any commands found there.   This is identical in concept to the DOS autoexec.bat file, and similar in concept to Macintosh "Start Up Items" folder.<P>
+
+
+<CODE>startup </CODE>can contain any number of  valid OS-9 system commands or OS-9 program commands.   The most common use of the startup file it to automatically start MediaMogul without using the pulldown menu, quick key or other manual method after a reset.<P>
+
+
+Below is an example startup file that actually works.  It uses the system sleep command to alternately sleep (pause) for one second, then echo a message, sleep, echo, etc...until 5 seconds have elasped.   The last command runs the procedure file that starts MediaMogul.<P>
+
+
+To make the startup file, open your favorite text edtitor and type in the following.  Save the file as PLAIN TEXT, and as the file name STARTUP.  The <CODE>startup</CODE> file must be at the ROOT of your MediaMogul folder (directory).<P>
+
+
+<CODE><BLOCKQUOTE>-nt<BR>
+echo You have 5 seconds to abort the start of MediaMogul.<BR>
+
+echo Click in this window, then press Control-E to abort.<BR>
+sleep -s 1<BR>
+
+echo 5 seconds...you have plenty of time...<BR>
+
+sleep -s 1<BR>
+
+echo 4 seconds...getting closer...<BR>
+
+sleep -s 1<BR>
+
+echo 3 seconds...halfway...<BR>
+
+sleep -s 1<BR>
+
+echo 2 seconds...be quick about it...<BR>
+
+sleep -s 1<BR>
+
+echo 1 second...almost a lost cause...<BR>
+
+sleep -s 1<BR>
+echo TOO LATE...here we go...<BR>
+
+strt_mm</BLOCKQUOTE></CODE><P>
+
+
+Be sure to put a carriage return (blank line) after <CODE>strt_mm</CODE>.  The startup file MUST have a blank line as the last line.<P>
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="playback.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+</BODY>
+</HTML>

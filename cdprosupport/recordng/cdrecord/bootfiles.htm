@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+   <TITLE>Boot File Configuration for CD Record</TITLE>
+</HEAD>
+<BODY BGCOLOR="FFFFFF">
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="cdrecord.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+<P><HR></P>
+<H2><CENTER><FONT COLOR="610806">Boot File Configuration for CD Record</FONT></CENTER></H2>
+
+CD Record requires several drivers, described below,  to be loaded at startup via the autoexec.bat and config.sys files.  For load order, see the <A HREF="#examples">example files.</A>
+
+<P>
+<BR>
+<B><FONT COLOR="0000FF"><FONT SIZE=+2>CONFIG.SYS</FONT></FONT></B>
+<P>
+<HR SIZE="1" NOSHADE>
+<P>
+<CENTER><CAPTION><FONT COLOR="00CC66"><B><A NAME="DOSMEMORY">DOS memory drivers:</A></B></FONT></CAPTION></CENTER>
+<CENTER><TABLE BORDER=1 CELLSPACING="2" CELLPADDING="4"><TR><TH>HIMEM.SYS <TD>DOS <B>Hi</B>gh  <B>Mem</B>ory Manager-- makes extended memory above 1Mb usable.<BR>
+<TR><TH>EMM386.EXE<TD>DOS <B>E</B>xpanded <B>M</B>emory <B>M</B>anager.  This allows expanded memory between 640K and 1Mb, creates Upper Memory Blocks(UMBs), Page Frames, etc.</TABLE></CENTER>
+<BR>
+<CENTER>Both of these drivers should be loaded, in this order.</CENTER><BR>
+
+<P>
+
+<HR SIZE="1" NOSHADE>
+
+<P>
+
+<CENTER><CAPTION><FONT COLOR="00CC66"><B><A NAME="ASPI4DOS.SYS">Adaptec SCSI drivers:</A></B></FONT></CAPTION></CENTER>
+<CENTER><TABLE BORDER=1 CELLSPACING="2" CELLPADDING="4">
+<TR><TH>ASPI?DOS.SYS<TD><BR> This is the driver which comes with the Adaptec SCSI host adaptor card.  The <B>?</B> will be a different number depending on which model of Adaptec card you are using.    The most common ones are:
+<CENTER><TABLE BORDER=1 CELLSPACING="2" CELLPADDING="4">
+<TR><TH>ASPI4DOS.SYS</TH><TD>for ISA cards</TD>
+<TR><TH>ASPI7DOS.SYS</TH><TD> for VLB cards.</TD>
+<TR><TH>ASPI8DOS.SYS</TH><TD>for PCI cards.</TD></TABLE></CENTER><BR>
+
+<TR><TH>ASPICD.SYS<TD> <A NAME="ASPICD.SYS">This is another Adaptec driver which comes with the Adaptec SCSI host adaptor card.  This driver is used to enable access to standard SCSI CD-ROM drives.  It is not needed if:</A>
+<OL>
+<LI>You are not using a SCSI CD-ROM drive, but rather an IDE or proprietary bus drive (or none), or<BR><BR>
+<LI>You are using your CDR as a CD-ROM reader and do not have any other CD-ROM drives on your SCSI bus.  This is <B>not</B> recommended because CDR's generally aren't as good at reading CD-ROM's as normal CD-ROM drives, and using the CDR as a reader causes more wear & tear on the laser.
+</OL><BR>
+
+</TABLE></CENTER>
+<BR>
+<CENTER>The ASPI drivers should be loaded before the CD Record drivers in config.sys, but after the DOS memory managers.</CENTER>
+<P>
+
+<HR SIZE="1" NOSHADE>
+<CENTER><FONT COLOR="00CC66"><B>CD Record Drivers:</B></FONT></CENTER>
+<P>
+
+<CENTER><CAPTION><FONT COLOR="333399"><B><A NAME="VMAP_DRV.SYS">Virtual CD driver:</A></B></FONT></CAPTION></CENTER>
+<P>
+
+
+<CENTER><TABLE BORDER=1 CELLSPACING="2" CELLPADDING="1"><TR><TH>VMAP_DRV.SYS<TD> This is the device driver which creates a virtual drive in expanded memory to hold the disc image created by CD Record.  This virtual drive is essentially the disc image mounted on a drive letter of its own, as though it were an actual device. </TABLE></CENTER>
+
+<P>
+&nbsp;
+<P>
+
+<CENTER><CAPTION><FONT COLOR="333399"><B><A NAME="RECORDERS">Recorder Device Drivers:</A></FONT></B></CAPTION></CENTER>  <BR>
+<CENTER><TABLE BORDER=1 CELLSPACING="2" CELLPADDING="4">
+<TR><TD COLSPAN=2 ALIGN=CENTER>These drivers are used to <B>read</B> from a CDR drive. They are not required for making CDRs (unless doing multisession).
+<TR><TH>PHIL521.SYS<TD> For the Philips CDD 521, 522, 2000 drives and Kodak PCD 200,225, and 600 drives.
+<TR><TH>RICOH920.SYS<TD> For the Ricoh 920-R CD-R drive.
+<TR><TH>SONY920.SYS<TD> For the Sony 920S CD-R drive.
+<TR><TH>YAMAHA.SYS<TD> for the Yamaha CD-R drive.</TABLE></CENTER>
+<BR>
+<CENTER>The CD Record drivers should be loaded after the DOS memory and ASPI drivers.</CENTER>
+
+<P>
+<HR SIZE="4" NOSHADE>
+
+<P>
+<B><FONT COLOR="0000FF"><FONT SIZE=+2>AUTOEXEC.BAT</FONT></FONT></B>
+<P>
+<CENTER><A NAME="MSCDEX"><TABLE BORDER=1 CELLSPACING="2" CELLPADDING="4"><TR><TH>MSCDEX.EXE</A><TD> Microsoft CD extensions.  This executable works with the drivers loaded in config.sys to enable access to the CDR, the CD-ROM drive, and the virtual CD drive.  It interracts with the drivers through the <B>driver signature</B> (the /D switches). 
+<TABLE BORDER=1 CELLSPACING="2" CELLPADDING="1"><TR><TH>/D:DWTHSDVR</TH><TD> This switch added to the MSCDEX line in autoexec.bat references the driver signature created by the VMAP_DRV.SYS line in config.sys, and creates a virtual drive on its own drive letter.   The drive signature is the default,  "DWTHSDVR".
+<TR><TH>/D:<I>CDRNAME</I></TH><TD> This switch enables read access to the CDR drive.  It is only required for reading, or for multisession recording.  If  neither is being done, it can (and should) be left out of the MSCDEX line. The<CODE> /D:<I>CDRNAME</I></CODE>  switch should be used in both the driver device loading in config.sys and the MSCDEX line in autoexec.bat, and the driver signatures must match.<BR>
+<TR><TH>/D:ASPICD0</TH><TD> This switch is used to enable access to a standard SCSI CD-ROM drive.  The driver signature, "ASPICD0",  must exactly correspond with the driver signature assigned by ASPICD.SYS in config.sys.  It may not be needed.  See the <A HREF="#ASPICD.SYS">ASPICD.SYS</A> entry in config.sys above.</TABLE></TABLE></CENTER>
+<BR>
+
+
+<P>
+<HR SIZE="4" NOSHADE>
+
+<P>
+<CENTER><FONT SIZE=+2 COLOR="663300"><A NAME="examples"><B>EXAMPLE BOOTUP FILE CONFIGURATION</B></A></FONT></CENTER><BR>
+(Examples shown contain just the commands needed for recorder operation.  Obviously, real world files would normally contain other configuration lines.)<BR><BR>
+<B><FONT COLOR="FF0033" SIZE=+1>PC with<UL>
+<LI> SCSI CD-ROM drive (at ID#3) <LI>Philips CDD2000 recorder (at ID#5)<LI>Adaptec 1542 host adaptor card (at ID#7)</UL>
+</FONT></B><BR>
+
+<P>
+<B>CONFIG.SYS</B><BR>
+<HR SIZE="1" NOSHADE ALIGN=LEFT WIDTH=200>
+<TABLE BORDER=0 CELLSPACING="2" CELLPADDING="1">
+<TR><TD VALIGN=TOP WIDTH=350><PRE>DEVICE=C:\DOS\<A HREF="#DOSMEMORY">HIMEM.SYS</A></PRE><TD VALIGN=TOP>This line loads HIMEM, enabling access to memory above 1MB.
+<TR><TD VALIGN=TOP WIDTH=350><PRE>DEVICE=C:\DOS\<A HREF="#DOSMEMORY">EMM386.EXE</A> RAM</PRE><TD VALIGN=TOP>This line loads  EMM386, enabling access to memory above 640K.  The RAM option enables a memory page frame (used by the virtual drive) and upper memory blocks (often the place where DOS is put).  This might not be the option for everyone, depending on the system, and is just one of  many possible options.
+<TR><TD VALIGN=TOP WIDTH=350><PRE>DEVICE=C:\SCSI\<A HREF="#ASPI4DOS.SYS">ASPI4DOS.SYS</A> /D</PRE><TD VALIGN=TOP>This line loads the Adaptec SCSI Peripheral Interface driver (in this case, for the 1542 ISA host adaptor card).  The /D switch turns on the SCSI bus diagnostic display upon boot.
+<TR><TD VALIGN=TOP><PRE>DEVICE=C:\SCSI\<A HREF="#ASPICD.SYS">ASPICD.SYS</A> /D:ASPICD0 /ID=3</PRE><TD VALIGN=TOP>This line loads the Adaptec SCSI CD driver,  assigns the signature "ASPICD0" to it, and looks for it at SCSI ID# 3.  The /ID switch, while not required, is a good idea: it has been noted that spurious drive letters may be assigned if it is missing.  The number assigned by <CODE>/ID=</CODE> <B>must</B> match the actual SCSI id# of the CD-ROM drive.
+<TR><TD VALIGN=TOP>.........................<TD ROWSPAN=3> Other lines not related to CD operations.
+<TR><TD VALIGN=TOP>.........................
+<TR><TD VALIGN=TOP>.........................
+<TR><TD COLSPAN=2>&nbsp;
+<TR><TD VALIGN=TOP><PRE>LASTDRIVE=Z</PRE><TD VALIGN=TOP>This enables all possible drive letters, so that the /L:R switch for MSCDEX.EXE works.
+<TR><TD VALIGN=TOP><PRE>DEVICEHIGH=C:\CDRECORD\VMAP\<A HREF="#VMAP_DRV.SYS">VMAP_DRV.SYS</A></PRE><TD VALIGN=TOP>This loads the "virtual drive"  driver for emulating with CD Record.   Unless changed by the <CODE>/D:<I>virtualdrivename</CODE></I>&nbsp; option, the driver signature defaults to DWTHSDVR.   The <I>CDRNAME</I> associated with one of the recorder drivers should be changed so as not to interfere with this virtual driver.
+<TR><TD VALIGN=TOP><PRE>DEVICEHIGH=C:\CDRECORD\<A HREF="#RECORDERS">PHIL521.SYS</A> /D:DWPHILDV</PRE><TD VALIGN=TOP>This loads the driver for reading cd's in the Philips CD recorders.  It is not needed if you are not using the recorder as a disc reader (or burning multisession discs); if you aren't, it's a good idea to REM this line out, or leave it out altogether.  The <I>CDRNAME</I> in this case is DWPHILDV.  This signature for Philips recorders is arbitrary: it can be (almost) anything as long as:<BR>
+<LI> it matches a /D switch in the MSCDEX line in autoexec.bat and
+<LI> is different from the virtual drive signature.<BR><BR>
+  Unless changed by the <CODE>/D:<I>CDRNAME</CODE></I>&nbsp;option, the driver signature(<I>CDRNAME</I>)  defaults to DWTHSDVR.   Since  the virtual driver also defaults to DWTHSDVR, the <CODE> /D:<I>CDRNAME</I></CODE>  switch <B>must</B> be used (in both the driver device loading in config.sys and the MSCDEX line in autoexec.bat) so the reader driver and virtual driver  don't interfere with each other.<BR>
+</TABLE>
+
+<P>
+
+<B>AUTOEXEC.BAT</B><BR>
+<HR SIZE="1" NOSHADE ALIGN=LEFT WIDTH=200>
+<TABLE BORDER=0 CELLSPACING="2" CELLPADDING="1">
+<TR><TD><PRE>C:\DOS\SMARTDRV.EXE /X</PRE><TD>Enables drive caching.  The /X option disables write-behind caching.
+<TR><TD VALIGN=TOP>.........................<TD VALIGN=TOP ROWSPAN=3>Other lines configuring other drivers, environment variables, etc, depending on your particular computer.
+<TR><TD VALIGN=TOP>.........................
+<TR><TD VALIGN=TOP>.........................
+<TR><TD COLSPAN=2>&nbsp;
+<TR><TD WIDTH=390 VALIGN=TOP><PRE><A HREF="#MSCDEX">C:\DOS\MSCDEX.EXE</A> /L:R /M:12<A HREF="#MSCDEX"> /D:ASPICD0</A> <A HREF="#MSCDEX">/D:DWTHSDVR</A> <A HREF="#MSCDEX">/D:DWPHILDV</A></PRE><TD VALIGN=TOP>This line links the loaded CD drivers to the <B><FONT COLOR="660033">M</FONT></B>icro<FONT COLOR="660033"><B>s</B></FONT>oft <FONT COLOR="660033"><B>CD Ex</B></FONT>tensions(MSCDEX).  The /L:R switch puts the first ROM drive at drive letter R:. Subsequent CD-ROMs are assigned drive letter S, then T, etc., according to their order in the MSCDEX line. In this case, the CD-ROM drive would be drive R:, the CD Record virtual device at drive S:, and the CDD2000 at drive T:.   The advantage to this is that the ROM drives remain at the same drive letters regardless of what other devices are swapped in and out of the system.  The /M:12 switch is just the default sector buffer.</TABLE>
+
+
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="cdrecord.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+<!-- TRW -->
+

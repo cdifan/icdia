@@ -1,0 +1,75 @@
+<html>
+<title>Making a CD-XA disc using Master</title>
+
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+
+<head><H2>Making a CD-XA disc using Master</H2></head><p>
+<body>
+! <b>Example Input File for the 'MASTER' Disc Builder</b><BR>
+!<b>========================================</b><BR>
+! <B>CDi - XA Disc Image</B><BR>
+!<BR>
+! 1) Define the Various Files that are Involved in the Disc Image<BR>
+!    ------------------------------------------------------------<BR>
+! <i>Bold names below indicate changeable items. ! = comments.   Be sure to use quotes wherever they are indicated.</i><BR>
+! <i>Type in non-bold items <b>exactly</b> as shown below.  Easy way:  save <b>copy</b> of this file ,  then type in the changes to</i><BR>
+!<i> the bold text as needed.  Script <b>must</b> be saved in basic ASCII format.</i><BR>
+<BR>
+<tt>options: -xa -g &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt>	!<I> Creates xa disc, and doesn't get too fussy about green compliance.</I><BR>
+<BR>
+<BR>
+<tt>define album "<b>YELLOW FILES</b>"	&nbsp;</tt>! <i>Album name can be anything, 32 characters max.</i> <BR>
+<tt>publisher  "<b>Acme Inc.</b>"</tt><BR>
+<tt>preparer   "<b>John Doe</b>"</tt><BR>
+<tt>volume "<b>XA Disc</b>" in "<b>XA.cd</b>"		&nbsp;</tt>! <i>Volume name can be anything, 32 characters max. </i> <BR>
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	! <i>Disk image named according to OS9 naming conventions.</i><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;! <i>Use absolute path for image file if you do not want it placed in current directory.</i><BR><BR>
+! Define YOUR Files Here<BR>
+<BR>
+&lt;def&gt;<BR> <BR>
+! <i>pastes in all the yellow files listed in the defs file.</i><BR>
+! <i>Eachline in defs has the structure </i><BR>
+! <tt>yellow file <b>fileidentifier</b> from "<b>filename</b>"</tt><BR>
+! <i>e.g.</i><tt> yellow file file00001 from "../example/text.txt"</tt><BR>
+<BR>
+!  2) Define the directory structure on the disc.<BR>
+!    ------------------------------------------------------------<BR>
+<BR>
+   <tt> "<b>YELLOW</b>"					</tt>!<i>Caps. Directory name, 8 characters max.</i><BR><BR>
+   <tt> {<BR>
+&lt;dir&gt;<BR>
+    }    </tt><BR><BR>						
+! <i>pastes in all the cdi-xa files listed in the dir file.</i><BR>
+! <i>Each line in defs has the structure </i><BR>
+! <tt>"<b>XA_FILE</b>;1" protection 0x555  from <b>fileidentifier</b></tt><BR>
+! <i>e.g.</i><BR>
+! <tt>"EXAMPLE"</tt><BR>
+! <tt>{</tt><BR>
+! <tt> "TEXT.TXT;1" protection 0x555 from file00001</tt> <BR>  	       
+! <tt>}</tt><BR><BR>
+! <i>There must be a corresponding entry for all the files listed</i><BR>
+! <i>above.  XA_FILE files must use all caps, must conform to 8.3 naming, </i><BR>
+! <i>must have filename extension, and ;1 and quotes are required! Use the same</i><BR>
+! <i>names for identifiers as those used above. Use the format</i><BR>
+!  "<tt><b>DIR_NAME</b></tt>"<BR>
+! <tt>{</tt><BR>
+! <tt> "<b>XA_FILE(S)</b>;1" protection 0x555 from <b>fileidentifier</b></tt><BR>
+! <tt>}</tt><BR>
+! <i>to make directories on the xa cd.</i><BR>
+! <i>You can also define all your files individually in the master script, instead of using the <b>def</b> and <b>dir</b> files.  See the <A HREF="cdi_xabr_scr.htm">CD-i/XA Bridge Disc Script</A></i><BR><BR>
+! <i>&gt;&gt;&gt;&gt;End of Master Script &lt;&lt;&lt;&lt;</i><BR>		
+! <i>Save the script, type the command </i><tt>master <b>scriptname </b></tt><i>to build the image.</i><BR>
+<P>
+<HR>
+<P>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+</body
+></html>
+

@@ -1,0 +1,92 @@
+<HTML><HEAD>
+<TITLE>MPEG1 Specifications</TITLE>
+</HEAD>
+<BODY>
+<BODY BGCOLOR="FFFFFF">
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="pink.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+<P><HR></P>
+
+<CENTER><TABLE BORDER=5 CELLSPACING=3 BGCOLOR="#A6A6A6" WIDTH=670><CAPTION><B><FONT COLOR="080835"><FONT SIZE=+3>MPEG1 Requirements</FONT></FONT></B></CAPTION>
+
+<TR ALIGN=CENTER><TH WIDTH=120>&nbsp;</TH><TH WIDTH=110><FONT SIZE=+2>VCD 1.1</FONT></TH><TH WIDTH=110><FONT SIZE=+2>VCD2.0</FONT></TH><TH WIDTH=110><FONT SIZE=+2>CD-i</FONT></TH><TH WIDTH=110><FONT SIZE=+2>MediaMogul </FONT></TH></TR>
+<TR><TD COLSPAN=5 WIDTH=520><B><FONT SIZE=+2>Video:</FONT></B>
+<TR><TH  COLSPAN=5 ALIGN=LEFT WIDTH=520><P><FONT SIZE=+1 COLOR="990099"><B>Picture Size:</B></FONT>  
+<TR ALIGN=CENTER><TD WIDTH=120><FONT SIZE=+1 COLOR="046126">NTSC </FONT>
+<TD COLSPAN=4 WIDTH=400>352 x 240/29.97Hz ,30Hz  (or 23.976Hz film)<SUP>1</SUP>
+<TR  ALIGN=CENTER><TD WIDTH=120><FONT SIZE=+1 COLOR="046126">PAL</FONT>
+<TD COLSPAN=4 WIDTH=400>352 x 288/25Hz  (or 24Hz film)<SUP>1</SUP>
+<TR ALIGN=CENTER><TD WIDTH=120><FONT SIZE=+1 COLOR="046126">Stills</FONT>
+<TD COLSPAN=4 WIDTH=400>MPEG stills should use the same dimensions as motion video.<SUP>2</SUP>
+<TR><TH  COLSPAN=5 ALIGN=LEFT><P><FONT SIZE=+1 COLOR="990099"><B>Pixel Clock :</B></FONT>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126">Frequency</FONT><TD  COLSPAN=2>13.5Mhz<TD COLSPAN=2>15Mhz
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126">Horiz. Pixel Distortion Ratio</FONT><TD  COLSPAN=2>1.09<SUP>3</SUP><TD COLSPAN=2>NA<SUP>3</SUP>
+<TR><TH  COLSPAN=5 ALIGN=LEFT><P><FONT SIZE=+1 COLOR="990099"><B>Bitrates:</B></FONT>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126"><B>Maximum</B> <U>Video</U> bitrate<SUP>4</SUP>
+</FONT><TD COLSPAN=2 ALIGN=CENTER>1151929 bits/sec<TD COLSPAN=2>1183200 bits/sec
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126"><B>Maximum</B> <U>MPEG1</U> bitrate<SUP>5</SUP><BR>(multiplexed audio/video)
+</FONT><TD COLSPAN=4> 1411200 bits/sec
+<TR><TH  COLSPAN=5 ALIGN=LEFT><P><FONT SIZE=+1 COLOR="990099"><B>VBV Buffer Size:</B></FONT>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126"> <U>Video</U> stream<SUP>2</SUP></FONT>
+<TD COLSPAN=4 ALIGN=CENTER>40960  bytes
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126"> <U>Still Picture</U> stream<SUP>2</SUP></FONT>
+<TD COLSPAN=4> 47104  bytes
+<TR><TH ALIGN=LEFT><P><FONT SIZE=+1 COLOR="990099"><B>PCB Channel :</B></FONT>
+<TD ALIGN=CENTER COLSPAN=2><B>Must</B> be in Channel 1<TD ALIGN=CENTER COLSPAN=2>Normally in Channel 0.
+<TR><TH  COLSPAN=5 ALIGN=LEFT><P><FONT SIZE=+1 COLOR="990099"><B>Streams :</B></FONT>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126"> Number of Streams allowed</FONT>
+<TD  COLSPAN=2>One.<TD>Up to 16.<TD>One.
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126"> Stream Number</FONT>
+<TD  COLSPAN=2><B>Must</B> be in Stream 0.<TD>Typically in Stream 0.<TD><B>Must</B> be in Stream 0.
+
+<TR><TH COLSPAN=5 HEIGHT=20>  </TH>
+<TR ALIGN=CENTER><TH>&nbsp;<TH  ><FONT SIZE=+2>VCD 1.1</FONT></TH><TH><FONT SIZE=+2>VCD2.0</FONT></TH><TH><FONT SIZE=+2>CD-i</FONT></TH><TH><FONT SIZE=+2>MediaMogul </FONT></TH></TR>
+<TR><TD COLSPAN=5><B><FONT SIZE=+2>Audio:</FONT></B></TR>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126">ALL</FONT>
+<TD COLSPAN=4>16 bit, 44.1K sampling rate</TR>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126">Joint Stereo/Stereo/Dual Channel</FONT><TD>224kbit/sec<TD>ONLY these bitrates:<BR>128, 192, 224,<BR> or 384kbit/sec<SUP>6</SUP></TD><TD COLSPAN=2>32-448kbits/sec/PCB Chan.<BR>   Most commonly 192kbit/sec/<BR>PCB Chan.</TR>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126">Mono:</FONT><TD>No.<TD WIDTH=110>
+ONLY these bitrates: 64 or 96 or 192kbit/sec<SUP>6</SUP><TD COLSPAN=2>32 to 448kbits/sec<SUP>7</SUP></TR>
+<TR><TH  COLSPAN=5 ALIGN=LEFT><P><FONT SIZE=+1 COLOR="990099"><B>Streams :</B></FONT></TR>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126">Number of Streams allowed:</FONT><TD COLSPAN=2>One<TD>1-32<TD>1-16</TR>
+<TR ALIGN=CENTER><TD><FONT SIZE=+1 COLOR="046126">Stream Number</FONT>
+<TD COLSPAN=2> Stream 0 . <TD WIDTH=110>Streams 0 to 31, starting with Stream 0.<TD WIDTH=110>Streams 0 to 15, starting with Stream 0.</TR>
+
+</TABLE></CENTER>
+
+
+
+
+<P>
+
+<SUP>1</SUP><I>Dimensions up to 384 x  288 are supported, though not at full frame rate , but may not display properly on normal TV equipment.  CD-i allows for dimensions below 352 x (240 or288), as long as both x and y are multiples of 16.  Smaller images are automatically centered on the screen by the decoder card.</I><BR><BR>
+
+<SUP>2</SUP><I>MediaMogul does not support MPEG stills.  However, any I-frame of a motion stream may be displayed as a still image.  The maximum size of any one still picture(or frame) is the same as the VBV buffer size.  </I><BR><BR>
+
+<SUP>3</SUP><I> VCD MPEG1 fills  the screen, but dimensions are distorted slightly.   CD-i MPEG1 is not distorted, but doesn't fill the screen fully--at 352 pixels horizontally, there will be black vertical bands on both sides.</I><BR><BR>
+
+<SUP>4</SUP><I>Maximum video rate based on these assumptions:</I><BR><BR>
+<UL><LI TYPE="Disc">One audio stream at standard bit rate:  CD-i: 192kbit/sec, VCD: 224kbit/sec.<BR>
+<LI TYPE="Disc">MPEG play is from CD.  Hard drives may support up to 5Mbit/sec video streams.</UL><BR>
+
+<SUP>5</SUP><I>Maximum mux rate based on CD play.  Depending on the decoder, playing MPEG1 from a hard drive  <B>might </B>work up to 5.6448Mbit/sec.</I><BR><BR>
+
+<SUP>6</SUP><I>For VCDAV (Trackable MPEG), only224kbit sec is allowed.  VCDAV also has these requirements:</I>
+<UL><LI TYPE="Disc">Only motion video allowed, no stills.<BR>
+<LI TYPE="Disc">Must contain both motion video and audio.<BR>
+<LI TYPE="Disc">Only stereo audio, no mono.<BR>
+</UL><BR>
+<SUP>7</SUP><I>1kbit=1000 bits</I>
+<BR>
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="pink.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>

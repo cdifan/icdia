@@ -1,0 +1,115 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>Mtools for OS-9<BR>
+PC Y2K-fix and Windows 95/NT long file name interchangability for CD-RTOS
+</B><BR><BR>
+
+<P>When the designers of the CD-i system created the specifications for a multimedia delivery system that would last at least until the next century, they took their job very seriously. 
+Altough the fact that the CD-i player's operating system CD-RTOS was based on release 2.4 of Microware's OS-9 system, which did not handle the Y2K (Year 2000) problem correctly, they created a fix for the OS to provide for a careless usage after the year 2000. It was years later that Microware released an interim release of the OS-9 system -release 2.9- that also included a fix for this problem. As a user of a CD-i system and as a CD-i developer you do not need to buy this upgrade from Microware and you do not need to worry about faulty operation after the year of digital doom.
+
+<P>CD-i's handling of Y2K works correctly for the internal clock and all applications that use it for displaying a date including the 1st and 2nd generation versions of the player shell. (You can check this by setting the clock onto a date past the year 2000 and then creating an FTS-title for a CD-Audio disc. View the contents of Memory or Storage to see that the selection's date is correctly displayed, either as 2000 or as '00). Also, file creation time and date are handled correctly. All CD-i discs created after the year 2000 which include OS-9 filenames with dates after the year 2000 will work.
+
+<P>However, since only the parts of CD-RTOS that handle CDs and OS-9 type magnetic media (the so called CDFM and RBF) are fully compatible with the next millenium, the problem stills occures when using storage media that use the PC or DOS filesystems, since they use a different filemanager named PCF (PC Filemanager). This is only a problem on CD-i development players and POI/POS-models such as the Philips CDI-605 and the CDI-615, since they occasionally need to access PC media. These players behave a little strange when trying to use a post-2000 file from a PC-formatted disk. For example: copying a 2001-file from a DOS-disk onto an OS-9 harddisk, leaves this file with 101 as the creation year!
+
+<P>From the public domain circuit now there is a utility-package which provides for a work-around for this problem, and which adds tremendous functionality to PC - OS-9 file interchangability, including the recognition of Windows 95/98/NT long file names. 'Mtools', originally developed for UNIX by Free Software Foundation and ported to OS-9 by Andrzej Kotanski in 1997.
+
+<P>Mtools consists of several DOS-style utility commands such as dir, copy an format which can be used from the OS-9 shell prompt on PC-formatted diskettes. The main advantage of Mtools over the provided PCF in the CDI-605 and CDI-615 ROM is that it handles long file names correctly. Reading a disk with files created under Windows 95, 98 or NT using the standard PCF (/pcd0 and /pcd0h) results in strange filenames and even errors. Using Mtools, long file names will be read and copied with their full name. This also works vice versa: long OS-9 filenames will be copied with their full name onto a PC diskette using Mtools. It even creates a short (..~1) name on the diskette for backwards compatibility. Furthermore, it assigns the current time and date onto a file copied from a PC-disk onto an OS-9 disk, and therefore it iliminates the Y2K-problem, since OS-9 files created on an OS-9 storage medium always bear a correct year-stamp on CD-i systems.
+
+<P>The complete Mtools package is available on the Internet. Three archives consist: one incorporating all executable commands, one with all source-code so that you will be able to include (parts of) it in your own projects or to modify it to suit your needs, and one with the full documentation. All you have to do manually is adding a text file named mtools.conf in the /SYS directory of your default device (usually /h0) with the line: drive a: file="/pcd0h@" 1.44m.
+
+<P>Please note that Mtools does not add an additional device descriptor to your system, it only works with the provided utilities. Therefore, you will not be able to read long file names on PC diskettes and copy with a correct year stamp in for example MediaMogul. You can, of course, use Mtools from the CD-RTOS shell in MediaMogul, and then access the copied long file names on your OS-9 disk.
+
+<P>The recently announced Philips CDI-660 and the CDI-670 CD-i/DVD Multimedia Controller have an updated PCF built-in, and therefore do not suffer from the PC Y2K complaints as stated in this article. However, it is still worthfull to take a look at Mtools for its long file name compatibility.
+
+<P>You can download Mtools for OS-9 at the <A HREF="../sw_cdi/index.html">CD-i development player downloads</A> section.
+
+<P><I>Text: Jorg Kennis<BR>
+This article was published in the Volume 7, Number 1 issue of Interactive Engineer.</I>
+</P>
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

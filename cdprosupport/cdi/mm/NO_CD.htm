@@ -1,0 +1,64 @@
+<HTML><HEAD>
+<TITLE>Starting MediaMogul Without the CD</TITLE>
+</HEAD>
+<BODY>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="mm.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+<CENTER><H2>Starting MediaMogul Without the CD</H2>
+</CENTER>
+MediaMogul can be started without the MediaMogul CD, to allow developers to easily exchange MPEG CD's while using the ScriptWriter.   This technique works on any Macintosh or Windows installation of the I2M authoring card and a fully installed copy of MediaMogul on the host's hard drive.<P>
+
+
+The procedure for enabling this feature is as follows:<P>
+
+
+1. In your favorite text editor-- in Windows or on the Mac--open the file <CODE>Strt_MM</CODE>, located in the MediaMogul folder on the host hard drive.    In the original file, the last line reads:<P>
+
+
+<CODE><BLOCKQUOTE>ex optshell /cd /h0</BLOCKQUOTE></CODE><P>
+
+
+or something similar.<P>
+
+
+Edit the last line so that it reads:<P>
+
+
+<CODE><BLOCKQUOTE>ex optshell /h0 /h0</BLOCKQUOTE></CODE><P>
+
+
+Save the file.<P>
+
+
+2. Start CDIPlayback.<P>
+
+
+3. Put CDIPlayback in the 'CD-RTOS' mode, and then 'reset' CDIPlayback.<P>
+
+
+4. When CDIPlayback presents the $ prompt, type the following at the prompt:<P>
+
+
+<CODE><BLOCKQUOTE>copy /cd/CDI_MEMO  /h0/CDI_MEMO  (press return)</BLOCKQUOTE></CODE><P>
+
+
+Make sure that you type the above EXACTLY--spelling and case are important!<P>
+
+
+5.  That's it!  Take the MediaMogul CD out of the CD drive, and start up MediaMogul as usual.  Notice that it no longer gives the 'business' about needing the CD to start up, and MediaMogul appears just the same!<P>
+
+
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="mm.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+
+</BODY>
+</HTML>

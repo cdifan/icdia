@@ -1,0 +1,140 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>The CD-i defective NV-RAM issue</B><BR><BR>
+
+<A HREF="#introduction">Introduction</A><BR>
+<A HREF="#how">How the NV-RAM is used in CD-i players</A><BR>
+<A HREF="#cause">Cause of the problem</A><BR>
+<A HREF="#replace">How to replace the NV-RAM IC</A><BR>
+<A HREF="#conclusion">In conclusion</A><BR>
+<A HREF="#acknowledgements">Acknowledgements and disclaimer</A>
+
+<BR><BR><BR>
+
+<A NAME="introduction"><B>Introduction</B><BR><BR>
+
+From one day to another, some people might experince a problem with their CD-i player: at start-up, the player prompts the user to delete some items from memory (NV-RAM), but the player refuses to actually delete the selected item(s). As a result, the player does not load the player shell and cannot be used anymore. This document describes why the player behaves this way and how the problem can be resolved.
+<BR><BR><BR>
+
+<A NAME="how"><B>How the NV-RAM is used in CD-i players</B><BR><BR>
+
+Every CD-i player is equiped with at least 8 Kbytes of non volatile memory (NV-RAM), that is used among others to store game scores, player shell settings, favourite picture selections, etc. One other important usage of the NV-RAM is to store the CSD (Configuration Status Descriptor). When a CD-i player is turned on, the operating system kernel is initialized and one of the startup routines includes the creation of the CSD. The CSD contains information about a certain CD-i system, such as the amount of NV-RAM available, which kind of pointing device is connected, the version of CD-RTOS used, but also wether a floppy disk drive is available, if a printer is connected, etc. If the CSD cannot be written, for example when the NV-RAM memory is full, the player should presen the user with an option to delete some items at startup, and should then proceed by loading the player shell.<BR><BR><BR>
+
+<A NAME="cause"><B>Cause of the problem</B><BR><BR>
+
+In most Philips CD-i players, the most widely used NV-RAM IC is the M48T08 by STMicroelectronics. This chip, which is also called TimeKeeper, contains the real-time clock, a quartz cristall, a lithium cell and 8 Kbytes of static memory. The 'CD-i defective NV-RAM issue' occures from a problem in the lithium cell. According to documentation of the M48T08 provided by STMicroelectronics (which is available for download at the <A HREF="../docs/index.html">CD-i Technical Documentation / Hardware</A> section on this site) the cell should be able to keep the stored data for at least 10 years, or even up to 25 years under optimum temperature conditions. <BR><BR>
+
+Unfortunately, this is not always the case. There are various factors which can affect the life time of the battery cell, which in such cases will be dramatically reduced. When the lithium cell does not function anymore, a tension difference will be detected and the memory will be turned into a 'write protect' mode. When the CD-i player is powered on, it cannot write the CSD and hence it presents the user with the memory screen. Of course the user will not be able to delete certain items because the NV-RAM can not be written to anymore. Hence, the player will become useless.<BR><BR><BR>
+
+<A NAME="replace"><B>How to replace the NV-RAM IC</B><BR><BR>
+
+There is only one solution to fix this problem: replace the entire M48T08 IC with a new one. The M48T08 (official catalogue number: M48T08 150 PCI) can be ordered from virtually any electronics store for about US$ 25.00. Please note that this can only be taken care of by a certified electronic engineer or a truly skillfull amateur electrician, since it is a rather complicated operation. Also note that making any modifications to the player will permanently violate your garuantee. <BR><BR>
+
+The various Philips CD-i player models are based on different Printed Circuit Boards (see <A HREF="../players/comparison.html">comparison table of all Philips consumer CD-i players</A> on this site), and hence there are various implementations of the method used to mount the NV-RAM on the board. You might have to search for the location of the M48T08 IC. Please check if the identification of the IC states 'M48T08 150 PCI'. If not, your player might be equiped with a different NV-RAM module which cannot be replaced with a standard M48T08. You can use a soldering bolt to melt the tin that is used to fix the IC on the board. Be very carefull not to damage the board itself or other components. It might be best to use a pair of tweezers to undo each pin of the IC from the board after heating it with the soldering bolt. After you have removed the IC, make sure that there is no tin in any of the holes on the board where the NV-RAM was located so that there is no problem when placing the new one. Use the soldering-bolt and a tin piston to remove the tin that was left behind.<BR><BR>
+
+It might be best to mount a suitable IC socket on the board instead of directly putting the new NV-RAM on it because of these two important reasons:<BR>
+1. Some CD-i boards have components and silicon tracks on both sides (like the Roboco board that is used for example in the CDI 450). When you use an IC socket it's easier to notice wether both sides of the board have tin on them in such a manner that the silicon tracks on both sides are connected to the IC holder.<BR>
+2. When you are experiencing similar NV-RAM problems in the future, it's far more easy to replace the IC with a fresh one.<BR><BR>
+
+When the IC socket is mounted on the board, you can carefully put the M48T08 on it. Make sure that the IC is inserted correctly, take care of the pin that is marked 'pin 1'.<BR><BR><BR>
+
+<A NAME="conclusion"><B>In conclusion</B><BR><BR>
+
+When the IC has been replaced correctly you can turn on the player. The CSD can now be written (you won't notice this) and the player will display the player shell. You can now use the CD-i player as before. Of course you'll have to replay all of your games to make sure you're number one at the high score lists again! :-)<BR><BR>
+
+As stated previously, this is a rather complicated operation. Do <U><B>not</B></U> take any actions if you are not completely sure what you are doing! Instead, contact your local Philips service organization or local electronics store and let them take care of things for you.<BR><BR><BR>
+
+<A NAME="acknowledgements"><B>Acknowledgements and disclaimer.</B><BR><BR>
+
+This article was almost entirely based on information supplied by <A HREF="mailto:ruud.verhoofstad@tip.nl">Ruud Verhoofstad</A>.<BR><BR>
+
+Ruud Verhoofstad nor The New International CD-i Association will accept any responsibility from any damage to your equipment or any personal injuries that occured from carrying out these instructions.
+
+
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>VCD 2.0 Toolkits and Audio</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR=#FFFFFF>
+
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="vcd2x.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<CENTER><TABLE BORDER=2 BGCOLOR="#339933" VALIGN=Middle HEIGHT="10" WIDTH="500" ><TR>
+	<TD ALIGN=Center ><FONT SIZE=+3 COLOR="#FFFFFF">VCD 2.0 Toolkits and Audio</FONT></TD>
+</TR>
+</TABLE></CENTER><P>
+<FONT SIZE=+2>The Macintosh and PC VCD 2.0 Toolkits handle audio differently:</FONT>
+<UL>
+	<LI TYPE="Disc"><FONT SIZE=+1>The Macintosh version converts native audio (AIFF, SDII, WAV) to MPEG audio unless the audio is 
+	added to the Tracks window. Native audio added as a track is automatically made CD-DA (Red) audio.<P>
+
+	<LI TYPE="Disc">The PC converts all native audio to Red tracks.   MPEG audio must be encoded and multiplexed <B>before</B> being imported into the PC Toolkit.</FONT>
+</UL>
+<P>
+<FONT SIZE=+2>The Mac and PC versions of the Toolkit also handle Menu audio (and video) differently:</FONT>
+<UL>
+	<LI TYPE="Disc"><FONT SIZE=+1>The Macintosh version offers only one asset field in its Menu Editor. To play:</FONT>
+
+	<UL>
+		<FONT COLOR="#3300CC"><LI TYPE="Disc">Both audio and video:</FONT>Either:
+<OL TYPE="a">
+ <LI>use a multiplexed AV stream or
+<LI>create an Event with the desired audio and video, and drop the Event on the Menu asset field.  The audio and video will be multiplexed together at build time.  Contrary to the manual, either still <B>or motion</B>
+ video can be used.
+</OL>
+		<FONT COLOR="#3300CC">
+		<LI TYPE="Disc">Just Video:</FONT> use a native still, an MPEG still, an elementary video 
+		stream, or a multiplexed video-only stream.
+		<FONT COLOR="#3300CC">
+		<LI TYPE="Disc">Just Audio:</FONT> use native audio, an elementary audio stream, or a 
+		multiplexed audio-only stream.
+	</UL>
+<P>
+
+	<LI TYPE="Disc"><FONT SIZE=+1>The PC version offers both a video and audio field in its Menu Editor.  This leaves open a number of possible combinations of audio and video files, most of which should be avoided:</FONT>
+	<UL>
+		<FONT COLOR="#3300CC">
+		<LI TYPE="Disc">Both audio and video:</FONT>
+		<UL>
+			<LI TYPE="Disc"></FONT> For <I>motion</I> video plus audio, use a multiplexed AV 
+								stream.  Leave the audio field blank.
+			<LI TYPE="Disc"> For still video plus audio, there are a couple choices: 
+			<UL>			
+<FONT COLOR="#660066">
+			<LI TYPE="Disc">Multiplexed still video with audio stream, or
+			<LI TYPE="Disc">Native still (which will be converted to an MPEG still) in the Video field, 
+						plus a<B> multiplexed  MPEG</B> audio file in the Audio field.  
+						</FONT> <BR>
+<FONT COLOR="#663300">
+Note:<OL>
+			<LI TYPE="Disc">Using native audio should be avoided, because it  will be converted 
+						to a Red track: the VCD player will then need to play the MPEG still 
+						and the Red track audio for the menu, with unpredictable results.
+			<LI TYPE="Disc">Do not use both a still in the video field and an A+V multiplexed stream in 
+						the audio field. This will result in the still displaying for a fraction of 
+						a second,  followed by the audio and video in the multiplexed AV file.
+					</FONT></OL>
+			</UL> <BR><BR>
+		</UL>
+		<FONT COLOR="#3300CC">
+			<LI TYPE="Disc">Just Video:</FONT> use a native still, an multiplexed MPEG still,  or a 
+						multiplexed video-only stream.
+		<FONT COLOR="#3300CC">
+			<LI TYPE="Disc">Just Audio: </FONT>use native audio or a multiplexed audio-only stream. 
+						Be aware that native audio will be made into a Red track.		
+	</UL>
+</UL>
+</BODY>
+</HTML>

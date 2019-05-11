@@ -1,0 +1,34 @@
+<HTML>
+
+<HEAD>
+<TITLE>Cursor Gravity in MediaMogul 2.2/2.2.1
+</TITLE>
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+<P><H2><CENTER>Cursor Gravity in MediaMogul 2.2/2.2.1</CENTER></H2>
+<P>
+<BR>
+<BR>
+The Cursor Gravity selection from the Preferences Editor is not retained in MediaMogul versions 2.2 or 2.2.1.  If you set this to NO and Exit MediaMogul, when you start MediaMogul again Cursor Gravity will be YES.
+<P>
+The settings from the Preferences Editor are kept in a file named <CODE>Mogul.con</CODE> at the root of <CODE>/h0</CODE>.  If you look at the contents of this file, the information for Cursor Gravity reads <CODE>CURSOR_GRAVITY NO</CODE> once you turn off Cursor Gravity.  However this is not being read correctly when MediaMogul is started.
+<P>
+Additionally, once Cursor Gravity is set to NO in the Preferences Editor, and this is closed and saved, the field shows as YES if the Preferences Editor is re-opened, even when Cursor Gravity is not on.  If you make additional changes in the Preferences Editor, set Cursor Gravity to NO prior to saving your changes.
+<P>
+At present the solution is to set Cursor Gravity to NO each time you start MediaMogul, if you do not desire to use this feature.  We are aware of this, so you need not inform us about it.
+
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit Lite 3.5.1 -->
+<P>
+<BR>
+<BR>
+
+
+</BODY>
+
+</HTML>
+

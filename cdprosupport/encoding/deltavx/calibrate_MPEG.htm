@@ -1,0 +1,84 @@
+<HTML><HEAD>
+  <TITLE>Calibrating MPEG Audio Encoders</TITLE>
+</HEAD>
+<BODY>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="deltavx.htm">Up 1 Level </A>&#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<CENTER><H2>Calibrating MPEG Audio Encoders</H2>
+</CENTER>
+
+
+First, it is important to understand the difference between ABSOLUTE and NORMALIZED levels, as viewed from the equipment level METERS.<P>
+
+
+In audio work, equipment manufacturers use the concept of NORMALIZATION, where some arbitrary value is chosen to represent 0 or neutral.  An non-electrical example of this is when we build houses.  A standard ceiling is 8 feet above the floor.   We could have as accurately said this particular ceiling was 862.75 feet above sea level, or 12.2 feet below the roof line.  In each case, some arbitrary reference was established and called "ZERO" and measurements taken from that point.<P>
+
+
+In most ANALOG audio equipment, the meters are set to read a normalized O VU when some calibration tape is played.  At the same time, the machine is adjusted to produce a voltage level of some standard value at it's output jacks.  As long as everyone uses the same calibration tape (really an agreed upon tape magnetic level comfortably below the tape saturation/clipping point), and use the same output voltage reference, equipment from various manufacturers can be used together with predictable results.  Analog equipment calibrated in this way would then be used so that "average" recording levels are around 0 VU, with peaks (headroom) between +5 VU and +10 VU.<P>
+
+
+In DIGITAL audio gear, "0" on the meters usually represents the ABSOLUTE maximum permissible recording level.  Since the audio is stored as digital (numerical) data, this "0" point is the highest (i.e. FFFF hex) and lowest (0000 hex) values of a 16 bit sample. If a recording tries to exceed this level, severe clipping occurs.  Therefore, most studios keep the average recording levels on a digital deck at -15 to -10 VU, with peaks from -5 to -3 VU on the deck meters.<P>
+
+
+MPEG encoding equipment is in the DIGITAL class, having an ABSOLUTE reference.  Unfortunately, most MPEG systems have no metering, and allow arbitrary gain adjustment on the input and possibly the output.  If you are adjusting the encoded MPEG audio levels by "ear" or by the video decks meters, you're in real trouble.  The only way to get predictable results (other than experimentation) is to KNOW what the MPEG system is producing reference to ABSOLUTE DIGITAL 0.  Especially for CD-i titles, there is probably ADPCM audio throughout (also a digital format), to which the MPEG audio levels must usually match, or least be close enough to avoid distraction.    <P>
+
+
+The bottom line:  You CANNOT trust the video deck meters or any other NORMALIZED meter in the chain to give reliable encoded audio levels.  There must be at least ONE meter in the chain that coorelates to the ABSOLUTE level produced by the encoder.  Once this is known, predictable and repeatable results can be had.<P>
+
+
+The first step is to calibrate a meter to correspond to some known ABSOLUTE level.  The procedure follows:
+
+<H3>Calibration Procedure:</H3>
+<BLOCKQUOTE>a. insert a *VU meter (preferably with adjustable gain, and having peak holding LED's)  at the encoder's analog audio OUTPUT jack. <P>
+
+b. obtain the MPEG -15 dB <A HREF="#assets">reference asset</A> from pmpro (ftp, BBS or floppy).  This is a 1 KHz tone at -15 dB relative to absolute digital 0.  A non-descript video clip is used to make up the multiplexed file.<P>
+
+c. if your encoding system has OUTPUT gain controls, set them to NEUTRAL (no attenuation or gain).  Play the MPEG reference asset on your encoding system and adjust the METER connected to the encoder OUTPUT jack to read <B>0 VU</B>.  Check this calibration level every six months or so, as meter gain may drift<P>
+
+d. place a sticker on the calibrated meter noting that<B> 0 VU = digital -15 dB</B> <P>
+
+
+e. when you are encoding from a video deck, you'll need to adjust the DECK'S output gain, or A/D converter gain, or encoder INPUT gain,  so that the AVERAGE is around <B>0 VU</B> (-15 dB absolute) on the calibrated meter.  This will keep occasional peaks from clipping (0 dB absolute) the encoder.  Depending on the care taken when the audio was laid down on the video tape, you may have to adjust the deck, A/D or encoder gain for every clip, so that all clips produce an average encoded level of 0 VU on the calibrated meter. <P>
+
+<B><P ALIGN=Center>Reminder:  Don't touch the encoder OUTPUT gain nor the calibrated meter gain!</P></B>
+<P></BLOCKQUOTE>
+<BR>
+<CENTER><IMG SRC="calibrate_MPEG1.gif" WIDTH=453 HEIGHT=175></CENTER>
+<BR>
+This calibration procedure will assure consistent and known levels from MPEG clip to MPEG clip, but it does NOT assure that they will match the levels of the ADPCM material in a title.<P>
+
+
+Ideally, you can convince the studio producing the source audio for ADPCM assets to keep their average levels at -15 dB absolute (they may have their meter calibration at something other than 0 VU = -15 dB absolute).  Even if the average audio level is at a different absolute, you can at least ask them where "0 VU" and "average levels" are for them, and pass that information along to the CD-i title developer.  The CD-i title developer can then determine whether (and how much) the ADPCM or MPEG audio levels need attenuation relative to each other, so that they match.<P>
+
+<H3>Developers Using I2M CD-i Cards:</H3>
+
+
+The default ADPCM attenuation level of 6% will give misleading results if you attempt to match MPEG and ADPCM audio levels by ear.   Audio levels balanced by ear with the 6% setting will yield an 8-10 dB difference once the title is built and played on a regular CD-i player.  
+
+<P>
+<B><P ALIGN=Center>You must change the CDIPlayback ADPCM attenuation setting (<U>every</U> time you start CDIPlayback) to<B> 0%</B> to duplicate the audio levels of a regular CD-i player.</P></B>
+<P>
+<P>
+<HR>
+<A NAME="assets"></A><BLOCKQUOTE><A HREF="http://www.cdprosupport.com/files/pc/1k20sabm.zip">Download ADPCM -15 dB Reference tone (368K)</A><P>
+
+<A HREF="http://www.cdprosupport.com/files/pc/1k20smmd.zip">Download MPEG -15 dB Reference tone (1.2 Meg)</A><P>
+</BLOCKQUOTE>
+These files may be unzipped on the Mac using ZipIt or StuffIt Expander.
+<HR>
+<P>
+
+* Markertech Audio/Video (800-522-2025) carries an LED, dual channel meter, with adjustable gain.  Model:  RU-SM12,  $132.00<P>
+<HR>
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="deltavx.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+</BODY>
+</HTML>
+

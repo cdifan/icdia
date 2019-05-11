@@ -3,5 +3,16 @@
 *.png
 *.pdf
 *.zip
+*.rar
+*.lzh
+*.swp
+*.jbf
+*.sea
+*.sit
+*.exe
+*.rtf
+*.tar
+*.mpg
+*.ps
+*.db
 *.7z
-*/

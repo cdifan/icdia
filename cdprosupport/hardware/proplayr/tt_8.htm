@@ -1,0 +1,192 @@
+<HTML>
+
+<HEAD>
+
+
+
+<TITLE>Tech Note : TT-8</TITLE>
+
+
+
+
+
+</HEAD>
+
+<BODY>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="proplayr.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<HR>
+
+<P>
+
+<P>
+
+<P>
+
+					<CENTER>Tech Note : TT-8</CENTER>
+
+                                 <CENTER>2/16/95</CENTER>
+
+<P>
+
+<B>TOPIC:</B>
+
+<P>
+
+Using PC formatted hard drives on the 605 Player
+
+<P>
+
+<B>OVERVIEW:</B>
+
+<P>
+
+Historically, it has been a challenge to create PC hard drives that the 605 
+
+will recognize.  From OptImage, Philips and customer experience, there are 
+
+some proven methods.  See the "OS-9 System Diskette" documentation for further 
+
+details on running partdgen, etc.
+
+<P>
+
+<B>DISCUSSION:</B>
+
+<P>
+
+
+
+<B>GENERAL:</B>
+
+<P>
+
+<UL TYPE=DISC>
+
+	<LI>It is suspected that a single PC partition cannot be over 2 Gig, and may 
+
+have problems if the PC partition is over 1 Gig - unverified.
+
+	<LI>Early versions (prior to 7/94) of Adaptec's AFDISK may NOT create a PC drive readable by the 605.
+
+	<LI>Removable hard drives (Syquests) have never been read successfully on the 605 using /pch1 or /pch2.  /pch1_ is the only descriptor that appears to work.
+
+	<LI>There are probably other PC compliant formatters, other than Formatter Five, available for the Macintosh.  OptImage only tested Formatter Five.
+
+	<LI>Most Macintosh's can read/write to Removable type PC hard drives through the use of PC Exchange, DOSMounter, or other commercial DOS enablers.  Fixed PC hard drives may also be readable on the Macintosh using the most current PC Exchange, DOSMounter, or similar software - untested.
+
+	<LI>Flopticals, Bernoulli, and other removable media have not been tested on the 605 and are not supported.
+
+	<LI>When copying files from the 605 OS-9 drives to the PC hard drive be sure to use valid MS-DOS filenames (8.3), as invalid filenames will result in error 
+
+000:214 "File Not Accessible".
+
+</UL>
+
+<P>
+
+<B>PREPARING DRIVES:</B>
+
+<P>
+
+Fixed disk - single partition:
+
+<P>
+
+<UL TYPE=DISC>
+
+	<LI>Format on PC using FDISK and FORMAT for a single partition. Once formatted, 
+
+move to the 605 and access using /pch1_. or /pch1, or /pch2.
+
+<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-or-
+
+<P>
+
+	<LI>Format on Macintosh using Formatter Five for a single partition. Once 
+
+formatted, move to the 605 and access using /pch1_. or /pch1, or /pch2.
+
+</UL>
+
+<P>
+
+Fixed disk - multiple partitions:
+
+<UL TYPE=DISC>
+
+	<LI>Format on PC using FDISK and FORMAT for a multiple partitions or on the 
+
+Macintosh using Formatter Five. Once formatted, move to the 605 and run the 
+
+shell script start_pch1. This will execute partdgen which will create device 
+
+descriptors for each of the partitions, loads them into memory, and 
+
+initializes them. The shell script will print a list of the created 
+
+descriptors on the screen, you may the access the partitions using /pch1a, 
+
+/pch1b, etc.  Alternately, run partdgen on the 605 manually, then load the 
+
+derived descriptors /pch1a, /pch1b...  (ex.:  load  -d  pch1a  pch1b).
+
+</UL>
+
+
+
+Syquest or other Removable -  single partition ONLY:
+
+<UL TYPE=DISC>
+
+	<LI>Format on PC using SQPREP version 2.4 or later with DOS 5.0 or later for a single partition only. Multiple partitions on Syquest cartridges are not 
+
+supported on the 605. Access as /pch1_.    
+
+<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-or-
+
+<P>
+
+	<LI>Format on a PC using DOS (5.0 or later) FDISK and FORMAT commands - single partition only!  Access as /pch1_     
+
+<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-or-
+
+<P>
+
+	<LI>Format on the PC using Adaptec's AFDISK (9/27/94 or later) and DOS FORMAT - single partition only!  Access as /pch1_      
+
+<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-or-
+
+<P>
+
+	<LI>Format on the Macintosh using FormatterFive for a single partition only. Once formatted, move to the 605 and access using /pch1_..
+
+</UL>
+
+<P>
+
+<BR>
+
+<HR>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="proplayr.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<!-- Page by Chuck Hildebrand -->
+
+<!-- BBEdit 4.0.4 -->
+
+<!-- Original Tech Note by OptImage Support -->
+
+</BODY>
+
+</HTML>
+

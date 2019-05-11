@@ -1,0 +1,266 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 2. Applicazioni CD-i
+
+ 2.1 In che aree e' utilizzato il CD-i?
+ Quando il CD-i venne progettato alla meta' degli anni '80, si supponeva che
+ dovesse funzionare come un dispositivo di consumo, e venne venduto come
+ un sistema per l'intrattenimento famigliare (in un modo simile a un VCR),
+ come accadde nelle aree professionali. Inizialmente, Philips e Sony attesero
+ che il CD-i diventasse il boom dell'elettronica di consumo, su cui si sarebbe
+ dovuta basare buona parte dell'elettronica del futuro.
+
+ Sfortunatamente il CD-i non ha mai catturato in quel modo il mercato della
+ cosiddetta Hi-Tech di consumo, lasciando il sistema con piu' di 100.000
+ unita' vendute in America, circa 100.000 in Asia e circa mezzo milione in
+ Europa. Nel campo professionale tuttavia il CD-i e' diventato molto popolare;
+ e' emerso velocemente come lo standard effettivamente piu' facile da usare,
+ basato totalmente sulla cosiddetta TV-interattiva. Il CD-i era, ed e' ancora,
+ usato da dozzine di compagnie per un'ampia varieta' di scopi. Questo dimostra
+ che il sistema e' dotato di una tecnologia avanzata e di specifiche tecniche
+ ancora oggi insuperate. Attualmente il CD-i esegue ancora molte funzioni
+ meglio di un PC-compatibile.
+
+ 2.2 Come viene usato il CD-i come dispositivo di consumo?
+ Il CD-i era nato come un dispositivo multi-scopo, diversamente dalle console
+ di gioco che avevano una sola funzione. Fu questa versatilita' che fece del
+ CD-i un prodotto unico, ma fu questa stessa versatilita' che ne fece un
+ qualcosa di molto difficile da spiegare e quindi difficile da vendere ai
+ consumatori.
+
+ Quando mi chiedono di spiegare cos'e' il CD-i, io solitamente  rispondo:
+ "Il lettore CD-i e' usato dai bambini al mattino per aiutarli con i loro
+ compiti di casa e, piu' tardi lo usano per giocare.
+ Nel pomeriggio, il papa' progetta la prossima vacanza sul CD-i usando alcune
+ enciclopedie o guide di viaggio. Durante pranzo, il CD-i funziona come un
+ lettore audio fornendo musica di fondo. La nonna viene a trovarvi e si coglie
+ l'occasione per mostrarle le fotografie dell'ultima vacanza da una Photo-CD e
+ alla sera lo si usa per vedere l'ultimo film preso da Blockbuster su Video-CD."
+ Questa storia viene usata per indicare i modi veramente versatili in cui il
+ CD-i puo' essere usato.
+
+ I programmi per CD-i destinati al consumatore furono, fra altri, disponibili
+ nelle seguenti aree:
+
+ * Titoli per l'infanzia
+ * Giochi
+ * Arte e Cultura
+ * Interessi Speciali
+ * Cd di riferimento (enciclopedie)
+ * Musica
+ * Karaoke
+ * etc.
+
+ Piu' di cento titoli CD-i furono disponibili durante gli anni in cui era
+ in vendita.
+
+ 2.2.1 Chi ha creato i titoli per CD-i?
+ La maggior parte di titoli CD-i furono distribuiti da Philips. Nel 1986,
+ Philips e PolyGram crearono per questo scopo AIM (American Interactive Media)
+ una joint venture con la missione di supportare il lancio di CD-i sul mercato
+ di consumo con un'ampia disponibilita' di titoli.
+ Il lancio del CD-i venne compiuto sul mercato americano nel 1991, PolyGram
+ si ritiro' da AIM e il nome fu cambiato in PIMA (Philips Interactive Media of
+ America). Ma i titoli erano gia' stampati, ed ecco perche' alcuni tra i primi
+ titoli indicano PIMA sulla copertina del box, ma iniziano con un'animazione
+ introduttiva di AIM.
+
+ Philips Interactive Media distribui' titoli che furono prodotti da software
+ house interne, come pure da altri fabbricanti di software, e in questo modo ne
+ controllo' la promozione, la compravendita e le distribuzione.
+
+ I Philips Studios furono specializzati ognuno nella loro propria area. C'era
+ per esempio il Philips Sidewalk Studios, con prodotti eccellenti per bambini,
+ Philips POV Entertainment Group, che sviluppo' i primi giochi con attori veri
+ e Philips Freehand Studios che svilupparono titoli marginali per CD-i cosi'
+ come "Create you own Caricature" o "Face Kitchen".
+
+ Fra gli Studios che produssero software per CD-i ci furono la Infogrames,
+ SPC Group, Lost Boys, Valkieser, NOB, Codim, CapDisc, Fathom Pictures,
+ Spinnaker Software, Microids, Mirage, PIMC, Epic Interactive Media, Radarsoft,
+ US Gold, AVM e parecchi altri.
+
+ Parecchi editori, compagnie TV e sviluppatori di giochi autorizzarono i loro
+ personaggi e altro materiale a Philips o ai suoi partner di software per farli
+ girare su titoli CD-i. Fra gli altri vi furono Nintendo, Paramount Pictures,
+ Miltron Bradly (MB), MGM, Bertelsmann, Oxford University Press, Compton's
+ New Media, EMI, NBC, Hanna-Barbera, Virgin Interactive Entertainment, BBC,
+ Manga Entertainment, Namco, Standaard Uitgeverij Antwerpen, Hachette,
+ Playboy Enterprises, Richard Scarry, Motown Records, Don Bluth, Warner Bros.,
+ Time-Life, Smithsonian Institution, Vivid Video, American Laser Games,
+ Ravensburger, Psygnosis e molti altri.
+
+ 2.3 Come venne usato il CD-i nelle aree professionali?
+ Il piu' grande successo per il CD-i fu nelle applicazioni professionali.
+ Il CD-i venne usato in un'ampia varieta' di corporazioni e ambienti
+ istituzionali, in aree come:
+
+ * Punto di informazione
+ * Sito pubblicitario
+ * Addestramento
+ * Educativo
+ * Sottofondi Musicali
+
+ Con i lettori CD-i furono creati chioschi informativi con applicazioni che
+ diedero la possibilita' agli utenti di vedere ed ascoltare le notizie volute
+ usando un semplice touchscreen.
+ Questo permetteva per esempio di vedere tutte le variazioni di un particolare
+ modello di auto in uno showroom, o di trovare la strada in un museo. Il CD-i
+ e' un eccellente sistema per questo tipo di applicazioni, grazie al suo basso
+ costo, alla sua interfaccia facile da usare el all'alta qualita' di immagini
+ ottenibile su qualsiasi TV.
+
+ In un'altra area, il CD-i venne anche largamente usato in ambienti di
+ addestramento.
+ Il CD-i ha permesso a varie compagnie di addestrare i propri dipendenti
+ in un particolare campo, usando la loro velocita', selezionando le loro
+ aree di interesse personali. Anche qui, il CD-i ha il vantaggio principale
+ della mancanza di procedure di installazione complicate o di incompatibilita'
+ che si trovano normalmente su un PC.
+
+ Il CD-i venne anche ampiamente usato nelle scuole. Sia le principali che le
+ secondarie usarono il sistema per una varieta' di bisogni, che passano
+ dall'insegnamento della coordianzione occhio-mano per i piu' piccoli fino ad
+ arrivare ad utilizzarlo come metodo di insegnamento artistico circa il
+ Rinascimento per i piu' grandi.
+
+ 2.3.1 Quali compagnie hanno usato il CD-i?
+ Fin quando CD-i non divenne una piattaforma aperta, non tutti lo poterono
+ utilizzare senza richiederne l'uso a Philips. In seguito il CD-i venne usato
+ da centinaia di compagnie in tutto il mondo in dozzine di aree.
+ Fra di esse vi sono le seguenti compagnie:
+
+ A&P / Hermans Groep, Abbots Labs, ABN Amro Bank, Absolut, ACOG, Adidas,
+ Advertising Display Company, AFT-IFTIM, Agfa Gevaert, Air Plus,
+ Alabastine, Albert Heijn, Alcon, Alied Van Lines, Allianz, Alpine,
+ American Express, American Greating, Ameritech, AMPED, Amsterdam Arena,
+ Amsterdam Automobile Exhibition, msterdam Police, Amsterdam Stock
+ Exchange, AASHTO, American Greetings, Ameritech, ANRA, ANWB, AOK, APAC,
+ Aquamris Hotel Rügen, Arai Helmets, Armstrong Flooring, ASC, ASICS, ATAG,
+ Auto Rai, AT&T Wireless Services, Aviodome, AVM Dialog AB, Aylesford News
+ print B B.A.T. GmbH, B.F. Goodrich, Backs Electronic Publishing Ltd,
+ Badisches Landesmuseum Karlsruhe, Ballast Nedam, Banyu, Barclays, Barton
+ Creek School, BASF, Battenfeld Spritzgieß Technik, Baume & Mercier, Bayer,
+ Bayerische Landtag, Baylor College of Medicine, Baxter, BBC, Bell Atlantic
+ (electronic Yellow Pages), Bell Atlantic (InfoTravel), Bénéteau,
+ Bertelsmann AG, Best Buy, Better Health Network, BEWAG, Beursdata B.V.,
+ Beyschleg GmbH, B.F. Goodrich, B.H.V., Bibliotheque Nationale de France,
+ Bicycle Rai, Big Hand Productions, Bildzeitung, Bionova Teichbau, Blum,
+ BMW, BOCO, Boehringer Ingelheim, Böhler Uddeholm, Bose Lifestyle Systems,
+ Brantano, Bristol Meyers Squib, British Petroleum, British School
+ Motoring, British Sky Broadcasting, B.S.L. Publishers, Burger King, C
+ Cadbury beverages, Cadillac, Calcografia Nacional, Madrid, Caltex
+ Petroleum, Canon & Shea Associates Inc., Canton, Carphone Warehouse,
+ Carrier Corp., Carter Retail Technologies, CBR, CD-Interior, Cellular One,
+ Chanel, Chargeurs, Chauvin, Chicago Transit Authority, Chronopost,
+ Chrysler, Churchill Livingstone, Ciba Gigy, Circon Nova B.V., Citroen,
+ City of Nijmegen, Clarins, Classic Worldwide Productions, Cleveland
+ Lumberjacks, CNA, CNN, Coca Cola Finland, Codim, Cognac Otard, Comercial
+ press (HK) Ltd., Commerzbank, Compumed, Congress Innsbruck, Continental
+ Can, Codes Rouseau, Corning, Corporate Market Stratagies, Coulter
+ Electronics, Course Care & De Geldergroep, CSX Railroad, CTE D Dähne
+ Design, Daka KG, Dane Investment, Dantuma, De Dietrich, De Hullu, Degener,
+ Dental Video Verlag, Department of Justice (Netherlands), Detlev Louis
+ GmbH, Deutsche Bahn, Deutsche Messe, Deutsche Telekom, Deutsche Museum
+ München, Deventer Tourist Office, DG-Verlag, Diamon Publishing Multimedia,
+ Disney World, DocData, Dodge, Doka, Dorinth Hotelgesellschaft, Dr. Oetker,
+ Dresdner Bauspar AG, Dubois Ceramics, Dulux, Dun & Bradstreet Software,
+ Dupont, Dutch Hospital, Association, Dutch Libraries E Eaton Corporation,
+ ECMI, Ecolauto, EDF/GDF, Ediser, Edutech, Eheim, Eichbaum-Brauereien AG, 
+ EKZ, Elsevier, EMG Ltd., ENJO, Ericsson, Euro Disney, European Traffic 
+ Tuition, Evoluon, Exectrain, Explainer Interactive BV, Exxon, Eybl Dumont,
+ Federal Highway Administration, First Bank of Boston, Fischer Schi, 
+ Fischer Tennis, Flaga Gas, Flammarion, Flughafen Wien, Forbes, Ford,
+ Freemans, Free Record Shop, Free University, Future Media Systems,
+ Futuroscope, Futuremedia PLC, GAK, GAP Consulting, General Motors, Georgia
+ Pacific, Gewerkschaft der Gemeindebediensteten (Austria), GGK, Glaxco,
+ Goldstar, Goodyear, Gran Dorado, Greiner, Groninger Museum, Grundig,
+ Gullet Touristik, Gulliver Ritchie Assocs., Inc, Hachette, C.Hafner GmbH,
+ Hall of Fame - WI, Halm, Hans Anders, Hans Schwarzkopf GmbH, Harley
+ Davidson, Haskoning, HEAD, Henkel, Heras Hekwerk, Hij/Zij Mode, Hödlmayr
+ Spedition, Hoechst, Homestead, Hooge Huys Insurances, Houde, Hubert EBNER
+ Verkehrsmittel Ges.m.b.H, ICI, IDV, Imperial Chemical Industries,
+ Infodent, ING Bank, Inmedia Inc, Innothera, Intermarché, Ipsen, Jaguar
+ (Netherlands), Janssen-Cilag, Janssen Pharma, J.C. Penny, Johnson &
+ Johnson, Junkers, JVC, Kaindl Laminatboden, Kaiser Friedrich GmbH,
+ Kantonspolizei Schaffhausen, Ken Cook Education Systems, Kentucky Fried
+ Chicken, Kerastase, KIA, Kiddies' Kiosk, Kimberly Clark, Koch
+ International, Komatsu, KPN, Krys, Kunsthistorisches Museum (Austria),
+ Kvaerner, La Redoute, Lab-CDI, Lancaster Group World Wide, Lancâme,
+ Laroche-Posay, Lease Concept / ABN Amro Bank, Lee Jeans, Lengers Yachting,
+ LEO Laboratories, Levi Strauss, Liebherr, Life Learn, Lights of Vienna,
+ Lipha Sante, Lithonia Lighting, Locatel, Lockheed Aeronautical, LOI,
+ L'Oréal, Lotto, Lowe's Warehouses, L.G. Electronics, 3M,
+ MacPherson-Meistergram, Majorica S.A, Manatees, mannaSpace, Mannesmann
+ Transmodal, Marine Nationale (France), Marriot, Martell, Maryland
+ Lotterie, Maynard & Associates, Masco, Masterdoc, Matsushita, Mazda,
+ McDonald's, McDonnell Douglas, McGill Multimedia, MCI, Med. I.A. Inc.,
+ Media Art, Media Design Group, Meistergramm, Melitta, Melrose, Mercedes
+ Benz, Merck Sharpe & Dohme / Merck Pharmaceutical, Miles Laboratories,
+ Ministery of Int. Affairs (Netherlands), Ministery of Public Work
+ (Netherlands), Mobalpa, Mont Blanc, Mood Media, Moore Int., Mother Network
+ (mannaSpace), Motel 6, Motorola, ,MSD, Merck Sharpe & Dornê, Muffin Head
+ Productions, Multi-Media Corporation, Multimedia International, Museum
+ Amparo, Museum of London, Muzak DMI, 11er Nahrungsmittel National Cancer
+ Institute, National Safety Council (UK), Nationale Nederlanden,
+ Naturkundemuseum Stuttgart, Naturschutzzentrum Bad Wurzbach, Nestles,
+ Netherlands Antilles Police Force, Netherlands Film Festival, Nethold, New
+ Media Systems, Nieuwe Revue, Nikon, NIMA, Nine West Group, Nissan, NÖ
+ Landesausstellung, NOB Interactive, Nordsjö Färg, NOTA Multimedia LTV
+ Allemande, Notre Dame University, Novare International, Novem, Novotel,
+ Nuclear Electric, Nursery Union O O'Neill, ÖBB Bahnstrom, ODME, Office du
+ Tourisme de Lorraine, Office Int. de l'eau, Office National de la Chasse,
+ ÖGB 100 Jahre, ÖO Landesausstellung, Olympic Austrian Commitee,
+ Orthopädische Industrie-Otto Bock, Österreichische Nationalbibliothek,
+ Österreichische Werbepreise, P.Reincke Direkt Marketing GmbH, Page & Moy,
+ Pall Hydraulik, Pantheon Productions, Penthouse, PepsiCo, Pergo Flooring,
+ Peugeot, Pfaff Silberblau, Pfizer, Pharma Lab, Pharma-laser,
+ Pharmascience, Philip Morris SA, Philips, Phönix Backbedarf GmbH, Pierre
+ Fabre, Plasser & Theurer, Plawerg, Madrid, Playboy, Plymounth, PNEM,
+ Poilane, Point Series, Polygram, PPG Industries, Precor USA, Proctor &
+ Gamble, PTT Telecom BV, Public Museum of Grand Rapids, Qualifortour,
+ Rabobank, Raiffeisen Bank, Raleigh, Ramada Inns, Rand McNally, RATP,
+ RDR-Affektive Störungen, Reckitt & Coleman, Renault, Reuters, Rhone
+ Poulenc, Rijksmuseum, Rise International, Royal Canin, Royal Dutch Air
+ Force,,SAAB GmbH, Sake, Sale '96, Salzburger Tourismus, Sanofi Pharma,
+ Saturn, Schering, Schindler, Schleswag, Schloemann Slemag, Schöller Bank,
+ Schiphol Amsterdam Airport, Schwäbisch Hall, Schweizerische
+ Industriegesellschaft, Scottish Office Education Dept., SeaFirst Bank,
+ Seagram, SeaWorld , Sealy, Searle Canada, Sears, Sep, Serv & Tech AB,
+ Service One Catering, Shell, Sherwin Williamís, Shimano, Shindler,
+ Siemens, Signum, Simstar Inc., Sipa, Sita, Skillmaster, Sofidoc, Sony,
+ Southwest Bell, SPC Vision, Stabernack, Jr. Partner GmbH & Co., Stadt
+ Dornbirn, Stadt Heiligenstadt, Stadt Wien, Stadtmuseum Bad Ischl,
+ Stadtwerke Geinhausen GmbH, St. Elisabeth Hospital, Start Opleidingen,
+ Stephansdom, Storck GmbH, Studio Hamburg, Subaru of America, Swatch,
+ Symphony Group, Synthelabo, Syracuse University, Tauernkraftwerke AG,
+ Target Vision, Teleac, Tempo, Tengelmann, Texaco, The Amsterdam Stock
+ Exchange, The Brain Center, The National Cancer Institute, The Palace
+ Museum China, The Spanish Ministry of Social Security and Welfare, Thomson
+ CSF, Thyssen, Tirol CD-i, Tissot, TNO, Toyota, Trodat, TRT, Tsuyata,
+ Unisource, United Nations, United Technologies Corp., University of
+ Glasgow, University of Guelph, University of Iowa, University of Nijmegen,
+ US Federal Government, US Gold Association, US Navy, US Pharmacopea, US
+ Postal Services, US West, Valkieser New Media, Van Cleef & Arpels,
+ Vekabest, Verband Österreichischer Hobelwerke, Veritech, Verkade,
+ Versalius Klinik, Victory Interactive Media S..A, Video Arts, Videotronic,
+ VGZ medical Insurance, Vismed LTD, Vivanco, VOEST Alpine, Vogelbusch,
+ Vogel Verlag, VOK Dams Gruppe, Volksbund Deutsche Kriegsgräberfürsorge,
+ Volkswagen, Volvo, Vredenstein, Vroom & Dreesmann, Vucom Graphic Systems,
+ VVD, VVV, Wella AG, Wendy's, Werndl Furniture, Western Autostores,
+ Weyerhouser, Whirlpool, Wifi Wien, Wilson Learning, Wolf Gartengeräte,
+ Wyeth, Yamaha, Yamanouchi Pharma GmbH, Yves Rocher, Yves Saint LaurEnt,
+ Zambon, Zegna, Zeneca and Zumtobel. 
+
+ This list was created by Philips Disc Systems in early 1999, and is used
+ with permission.
+ Questa lista venne creata da Philips Disc System all'inizio del 1999 ed e'
+ utilizzato con il loro permesso.
+
+          
+ © Copyright 2000 KennisOnline.com and ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.
+

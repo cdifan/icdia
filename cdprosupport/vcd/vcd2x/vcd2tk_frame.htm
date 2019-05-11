@@ -1,0 +1,65 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>VCD 2.0 Toolkit: Volume Map Frame of Reference</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR=#FFFFFF>
+
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="vcd2x.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<CENTER><TABLE BORDER=2 BGCOLOR="#0066CC" VALIGN=Middle HEIGHT="10" WIDTH="500" ><TR>
+	<TD ALIGN=Center ><FONT SIZE=+3 COLOR="#FFFFFF">VCD 2.0 Toolkit: <BR>Volume Map Frame of Reference</FONT></TD>
+</TR>
+</TABLE></CENTER><P>
+
+
+Both the Mac and the PC VCD 2.0 Toolkits have a limit to the number menus and sequences that can be displayed hierarchically in the Volume Map window. The hierarchy of objects displayed currently in the Volume Map window is defined as the <I>Frame of Reference</I>. Sequences and Menus are <I>hierarchical</I> objects-- that is, they have branches to multiple objects. 
+<UL>
+<LI>The Mac version can only display 9 hierarchical menus and sequences.
+<LI>The PC version can only display 31 hierarchical menus and sequences.
+</UL>
+<P>
+   To get around this limitation, and jump to a different part of the hierarchy within a volume, you must change the<I>frame of reference</I> within the Volume Map window. To do that, drag&amp;drop the desired menu/sequence/event from the corresponding <B>object</B> window onto the <B>first</B> (top-left-most) line in the Volume Map as shown:<P>
+
+<IMG SRC="change_frame.gif"><P>
+
+<UL>
+<LI>Do <B>NOT</B> drag&amp;drop an object from within the Volume Map window itself; doing that will change the structure. 
+ <LI> Changing the <I>frame of reference </I>does not change the structure of the volume, it merely displays a different portion of it.<P></UL>
+
+
+The frame of reference should now be shifted, so that the object dropped is now the <B>top-left-most</B> object displayed in the Volume Map window, as shown:<P>
+
+<IMG SRC="new_frame.gif"><P>
+
+  To go back to the start of the Volume, either 
+<UL><LI>double-click the Volume Name at the top of the Volume Map window or
+<LI>drag the first object in the volume, from its <B>object</B> window, to the first line  displayed in the Volume Map window.</UL><P>
+
+<FONT SIZE=+1 COLOR="#FF0000"><B>Warning:</B></FONT><BR>
+The PC version can crash with a Stack Overflow if you try to jump back the frame of reference to one with all of its hierarchy open.  To avoid this problem:
+<UL>
+<LI>Keep only the part of the title currently being edited open.    Collapse all other parts of the hierarchy.
+<LI>Be sure at least to keep <B>one</B> of the first 30 hierarchies collapsed.
+<LI> Before trying to jump back, collapse the hierarchy in the current frame of reference by clicking on the downward facing triangle in the top line of the Volume Map.
+<LI>If you get a Stack Overflow error and the VCD 2 Toolkit app quits:
+<OL>
+<LI>Restart the Toolkit application.  If you have gotten multiple Stack Overflows, you may need to restart Windows. You should return to that point in the title where you were before you attempted the backward frame of reference jump.
+<LI> Collapse the hierarchy in the current frame of reference by clicking on the downward facing triangle in the top line of the Volume Map.
+<LI>Drag&amp;drop an hierarchical object that is <B>30-or-less</B> steps back in the hierarchy from an object window (i.e.  Sequences or Menus) onto the first line displayed in the Volume Map window.
+<LI>Repeat steps 2 and 3 until you get to where you want to be. 
+</OL></UL>
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="vcd2x.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+</BODY>
+</HTML>

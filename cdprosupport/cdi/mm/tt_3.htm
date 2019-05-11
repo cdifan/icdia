@@ -1,0 +1,200 @@
+<HTML>
+
+<HEAD>
+
+
+
+<TITLE>Tech Note : TT-3</TITLE>
+
+
+
+
+
+</HEAD>
+
+<BODY>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<HR>
+
+<P>
+
+<P>
+
+<P>
+
+					<H2><CENTER>Tech Note : TT-3</CENTER></H2>
+
+					   <CENTER>11/1/94</CENTER>
+
+<P>
+
+<BR>
+
+
+
+<B>TOPIC:</B>
+
+<P>
+
+Checking Memory usage and Processes while testing a title under emulation.
+
+<P>
+
+<B>OVERVIEW:</B>
+
+<P>
+
+You can start an OS-9 command line shell, begin a CD-i application (emulation 
+
+or from a CD) from there, and still retain the ability to type commands like 
+
+MFREE, MDIR, PROCS. This allows the developer to troubleshoot memory problems 
+
+and the like while emulating a title.  (See TT-1 for details on starting the 
+
+shell).
+
+<P>
+
+<B>PROCEDURE:</B>
+
+<P>		
+
+1. Establish a shell as described in TT-1, but do NOT start the .MM0  application yet!<BR>
+
+2. Type  mfree -e , and note the Total RAM at startup and the Current total  free RAM.<BR>
+
+3. Start the .MM0 file as described in TT-1.
+
+<P>
+
+
+
+Using mfree:
+
+<P>
+
+mfree is a utility for displaying how memory is being used.  Theses items are 
+
+of interest to us:
+
+<P>
+
+Total RAM at startup - the grand total RAM installed 
+
+on the mother board, expansion card and DV card 
+
+present at startup.
+
+<P>
+
+Current total free RAM - The amount of RAM available 
+
+when mfree was "looking".
+
+<P>
+
+
+
+To calculate the amount of RAM being used by your title at any given time, 
+
+subtract the Current total free RAM reported by the recent mfree, from the 
+
+Current total free RAM reported just BEFORE you started the .MM0 file.
+
+<P>
+
+According to the green book a consumer base-case CD-i player must have FREE, 
+
+two segments of at minimum 480k bytes, for a Current total free RAM of 960k 
+
+(minimum) out of 1024k bytes. Some base-case players will have more than 960k 
+
+free as their OS-9 kernels use less RAM from the 1024k (1 Meg base case).
+
+<P>
+
+With a DV cartridge adding another 1024k of RAM, the Current total free RAM 
+
+should be in the range of 1980k.  
+
+<P>
+
+The script2disc modules,  Plugins and their required buffers MUST fit in the 
+
+Current total free RAM, whether than be 960K for a base case player, or 1980k 
+
+for a DV cartridge equipped one.
+
+<P>
+
+If when testing the title on the 605, calculated memory usage exceeds the 
+
+amount that WOULD be available on the consumer machine of choice, you must go 
+
+back to the title and do some trimming, either in the total number of Plugins 
+
+running or in the amount of buffers they use.  Memory hogs include any Plugin 
+
+that must allocate memory for sound maps (like talking menus) or video (like 
+
+QHY zoom).  Reducing the number of or size of the sound maps or image byte 
+
+counts can help.
+
+<P>
+
+<BR>
+
+Using procs:
+
+<P>
+
+procs shows all the processes running on the machine, whether in the 
+
+foreground or background.
+
+<P>
+
+We use procs to show the modules in memory, and to find duplicate or runaway 
+
+modules. Duplicates can cause sluggish or erratic operation and are usually 
+
+the result of "Call_bg" to a MediaMogul Plugin module multiple times. Runaway 
+
+processes use up the majority of the CPU time and cause sluggish or erratic 
+
+operation.
+
+<P>
+
+<BR>
+
+Other commands:
+
+<P>
+
+Almost any command in the CMDS directory can be used while the user shell is 
+
+running.  Feel free to experiment.
+
+<P>
+
+<BR>
+
+<HR>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<!-- Page by Chuck Hildebrand -->
+
+<!-- BBEdit 4.0.4 -->
+
+<!-- Original Tech Note by OptImage Support -->
+
+</BODY>
+
+</HTML>
+

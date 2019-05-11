@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+    <TITLE>ADPCM vs. MPEG Audio</TITLE>
+</HEAD>
+<BODY>
+<BR>
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> | <A HREF="mm.htm">Up
+One Level</A> | <A HREF="/cdprosupport/sitemap.htm">Site Map </A>| <A HREF="mailto:cdprosupport@icdia.org">Send
+Us email</A> </CENTER>
+<HR>
+
+
+
+
+<H2><CENTER>                                                           
+               ADPCM vs. MPEG Audio</CENTER>
+</H2>
+                                                                       
+     <BR>
+<BR>
+5/13/96<BR>
+<BR>
+In attempts to make some progress on the MPEG vs. ADPCM encoding issues,
+a series of tests were conducted, with the goal of eliminating or controlling
+as many variables as possible.   The original complaints were with CD-i
+developers using MediaMogul versions 2.2 and earlier.  Current tests were
+conducted with MediaMogul 2.2.1 and corresponding plug-ins.   A similar
+disc using Balboa was also produced to eliminate MediaMogul as a variable.<BR>
+<BR>
+<B>Test Conditions:<BR>
+</B>
+<UL>
+  <LI>The source audio was a digitally generated 1 KHz sinewave, monophonic,
+44.1 KHz sample rate, 30 seconds in length, in AIFF format.  The amplitude
+swing was +/- 50%.   This produced an -6 dB signal level relative to full
+16 bit modulation--to eliminate amplitude clipping in ADPCM or MPEG processing.
+ This -6 dB absolute level was normalized,  subsequently termed &quot;0
+dB&quot; and used as reference throughout the tests.  
+  <LI>The AIFF source was down sampled to 37.8 KHz using Sound Designer
+DSP tools.  The amplitude was verified to match the source file.   I used
+AudioStack on the Macintosh (the same tool a developer would use) to encode
+the resampled file to A level, Mono, ADPCM.
+  <LI>The AIFF source was also encoded into 192 kbits/sec, Mono, MPEG audio,
+using Audio2MPEG on the Macintosh.  The intent was to remove hardware A/D
+converter and hardware encoding issues.  The elementary audio file was multiplexed
+with a nondescript elementary video file, using PINK.  The multiplexed file
+was processed into an RTF using Master.  This stream is designated MPEG
+#1.
+  <LI>Another MPEG stream was prepared by encoding a Beta SP tape of color
+bars and 1 KHz tone.   The A/D converter gain at the Delta Vx encoding system
+was adjusted so that the &quot;clip&quot; light just flickered (-1.5 dB
+from full 16 bit modulation according Apogee documentation).  This is the
+only &quot;metering&quot; provision on the encoding system.  The audio was
+recorded at 192 Kbits/sec, multiplexed using PINK and RTF'ed by Master.
+ This stream is designated MPEG #2. 
+  <LI>Both the ADPCM and MPEG assets were scripted in MediaMogul 2.2.1 using
+ DV Plugin 2.2.1 and processed with Script2Disc 2.2.1.   The default audio
+attenuation settings were used (no VOLUME or $ command was used to manipulate
+volume of either asset type).
+  <LI>A CD-i disc of the build was recorded using CD-IT All 2.5.8.  The
+disc is marked:  Level Test (Audio)  5-15-96  MM 2.2.1.
+  <LI>The CD-i disc was used in all units subject to the test.
+  <LI>An analog VU meter (with 0.1 dB resolution) was connected to the RIGHT
+analog audio output of each unit under test.
+  <LI>The ABSOLUTE level of the signals was not measured and varied somewhat
+from unit to unit.
+  <LI>Only the RELATIVE amplitude between the three assets were measured,
+with the ADPCM level on each respective unit used as 0 dB reference.
+</UL>
+<BR>
+<B>MediaMogul  2.2.1 Disc:<BR>
+</B>
+<PRE>Unit               DV Cart        MPEG Level (dB)   MPEG Level (dB)  ADPCM Level (0 dB)
+				        (MPEG #1)          (MPEG #2)
+210/25            22ER9141/37           0                 +4            0
+220/37            22ER9141/00           0                 +4            0
+220/57            22ER9141/00           0                 +4.5          0
+350 portable      docking unit          0                 +4            0
+370 portable      DV01                 -0.5               +3.5          0
+550               DV01                  0                 +4            0
+605 (carrier)     new                  +0.5               +4            0
+605T              new                  +0.5               +4.5          0
+PC-I2M            daughter             +7.0               +11           0   (using OptImage CDIPlayback 2.2.1)
+MAC-I2M           daughter             +7.0               +11           0   (using CDIPlayback 1.5, ADPCM att=6%)
+MAC-I2M           daughter             -0.5               +3.5          0   (using CDIPlayback 1.5, ADPCM att=0%)</PRE>
+<BR>
+<BR>
+<B>Conclusions:</B>
+<UL>
+  <LI>If MediaMogul and/or the DV plug-in were faulty with audio levels
+or controls at some version, it is has since been fixed and not a factor.
+  <LI>OptImage has an incomplete compliment of CD-i players.   However,
+given the wide disparity in age and models, the tests provide reasonable
+confidence.  It would appear that the ADPCM and MPEG discrepancy is ASSET
+PRODUCTION related.   ADPCM production tools permit easy control of amplitude,
+plus the audio industry is very familiar with amplitude matching and calibration
+procedures in all equipment in the production chain.  
+  <LI>The same CANNOT be said of the MPEG service industry.  For Delta V
+systems, there is little provision for monitoring or calibrating the audio
+encoding equipment for a known and repeatable amplitude entering the encoding
+system.  Moreover, the encoding systems themselves provide NOTHING for checking
+amplitudes on the encoded side so that calibration can be achieved
+  <LI>The 4 dB relative difference from MPEG #1 to MPEG #2 was expected.
+  MPEG #1 was recorded at -6 dB absolute, while MPEG #2 was produced at
+approximately -1.5 dB absolute (as best we could read the LED).  This yields
+an approximate 4.5 dB difference between the two MPEG assets--confirmed
+in the tests
+  <LI>The level discrepancy problem ACROSS PLAYERS, reported last October
+with MediaMogul 2.2, appears to have been solved by MediaMogul, DV Plugin
+and Script2Disc versions 2.2.1.    The relative levels between the three
+assets remained essentially identical across units
+  <LI>The history of the &quot;6%&quot; attenuation setting in CDIPlayback/I2M
+software is unknown, but apparently misguided.  The 0% setting yields much
+better amplitude matching with controlled assets.  Unfortunately, the PC
+version of OptImage CDIPlayback does not permit adjustment of the ADPCM
+attenuation--it is fixed at 6%
+  <LI>Similar tests using the three assets, but under Balboa, yielded essentially
+identical results of the MediaMogul disc.   However, on PC and Mac I2M cards,
+it seems that Balboa is manipulating the ADPCM attenuation.   On the PC,
+the ADPCM level was only 1 dB below MPEG #1 (compared to 7 dB below with
+the Mogul disc).   On the Mac, the ADPCM level was 7.5 dB below MPEG #1
+(same as Mogul disc), but REGARDLESS of CDIPlayback attenuator settings.
+</UL>
+<BR>
+<BR>
+<B>Recommendations:<BR>
+</B>
+<UL>
+  <LI>Locate equipment or software that permits monitoring of encoded MPEG
+audio levels in Real Time or in Post processing
+  <LI>Locate equipment or software that permits <A HREF="../../encoding/deltavx/calibrate_MPEG.htm">calibration</A>
+of the A/D converters and audio encoding equipment against an in-line analog
+or electronic VU meter.  This would permit manual level adjustment of the
+Video Tape machine or other sources,  to produce known and repeatable levels.
+ The Delta Vx system just so happens to use an outboard A/D converter with
+an LED to indicate -1.5 dB absolute level.   For Delta Vc and other totally
+integrated systems, there is no published relationship between volume settings,
+analog signal levels vs. digital levels, etc.  Empirical testing--effective
+but tedious-- could be used to calibrate the system
+  <LI>Alternatively, process all audio files using a software audio MPEG
+encoder.   Amplitudes can be controlled/manipulated in standard audio production
+tools, with seemingly predictable encoding results
+  <LI>For a given title, both the ADPCM processing chain and the MPEG processing
+chain MUST be calibrated to the same reference amplitude.  Without calibration,
+the audio levels between ADPCM and MPEG assets will be unpredictable.  
+Most audio experts recommend a &quot;0 dB&quot; reference at an absolute
+level of -10 or -15dB (absolute 0 dB is full 16 bit modulation) to provide
+adequate safeguards against clipping.  If MPEG and ADPCM processing cannot
+be mutually calibrated, then at minimum, the calibration references should
+be published by both so the title developer can make the appropriate adjustments.
+</UL>
+<BR>
+<BR>
+<BR>
+<HR>
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> | <A HREF="mm.htm">Up
+One Level</A> | <A HREF="/cdprosupport/sitemap.htm">Site Map </A>| <A HREF="mailto:cdprosupport@icdia.org">Send
+Us email</A> </CENTER>
+
+
+
+</BODY>
+</HTML>
+

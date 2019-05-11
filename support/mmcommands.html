@@ -1,0 +1,1848 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td>
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>MediaMogul - Script commands overview</B><BR><BR>
+
+<A NAME="Heading0"><BR>
+	<LI><A HREF="#Heading1">Run Length Animation commands</A>
+	<LI><A HREF="#Heading2">DYUV Movie commands</A>
+	<LI><A HREF="#Heading3">Still Picture Display commands</A>
+	<LI><A HREF="#Heading4">Special Still Picture Controls</A>
+	<LI><A HREF="#Heading5">Branching Controls</A>
+	<LI><A HREF="#Heading6">Plug-in Controls</A>
+	<LI><A HREF="#Heading7">Digital Video Related commands</A>
+	<LI><A HREF="#Heading8">Variable Controls</A>
+	<LI><A HREF="#Heading9">Memory Control</A>
+	<LI><A HREF="#Heading10">ADPCM Audio Commands</A>
+	<LI><A HREF="#Heading11">Menu Controls</A>
+	<LI><A HREF="#Heading12">Misc Controls</A><BR><BR><BR>
+</td>
+</tr>
+</table>
+</center>
+
+<center>
+<TABLE BORDER=1 WIDTH=600>
+	<TR>
+		<TH WIDTH=160 ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Description</FONT>		</TH>
+		<TH WIDTH=28 ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Type</FONT>		</TH>
+		<TH WIDTH=100 ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Col 1</FONT>		</TH>
+		<TH WIDTH=90 ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Col 2</FONT>		</TH>
+		<TH WIDTH=90 ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Col 3</FONT>		</TH>
+		<TH WIDTH=90 ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Col 4</FONT>		</TH>
+		<TH WIDTH=90 ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Col 5</FONT>		</TH>
+		<TH WIDTH=90 ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Col 6</FONT>		</TH>
+	</TR>
+	
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading1">
+		Run-Length Animations</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD> 		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Animate at 5 fps</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin anim: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Animate5</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		animation filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		offset into file: time</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration time</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Animate at 10 fps</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin anim: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Animate10</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		animation filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		offset into file: time</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration time</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Animate at 15 fps</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin anim: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Animate15</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		animation filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		offset into file: time</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration time</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading2">
+		DYUV Movies</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Play movie at 5 fps</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin movie: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Dyuvmovie5</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		movie filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		topleft corner: X Y</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		# pixels to mask</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Play movie at 10 fps</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin movie: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Dyuvmovie10</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		movie filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		topleft corner: X Y</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		# pixels to mask</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Play movie at 15 fps</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin movie: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Dyuvmovie15</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		movie filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		topleft corner: X Y</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		# pixels to mask</FONT>		</TD>
+	</TR>
+
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading3">
+		Still Picture Display</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Open Curtain to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin curtain: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Curtain Open</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of open</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Close Curtain to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin curtain: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Curtain Close</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of close</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Cut to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do cut: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Cut</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Dissolve to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin dissolve: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Dissolve</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of dissolve</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Fade down on <I>current</I> picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin fade: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Fade_Down</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of fade</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Fade up to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin fade: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Fade_Up</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of fade</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe Left-&gt;Right to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin wipe: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe LR</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of wipe</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe Right-&gt;Left to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin wipe: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe RL</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of wipe</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe Top-&gt;Bottom to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin wipe: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe TB</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of wipe</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe Bottom-&gt;Top to new picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin wipe: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe BT</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of wipe</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Turn video off (makes screen blkack)</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do off: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Off</FONT>		</TH>
+		<TD> 		</TD>
+		<TD> 		</TD>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading4">
+		Special Still Picture Controls</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Load Picture in background plane</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Background</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Loop through foreground CLUT</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin cycling: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Clutcycle</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		start at position #</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		end at position #</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		time per entry</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of loop</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Select Font for text display</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		load font by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Font</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		font filename</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Turn on interlace video for QHY</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at:time</FONT>	</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Interlac_On</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Turn off interlace</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Interlac_Off</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Display back on front &amp; enable transp</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Overlay_bg</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Blast picture onto current picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Partial</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Blast picture onto background picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Partial_bg</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Pause video in mid-transition</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Pause Video</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Draw solid rectangle on current pict.</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Rect</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Lx Ly Rx Ry</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Draw solid rectangle on back picture</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Rect_bg</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Lx Ly Rx Ry</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Choose color for &quot;draw rectangle&quot;</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		set color at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Rectcolor</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Color: Red, HalfRed</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Display text line on current pict</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		display at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Text</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		A line of text between ^</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		location:Lx Ly</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Display text line on back pict</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		display at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Text_bg</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		A line of text between ^</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		location:Lx Ly</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Choose text color for fore. pict</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		set color at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Textcolor</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Color: Red, Halfred</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Choose text color for back. pict</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		set color at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Textcolor_bg</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Color: Red, Halfred</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Display text from text file on fore.</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		display at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Textfile</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		text filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		location:Lx Ly</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Display text from text file on back.</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		display at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Textfile_bg</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		text filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		location:Lx Ly</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Animation transparency enable/disable</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		enable at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Transp_on<BR>
+		Transp_off</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading5">
+		Branching Controls</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD  ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Branch immediately, track/don't return</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		branch at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Br_alwys_r <BR>Br_alwys_nr</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		script to branch to</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD  ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Branch IF a variable is TRUE/FALSE, track/don't track return</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		branch at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Br_true_r <BR>Br_true_nr, <BR>Br_false_r <BR>Br_false_nr</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		script to branch to</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		variable examined to make decision</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD  ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Branch if variable is some desired value, track/don't track return</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		branch at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Br_ifeq_r <BR>Br_ifeq_nr</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		script to branch to</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		variable examined to make decision</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Desired value</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Branch if two variable contents match, track/don't track return</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		branch at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Br_ifeq_r <BR>Br_ifeq_nr</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		script to branch to</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		variable in question</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		reference variable</FONT>		</TD>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading6">
+		Plug-in Controls</A></FONT></TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD  ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Attach plug-in - pauses script to run plug-in</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		attach at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Call</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		plugin filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		run instructions</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD  ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Attach plug-in - does NOT pause script to run plug-in</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		attach at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Call_bg</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		plugin filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		run instructions</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading7">
+		Digital Video Related commands</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Curtain Open when DV plays</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		DV_Curt_Open</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of open</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Curtain Close when DV plays</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		DV_Curt_Close</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of close</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Cut to new picture when DV plays</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		DV_Cut</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of open</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe L-R when DV plays</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		DV_Wipe_LR</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of wipe</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe R-L when DV plays</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		DV_Wipe_RL</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of wipe</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe T-B when DV plays</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		DV_Wipe_TB</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of wipe</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wipe B-T when DV plays</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		DV_Wipe_BT</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		picture filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of wipe</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Setup still planes for DV Play</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		be ready by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		DV_Transp</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		matte/mode -or- <BR>
+		clut/mode<BR>
+		<BR>
+		mf1 mf2 mf3<BR>
+		ck1 ck2 ck3<BR>
+		NONE<BR>
+		HIDE<BR>
+		SHOW_T<BR>
+		SHOW_NT</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Matte Location:<BR>
+		Lx Ly Rx Ry</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Load DV Entry point list</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		V</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		load by: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		EPLoad</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		EP filename</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading8">
+		Variable Controls</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Put a number into a variable</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Put at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Set_var</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		target variable</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		number</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Copy one variable to another</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Copy at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Set_var</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		target var name</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		source var name</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Put true/false into a variable</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Put at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Set_true<BR>
+		Set_false</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		variable to set</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Add a number to a variable</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Add at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Add_var</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		variable name</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		number</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Add one variable to another</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Add at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Add_var</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		sum variable</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		var to add with</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD  ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Save a variable to NV memory</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		save at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Save_var</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		variable to save</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Save all variables to NV memory</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		save at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Save_var_all</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Retrieve a variable from NV mem</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		get at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Load_var</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		variable to retrieve</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Retrieve all variables from NV mem</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		get at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Load_var_all</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading9">
+		Memory Control</A></FONT></TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Free memory used by pointers</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Free_ptr</FONT>		</TH>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Free memory used by video buffers</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Free_video</FONT>		</TH>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Free memory used by audio buffers</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Free_audio</FONT>		</TH>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Restore memory freed earlier</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Restore_ptr<BR>
+		Restore_video<BR>
+		Restore_audio</FONT>		</TH>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading10">
+		ADPCM Audio Commands</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Adjust volume of currently playing and subsequent audio clips</FONT></TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		A</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		adj at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Volume</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		new volume level</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		how quickly volume changes:time</FONT>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Pause audio playback</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		A</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		adj at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Pause Audio</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of pause</FONT>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Play an Audio file</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		A</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		begin play at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Play</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		filename,filename..</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		offset into file: time</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		duration of play</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Stop current audio play immediately</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		A</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		stop at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Stop</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading11">
+		Menu Controls</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Disable current menu</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Menu_Off</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Enable a menu and pause for select</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wait</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		menu filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		pause for: time</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Enable a menu and DON'T pause</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Menu</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		menu filename</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		breakout after: time</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wait here to advance to next line</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		do at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Wait</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		leave blank</FONT>		</TD>
+		<TD>		</TD>
+	</TR><TR>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial"><A NAME="Heading12">
+		Misc Controls</A></FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD ALIGN=CENTER><FONT SIZE=-1 color="#ffffff" face="Arial"><A HREF="#Heading0">Top of page</A></FONT></TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD  ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Allow advance to branch/menu on a click (when NO menu is enabled)</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		allow at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Skip_on</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD  ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Disallow advance to branch/menu on a click (when NO menu is enabled)</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		disallow at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Skip_off</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Enable Microtouch brand screen</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		enable at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Touch</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		On Point</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Change cursor patterns, colors...</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		change at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Change_crsr</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		cursor pattern file</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Turn on/off cursor (when off freezes cursor at last X/Y position)</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		on/off at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Cursor_on<BR>
+		Cursor_off</FONT>		</TH>
+		<TD>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Move cursor immediately to coord.</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		move at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Cursor_pos</FONT>		</TH>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Coordinates: X Y</FONT>		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Turn click sound on/off</FONT>		</TD>
+		<TD ALIGN=CENTER>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		C</FONT>		</TD>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		change at: time</FONT>		</TD>
+		<TH ALIGN=LEFT>
+		<FONT SIZE=-1 color="#ffffff" face="Arial">
+		Click_on<BR>
+		Click_off</FONT>		</TH>
+		<TD>		</TD>
+		<TD>		</TD>
+	</TR>	
+</TABLE>
+
+
+
+
+
+
+
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+!***************************************************************
+
+!
+
+!	Master script for building a disc image to test a
+
+!	MediaMogul Digital Video title in simulation.
+
+!
+
+!	To modify this script for your own use, just follow these
+
+!	steps:
+
+!	1)	Replace the name of the file to build the disc image
+
+!		in in the volume line.  The default file name is
+
+!		dv_assets.cd in the current directory.  You may leave
+
+!		it at the default if desired.
+
+!	2)	Fill in the names of all DV files to build into the
+
+!		disc image by modifying (and adding new entries) the
+
+!		line which begins with green file.  This script is
+
+!		currently set up to build a disc image for the demo
+
+!		application using the DV files "DARE.RTF" and 
+
+!		"AEROSPACE.RTF".  Each green file line attaches a label
+
+!		(in this case DARE_RTF and AEROSPACE_RTF) to
+
+!		the file name (in this case "DARE.RTF" and "AEROSPACE.RTF"
+
+!		from our current build directory.  Each file must have a 
+
+!		unique label associated with it.
+
+!	3)	For each green file you list, add an entry in the
+
+!		directory listing at the bottom of this file.
+
+!		These lines attach a file name in the disc image to
+
+!		the labels defined in the green file lines.
+
+!	4)	Save this file, then build the disc image by entering
+
+!		the command:
+
+!			master dv_master_script
+
+!
+
+!***************************************************************
+
+define 
+
+	!-----------------------------------------------------------
+
+	! Standard stuff
+
+	!-----------------------------------------------------------
+
+	album "DV Assets"
+
+	publisher "My company" preparer "Me"
+
+
+
+	!-----------------------------------------------------------
+
+	! Volume name
+
+	!-----------------------------------------------------------
+
+	volume "DV" in "dv_assets.cd"
+
+
+
+	!-----------------------------------------------------------
+
+	! Standard stuff
+
+	!-----------------------------------------------------------
+
+	application file APPL from "cdi_appl"
+
+	message from "message.cda"
+
+	copyright file Copyright from "copyright.txt"
+
+	abstract  file Abstract from "abstract.txt"
+
+	biblio    file Biblio from "bibliographic.txt"
+
+
+
+	!-----------------------------------------------------------
+
+	! The DV files to include in the disc image.
+
+	!-----------------------------------------------------------
+
+	green file DARE_RTF			from "DARE.RTF"
+
+	green file AEROSPACE_RTF	from "AEROSPACE.RTF"
+
+
+
+{
+
+	"abstract"  protection 0x555 from Abstract
+
+	"bibliographic" protection 0x555 from Biblio
+
+	"copyright" protection 0x555 from Copyright
+
+
+
+	"CDI"
+
+	{
+
+		"DUMMY" 		protection 0x555 from APPL
+
+
+
+		!-------------------------------------------------------
+
+		! Directory listing.  Where to put the DV files in the
+
+		! disc image.
+
+		!-------------------------------------------------------
+
+		"DARE.RTF" 		protection 0x555 from DARE_RTF
+
+		"AEROSPACE.RTF" protection 0x555 from AEROSPACE_RTF
+
+	}
+
+}
+

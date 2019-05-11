@@ -1,0 +1,19 @@
+                         READ ME FOR cdi_vol SUBROUTINE
+
+
+
+This subroutine adjusts global volumes for ADPCM audio and DV audio at the same time, via the values
+of Mastervol and VOLVAR. The syntax for this subroutine is ñCall_bg cdi_vol <volvar>", where volvar
+is the variable(A,B,C,...) that is used in the cdi_dvpl VOLVAR parameter. When $MM_incvolume, 
+$MM_decvolume, or $MM_setvolume hotspots are selected, the mastervolume(in video environment) and 
+the DV volvar are incremented and decremented accordingly, with appropriate bounds checking. When 
+$DV_incvolume, $DV_decvolume, or $DV_setvolume hotspots are selected, only the mastervolume is updated
+by cdi_vol since cdi_dvpl updates the VOLVAR. The hotspot must have the appropriate command for the 
+type of video currently playing.  This means you need one menu which has $MM_ command hotspots for 
+when ADPCM audio is playing, and another menu with $DV_ command hotspots for when DV is playing. 
+
+cdi_vol.tar contains the cdi_vol subroutine, as well as as an example script, menus, and assets.  
+In order to use this subroutine, you will need to untar the file, copy cdi_vol to the SUBROUT folder, 
+and then be sure to give it execute attributes, e.g. ñattr -peepwwprr cdi_volî.
+
+This subroutine is at present unsupported, and you use it at your own risk. 

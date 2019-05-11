@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+
+<TITLE>Errors starting CDIPlayback for Windows</TITLE>
+
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="playback.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<BR>
+<BR>
+<P><H2><CENTER>Errors starting CDIPlayback for Windows</CENTER></H2>
+<BR>
+<BR>
+<P>
+The changes you need to make in the <CODE>AUTOEXEC.BAT</CODE> and <CODE>CONFIG.SYS</CODE> files when installing CDIPlayback for Windows are outlined in the Installation section of the manual.  Additionally, under some circumstances you may need to make changes to the <CODE>WCDIPLAY.INI</CODE> file located in your <CODE>WINDOWS</CODE> directory.
+<P>
+If you get errors when starting CDIPlayback, you may need to edit the <CODE>WCDIPLAY.INI</CODE> file.  The errors can range from a message that CDIPlayback couldn't be started and needs to be configured to a General Protection Fault, and can vary from installation to installation.
+<P>
+The <CODE>WCDIPLAY.INI</CODE> file can be opened with any text editor, such as Notepad.  In the file make sure the base address is set to the one your board is actually set to.  This is the lower (or first) of the memory addresses in the &quot;<CODE>X=nnnn-nnnn</CODE>&quot; statement that you entered in the <CODE>EMM386.EXE DEVICE</CODE> specification in your <CODE>CONFIG.SYS</CODE> file.
+<P>
+<BLOCKQUOTE><B>NOTE</B>: The base address for the board is located in two places in the <CODE>WCDIPLAY.INI</CODE> file, and should be changed in both locations.</BLOCKQUOTE>
+<P>
+Additionally, you should make sure that the <CODE>COM</CODE> port setting in the <CODE>WCDIPLAY.INI</CODE> file is set to the <CODE>COM</CODE> port you are actually using.
+<P>
+After making these changes, save the <CODE>WCDIPLAY.INI</CODE> file, exit your text processor, and restart Windows.  You should now be able to start CDIPlayback.
+
+<P>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.1 -->
+<P>
+</BODY>
+</HTML>

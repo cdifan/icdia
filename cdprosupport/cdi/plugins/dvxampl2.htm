@@ -1,0 +1,133 @@
+
+<HTML>
+
+<HEAD>
+<TITLE>Simulation of digital video with OS-9 Emulators</TITLE>
+</HEAD>
+
+<BODY>
+Back to <A HREF="digital_video.htm">Digital Video</A> Plug-In supplement page.
+<HR>
+<P>
+<H2><CENTER>Creating a CD for simulation of digital video on OS-9 Emulators:</CENTER></H2>
+
+
+Making the CD containing RTF's is not as straightforward on OS-9 Emulators, as there is no ImageMaker utility available.  There are two basic roads that can be taken;  a.) use the PC or Mac to create the master script and process on the Emulator.  b.)  Write your own master script and process on the Emulator.   Option &quot;a&quot; will appeal to most of you, and is covered first.  For option &quot;b&quot;, see the <A HREF="dvxampl2.htm#example">example script</A> below.
+<P>
+Option &quot;a&quot; simply uses &quot;dummy&quot; files with filenames matching those of the real MPEG files over on the Emulator.  ImageMaker identifies the file type either by the .mmd extension or from where the file is selected in its browser.   Therefore, it can create the necessary master script, even if the REAL mmd files aren't really on the Mac or PC. 
+<P>
+1. On a PC or Mac create a DVPREP directory.   In DVPREP, create a plain text file containing a few hundred characters, and save it under the name &quot;dummy.txt&quot;.   A readme file from anywhere could also be copied and named &quot;dummy.txt&quot;.
+<P>
+2. Obtain a list of the MPEG file names you wish to process.
+<P>
+3. For each MPEG filename, make a copy of dummy.txt, then rename it to match the MPEG filename. For example, the first MPEG on your list has a filename of &quot;booboo.mmd&quot;.  Duplicate &quot;dummy.txt&quot;, then rename the duplicate &quot;booboo.mmd&quot;.   Repeat until all the MPEGs on your list have a corresponding text file in DVPREP.
+<P>
+4. Run ImageMaker according to the preceding Macintosh or PC section instructions.  Make SURE you choose the disc image file to be placed in the DVPREP directory.  At some point, ImageMaker (actually Master) will Error and Quit on the text files it assumed were actual mmd files.   This is OK.  We are only after the master script and disc image parts ImageMaker manufactures.
+<P>
+5. Open the master script file (file ends in .msc) in a text editor that can do search/replace.  In OS-9 hard drives are referred to a /h0, /h1, /h2, etc.  On the Mac, they have a name, followed by a colon, followed by folder names separated by colons (like Macintosh HD:Homer:DVPREP).  On the PC the drive is C:\, D:\...followed by directory names separated by slashes (like D:\HOMER\DVPREP).   On both platforms, all the characters preceding the name DVPREP are to be replaced with &quot;/h2/&quot; for use on the emulator.   Follow the appropriate Macintosh or PC procedure below:
+<P>
+Macintosh:
+<P>
+Find the first text line containing a drive path and filename.   ALL the characters BEFORE the word DVPREP must be replaced with /h2/. For example, a path reading 
+Macintosh HD:Homer:DVPREP would be changed to read /h2/DVPREP.  In similar fashion,  change all remaining lines in the master script.  Save the master script.
+<P>
+IBM Compatibles:
+<P>
+Find the first text line containing a drive path and filename.   ALL the characters BEFORE the word DVPREP must be replaced with /h2/. For example, a path reading D:/Homer/DVPREP would be changed to read /h2/DVPREP.  In similar fashion,  change all remaining lines in the master script.  Save the master script.
+<P>
+<P>
+6. Copy all the files, EXCEPT the .MPEG text files, to a high density MS-DOS floppy.
+<P>
+7. Copy the files from the MS-DOS floppy to the DVPREP directory where the REAL MPEG files are. 
+The OS-9 command:  copy /pcd0h/* -w=/h2/DVPREP  should work.
+<P>
+8. Assure than script2disc 2.2 has been installed on /h2.   Run master, using the master script created.  The command master rtf_worm.msc or something similar should work.  Master will produce a disc image file.  This can take several hours or more, so be patient.
+<P>
+9. Record the disc image according the Emulator instructions.  Usually, this can be done with a command similar to:
+<P>
+cdr521 -t=rtf_worm.toc rtf_worm.cd.
+<P>
+<P>
+<P>
+<P>		
+<B><A NAME="example">Example master script</A></B>
+<P>
+For those truly brave souls wishing to try option &quot;b&quot;, disc image processing  can be done by writing your own master script, or by altering, or adding to, the information in the master script template.Remember, the following information presumes that you have already created .rtf files of your MPEG.  If you have not, please read the information about doing this 
+<A HREF="greening.htm">here</A>.
+<P>
+1.) Change the volume name shown in the template to what you'd like the disc image file name to be.  Be sure the hard drive and directory you specify the disc image to be on has enough free space - add the file sizes of all the MPEG .rtf's you wish to place on th CD.
+<P>
+2.) You must assign each .rtf to be included in the disc image a &quot;token&quot; name.  The token name is just a temporary name used by master in the process of building the disc image.  As shown in the template, it is easiest to use the .rtf filename with periods altered to the underscore character.  Each .rtf must be specified on a line that follows the format:
+<P>
+<PRE>     green file     DARE_RTF  from   &quot;/h2/DV/DARE.RTF&quot;</PRE>
+<P>
+where &quot;green file&quot; indicates the source file is already in.rtf format.  DARE_RTF is the token name, and &quot;/h2/DV/DARE.RTF&quot; is the .rtf filename as it appears on your hard drive.
+<P>
+3.) Lastly, the disc image directory structure is specified, along with the directory contents.  Each token name specified in step 2 is then assigned an actual filename to be used for placement in the &quot;CDI&quot; directory on the WORM.  The format is:
+<P>
+<PRE>     &quot;DARE.RTF&quot;     protection 0x555 from DARE_RTF</PRE>
+<P>
+where &quot;DARE.RTF&quot; is the filename to be used, protection 0x555 is the access privilage for the file, and DARE_RTF is the token name used while master is building the disc image.
+<P>
+4.) Make a directory called DVWORM.  Save the master script in ASCII format with the name dvworm.msc in the DVWORM directory.
+<P>
+5.) A &quot;dummy&quot; file is needed as a placeholder for several lines in this example master script for CD-i images.  Make a copy of some utility, like &quot;/h2/CMDS/attr&quot; and name it &quot;/h2/DVWORM//dummy&quot;.  For example:
+<P>
+<PRE>     copy /h2/CMDS/attr /h2/DVWORM/dummy</PRE>
+<P>
+6.) Then chd to DVWORM and type:
+<P>
+<PRE>     master dvworm.msc</PRE>
+<P>
+Creation of the disc image might take several hours depending on the number and length of your real time files.
+<P>
+<B>master script template</B>
+<P>
+<PRE>! this comment line marks the beginning of the template<P>
+
+options:  -s
+define
+    album 		&quot;DV Assets&quot;
+    publisher 	     &quot;My company&quot; preparer &quot;Me&quot;
+    volume 		&quot;DV&quot; in &quot;/h2/DVWORM/dv_worm.cd&quot;
+    application 	file APPL from &quot;/h2/DVWORM/dummy&quot;
+    message		from &quot;/h2/DVWORM/dummy&quot;
+    copyright 	file Copyright from &quot;/h2/DVWORM/dummy&quot;
+    abstract  	file Abstract from &quot;/h2/DVWORM/dummy&quot;
+    biblio    	file Biblio from &quot;/h2/DVWORM/dummy&quot;
+
+! add as many lines as you have RTF's, according to the
+! examples below
+
+    green file 	DARE_RTF from &quot;/h2/DV/DARE.RTF&quot;
+    green file 	AEROSPACE_RTF from &quot;/h2/DV/AEROSPACE.RTF&quot;
+
+
+! the brackets below are VERY important. do NOT delete
+{
+    &quot;abstract&quot;  protection 0x555 from Abstract
+    &quot;bibliographic&quot; protection 0x555 from Biblio
+    &quot;copyright&quot; protection 0x555 from Copyright
+
+    &quot;CDI&quot;
+    {
+
+! for every line with green file above, there MUST be a
+! entry below. The indented bracket must be AFTER all entries
+   
+     &quot;DUMMY&quot;         protection 0x555 from APPL
+     &quot;DARE.RTF&quot;      protection 0x555 from DARE_RTF
+     &quot;AEROSPACE.RTF&quot; protection 0x555 from AEROSPACE_RTF
+    }
+}
+
+! this comment line marks the end of the template</PRE>
+<P>
+<HR>
+Back to <A HREF="digital_video.htm">Digital Video</A> Plug-In supplement page.<BR>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit Lite 3.5.1 -->
+</BODY>
+
+</HTML>
+

@@ -1,0 +1,76 @@
+**********************************************************************************************
+*************************************READ ME FOR ATAR*****************************************
+**********************************************************************************************
+
+This text file merely gleans the most useful information from the ASPI.DOC file included with normal the ATAR distribution.  The important things to account for are:
+1) TAPEID
+2) ASPI drivers
+3) Running the programs (be sure to use /dev/ct, /dev/nrct)
+
+TAPEID
+-------
+This defines the scsi-host-adapter-number,the scsi-target-id, and the logical-unit-number of the scsitape. Normally, the tape drive should be set to SCSI ID4.
+E.g.:
+                                        DEFAULT_TAPE_ID="0:4:0"
+                                                         | | |
+adapter-num (0 if you just have 1 controller) -----------| | |
+                                                           | |
+scsi-target-id (0-7) --------------------------------------| |
+                                                             |
+logical-unit-number -----------------------------------------|
+
+On most systems, you just have one host adapter, so the adapter-num
+will almost always be "0". The same is true for the logical unit number.
+All streamers support only logical unit number "0". Only the scsi-target
+ID depends on your scsi-setup. The DEFAULT_TAPE_ID in ATAR is already set to
+"0:4:0". You may also define the environment variable TAPEID (same syntax as
+DEFAULT_TAPE_ID). TAPEID overwrites at runtime the default setting.
+E.g. you may put a "TAPEID=0:3:0" in your autoexec.bat if you insist on putting 
+the tape drive at ID3.
+
+ASPI
+-----------------
+In order to run "tar" and "ctctrl" you will need to have installed an ASPI driver for your SCSI card.  Adaptec's driver is called"ASPI4DOS.SYS". Consult the documentation for your card to find out the proper driver and installation procedure.
+
+RUNNING THE PROGRAMS:
+----------------------
+ctctrl:
+-------
+ctctrl is a small tape control tool: say "ctctrl -?" to get the online-help
+to see what it does.
+
+tar:
+----
+Say tar +help to get the online help.
+There are two special archive file names.
+The filename "/dev/ct" specifies the cartridge-tape and "/dev/nrct"
+specifies the no-rewind-cartridge-tape (no rewind on close). I choose
+those names, because they unlikely to exist on an MSDOS filesystem
+and because I'm used to them from my ix386.
+
+E.g.:
+tar -cv c:/some/dir                - creates the tar-file "tar.out"
+
+tar -cvf archive.tar c:/some/dir   - creates the tar-file "archive.tar"
+
+tar -cvf /dev/ct c:/some/dir       - creates a tar-file on the scsi-tape
+                                    and rewinds the tape on close.
+
+tar -cvf /dev/nrct c:/some/dir     - creates a tar-file on the scsi-tape
+                                    and does *not* rewind the tape on close
+
+To append one tar-file to the end of another just use the "/dev/nrct" device.
+
+E.g:  1) tar -cvf /dev/nrct c:/some/dir
+      2) tar -cvf /dev/ct d:/some/other/dir
+
+Multi volume archives are now supported by the aspi-functions(). So, you
+may backup your whole disk in one GO to a multi volume tape archive.
+
+E.g.:  tar -cvMf /dev/ct c:/ d:/ e:/ f:/ writes your c:, d:, e: and
+f: - drive to the tape archive.
+
+You might have noticed the use of "/" instead of "\" to separate dirnames
+in a pathname. So, don't use the backslash in pathnames, use the normal
+slash.
+

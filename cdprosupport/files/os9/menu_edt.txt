@@ -1,0 +1,18 @@
+*************************  menu_edt --MENU EDITOR BUG FIX  ********************
+
+
+
+The menu_edt module fixes a bug in the MediaMogul 2.2 menu editor.  The
+
+editor on the cd will not display hotspots correctly if any of the lines
+
+in the menu file is over 80 characters.  The version of menu_edt on this
+
+BBS increases the character limit to 120.  To install the editor:
+
+1) Copy it in binary form over to the /h0/CMDS/APPL directory.
+
+2) change directory over to the /h0/CMDS/APPL directory.
+
+3) type: attr -peepwwprr menu_edt.
+

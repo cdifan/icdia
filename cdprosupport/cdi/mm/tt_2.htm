@@ -1,0 +1,394 @@
+<HTML>
+
+<HEAD>
+
+
+
+<TITLE>Tech Note : TT-2</TITLE>
+
+
+
+
+
+</HEAD>
+
+<BODY>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<HR>
+
+<P>
+
+<P>
+
+					<CENTER>Tech Note : TT-2</CENTER>
+
+					   <CENTER>11/1/94</CENTER>
+
+
+
+
+
+<B>TOPIC:</B>
+
+<P>
+
+Diagnostic techniques used with secondary shell running, as described in TT-1
+
+<P>
+
+<B>OVERVIEW:</B>
+
+<P>
+
+While running a secondary shell, various OS-9 utilties can be used to evaluate 
+
+memory usage and system processes.
+
+<P>
+
+<B>DISCUSSION:</B>
+
+<P>
+
+&nbsp;&nbsp;PROCS
+
+<P>
+
+The processes currently running both in foreground and background can be 
+
+displayed using the "procs" command.  Most noteworthy to a MediaMogul are 
+
+plugin modules running, the number of copies in memory and how their system 
+
+priority.  At any time there should only be ONE copy of any module displayed 
+
+by procs.  The priority value also indicates the relative amount of 
+
+processor time used by the module.  Priority values markedly higher than other 
+
+displayed modules will use a larger percentage of the processors time.  High 
+
+prioroty modules can also cause the most problems if something goes wrong.
+
+<P>
+
+Also shown by procs is the number of min:sec:ticks of CPU time the module has 
+
+used since it was started. If the the title acts sluggishly, look for a plugin 
+
+module that is taking a large share of time, as compared to other modules. 
+
+Lastly, the listing shows the size of the module in memory.
+
+<P>
+
+In summary, look for duplicate modules and any module that appears to be 
+
+taking a lot of processor time.  High priority modules are more lilkey to 
+
+effect title performance is something goes wrong.
+
+<PRE><CODE>
+
+ Id PId Grp.Usr  Prior  MemSiz Sig S    CPU Time   Age Module & I/O
+
+  2   6   0.0     128  445.71k 503 a        2.78  1:14 videopro <>>>nil
+
+  3   6   0.0     256   28.76k   0 s        0.14  1:14 audiopro <>>>nil
+
+  4   0   0.0     128   19.76k   0 w        2.32  1:14 optshell <term >>>vid
+
+  5   2   0.0     128   26.51k   0 s        1.24  1:14 inputpro <>>>nil
+
+  6   0   0.0     128   10.51k   0 s        0.25  1:14 statepro <>>>nil
+
+  7   2   0.0     128   14.70k   0 s        0.00  1:14 filepro <>>>nil
+
+  8   4   0.0     128  104.21k   0 s        2.86  1:14 browser <term >>>nil
+
+  9   4   0.0     128    7.10k   0 s       11.52  1:14 cdishell <term >>>vid
+
+ 10  11   0.0     128    6.64k   0 w        3.24  0:01 shell <>>>pks00
+
+ 11   0   0.0     128   22.20k   0 e        3.97  0:01 telnetdc <pks00
+
+ 12   0   0.0     128   11.96k   0 e        0.63  1:14 telnetd <>>>nil
+
+ 13   0   0.0     128    2.00k   0 e        3.02  1:14 ifman
+
+ 14   0   0.0     128    2.00k   0 s        0.29  1:14 sockman
+
+ 15   0   0.0     128   11.96k   0 e        0.14  1:14 ftpd <>>>nil
+
+ 16  10   0.0     128   18.01k   0 *        0.44  0:00 procs <>>pks00 >dd</CODE></PRE>
+
+<P>
+
+<BR>
+
+&nbsp;&nbsp;MFREE -e
+
+<P>
+
+MFREE shows the cuurent amount of RAM remaining on a system, and with the -e 
+
+option, details the memory available.  Used alone, the only informative 
+
+line is "Current total free RAM".  This should not be less than 10k.
+
+<PRE><CODE>
+
+Minimum allocation size:       0.01 K-bytes
+
+Number of memory segments:   30      
+
+Total RAM at startup:       5117.50 K-bytes  
+
+Current total free RAM:     3667.94 K-bytes  
+
+
+
+Free memory map:
+
+
+
+  Segment Address         Size of Segment    
+
+ -----------------   --------------------------
+
+     $A80000         $80000       512.00 K-bytes  
+
+     $6029C0         $1B0           0.42 K-bytes  
+
+     $6175F0         $8C0           2.18 K-bytes  
+
+     $61A270         $2AC0         10.68 K-bytes  
+
+     $61F800         $2D6560     2905.34 K-bytes  
+
+     $90B9B0         $30            0.04 K-bytes  
+
+     $92FF90         $40            0.06 K-bytes  
+
+     $932D70         $F0            0.23 K-bytes  
+
+     $934680         $A0            0.15 K-bytes  
+
+     $9348B0         $E0            0.21 K-bytes  
+
+     $9360E0         $10            0.01 K-bytes  
+
+     $9361F0         $20            0.03 K-bytes  
+
+     $9369F0         $50            0.07 K-bytes  
+
+     $936A70         $80            0.12 K-bytes  
+
+     $937BF0         $10            0.01 K-bytes  
+
+     $9A3CC0         $10            0.01 K-bytes  
+
+     $9A3DE0         $B0            0.17 K-bytes  
+
+     $9A3F30         $A0            0.15 K-bytes  
+
+     $9A41B0         $10            0.01 K-bytes  
+
+     $9A49E0         $40            0.06 K-bytes  
+
+     $9E0540         $10            0.01 K-bytes  
+
+     $9E0DE0         $10            0.01 K-bytes  
+
+     $9EE870         $10            0.01 K-bytes  
+
+     $9F8040         $10            0.01 K-bytes  
+
+     $9FFCC0         $10            0.01 K-bytes  
+
+     $80500          $1FA10       126.51 K-bytes  
+
+     $FDC80          $19A0          6.40 K-bytes  
+
+     $3D2A           $1D6           0.45 K-bytes  
+
+     $4000           $197E0       101.96 K-bytes  
+
+     $5FCA0          $1E0           0.46 K-bytes</CODE></PRE>
+
+<P>
+
+<BR>
+
+&nbsp;&nbsp;MDIR -e
+
+<P>
+
+MDIR is used to list every module in memory, both RAM and ROM, its size and 
+
+where it is loaded in memory.  It can be used in conjunction with MFREE to 
+
+locate video planes, and where plugins are getting loaded.
+
+<P>
+
+<PRE><CODE>
+
+   Addr     Size      Owner    Perm Type Revs  Ed #  Lnk  Module name
+
+ -------- -------- ----------- ---- ---- ---- ----- ----- --------------
+
+ 00322524      690     0.0     0555 Sys  8000    50     1 init
+
+ 003227d6     4510     0.0     0555 Fman a003    96     2 cdfm
+
+ 00323974    18082    10.48    0555 Trap c00a     6     1 cio
+
+ 00328016     2992     0.0     0555 Data 8020     1     0 FONT8X8
+
+ 00328bc6    27562     0.0     0555 Sys  a000    83     1 kernel
+
+ 0032f770     7798     1.0     0555 Trap c001    13     0 math
+
+ 003315e6      118     0.0     0555 Desc 8000     2     0 nil
+
+ 0033165c     5592     0.0     0555 Fman a000    17     2 nrf
+
+ 00332c34      172     0.0     0555 Driv a000     1     1 null
+
+ 00332ce0      774     0.0     0555 Driv a001     6     2 nvdrv
+
+ 00332fe6      102     0.0     0555 Desc 8000     2     1 pipe
+
+ 0033304c     2270     0.0     0555 Fman a000    35     1 pipeman
+
+ 0033392a     1934     0.0     0555 Fman a000    31     2 scf
+
+ 003340b8    20754     1.0     0555 Prog c001    52     1 shell
+
+ 003391ca     2848     0.0     0555 Fman a00b    36     2 ucm
+
+ 00339cea      304     0.0     0555 Sys  a000    50     2 tk68341
+
+ 00339e1a       96     0.0     0555 Desc 8000    50     2 nvr
+
+ 00339e7a      208     0.0     0555 Desc 8000   150     1 cd
+
+ 00339f4a      208     0.0     0555 Desc 8000   150     1 ap
+
+ 0033a01a    20702     0.0     0555 Driv a006   153     2 cddrv
+
+ 0033f0f8     5878     0.0     0555 Sys  a000    61     1 csdinit
+
+ 003407ee      104     0.0     0555 Desc 8001     2     0 ma
+
+ 00340856      120     0.0     0555 Desc 8001     4     0 mv
+
+ 003408ce     7228     0.0     0555 Prog 8001    15     0 fmvconf
+
+ 0034250a     8044     0.0     0555 Driv a001     6     0 MADRIV
+
+ 00344476    13000     0.0     0555 Driv a002    17     0 FMVDRV
+
+ 0034773e     3152     0.0     0333 Data 8000    13     1 impeg_audio
+
+ 0034838e     3808     0.0     0333 Data 8000     5     1 impeg_video
+
+ 0034926e      176     0.0     0113 Data 8000     1     1 srcdat
+
+ 0034931e     7762     0.0     0555 Fman a000     0     0 MoviMan
+
+ 0034b170      180     0.0     0555 Desc a002    32     0 dd
+
+ 0034b224      180     0.0     0555 Desc a002    32     1 h0
+
+ 0034b2d8      180     0.0     0555 Desc a002    32     0 h1
+
+ 0034b38c      180     0.0     0555 Desc a002    32     0 h2
+
+ 0034b440      180     0.0     0555 Desc a002    32     0 h3
+
+ 0034b4f4      180     0.0     0555 Desc a002    32     0 dav
+
+ 0034b5a8     4006     0.0     0555 Fman a002    32     1 hdmgr
+
+ 0034c54e      298     0.0     0555 Driv a002    31     1 hddrv
+
+ 0034c678      218     0.0     0555 Prog 8000     2     0 AsyncRead
+
+ 0034c752    54416     1.1     0555 Prog 8001    50     0 Preview
+
+ 00359be2      158     0.0     0555 Desc 8000    50     2 term
+
+ 00359c80      156     0.0     0555 Desc 8000    50     0 t2
+
+ 00359d1c     2548     0.0     0555 Driv a000    50     2 sc68341
+
+ 0035a710      168     0.0     0555 Desc 8000    50     1 ptr
+
+ 0035a7b8      168     0.0     0555 Desc 8000    50     0 pt2
+
+ 0035a860      170     0.0     0555 Desc 8000    50     0 gt12
+
+ 0035a90a      170     0.0     0555 Desc 8000    50     0 gt96
+
+ 0035a9b4     2656     0.0     0555 Driv a000    50     1 ms68341
+
+ 0035b414      138     0.0     0555 Desc 8000    50     0 pck2
+
+ 0035b49e      198     0.0     0555 Driv a000    50     0 pck2driv
+
+ 0035b564      140     0.0     0555 Desc 8000    50     0 kb
+
+ 0035b5f0      140     0.0     0555 Desc 8000    50     0 kb1
+
+ 0035b67c     2196     0.0     0555 Driv a000    50     0 kb68341
+
+ 0035bf10      906     0.0     0555 Prog 0000    51     1 sysgo
+
+ 0035c29a      214     0.0     0555 Desc 8000    51     1 wdog
+
+ 0035c370      256     0.0     0555 Fman 8000    51     1 wdogmgr
+
+ 0035c470     1172     0.0     0555 Driv a000    51     1 wdogdrv
+
+ 0035c904      902     0.0     0555 Prog 0000    51     1 wdogproc
+
+ 0035cc8a      150     0.0     0555 Desc 8000    50     0 sram
+
+ 0035cd20      460     0.0     0555 Fman 8000    50     0 srammgr
+
+ 0035ceec      144     0.0     0555 Desc 8001     6     1 vid
+
+ 0035cf7c      144     0.0     0555 Desc 8001     6     0 vd2
+
+ 0035d00c      144     0.0     0555 Desc 8001     6     0 v12
+
+ 0035d09c      144     0.0     0555 Desc 8001     6     0 v96
+
+ 0035d12c    67140     0.0     0555 Driv a013    55     1 vdscdrv
+
+ 0036d770    23576     1.1     0555 Prog 8001    50     0 VisualShell
+
+ 002e0750     5214     1.0     0555 Prog c001    20     1 mdir</CODE></PRE>
+
+
+
+<BR>
+
+<HR>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<!-- Page by Chuck Hildebrand -->
+
+<!-- BBEdit 4.0.4 -->
+
+<!-- Original Tech Note by OptImage Support -->
+
+</BODY>
+
+</HTML>
+

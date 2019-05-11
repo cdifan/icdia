@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+   <TITLE>script2disc memory caching</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="s2d.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER>
+<P>
+<H2><CENTER><HR>script2disc Memory Caching</CENTER></H2>
+
+<P><B>Preamble:</B><BR>
+
+Script2disc allocates a portion of a CD-i player's memory for a
+preamble cache. This cache contains the branches and other control
+information contained in one script that the player will need to
+execute. Scripts with many Menu, Wait, Text, or Change_crsr commands
+may create especially large preambles. The size of the cache is
+usually about 3 times the size of the LARGEST script file in your
+CD-i application. There are instances, particularly when trying to
+use basecase 1mb players, where the size of the preamble may cause a
+particular title to run out of memory. The solution to this problem
+is to limit the size of the largest script.</P>
+
+<P>Enormous scripts often occur when you try to use a single
+"include" script to contain branches to all of the scripts in your
+application. This technique is required for certain plugins whose
+subroutines use scripts as a parameter, especially if they allow
+variables in place of the actual script names. If you have a large
+number of scripts, however, this include script file can get very
+big, and the resulting preamble cache enormous. If the include script
+is split up into pieces, i.e. include1.scr, include2.scr,
+include3.scr, etc., the size of the preamble buffer is considerably
+reduced, freeing up memory.</P>
+
+<P><B>Directory Cache:</B><BR>
+
+The runtime directory cache is the memory space reserved by the title
+for the names of all the scripts on the CD-i disc. Its size is
+affected by the NUMBER of scripts in the title, and the name length
+of the script with the longest NAME. It's size in bytes can be
+calculated by the formula <TT>(s+4)*n</TT>, where <TT>s</TT>=the name
+length of the script with the longest name, and <TT>n</TT>=the number
+of scripts in the application. It can be reduced by having fewer,
+longer, &amp; shorter-named scripts. Potential space savings are much
+less than the preamble issue above, however, on the order of 5-10K.
+</P>
+
+<P><B>Subroutines and Fonts:</B><BR>
+
+Subroutines are normally loaded into memory during use, and then
+unloaded. If you set the sticky bit on a subroutine module, however,
+the subroutine is always in memory taking up space. The upside is
+that it does not require reloading every time you use it, thus
+speeding up the title.</P>
+
+<P>Fonts have memory preallocated for them, so the more fonts you use
+in your title, the more memory will be taken up.</P>
+
+<P><B>QHY Images:</B><BR>
+
+The high resolution FCT/LCT information for these images is stored in
+memory, so titles using QHY images use 36K more memory than those
+using lower resolution types.</P>
+
+<P><B>Compacted Audio:</B><BR>
+
+The use of compacted audio in a title requires the creation of a
+memory buffer, the size of which is determined by the highest level
+of audio quality used:</P>
+
+<UL>
+   <LI>C Mono compacted audio: 58.5K
+   
+   <LI>C Stereo/B Mono compacted audio: 121.5K
+   
+   <LI>B Stereo/A Mono compacted audio: 261K
+</UL>
+
+<P><HR></P>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="s2d.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+

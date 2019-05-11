@@ -1,0 +1,324 @@
+<HTML><HEAD>
+<TITLE>What those script2disc messages mean</TITLE>
+</HEAD>
+<BODY>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="s2d.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<H2><CENTER>What those script2disc messages mean</CENTER></H2>
+
+
+script2disc displays a running series of status messages in its dialog box while processing.   An example is below.    For common <A HREF="#error messages">script2disc error messages</A>, see the listing at the end of the document.
+
+<HR>
+<CODE><PRE>cdbuild -d -f=23 -s=156 -a/h0/=Double Giggy:MediaMogul 2.2: -a/=: -S -o=Double<BR>
+ Giggy:script2disc 2.2:CDIMAGES:BUMPER.cd Double Giggy/MediaMogul 2.2/SCRIPTS/EXAMPLES/Bumper   
+
+<B>(First Phase - analyze each script for fitness as a real time file)</B>
+
+Reading script: Double Giggy:MediaMogul 2.2:SCRIPTS:EXAMPLES:Bumper  
+Script Double Giggy:MediaMogul 2.2:SCRIPTS:EXAMPLES:Bumper: Standard realtime file: 1661 sectors = 3906672 bytes
+Creating preamble file: BUMPER._p     
+Creating rtrb file: BUMPER._r       
+Application extra memory usage, excluding subroutines/fonts (bytes):
+    compacted audio: 0
+    large video/compacted animation: 0
+    directory cache: 10
+    preamble: 0
+    QHY (high resolution) lcts: 0
+    Error screen: 0
+    Entry point data: 0
+Remaining application base case memory approximately 211 Kb  
+Creating file: _my_dir_
+Creating file: _appl_sc
+Creating master script: _master0
+Creating master script: _master1
+Creating master script: _master2
+Disc Image approximately 9 Mb   
+
+<B>(Second Phase - make real time files for each script, <BR>under direction of _r files)</B>
+
+Creating real-time file: BUMPER._g  
+Creating disc image: Double Giggy:script2disc 2.2:CDIMAGES:BUMPER.CD
+
+<B>(Third Phase - assembling CD image file from intermediate <BR>files from second phase, and files described in _master files)</B>
+
+FULL CD IMAGE    
+Start generation of album "BUMPER"
+Start generation of volume "BUMPER" [about 00:57] 
+Start generation of MESSAGE area
+Start generation of ABSTRACT file abstract
+Start generation of BIBLIOGRAPHIC file bibliographic
+Start generation of COPYRIGHT file copyright
+Start generation of YELLOW file CDI/DSTATEPR.MM1    
+Start generation of YELLOW file CDI/DEXITPR.MM1
+Start generation of YELLOW file CDI/DDV.MM1
+Start generation of YELLOW file CDI/DAPPL_SC.MM1
+Start generation of APPLICATION file CDI/DBUMPER.MM0  
+Start generation of YELLOW file CDI/DSCREEN1.MM1
+Start generation of YELLOW file CDI/DMY_DIR_.MM1
+Start generation of YELLOW file CDI/DCLICK_C.MM1
+Start generation of YELLOW file CDI/ECDI_POPS.MM5 
+Start generation of ready GREEN file CDI/RBUMPER.MM3  
+Start generation of ready GREEN file CDI/EBUMPER_RTF.MM7
+Start generation of YELLOW file CDI/XCDI_POPS.MM6  
+Start generation of YELLOW file CDI/YBUMPER.MM4
+Start generation of YELLOW file CDI/ZMY_DIR_.MM2  
+Start generation of YELLOW file CDI/ZCLICK_C.MM2
+Start generation of YELLOW file CDI/ZSTATEPR.MM2
+Start generation of YELLOW file CDI/ZEXITPR.MM2
+Start generation of YELLOW file CDI/ZDV.MM2
+Start generation of YELLOW file CDI/ZAPPL_SC.MM2
+Start generation of DIRECTORY /
+Start generation of DIRECTORY CDI
+Start generation of Motorola PATH table file
+Start generation of volume "BUMPER"'s label
+End   generation of volume "BUMPER" [00:58 - space efficiency 98%]  
+
+	Directory of /    
+
+ Owner    Last modified Attributes Sector Bytecount Name
+-------   ------------- ---------- ------ --------- ----
+  0.0     95/06/05 1729 -e-re-re-r    8de         2 abstract
+  0.0     95/06/05 1729 -e-re-re-r    8df         2 bibliographic
+  0.0     95/06/05 1729 -e-re-re-r    8e0         2 copyright
+  0.0     95/07/19 1103 d--r--r--r    8e1       962 CDI
+  0.0     95/07/19 1103 ---r--r--r    8dc        22 PATH_TBL;
+
+	Directory of CDI  
+
+ Owner    Last modified Attributes Sector Bytecount Name
+-------   ------------- ---------- ------ --------- ----
+  0.0     95/06/05 1729 -e-re-re-r    8e2    132404 DSTATEPR.MM1
+  0.0     95/06/05 1729 -e-re-re-r    923      1332 DEXITPR.MM1
+  0.0     95/06/05 1729 -e-re-re-r    924     39798 DDV.MM1
+  0.0     95/07/19 1103 -e-re-re-r    938      2048 DAPPL_SC.MM1
+  0.0     95/06/05 1729 -e-re-re-r    939     14938 DBUMPER.MM0
+  0.0     95/07/19 1103 -e-re-re-r    941      2048 DSCREEN1.MM1
+  0.0     95/07/19 1103 -e-re-re-r    942         6 DMY_DIR_.MM1
+  0.0     95/06/05 1729 -e-re-re-r    943      2390 DCLICK_C.MM1
+  0.0     95/07/19 1103 -e-re-re-r    945   3401728 RBUMPER.MM3
+  0.0     95/07/19 1103 -e-re-re-r    947   4401759 EBUMPER_RTF.MM7
+  0.0     95/07/19 1103 -e-re-re-r    fc2       166 YBUMPER.MM4
+  0.0     95/07/19 1103 -e-re-re-r    fc3         6 ZMY_DIR_.MM2
+  0.0     95/06/05 1729 -e-re-re-r    fc4      2390 ZCLICK_C.MM2
+  0.0     95/06/05 1729 -e-re-re-r    fc6    132404 ZSTATEPR.MM2
+  0.0     95/06/05 1729 -e-re-re-r   1007      1332 ZEXITPR.MM2
+  0.0     95/06/05 1729 -e-re-re-r   1008     39798 ZDV.MM2
+  0.0     95/07/19 1103 -e-re-re-r   101c      2048 ZAPPL_SC.MM2
+
+End   generation of album "BUMPER"  </CODE>
+</PRE>
+<BR><HR><BR>
+Below are explanations of selected lines from the above example:<P>
+
+
+<CODE>cdbuild</CODE><P>
+
+
+This is the first phase to run under script2disc.  cdbuild is a command line driven program and requires the various "-" options seen with it.   The script2disc interface on the Mac and PC/Windows hide this cryptic syntax.<P>
+
+
+<CODE>Reading script:</CODE><P>
+
+
+In phase one, each script in the title is analyzed for viability to be built as a real time file.  Also checks for correct paths for assets, script syntax and timing conflicts.<P>
+
+
+<CODE>Creating preamble file:</CODE><P>
+
+
+If the script passes analysis, all the asset timing, logic, menu, call and branching instructions in the script are boiled down into a control file (preamble) to be used when playing that script from the CD.  The preamble files end with the suffix _p on the hard drive (build folder).  The name is altered in phase three for more efficient CD storage.<P>
+
+
+<CODE>Creating rtrb file:</CODE><P>
+
+
+If the script passes analysis, an instructional file is constructed which tells the phase two utility, "rtrb", how to make the real time file from the audio and video assets (non-MPEG) called for in the script.  rtrb files end with the suffix _r on the hard drive (build folder). _r files are only used in phase two, and are not stored on the final CD.<P>
+
+
+<CODE>Application extra memory usage</CODE><P>
+
+
+After all the scripts have been analyzed, cdbuild makes an estimate of the player memory required by various items in the basic title.  Each K of memory used here reduces the amount of PLAYER memory available for fonts and subroutines (plug-ins) when the CD is played.<P>
+
+ 
+<CODE>Remaining application base case memory</CODE><P>
+
+
+After all the scripts have been analyzed, cdbuild makes an estimate of the PLAYER memory required by the basic title, and then reports the memory remaining for fonts and subroutines (plug-ins).  The number reported is for a base case player, which has no DV card installed.   For machines with DV cards, add 1024k to the reported amount.<P>
+
+
+<CODE>Disc Image approximately 9 Mb</CODE><P>
+
+
+Lastly, cdbuild calculates the approximate size of the disc image file (built during phase three, in the build folder).  The reported size does not include the CD playback application, fonts or plug-ins.  The amount is normally with 5% of the actual image file size.<P>
+
+
+<CODE>Creating real-time file:</CODE><P>
+
+
+This starts phase two.  cdbuild passes processing to rtrb which reads each _r file made earlier and constructs the real time files that correspond to each MediaMogul script.<P>
+
+
+<CODE>FULL CD IMAGE</CODE><P>
+
+
+This starts phase three.  The CD disc image creation software "Master" starts up.   Master reads the instructional files mast_s, _ master0, _master1 and _master2.  It then constructs a disc image file that will contain the EXACT contents to be recorded to the CD.   All real time files made in phase two, fonts, subroutines, plug-ins, preambles, play applications and lots of Green Book stuff will be included here.  The disc image file can be up to 70:00:00 long (about 710 Megabytes).<P>
+
+
+<CODE>Start generation of volume "BUMPER" [about 00:57]</CODE><P>
+
+
+Before constructing the disc image file, master reads through all the "master" instruction files (called master scripts).   It tallies the number of sectors used by all assets described there, then makes a very accurate hours:minutes:seconds estimate of the disc size.  Translation from minutes to Meg is:  1 minute = 10 Meg.<P>
+
+
+<CODE>Start generation of APPLICATION file CDI/DBUMPER.MM0</CODE><P>
+
+
+For efficient storage on the CD, most of the files are renamed and sorted.  This is why you see additional characters and extensions.  The MM0 extension marks the CD play application.  This application literally starts up the player to begin playing the title.  It uses the MM1 programs to get the job done.<P>
+
+
+<CODE>Start generation of YELLOW file CDI/DSTATEPR.MM1</CODE><P>
+
+
+The MM1 files are the workhorses of the title.  They control the timing, playback of realtime files, menuing, branching and other aspects of title playback.  There are redundant copies (MM2 files) of these important files at the end of the CDI directory.<P>
+
+
+<CODE>Start generation of YELLOW file CDI/ZMY_DIR_.MM2</CODE><P>
+
+
+MM2 files are redundant copies of the MM1 files.  These redundant copies are used only if the MM1 copies are unreadable because of scratches or other damage that makes that area of the CD unreadable.<P>
+
+
+<CODE>Start generation of ready GREEN file CDI/RBUMPER.MM3</CODE><P>
+
+
+MM3 files are all the real time files made in phase two by rtrb.   They contain all the non-MPEG audio and video assets, arranged in sequential order according to presentation times as originally specified in the corresponding MediaMogul script.<P>
+
+
+<CODE>Start generation of YELLOW file CDI/YBUMPER.MM4</CODE><P>
+
+
+MM4 files are the redundant copies of the preambles.   The primary preamble is located in the corresponding .MM3 file.   MM4 files are used only if the MM3 contained copy is unuseable.<P>
+
+
+
+<CODE>Start generation of YELLOW file ECDI_POPS.MM5</CODE><P>
+
+MM5 files are plug-ins and fonts that are used during CD playback.  Redundant copies are stored at the end of the CDI directory (MM6 files).<P>
+
+
+<CODE>Start generation of YELLOW file XCDI_POPS.MM6</CODE><P>
+MM6 files are redundant copies of the MM5 files.  These redundant copies are used only if the MM5 copies are unreadable because of scratches or other damage that makes that area of the CD unreadable.<P>
+
+<CODE>Start generation of ready GREEN file CDI/EBUMPER_RTF.MM7</CODE><P>
+
+
+MM7 files are real time files NOT made during phase two.  Most of the time these are MPEG files that were made elsewhere, but included on the CD for use with the Digital Video Plug-in.<P>
+
+
+<CODE>End   generation of volume "BUMPER" [00:58 - space efficiency 98%]</CODE><P>
+
+Marks the end of phase three and the end of the disc build.   Among a boat load of intermediate files littering the build folder from phases one and two, there is now a large (maybe VERY large) file bearing the .cd suffix.  This is the disc image.   This file may be fed back through a 605 player or I2M card in Emulation Mode, or may be recorded directly to a CD-R disc.<P>
+
+<CODE>Directory of /</CODE><P>
+As a courtesy, master shows to directory structure and files in the disc image (what will become the actual CD).  / is the root, or first level directory,  of the CD.<P>
+
+
+<CODE>Directory of CDI</CODE><P>
+
+This is where ALL of the title assets are stored.  This directory can literally contain THOUSANDS of entries.<P>
+
+
+<CODE>End   generation of album</CODE><P>
+
+Indicates that master, as well as the entire disc building process, is finished.<P>
+
+<BR>
+<BR>
+<A NAME="error messages"></A>
+<H2><CENTER>Common Script2Disc Errors</CENTER></H2>
+
+
+
+
+<CODE>WARNING: can't open scriptfile: Double Giggy:MediaMogul 2.2:goober: ERROR: errno=-43</CODE><P>
+
+
+Explanation:<P>
+<BLOCKQUOTE>  Can't find script file (goober) specified by a "Branch" command, or menu hotspot:
+</BLOCKQUOTE><P>
+
+Solutions:
+
+	<BLOCKQUOTE> Check all "Branch" command filenames<P>
+
+	For menus used in the script, check all hotspot "branch to script" filenames<P>
+
+	Check items:  spaces, typos, missing or extra : or / in filenames and wrong aliases in s2d</BLOCKQUOTE><P>
+<BR><BR>
+
+
+<CODE>ERROR: errno=-120
+ERROR at time 00:00:00:00 : script Double Giggy:MediaMogul 2.2:SCRIPTS:EXAMPLES:Bumper: can't open: Double Giggy:MediaMogul 2.2:VIDEO:EXAMPLES:baithous</CODE><P>
+
+
+Explanation:  <P>
+<BLOCKQUOTE>Can't find video or audio asset file (baithous) described in the script:</BLOCKQUOTE><P>
+
+
+Solutions:<P>
+
+
+<BLOCKQUOTE>Check items:  spaces, typos, missing or extra : or / in filenames and wrong aliases in s2d
+</BLOCKQUOTE>
+
+<BR><BR>
+
+<CODE>ERROR at time 00:00:00:00 : timing conflict between Double Giggy:MediaMogul 2.2:VIDEO:SAMPIMAG:baithous.d and Double Giggy:MediaMogul 2.2:ANIM:bumper.ani in script Double Giggy:MediaMogul 2.2:SCRIPTS:EXAMPLES:Bumper</CODE><P>
+
+	
+Explanation:<P>
+<BLOCKQUOTE>Timing problem between to assets (baithous.d and bumper.ani) in a script:</BLOCKQUOTE><P>
+
+Solutions:<P>
+
+<BLOCKQUOTE>	A still picture following a Run-Length animation MUST be give sufficient time to load  (animation play time + next still load 	time). See "Load Time Table" on the laminated "Quick Card" with your MediaMogul Documentation.<P>
+There must be a minimum (although no maximum) time between adjacent still video transition commands (Dissolve, Wipe, Curtain...) in a script.  The minimum depends on the audio quality level playing at the time the picture is loaded from the CD.   See "Load Time Table" on the laminated "Quick Card" with your MediaMogul Documentation.<P>
+There must be a minimum time of 12 frames (:12)  between "play" audio commands in a script.
+</BLOCKQUOTE><P>
+
+<BR>
+
+
+<CODE>ERROR: errno=-43
+WARNING: can't get file size for disc image estimate: Double Giggy:MediaMogul 2.2:goober.rtf: open[error 1] in file "mast_s" at line 11, error opening "Double Giggy:MediaMogul 2.2:goober.rtf" as input (Error -43)  <BR>
+ERROR: bad exit status from master</CODE><P>
+
+
+Explanation: <P>
+<BLOCKQUOTE>Master can't find a Plug-in file, MPEG realtime file (goober.rtf), CDIMAGES files, or font file:
+</BLOCKQUOTE><P>
+
+Solutions:<P>
+
+
+<BLOCKQUOTE>Make sure font, Plug-in or MPEG file is present in the folder(s) specified.</BLOCKQUOTE><P>
+
+
+
+
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="s2d.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+</BODY>
+</HTML>

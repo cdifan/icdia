@@ -1,0 +1,342 @@
+<HTML>
+<HEAD>
+<TITLE>Z variable values for MediaMogul Plug-Ins</TITLE>
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+<H4>Z variable values for MediaMogul Plug-Ins</H4>
+<P>
+Many MediaMogul Plug-Ins use the Z variable for internal messaging, error reporting, and control values. &nbsp;Often you can set the Z&nbsp;variable to a specific value causing the plug-in to&nbsp;react. &nbsp;Frequently you can monitor the value of the Z variable for errors reported by the plug-in, or for results placed there by the plug-in.  Following is a numerically ordered list of the values of the Z variable and their purpose. &nbsp;Functions marked with an * are error values placed in the Z variable by the module.
+<P>
+<P>
+<TABLE BORDER CELLSPACING="1" CELLPADDING="2"><CAPTION>Z variable functions for MediaMogul Plug-Ins
+</CAPTION><TR><TD><B>Value</B>
+</TD><TD><B>Module</B>
+</TD><TD><B>Function</B>
+</TD></TR><TR><TD>0
+</TD><TD>
+</TD><TD>Initial Value,NOT ASSIGNED TO ANY PLUG-IN
+</TD></TR><TR><TD><B>10 - 15</B>
+</TD><TD><B>String Variables</B>
+</TD><TD>
+</TD></TR><TR><TD>10
+</TD><TD>cdi_sv
+</TD><TD>Quit, dump&nbsp;data module, and free memory
+</TD></TR><TR><TD><B>30 - 39</B>
+</TD><TD><B>General Errors</B>
+</TD><TD>
+</TD></TR><TR><TD>30
+</TD><TD>ANY
+</TD><TD>*Attempt to access a file on a player with no floppy
+</TD></TR><TR><TD>31
+</TD><TD>ANY
+</TD><TD>*Attempt to read/write a file that isn't open yet
+</TD></TR><TR><TD>32
+</TD><TD>ANY
+</TD><TD>*Attempt to read past end of file
+</TD></TR><TR><TD>33
+</TD><TD>ANY
+</TD><TD>*Open request for file already open
+</TD></TR><TR><TD><B>40 - 49</B>
+</TD><TD><B>Screen Dimmer</B>
+</TD><TD>
+</TD></TR><TR><TD>40
+</TD><TD>cdi_dimr
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD><B>60 - 69</B>
+</TD><TD><B>File Access</B>
+</TD><TD>
+</TD></TR><TR><TD>60
+</TD><TD>cdi_flen
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD>61
+</TD><TD>cdi_flen
+</TD><TD>*Can't open any more files
+</TD></TR><TR><TD><B>80 - 89</B>
+</TD><TD><B>Constrained Cursor</B>
+</TD><TD>
+</TD></TR><TR><TD>80
+</TD><TD>cdi_cnsm
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD>87
+</TD><TD>cdi_cnsm
+</TD><TD>Return to default constrain area
+</TD></TR><TR><TD><B>90 - 109</B>
+</TD><TD><B>Pop-up Menu</B>
+</TD><TD>
+</TD></TR><TR><TD>90
+</TD><TD>cdi_popm
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD>91
+</TD><TD>cdi_popm
+</TD><TD>Disable pop-up menu plug-in (sleep)
+</TD></TR><TR><TD>92
+</TD><TD>cdi_popm
+</TD><TD>Wake up pop-up menu plug-in
+</TD></TR><TR><TD>93
+</TD><TD>cdi_popm
+</TD><TD>Return to default script names
+</TD></TR><TR><TD>94
+</TD><TD>cdi_popm
+</TD><TD>Wake up and scroll up the pop-up (display pop-up)
+</TD></TR><TR><TD>95
+</TD><TD>cdi_popm
+</TD><TD>Scroll down the pop-up (no sleep) (hide pop-up)
+</TD></TR><TR><TD>96
+</TD><TD>cdi_popm
+</TD><TD>Lock menu to avoid branches (lock user branching)
+</TD></TR><TR><TD>97
+</TD><TD>cdi_popm
+</TD><TD>Unlock menu to allow branches (unlock user branching)
+</TD></TR><TR><TD>98
+</TD><TD>cdi_popm
+</TD><TD>Change pop-up menu images/menus (prepare for new images and menus)
+</TD></TR><TR><TD>99
+</TD><TD>cdi_popm
+</TD><TD>Turn on pop-up menu pause on activate
+</TD></TR><TR><TD>100
+</TD><TD>cdi_popm
+</TD><TD>Turn off pop-up menu pause on activated
+</TD></TR><TR><TD><B>200 - 299</B>
+</TD><TD><B>OS-9 Error Codes</B>
+</TD><TD>
+</TD></TR><TR><TD>203
+</TD><TD>OS-9
+</TD><TD>*Illegal mode. Attempt to write to a fileoned for READ or write to a file opened for WRITE
+</TD></TR><TR><TD>216
+</TD><TD>OS-9
+</TD><TD>*File not found
+</TD></TR><TR><TD>235
+</TD><TD>OS-9
+</TD><TD>*Bad file name
+</TD></TR><TR><TD>242
+</TD><TD>OS-9
+</TD><TD>*Device write protected
+</TD></TR><TR><TD>245
+</TD><TD>OS-9
+</TD><TD>*Write error. Device probably full
+</TD></TR><TR><TD>246
+</TD><TD>OS-9
+</TD><TD>*No diskette, or hard drive not ready
+</TD></TR><TR><TD>247
+</TD><TD>OS-9
+</TD><TD>*Device not correct (specified) format
+</TD></TR><TR><TD>248
+</TD><TD>OS-9
+</TD><TD>*Device full
+</TD></TR><TR><TD>249
+</TD><TD>OS-9
+</TD><TD>*Wrong format on disk
+</TD></TR><TR><TD><B>500 - 519</B>
+</TD><TD><B>Digital Video</B>
+</TD><TD>
+</TD></TR><TR><TD>500
+</TD><TD>cdi_dvpl
+</TD><TD>*No digital video card present
+</TD></TR><TR><TD>501
+</TD><TD>cdi_dvpl
+</TD><TD>*Player does not have super-impose
+</TD></TR><TR><TD>502
+</TD><TD>cdi_dvpl
+</TD><TD>*cdi_dvpl is active
+</TD></TR><TR><TD><B>520 - 529</B>
+</TD><TD><B>Signal Manager</B>
+</TD><TD>
+</TD></TR><TR><TD>520
+</TD><TD>cdi_sgmn
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD><B>540 - 549</B>
+</TD><TD><B>Bar Code/Magnetic Stripe</B>
+</TD><TD>
+</TD></TR><TR><TD>540
+</TD><TD>cdi_bar
+</TD><TD>Scan received
+</TD></TR><TR><TD>541
+</TD><TD>cdi_bar
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD>542
+</TD><TD>cdi_bar
+</TD><TD>Done with scan
+</TD></TR><TR><TD>542
+</TD><TD>cdi_mag
+</TD><TD>Flush port
+</TD></TR><TR><TD>543
+</TD><TD>cdi_bar
+</TD><TD>*Communications error
+</TD></TR><TR><TD>543
+</TD><TD>cdi_mag
+</TD><TD>*Synchronous Cmd retrying
+</TD></TR><TR><TD>544
+</TD><TD>cdi-bar
+</TD><TD>*Read error
+</TD></TR><TR><TD>544
+</TD><TD>cdi_mag
+</TD><TD>*Synchronous Cmd failed
+</TD></TR><TR><TD>545
+</TD><TD>cdi_bar
+</TD><TD>Flush port
+</TD></TR><TR><TD>545
+</TD><TD>cdi_mag
+</TD><TD>Scan received
+</TD></TR><TR><TD>546
+</TD><TD>cdi_mag
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD>547
+</TD><TD>cdi_mag
+</TD><TD>Done with scan
+</TD></TR><TR><TD>548
+</TD><TD>cdi_mag
+</TD><TD>*Communications error
+</TD></TR><TR><TD>549
+</TD><TD>cdi_mag
+</TD><TD>*Read error
+</TD></TR><TR><TD><B>550 - 569</B>
+</TD><TD><B>Printer Manager</B>
+</TD><TD>
+</TD></TR><TR><TD>550
+</TD><TD>cdi_prmn
+</TD><TD>Parameters parsed OK
+</TD></TR><TR><TD>551
+</TD><TD>cdi_prmn
+</TD><TD>Target and port opened OK
+</TD></TR><TR><TD>552
+</TD><TD>cdi_prmn
+</TD><TD>Target and include files read into buffers
+</TD></TR><TR><TD>553
+</TD><TD>cdi_prmn
+</TD><TD>*General error
+</TD></TR><TR><TD>554
+</TD><TD>cdi_prmn
+</TD><TD>*Parameter or option error
+</TD></TR><TR><TD>555
+</TD><TD>cdi_prmn
+</TD><TD>*Error during read of a source file
+</TD></TR><TR><TD>556
+</TD><TD>cdi_prmn
+</TD><TD>*Error during write to port
+</TD></TR><TR><TD>557
+</TD><TD>cdi_prmn
+</TD><TD>*Can't open target file
+</TD></TR><TR><TD>558
+</TD><TD>cdi_prmn
+</TD><TD>*Can't open port
+</TD></TR><TR><TD>559
+</TD><TD>cdi_prmn
+</TD><TD>*Port has become inactive
+</TD></TR><TR><TD>560
+</TD><TD>cdi_prmn
+</TD><TD>All data sent to printer
+</TD></TR><TR><TD>561
+</TD><TD>cdi_prmn
+</TD><TD>Abandon print job
+</TD></TR><TR><TD><B>570 - 579</B>
+</TD><TD><B>Dynamic Hotspots</B>
+</TD><TD>
+</TD></TR><TR><TD>570
+</TD><TD>cdi_dyhs
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD><B>660 - 669</B>
+</TD><TD><B>Keyboard</B>
+</TD><TD>
+</TD></TR><TR><TD>660
+</TD><TD>cdi_vki
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD>661
+</TD><TD>cdi_vki
+</TD><TD>Enable key sequence actions
+</TD></TR><TR><TD>662
+</TD><TD>cdi_vki
+</TD><TD>Disable key sequence actions
+</TD></TR><TR><TD><B>1500 - 1549</B>
+</TD><TD><B>Test Engine</B>
+</TD><TD>Used only for internal communication.  Should NOT be set directly by the user.
+</TD></TR><TR><TD>1500
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Quit and free memory
+</TD></TR><TR><TD>1501
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Load a new section
+</TD></TR><TR><TD>1502
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Ask next question
+</TD></TR><TR><TD>1503
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Get response
+</TD></TR><TR><TD>1504
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Ask last question again
+</TD></TR><TR><TD>1505
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Ask random next question
+</TD></TR><TR><TD>1506
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Shuffle question order
+</TD></TR><TR><TD>1507
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Set number next question to ask
+</TD></TR><TR><TD>1508
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Set number tries per question
+</TD></TR><TR><TD>1509
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Use soundex in checking answer
+</TD></TR><TR><TD>1510
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>No soundex in checking answer
+</TD></TR><TR><TD>1511
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>First string variable to export to
+</TD></TR><TR><TD>1512
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Times included exported
+</TD></TR><TR><TD>1513
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>No times included exported
+</TD></TR><TR><TD>1514
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Export information for question (question number)
+</TD></TR><TR><TD>1515
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Export information for question (first response)
+</TD></TR><TR><TD>1516
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Export information for question (second response)
+</TD></TR><TR><TD>1517
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Export information for question (last response)
+</TD></TR><TR><TD>1518
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Export number correct
+</TD></TR><TR><TD>1519
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Export number incorrect
+</TD></TR><TR><TD>1520
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Turn debugging on
+</TD></TR><TR><TD>1546
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Waiting for a response
+</TD></TR><TR><TD>1547
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Branching to the next question
+</TD></TR><TR><TD>1548
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Executing a command
+</TD></TR><TR><TD>1549
+</TD><TD>cdi_teng/cdi_tecd
+</TD><TD>Waiting for another command
+</TD></TR></TABLE>
+<P>
+<BLOCKQUOTE><B>NOTE:</B>Some of the values for the MediaMogul Z variable are not documented in the manuals for specific Plug-Ins.  They are included for information purposes only.  Use of these is not supported.  Additionally, some of the values are used for communications between Plug-In modules and should NOT be set by the user.
+</BLOCKQUOTE>
+<P>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit Lite 3.5.1 -->
+</BODY>
+</HTML>
+

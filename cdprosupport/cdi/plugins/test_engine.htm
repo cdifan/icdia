@@ -1,0 +1,167 @@
+<HTML>
+<HEAD>
+    <TITLE>Supplement for Test Engine</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+
+<P><H2><CENTER>Supplement for: Test Engine</CENTER></H2>
+<P><BR>
+<B>Overview:</B>
+<P>
+The Test Engine Plug-In provides a method for automating testing procedures and recording test scores from a CD-i title.
+<P>
+
+<B>Plug-ins required for operation:</B>
+<P>
+<BLOCKQUOTE><CODE>cdi_teng</CODE> - The &quot;Test Engine&quot; plug-in.  This plug-in is responsible for  the actual actions performed by the plug-in.<BR>
+<CODE>cdi_tecd</CODE> -  This plug-in is used to send commands to cdi_teng.<BR>
+<CODE>cdi_sv</CODE> - The &quot;String Variables&quot; plug-in is required if using fill in the blank questions.<BR>
+<CODE>cdi_virt</CODE> - The &quot;Virtual Keyboard&quot; plug-in is required if using fill in the blank questions.</BLOCKQUOTE>
+<P>
+
+<B>MediaMogul utilities required to prepare assets:</B>
+<P>
+<UL>
+<LI>The maketest utility is required to create the data file(s) and the include file used by the test engine plug-in.
+</UL>
+<P>
+
+<B>Assets to create before using the plug-in:</B><P>
+<UL>
+<LI>A text file referred to as the "question database file" containing information about the questions needs to be created.  This file is processed by the maketest utility to create the following:
+	<UL>
+	<LI>The data file(s) containing the information about the questions;
+	<LI>The include file of the scripts presenting questions that need to be included in the title;
+	</UL>
+<LI>Scripts for asking each of the questions, and any assets they require, e.g. graphics to display the question(s) and menus for responding to these.
+</UL>
+<P>
+
+<BLOCKQUOTE>The question database file is simply a text file created by any text editor, or word processor that can save files as text.  The last line of the file must be blank, so make sure to enter a carriage return at the end of the last line of text.  Please refer to the Test Engine Plug-In manual for details of how information is entered into the question database file.<P>
+
+If you have more than one section defined in the question database file, a separate datafile is created by maketest for each section.<P>
+
+There is a 100k size limit to datafiles created by maketest, which means a limit of approximately 200 questions per section.  Additionally, there is a 128 character limit to any strings in the file, so no single line may be longer than this.</BLOCKQUOTE>
+<P>
+
+
+<B>Special preparations:</B><P>
+
+<BLOCKQUOTE>No additional required.</BLOCKQUOTE>
+<P>
+
+<B>How the plug-in works:</B>
+<P>
+
+&#183; The plug-in <CODE>cdi_teng</CODE> needs to be called in the background early in the title.  It should be in a script that is branched to only once.  The plug-in creates a shared data module, <CODE>cdi_te_head</CODE>, and an event, <CODE>cdi_te</CODE>.<P>
+
+&#183; If you are using fill in the blank questions, you should call <CODE>cdi_sv</CODE>  to set up string variables, then call <CODE>cdi_virt</CODE> to initialize the virtual keyboard.  In this case, when you call <CODE>cdi_teng</CODE> you must specify the string variable that will be used for responses to questions.<P>
+
+&#183; At the end of this script, after a branch that will always be executed, add a <CODE>Br_alwys_nr</CODE> (Branch Always No Return) to the include file produced by <CODE>maketest</CODE>.  This will ensure that all the question scripts are included in your title.<P>
+
+&#183; At the start of each section of questions, you need to load the datafile created by <CODE>maketest</CODE> for that section using a <CODE>Background</CODE> command, then call <CODE>cdi_tecd</CODE> with a parameter of <CODE>LoadSect,AskQues</CODE>.  You should not have any commands that load assets, or any other calls, between these.  When the plug-in is called, the parameter is sent to the event <CODE>cdi_te</CODE>, a shared data module <CODE>cdi_te_ques</CODE> is created, and the information in the datafile is copied to <CODE>cdi_te_ques</CODE>.  This data module contains not only the information from the datafile, but also has room for recording responses.  Then the plug-in branches to the first of the questions scripts for that section.<P>
+
+&#183; The plug-in will branch to each of the question scripts that you defined in a section of your question database file in turn.  Each of these scripts must have a call to <CODE>cdi_tecd</CODE> with a Parameter of <CODE>GetResp</CODE>, which is passed to <CODE>cdi_teng</CODE> so it knows to expect a response.  Additionally, the script should have a menu with wait for the users response.  Finally, the script should have another call to <CODE>cdi_tecd</CODE> with a parameter of <CODE>AskQues</CODE> to inform the plug-in to branch to the next question script for that section.  The last column of the last script for a section should have a <CODE>Br_alwys_nr</CODE> to the script that loads the datafile for the next section.<P>
+
+&#183; Questions may be asked more than once, if you wish, and a script presenting remedial information may be branched to in the event a question was answered incorrectly.  Additionally, the order in which questions are presented in any section can be scrambled.  Beyond that, individual questions may be removed from the list of questions to be asked.<P>
+
+&#183; In addition to presenting questions and receiving responses, the plug-in can also track ionformation about the test.  Information that can be tracked includes: number of questions answered correctly/incorrectly; if a particular question was answered correctly/incorrectly; number of times a question was asked (useful if you are allowing multiple attempts to answer a question correctly, and going on only after the question is either answered correctly or the maximum number of attempts is reached.)  This information may be exported to a string variable.  If you want to gather this type of information, it must be requested after each section is completed, and before the next section is loaded.<P>
+
+<BLOCKQUOTE><B>NOTE</B>: The Test Engine Plug-In manual contains extensive information on using the many features of the plug-in.</BLOCKQUOTE><P>
+
+
+<B>Example:</B>
+
+In the following example a simple test consisting of one section of three questions is prexsented to the user.  Each question will be asked only once.  Based on the results, the title branches to a script informing the user whether they passed or failed the test.<P>
+
+Following the scripts is an example of the question database file used to create the datafile and include script for this exanmple.<P>
+
+
+<CODE>init.scr<BR>
+00:00	Skip_off
+00:00	Call_bg		/h0/SUBROUT/cdi_teng	</CODE>(Start Test Engine)<CODE><BR>
+00:20	Br_always_nr	/h0/SCRIPTS/load.scr<BR>
+01:10	Br_always_nr	/h0/SCRIPTS/incl.scr	</CODE><BR>
+(This branch is never executed, but is here so the include script is included in the title)<P><CODE>
+
+incl.scr<BR>
+00:00	Br_always_nr	/h0/SCRIPTS/ques1.scr<BR>
+00:00	Br_always_nr	/h0/SCRIPTS/ques2.scr<BR>
+00:00	Br_always_nr	/h0/SCRIPTS/ques3.scr<P>
+
+load.scr<BR>
+00:00	Dissolve		/h0/VIDEO/loading.dyu	00:20<BR>
+00:20	Background		/h0/DATA/test1.dat		</CODE>(Load the datafile)<CODE><BR>
+00:21	Call				/h0/SUBROUT/cdi_tecd	LoadSect,AskQues </CODE>(Start section and ask first question)<CODE><P>
+
+ques1.scr<BR>
+00:00	Dissolve		/h0/VIDEO/ques1fg.cl7	00:20<BR>
+00:20	Background		/h0/VIDEO/ques1bg.cl7<BR>
+00:20	Call				/h0/SUBROUT/cdi_tecd	GetResp	</CODE>(Alert Test Engine for response)<CODE><BR>
+00:21	Wait				/h0/MENUS/ques1.mnu			</CODE>(Present question)<CODE><BR>
+00:21	Br_always_nr	/h0/SCRIPTS/next.scr<P>
+
+next.scr<BR>
+00:00	Cut					/h0/VIDEO/checkans.cl7<BR>
+00:00	Call				/h0/SUBROUT/cdi_tecd	AskQues	</CODE>(Ask next question)<CODE><P>
+
+ques2.scr<BR>
+00:00	Dissolve		/h0/VIDEO/ques2fg.cl7	00:20<BR>
+00:20	Background		/h0/VIDEO/ques2bg.cl7<BR>
+00:20	Call				/h0/SUBROUT/cdi_tecd	GetResp	</CODE>(Alert Test Engine for response)<CODE><BR>
+00:21	Wait				/h0/MENUS/ques2.mnu			</CODE>(Present question)<CODE><BR>
+00:21	Br_always_nr	/h0/SCRIPTS/next.scr<P>
+
+ques3.scr<BR>
+00:00	Dissolve		/h0/VIDEO/ques3fg.cl7	00:20<BR>
+00:20	Background		/h0/VIDEO/ques3bg.cl7<BR>
+00:20	Call				/h0/SUBROUT/cdi_tecd	GetResp	</CODE>(Alert Test Engine for response)<CODE><BR>
+00:21	Wait				/h0/MENUS/ques3.mnu			</CODE>(Present question)<CODE><BR>
+00:22	Br_always_nr	/h0/SCRIPTS/result.scr<P>
+
+result.scr<BR>
+00:00	Call				/h0/SUBROUT/cdi_tecd	ExpNumCor<BR>
+00:10	Br_ifeq_nr		/h0/SCRIPTS/allright.scr	Z	3	</CODE>(Answered 3 correctly)<CODE><BR>
+00:10	Br_ifeq_nr		/h0/SCRIPTS/missed1.scr	Z	2	</CODE>(Answered 2 correctly)<CODE><BR>
+00:10	Br_ifeq_nr		/h0/SCRIPTS/missed2.scr	Z	1	</CODE>(Answered 1 correctly)<CODE><BR>
+00:10	Br_ifeq_nr		/h0/SCRIPTS/missall.scr	Z	0	</CODE>(Answered none correctly)<CODE><P>
+
+allright.scr<BR>
+00:00	Dissolve		/h0/VIDEO/correct.dyu 00:20<BR>
+00:21	Wait<BR>
+00:21	Br_always_nr	/ho/SCRIPTS/load.scr</CODE><P>
+
+<BLOCKQUOTE><B>NOTE</B>: Times in the above example are approximate.</BLOCKQUOTE><P>
+
+question database file - <P>
+
+This is the file used to create the datafile and include file:<P>
+
+<CODE>example.txt<BR>
+; Question database file for example scripts<BR>
+SECTION: 1<BR>
+QUESTION: 1<BR>
+TYPE: T<BR>
+ANSWERS:T<BR>
+SCRIPT: /h0/SCRIPTS/ques1.scr<BR>
+QUESTION: 2<BR>
+TYPE: T<BR>
+ANSWERS: F<BR>
+SCRIPT: /h0/SCRIPTS/ques2.scr<BR>
+QUESTION: 3<BR>
+TYPE: M<BR>
+ANSWERS: C<BR>
+SCRIPT: /h0/SCRIPTS/ques3.scr</CODE>
+<P>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit Lite 3.5.1 -->
+</BODY>
+</HTML>
+

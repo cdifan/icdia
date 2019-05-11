@@ -1,0 +1,58 @@
+<!doctype html public "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+
+<HEAD>
+<TITLE>CD-i Warning Message
+</TITLE>
+</HEAD>
+
+<BODY>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+
+<CENTER><H2><TAB>CD-i Warning Message</H2></CENTER><P>
+
+All CD-i discs are required by the Green Book specification to have a warning message encoded at the beginning of the data track.  This warning message is necessary for older audio CD players that would mistakenly attempt to play the CD-i track on the disc, resulting in possible damage to the audio system.  The message is usually of the type "Please lower the volume and advance to the next track."  It has been found that a scrambled disc image must be built for this message to be audible on a CD player.<P>
+
+<B>Scrambled vs. Unscrambled</B><P>
+
+When building a disc image with Philips Media tools (script2disc or master), you are given the option of creating a scrambled or unscrambled disc image.  Scrambling is a process that shuffles the data on the physical CD to overcome possible problems in playback that are due to the way the CDs are manufactured.  During playback, the CD-i hardware unscrambles the data before processing it.  All data, with the exception of audio (CD-DA), on a CD is scrambled.<P>
+
+Scrambling is a complementary process, meaning that if you scramble a disc image twice, you end up with the original.  Therefore if you start with an unscrambled image and perform the scrambling function, you end up with a scrambled image.  Conversely, if you have a scrambled image and perform the scrambling function, you end up with an unscrambled image.<P>
+
+<B>The Problem</B><P>
+
+The message sectors on a CD-i disc are recorded as audio (CD-DA) so they can be heard by and audio CD player.  When script2disc builds a disc image, it always writes the message as unscrambled, even if the rest of the disc image is scrambled.<P>
+
+When recorders write in track-at-once mode (almost all do today), they want to scramble the data as it is written to the CD.  It is up to the recording software to make sure the data passed to the recorder is unscrambled.  Most CD recording software can process either scrambled or unscrambled disc images.  So if the disc image is scrambled, the recording software must unscramble it on the fly as it passes it to the recorder.  If the disc image is unscrambled, the recording software passes the data unchanged to the recorder. <P>
+
+<B>Examples</B><P>
+
+Assume we have created a scrambled disc image (See <A HREF="#figure1">Figure 1</A>).  Remember script2disc does not scramble the message since it knows it is audio.  Recording software, realizing that the recorder wants the data unscrambled, unscrambles the entire disc image before passing it to the recorder.  This effectively scrambles the audio sectors, but unscrambles the data.  The recorder then reverses the process, leaving you with unscrambled audio (good) and scrambled data (good) on the CD.<P>
+
+<A NAME="figure1"></A>
+<CENTER><IMG ALIGN="TOP" SRC="scrambled1.gif" ALT="Figure 1"></CENTER><P>
+
+Now assume we created an unscrambled disc image (See <A HREF="#figure2">Figure 2</A>).  Both the message sectors and the data are unscrambled.  The recording software just passes the data to the recorder, knowing that it wants unscrambled data.  The recorder then scrambles everything, leaving you with scrambled audio (bad) and scrambled data (good).<P>
+
+<A NAME="figure2"></A>
+<CENTER><IMG ALIGN="TOP" SRC="scrambled2.gif" ALT="Figure 2"></CENTER><P>
+
+<B>Conclusion</B><P>
+
+It is therefore necessary to always have script2disc create a scrambled disc image to warn users who have audio systems susceptible to the problem.<P>
+
+<HR>
+<P>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+
+</BODY>
+</HTML>
+

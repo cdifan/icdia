@@ -1,0 +1,130 @@
+<HTML>
+
+<HEAD>
+
+
+
+<TITLE>Tech Note : TT-1</TITLE>
+
+</HEAD>
+
+<BODY>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<HR>
+
+<P>
+
+<P>
+
+<P>
+
+					<H2><CENTER>Tech Note : TT-1</CENTER></H2>
+
+					    <CENTER>11/1/94</CENTER>
+
+<P>
+
+<BR>
+
+
+
+<B>TOPIC:</B>
+
+<P>
+
+Using an OS-9 command shell on a terminal, while running a CD-i application 
+
+under emulation or from a CD.
+
+<P>
+
+<B>OVERVIEW:</B>
+
+<P>
+
+You can start an OS-9 command line shell, from there start a CD-i 
+
+application, and still retain the ability to type commands, like MFREE, MDIR, 
+
+PROCS and other useful items.  This allows the developer to troubleshoot 
+
+memory problems and the like while emulating a title.
+
+<P>
+
+<B>PROCEDURE:</B>			
+
+<P>
+
+If testing a CD, then insert the CD into the 605 drive. If testing an emulated image, start the emulation on the emulator (for example, emulate image.cd). Wait for the emulation software to start and issue the "stop at sector 0" message, then proceed. 
+
+<P>
+
+1. On the 605, press the rear panel INTERN/EXTERN switch to INTERN.  With a terminal, or equivalent PC or Mac, connected to port 3, click on the SETTINGS icon, then SYSTEM icon (from the power on Philips screen).  A $ prompt will appear on the terminal screen.
+
+<P>
+
+Note: If the SYSTEM icon is not visible, assure that a terminal or 
+
+equivalent is connected to the 605 on port 3.  Power cycle the 605 to 
+
+force it to look at port 3.  Try step 1 again.
+
+<P>
+
+2. On the terminal type:	
+
+<P>
+
+<PRE>        chx /h0/cmds
+
+        chd /cd
+
+        dir  -e /cd/CDI</PRE>
+
+<P>
+
+3. Look for a file near the beginning of the listing with the suffix .MM0.  Use CNTRL-S and CNTRL-Q to pause/continue the display as necessary. The .MM0 file is the CD-i application.
+
+<P>
+
+4. Type the EXACT name of that file with its path (exact case and spelling) 
+
+with an &amp; at the end of the filename (for example:  /cd/cdprosupport/MY_SCRIPT.MM0&amp;).  
+
+An &amp; forces the application to start as a background process. 
+
+<P>
+
+5. The $ prompt will return, and the application will begin to play on the CD-i 
+
+screen.
+
+<P>
+
+<BR>
+
+Use MFREE, PROCS, MDIR on any other OS-9 command while the CD-i application is 
+
+running.
+
+<P>
+
+<BR>
+
+<HR>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<!-- Page by Chuck Hildebrand -->
+
+<!-- BBEdit 4.0.4 -->
+
+<!-- Original Tech Note by OptImage Support -->
+
+</BODY>
+
+</HTML>
+

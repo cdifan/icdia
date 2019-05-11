@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+   <TITLE>Line termination and invisible characters</TITLE>
+</HEAD>
+<BODY>
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="s2d.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER><P><HR><P>
+
+<H2><CENTER>Line Termination and Invisible Characters</CENTER></H2>
+
+
+<P>
+Strange and vexing problems can occur if your scripts or menus are not properly line terminated, or have invisible characters contained within.  Here's a few hints:
+<UL>
+<LI>If you manually type in your scripts in a text editor, be sure to put a hard CR, or CR/LF, or LF at the end of each line.  If your editor does a "soft" text wrap, script2disc may see 2 lines of script as only one, and get confused.<BR><BR>
+
+<LI>Some editors seem to randomly generate high ascii or invisible characters, which are not apparent when viewed in a low ascii only font.  To check for this, try to find a font which will display something(anything) for all high ascii characters.<BR><BR>
+
+<LI>End of line termination is especially important on the <I>last</I>&nbsp;line of your scripts, and particularly when using Mac script2disc.  If the last line of your script does not contain a carriage return at the end, it will still play fine in simulation.  But when you build the title, the first line of the <I>next</I>&nbsp;script will not be executed in emulation, or on the cd.<BR><BR>
+
+<LI>If you build your scripts and menus on a 605 professional player, and then run script2disc on a PC or Sun, a text file conversion utility is handy.  Text files made in OS9 do not display properly on the Sun or PC, because of line-termination differences between the platforms.  This does not affect proper operation of script2disc, but can make it hard to diagnose problems, or make changes.   For reference purposes, the line-termination of the various platforms is:<P>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1>
+<TR ALIGN=Center><TH>Platform<TH>Line Terminator
+<TR><TD>OS9, Macintosh<TD>CR (Carriage Return)
+<TR><TD>Sun<TD>LF (Line Feed)
+<TR><TD>PC<TD>CR/LF (Both)
+</TABLE>
+</UL>
+
+<P>
+<HR>
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="s2d.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+
+
+

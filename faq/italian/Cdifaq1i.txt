@@ -1,0 +1,216 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 1. Il sistema CD-i
+
+ 1.1 Cos'e' il CD-i?
+ CD-i sta in  breve per Compact-disc Interattivo. E' un sistema multimediale
+ interattivo che combina insieme liberta' e facilta' di spostamento e utilizzo
+ di informazioni video e audio contenute su un compact-disc, che puo' essere
+ eseguito utilizzando un lettore di CD dedicato.
+ Un CD-i player e' un dispositivo a se stante, consistente di una CPU, memoria
+ RAM e un sistema operativo integrato. Puo' funzionare da solo oppure puo'
+ essere collegato a un televisore standard per mostrare immagini e suoni, e
+ opzionalmente a un sistema Hi-fi. Tutto il sistema interattivo e' generato
+ posizionando un cursore sullo schermo usando un dispositivo di puntamento
+ (cosi' come un controllo remoto con un dispositivo pointing o un mouse), e
+ cliccando le opzioni usando uno dei due tasti di azione forniti.
+
+ 1.2 Chi ha inventato il CD-i?
+ CD-i e' stato sviluppato insieme da Philips Electronics NV e Sony Corporation
+ alla meta' degli anni '80. Insieme le due compagnie hanno definito tutte le
+ specifiche tecniche del sistema che sono contenute nel Libro Verde. Hanno
+ deciso di usare per lo sviluppo il sistema operativo OS-9 della Microware
+ Corporation of System, che fu progettato per racchiudere, applicazioni in
+ real time. Microware fu anche pesantemente implicata nel progetto di sviluppo
+ del CD-i ma alla fine fu Philips a prendere maggiormente parte nello sviluppo
+ del sistema, essendone responsabile per almeno il 90%.
+
+ 1.3 Chi e' proprietario del CD-i? (Inteso come sistema software)
+ Gli sviluppatori del software CD-i non hanno  bisogno di una licenza, da un
+ punto di vista di software il CD-i e' uno standard aperto. Naturalmente,
+ come con tutti i tipi di CD, la normale pressione sulle tasse di concessione
+ deve essere pagata, ma cio' per essere tutelati nei diritti. I fabbricanti di
+ lettori CD-i compatibili hanno bisogno di una licenza da Philips e Microware.
+
+ 1.4 Cos'e' il Libro Verde
+ Libro Verde e' il nome informale delle Specifiche Funzionali del Compact-disc
+ Interattivo, cosi' come furono dettate da Philips, Sony e Microware. E' chiamato
+ cosi' dalla copertina Verde del libro. Questi e' in linea con gli altri
+ sistemi CD che hanno anch'essi il loro proprio "colore" di identificazione
+ (cosi' come rosso per CD-Audio, giallo per CD-ROM e bianco per Video-CD).
+ Qualche volta e' stato anche ribattezzato come FFGB o Full Functionally Green
+ Book. Il Libro Verde consiste in un manuale contenente le specifiche tecniche
+ del CD-i e del Microware OS-9 2.4 . In contrasto agli altri sistemi CD cosi'
+ come CD-Audio e Video-CD, il Libro Verde non solo specifica il formato del
+ sistema CD, ma anche del dispositivo di riproduzione inclusa la CPU richiesta
+ e il sistema operativo utilizzato; il tutto minuziosamente specificato.
+
+ 1.5 Che versioni sono disponibili del Libro Verde?
+ In sostanza c'e' solo un Libro Verde. Tuttavia, alcune addizioni minori,
+ cambiamenti e aggiornamenti sono stati applicati negli anni (cosi' come nel
+ caso delle specifiche originali del CD-Audio!). La prima versione del Libro
+ Verde e' datata Settembre 1990 mentre la prima vera revisione e' contenuta
+ nell'edizione del Marzo 1993, dove nel Capitolo 9 vi e' il CD-i Full Motion
+ Video Extension. Le ultime date di versione sono del Marzo 1994.
+
+ 1.6 Dove posso acquistare una copia del Libro Verde?
+ Il Libro Verde non e' piu' disponibile in stampa ma solo come un file
+ digitale su CD-ROM a un prezzo di Dollari $ 150. Licenze e copie del Libro
+ Verde sono disponibili da Philips System Standards & Licensing.
+ Come sviluppatore di hardware o di software commerciale, ci si puo' abbonare
+ e ricevere tutto lo standard Philips CD inclusi aggiornamenti per 5 anni per
+ Dollari $ 5000.
+
+ 1.7 Qualsiasi CD CD-i puo' essere riprodotto su un qualsiasi lettore CD-i?
+ In generale: SI! Questa e' una delle bellezze del CD-i system. Fin quando
+ entrambi, CD e dispositivo di riproduzione sono largamente specificati, ogni
+ CD-i disc e' compatibile con ogni CD-i player, in contrasto a un dischetto di
+ CD-ROM, che non si sa mai se verra' eseguito con una certa configurazione del
+ PC. Si deve cercare il logo sia sul CD che sul lettore per essere certi della
+ compatibilita'. C'e' da ricordare che e' possibile per entrambi, fabbricanti
+ di software e fabbricanti di hardware includere caratteristiche addizionali
+ che non fanno parte delle specifiche base del CD-i. CD che sono progettati per
+ queste estensioni ( come una cartuccia Digital Video, tastiere o MODEM)
+ funzioneranno su CD-i standard, tuttavia essi mancheranno della funzionalita'
+ perfetta. In questo caso il CD-i mostrera' un messaggio indicante l'hardware
+ addizionale richiesto per eseguire il CD.
+
+ 1.8 Cos'e' un player of Case of Base e un cd of Case of Base?
+ Ogni CD-i, cd o lettore, che si attiene alle minime richieste come assegnate
+ dal Libro Verde e' chiamato Case of Base. Questo significa che un titolo di
+ Case of Base funziona su ogni CD-i player, e che un lettore di Case of Base
+ eseguira' solo dischetti di Case of Base. Quando un titolo usa un'estensione
+ alla specificazione standard, cosi' come implementando la scheda Digital
+ Video, non e' piu' considerato un titolo di Case of Base, fin quando non e'
+ assicurato che questo cd funzionera' su tutti i lettori. Tuttavia dev'essere
+ in grado di avviarsi e mostrare un messaggio.
+
+ 1.9 Il CD-i supporta il video Full Screen? (Pieno Schermo)
+ Le specifiche base permettono ad un lettore CD-i di mostrare animazioni a
+ pieno schermo in 128 colori sopra uno sfondo di 16.7 milioni di colore, o
+ eseguire parte di schermo spostando il video in un framerate inferiore in
+ 16.7 milione colori, entrambi con suono allegato. Tuttavia, queste capacita'
+ sono estese quando una cartuccia Digital Video e' inserita nel lettore. In
+ questo caso, il lettore e' in grado di mostrare immagini a pieno schermo,
+ ad una velocita' di 30 fps video in 16.7 milioni di colori conformemente allo
+ standard MPEG-1. Sebbene la Digital Video non sia una parte del CD-i base
+ e' generalmente considerata una estensione "obbligatoria" per un lettore CD-i
+ dato che appone al sistema un incremento audio-video. La cartuccia Digital
+ Video e' specificata come un'estensione facoltativa nel capitolo 9 del Libro
+ Verde.
+
+ 1.10 Che tipi di CD possono essere riprodotti su un lettore CD-i ?
+ In generale, un lettore CD-i esegue solo CD che incorporano un programma di
+ applicazione dedicato che fu progettato per il sistema operativo CD-i ed i
+ suoi componenti di hardware. Per alcuni tipi di CD, quali i Video-CD,
+ Photo-CD e CD-BGM, questa applicazione CD-i e' una parte obbligatoria del
+ contenuto. Questo significa che per quanto concerne un Video-CD deve avere
+ apposto il logo Video-CD, deve contenere un'applicazione CD-i, e deve essere
+ in grado di venire eseguito su un lettore CD-i comprensivo di scheda Digital
+ Video. Oltre a questo, il CD-i standard puo' comunque eseguire i CD-Audio.
+ Molti lettori (inclusi tutti i modelli di Philips) sono in grado di mostrare
+ i contenuti grafici di CD+Graphics, sebbene questo non sia richiesto dallo
+ standard CD-i.
+
+ In conclusione, un lettore CD-i esegue CD-Audio, CD-i, CD-BGM, CD-ROM/XA.
+ La maggior parte dei lettori CD Bridge possono leggere standard come
+ Photo-CD e Video-CD e CD+Grafica. Da vedere la sezione di Tipi di Dischetto
+ per ulteriori informazioni sui vari sistemi CD che possono o non possono
+ essere letti dal CD-i.
+
+ 1.11 Quali sono i vantaggi del CD-i a confronto del PC multimediale?
+ Il CD-i ha vari vantaggi se confrontato con un PC multimediale, tra questi i
+ piu' importanti sono:
+ * I Costi. Per costruire un PC con la stessa capacita' audiovisiva e
+            funzionalita', c'e' bisogno di spendere almeno il doppio o il
+            triplo del costo di un lettore CD-i.
+ *La Compatibilita'. Ogni CD per CD-i e' compatibile con ogni lettore CD-i.
+            Non ci sono "richieste di sistema". Un utilizzatore del CD-i puo'
+            essere sicuro che il suo CD funzionera' senza problemi, senza
+            preoccupazioni circa il tipo di scheda video adatta, scheda audio,
+            versione del sistema operativo, risoluzione di schermo, velocita'
+            del CD-ROM, drivers, conflitti di hardware, etc.
+ *Facilita' di uso. Sia il lettore CD-i che il software sono facili da usare.
+            Semplicemente si inserisce il CD e via! Nessun bisogno di settare il
+            software, aggiustando l'hardware o altre complicate procedure di
+            installazione. Oltre a questo, il dispositivo di puntamento e la
+            semplice interfaccia permettono di muoversi virtualmente a piacimento!
+ *TV        Il CD-i puo' essere collegato a qualsiasi televisore e impianto Hi-fi,
+            e quindi si puo' usare dovunque. Come vantaggio addizionale il Cd-i
+            ha uno stile semplice che lo fa diventare un sistema molto piu'
+            comodo da usare se confrontato con un PC.
+ *Standard Mondiale. Il CD-i e' un standard mondiale, al di sopra dei vari
+            fabbricanti e sistemi TV o altro. Ogni CD e' compatibile con ogni
+            lettore, senza tenere conto del suo fabbricante o del sistema
+            televisivo (PAL, NTSC o SECAM) utilizzato.
+
+ 1.12 Com'e' attinente il CD-i ad altri sistemi interattivi basati sulla TV?
+ Nei primi anni '90, vennero costruiti molti altri dispositivi di riproduzione
+ interattivi che usavano un CD come loro dispositivo di immagazzinaggio
+ principale. Furono venduti da diverse compagnie che tentarono di prendere una
+ quota del mercato emergente. Alcuni di essi furono chiaramente basati sulle
+ tecniche di compravendita del CD-i, altri scelsero un approccio leggermente
+ diverso.
+
+ I piu' importanti furono:
+
+ *3DO. Dispositivo per gioco/bambini(videogames) progettato dalla Compagnia 3DO,
+       e costruito sotto licenza da Panasonic e Goldstar.
+ *CDTV. Commodore Dynamic Total Vision. Un lettore interattivo basato sulla
+  tecnologia Commodore di Amiga. Il lettore fu costruito da Matsushita e
+  venduto da Commodore con incluso un caddy per il caricamento CD. Una versione
+  piu' evoluta con uno stile tipo console fu chiamato CD32, ed aveva un
+  hardware leggermente piu' sviluppato ed includeva, solo in quest'ultima
+  versione, la capacita' di visualizzare Video-CD.
+ *VIS. Video Information System. Venduto da Tandy, basato su un' architettura
+  PC (80286) utilizzava un sistema operativo Microsoft.
+
+ Nessuno di questi formati fu intercambiabile. Il 3DO eseguiva i Photo-CD,
+ 3DO e CDTV/CD32 eseguivano CD+Grafica e 3DO e CD32 potevano essere espansi
+ con una cartuccia che permetteva la lettura dei Video-CD. Nessuno di questi
+ dispositivi poteva guadagnare un mercato paragonabile al CD-i, e nessuno di
+ essi venne mai usato in applicazioni professionali, come il CD-i. Tutti loro
+ sparirono velocemente dal mercato.
+
+ Attualmente, ci sono molti sistemi basati su TV/CD multimediali con
+ applicazioni simili al CD-i. Uno di essi e' M2 Panasonic; si tratta di un
+ lettore interattivo basato sulla tecnologia 3DO (ma questo alla Panasonic non
+ lo dicono!) che incorpora un CD o DVD drive. L'unita' non ha mai guadagnato
+ molto popolarita'.
+ E naturalmente c'e' il DVD-Video. Lo standard DVD-Video fornisce alcune
+ caratteristiche di interazione, ma manca il grado di interattivita' che e'
+ offerto dal CD-i. Philips vende un lettore DVD-Video professionale che
+ aggiunge extra interattivi alle caratteristiche standard. Per ulteriori
+ informazioni vedere "Quali buone alternative ci sono al CD-i nel campo
+ professionale?".
+
+ 1.13 Qual'e' il logo ufficiale del CD-i?
+ Il logo ufficiale del CD-i e' il marchio di Compact-disc con la parola
+ Interattivo in un box in colore negativo al di sotto di esso. Questo logo
+ puo' essere usato solo sul software o prodotti di hardware che accolgono al
+ 100% le specifiche (vedere: Cos'e' il Libro Verde?). La parola Interattivo
+ puo' in alternativa essere bianca su una superficie negativa o positiva.
+ Il logo non puo' mai avere un'ampiezza inferiore a 9 millimetri.
+
+ In aggiunta al logo standard CD-i, Philips ha anche creato una compravendita
+ di loghi per il CD-i, come quello che si puo' vedere sulla cima della home
+ page www.icdia.org (e in tutte le altre pagine del mio sito CD-i). Questo
+ logo puo' essere usato solo da Philips, ma in alcuni casi Philips ne ha
+ permesso l'uso ad altri fabbricanti. Esso non puo' mai considerarsi come una
+ sostituzione per il logo usuale, come nel caso che venga usato su hardware o
+ prodotti di software quando deve essere accompagnato dal logo registrato.
+
+ 1.14 Qual'e' il modo corretto di scrivere CD-i?
+ Originariamente Philips stabili' che CD-I fosse il modo corretto di scrivere
+ il nome del sistema. Tuttavia, fin quando molte persone non famigliarizzavano
+ con il sistema pronunciavano questo come CD-primo, e quindi vi e' stata una
+ variazione in CD-i (con la 'i' minuscola) attorno al 1992. Tutti gli altri
+ modi di scrivere il nome (CDi, CDI, Cd-i, etc.) sono sbagliati e non si
+ dovrebbero usare.
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.
+

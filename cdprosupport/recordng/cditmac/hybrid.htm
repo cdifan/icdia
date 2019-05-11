@@ -1,0 +1,70 @@
+<html>
+<TITLE>Making Hybrid Discs with CD-IT!ALL</TITLE>
+
+<head></head>
+<body>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="cditmac.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+<b>MAKING HYBRID DISCS WITH CD-IT! ALL</b><p>
+<b></b><p>
+<b>1. </b>Choose Command-3 Mac/Iso Hybrid in CD-ROM menu<p>
+<b>2. </b>Use hard drive partition or create Temporary Partition under Options
+Menu if necessary.  If you choose an existing partition, it <b>cannot</b> be
+the startup volume.  The partition needs to be large enough to fit all your
+files. Temp. Partitions should mount automatically on the desktop: give it a
+name.  This name, and all the other names of <b>ISO</b> files &amp; folders,
+should be ISO 9660 compliant  (i.e. 8.3, capital letters, numbers, underscores)
+if you want maximum cross-platform compatilbility.  Name Mac-<b>only</b> files
+per Mac naming convention.<p>
+<b>3. </b>Drag the shared HFS/ISO data files/folders to the HFS partition.
+Often it is easiest to put all shared data into one folder. <b>Remember:</b>
+the number of files and icons can affect load/access times to the cd.  On a
+Mac, if all/most of your files have fancy icons, the time to display them on
+screen will increase significantly.  If these files are at the root of the cd,
+mount times may increase.<p>
+<b>4.</b> Make an alias of all folders/files meant to be shared.  This usually
+means just one alias of the folder containing all the shared data.  Drag the
+alias(es) to the desktop.<p>
+<b>5.</b> Create a folder on the desktop for your ISO data &amp; name it.<p>
+<b>6.</b> Drag the just created alias(es) to the ISO folder.  Be sure to remove
+the "<i>alias</i>" from the alias name. Then delete any copies of these aliases
+from the desktop &amp; empty the trash.<p>
+<b>7.</b> Drag any MacHFS-only files/folders to the HFS partition.  Since you
+do not make any aliases of these, they will only be available to the Mac.  If
+you want all data to be available to all platforms you can skip this step.<p>
+<b>8. </b>Build your HFS volume by clicking on "Mac" button in the Hybrid disc
+main screen.  Then choose the hard drive partition (or the temporary partition
+you've just created), be sure "<i>Don't Copy Free Space</i>" is checked.
+(<b>Remember: </b>"<i>Don't Copy Free Space</i>" just skips free sectors at the
+<b>end</b> of a partition.  Any free sectors between file segments, i.e. wasted
+space, <b>is</b> copied over to your cd image.  To minimize wasted space, be
+sure to run a utility such as Norton Speed Disk to defragment the partition
+<b>before</b> you begin CD-It! All.)  Click ok.<p>
+<b>9.</b> Drag any ISO-only files and folders to the ISO folder.  These will
+not be available to the Mac.  If you want all data to be available to all
+platforms you can skip this step.<p>
+<b>10.</b> Build your ISO image by clicking on "ISO" button in the Hybrid disc
+main screen. Choose "<i>Create a New 9660 image file</i>".  Be sure that you
+<b>uncheck</b><i> "Resolve Aliases"</i> (this will put only one copy of the
+data on the disc) and that "<i>Allow Mac/ISO Common Data</i>" is checked.Then
+highlite your ISO folder, click the "<i>Select </i><tt>&lt;ISO_folder&gt;</tt>"
+button just above the checkboxes.<p>
+<b>11.</b> In the ISO 9660 Builder dialog box, choose <b>CD-ROM XA</b>.  Be
+sure "<i>Append Version Number (;1)</i>"is checked.  Despite what the manual
+says, be sure to <b>uncheck</b> <i>"Use Apple Extensions"</i>:  this means that
+the ISO 9660 volume should ignore the HFS resource fork.  The Mac HFS volume
+will still see the resource fork.  If you neglect to do this, Sun workstations
+may give file errors.   ISO9660 naming is best for cross-platform
+compatibility. Consult the manual about the other options in this dialog if you
+want to customize further. Click on "<i>Build Image</i>".   Unless you want to
+change the image name, click "<i>Save</i>".<p>
+<b>12.</b> Doing a "<i>Check Speed</i>" is recommended, but optional.  If you
+are well familiar with recording similar images, you might skip this step.<p>
+<b>13.</b> Write the CD.<p>
+<p>
+</body></html>
+

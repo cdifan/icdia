@@ -1,0 +1,904 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>CD-i Technical Documentation / PIM Technical Notes</B><BR><BR>
+
+On this page, you will find technical notes released by Philips Interactive Media on a variety of subjects concerning CD-i. Most of them are in Portable Document Format, you need <A HREF="http://www.adobe.com">Adobe Acrobat Reader</A> to view or print them.
+
+<BR><BR>
+<HR WIDTH=100% SIZE=1 color=ffffff>
+<BR>
+
+
+<B><A HREF="#techindex">CATALOG OF CD-I TECHNICAL NOTES</A></B><BR>
+<A HREF="#technote022">TN #022 - Using RGB555 Images</A><BR>
+<A HREF="#technote034">TN #034 - DYUV Panning Algorithms</A><BR>
+<A HREF="#technote039">TN #039 - NTSC Coloring Problems</A><BR>
+<A HREF="#technote041">TN #041 - CD-I Application Library/Trap Handler Usage</A><BR>
+<A HREF="#technote042">TN #042 - Reduction of Flicker in Interlaced Pictures</A><BR>
+<A HREF="#technote044">TN #044 - Using Functions With Variable-Length Argument Lists in OS-9</A><BR>
+<A HREF="#technote046">TN #046 - Restrictions on the Use of Load CLUT Color Instructions</A><BR>
+<A HREF="#technote048">TN #048 - Preparing CD-I Titles for the International Marketplace</A><BR>
+<A HREF="#technote047">TN #047 - Real-Time Code Loading</A><BR>
+<A HREF="#technote049">TN #049 - Performance Considerations in CD-RTOS</A><BR>
+<A HREF="#technote051">TN #051 - EASI: Editing and Animation Sound Interface</A><BR>
+<A HREF="#technote052">TN #052 - Notes on QHYB: Base Case QHY</A><BR>
+<A HREF="#technote054">TN #054 - Error Strategy for CD-I Final Product Deliverable</A><BR>
+<A HREF="#technote056">TN #056 - CARLIE: Compressed AIM Run-Length Image Encoding</A><BR>
+<A HREF="#technote058">TN #058 - Notes from Charlie Golvin: SCCS Usage, Portation to SPARC, etc.</A><BR>
+<A HREF="#technote060">TN #060 - Recommended Disc Building Pathways</A><BR>
+<A HREF="#technote061">TN #061 - Software Sprites in CD-I</A><BR>
+<A HREF="#technote062">TN #062 - Living with Reality: Remaining Bugs in CD-RTOS 1.1</A><BR>
+<A HREF="#technote063">TN #063 - Display Synchronization in CD-I</A><BR>
+<A HREF="#technote064">TN #064 - Using the GNU Cross Compiler</A><BR>
+<A HREF="#technote065">TN #065 - High Resolution Graphics Tools</A><BR>
+<A HREF="#technote066">TN #066 - Accessing Audio Files on a CD-I Disc</A><BR>
+<A HREF="#technote067.2">TN #067.2 - Tape Submission of Disc Images (revised)</A><BR>
+<A HREF="#technote068">TN #068 - The CD-I Player and NVRUI</A><BR>
+<A HREF="#technote069">TN #069 - Technical Status of the Philips 910 CD-I Player</A><BR>
+<A HREF="#technote070.1">TN #070.1 - Inhibiting the Replication of Global Data</A><BR>
+<A HREF="#technote057.1">TN #057.1 - Initializing a Player's Configurable Parameters (revised)</A><BR>
+<A HREF="#technote071.1">TN #071.1 - Resource Compiler/Manager for CD-I Applications (revised)</A><BR>
+<A HREF="#technote072">TN #072 - Passing Open Paths Between Processes (revised)</A><BR>
+<A HREF="#technote073.2">TN #073.2 - Reading the Player Control Keys</A><BR>
+<A HREF="#technote074">TN #074 - Abekas A60 Tape Utility</A><BR>
+<A HREF="#technote075">TN #075 - Recommended Disc Labeling Conventions for PIMA Titles</A><BR>
+<A HREF="#technote076">TN #076 - Differences between the Philips 18x and 605 Development Platforms</A><BR>
+<A HREF="#technote077">TN #077 - Implementing a Compass Cursor in CD-I</A><BR>
+<A HREF="#technote078">TN #078 - A Technique for Menu Highlighting</A><BR>
+<A HREF="#technote079">TN #079 - Monitoring Audio Play from Memory</A><BR>
+<A HREF="#technote080">TN #080 - Using Sub-Routine Modules</A><BR>
+<A HREF="#technote081">TN #081 - Using SrcDbg to Debug CD-I Software</A><BR>
+<A HREF="#technote082">TN #082 - A Graphical Method for Hotspot Generation</A><BR>
+<A HREF="#technote083">TN #083 - A Compression Algorithm for Monochrome Images</A><BR>
+<A HREF="#technote084">TN #084 - ArtSpace Animation Conversion Pathway</A><BR>
+<A HREF="#technote085.1">TN #085.1 - Ensuring Title Compatibility Across Players</A><BR>
+<A HREF="#technote086">TN #086 - Improved DYUV Encoding Methods</A><BR>
+<A HREF="#technote087">TN #087 - Memory Allocation in CD-RTOS</A><BR>
+<A HREF="#technote088">TN #088 - Status of the Digital Video System</A><BR>
+<A HREF="#technote089">TN #089 - A New Method for Video Scan Synchronization in CD-i</A><BR>
+<A HREF="#technote090">TN #090 - Improved Seek Times with I$Seek</A><BR>
+<A HREF="#technote091">TN #091 - A Beginner's Guide to Balboa Edition 1</A><BR>
+<A HREF="#technote092">TN #092 - Audio Considerations in CD-I</A><BR>
+<A HREF="#technote093">TN #093 - Image Formats for Compatibility</A><BR>
+<A HREF="#technote094">TN #094 - Various Time Bases in CD-I</A><BR>
+<A HREF="#technote095">TN #095 - Media Mogul Script-to-Disc</A><BR>
+<A HREF="#technote096">TN #096 - Emulator and Emulation</A><BR>
+<A HREF="#technote097">TN #097 - The Full Motion System for CD-I</A><BR>
+<A HREF="#technote098">TN #098 - Introduction to Programming the FMV System</A><BR>
+<A HREF="#technote099">TN #099 - Balboa Video Manager Insights 1</A><BR>
+<A HREF="#technote100">TN #100 - Balboa Video Manager Insights 2</A><BR>
+<A HREF="#technote101">TN #101 - Extension Memory in CD-i</A><BR>
+<A HREF="#technote102">TN #102 - EOS Problem in Current DV Cartridge</A><BR>
+<A HREF="#technote103">TN #103 - Flying Mattes with CD-i Digital Video</A><BR>
+<A HREF="#technote104">TN #104 - Aspect Ratios in CD-i</A><BR>
+<A HREF="#technote105">TN #105 - Seamless Branching with CD-i Digital Video</A><BR>
+
+<BR>
+<HR WIDTH=100% SIZE=1 color=ffffff>
+
+<P>
+<B><LI><A NAME="techindex">CATALOG OF CD-I TECHNICAL NOTES</A></LI></B><BR>
+<I>March 22, 1994</I><BR>
+Download <A HREF="techindex.pdf">techindex.pdf</A> (PDF - 547 KB)<BR>
+<I>(does not contain TN #103 onwards)</I>
+</P>
+
+<P>
+<B><LI><A NAME="technote022">TN #022 - Using RGB555 Images</A></LI></B><BR>
+<I>Anderson, Eric - AIM</I><BR>
+A technical note to call attention to special handling requirements for
+RGB555 images. Use of the UCM function dm_write() is discussed along
+with IFF storage format considerations, and the use of RGB images in
+real-time files.<BR>
+<I>No revisions.</I><BR>
+Download <A HREF="technote022.pdf">technote022.pdf</A> (PDF - 136 KB)
+</P>
+
+<P>
+<B><LI><A NAME="technote034">TN #034 - DYUV Panning Algorithms</A></LI></B><BR>
+<I>Townsend, Dave - Capitol Disc</I><BR>
+Algorithms for panning a large DYUV draw map.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote039">TN #039 - NTSC Coloring Problems</A></LI></B><BR>
+<I>Wood, Rodney E. - AIM</I><BR>
+Most CD-I applications designers make some assumptions about the
+video output from the consumer CD-I player. Some assume that the
+player is connected to an RGB monitor and others assume that the
+connections is to a television. Small pixel patterns are displayed quite
+differently on an RGB monitor and on an NTSC television. This
+document describes some caveats regarding the use of the bit patterns
+in CD-I.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote041">TN #041 - CD-I Application Library/Trap Handler Usage</A></LI></B><BR>
+<I>Anderson, Eric - AIM</I><BR>
+This technical note describes the use of trap handlers found in CD-RTOS
+ROM. Using trap handlers allows you to save application memory.
+Additional memory can be saved by removing stack checking code.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote042">TN #042 - Reduction of Flicker in Interlaced Pictures</A></LI></B><BR>
+<I>Richards, Norman - PRL</I><BR>
+TECHNICAL
+Contrary to general belief, the base case CD-I system, the JNMS player,
+is capable of displaying interlaced pictures in a trivial manner and in a
+way entirely consistent with the Green Book standard.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote044">TN #044 - Using Functions With Variable-Length Argument Lists in OS-9</A></LI></B><BR>
+<I>Rader, Kirk - AIM</I><BR>
+OS-9 does not contain standard mechanisms for writing C code using
+functions that take variable-length argument lists. With special care,
+however, it is possible to use conventional techniques when writing C
+code under OS-9.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote046">TN #046 - Restrictions on the Use of Load CLUT Color Instructions</A></LI></B><BR>
+<I>Anderson, Eric - AIM</I><BR>
+This technical note describes a hardware restriction with the new VSR
+chip found in all CD-RTOS vl.0 players and CD-I development
+platforms. This restriction is not described in the current Green Book
+Specification (14 November 1988), but in all likelihood will be
+included in the next edition.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote048">TN #048 - Preparing CD-I Titles for the International Marketplace</A></LI></B><BR>
+<I>van Luijt, Alty - PIMA</I><BR>
+Different levels of preparation may be adopted by CD-I developers to
+assure that CD-I titles can be used on various television systems in the
+international marketplace. This note makes some recommendations to
+assist CD-I developers in preparing their titles for international
+distribution.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote047">TN #047 - Real-Time Code Loading</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This technical note describes a method for loading an executable
+program from a real time record and executing that program. This
+technique may be used by titles with memory considerations provided
+the title engineer is able to divide the title into separately compiled
+programs. This technique does not provide the ability to load, execute,
+and return from a code fragment, such as a function or subroutine.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote049">TN #049 - Performance Considerations in CD-RTOS</A></LI></B><BR>
+<I>van Luijt, Alty - PIMA</I><BR>
+Although recent changes in the 1.0 Philips JNMS player and in CD-RTOS
+have resulted in better responsiveness, title designers and
+software engineers can take additional steps to assure satisfactory
+performance from a CD-I disc.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote051">TN #051 - EASI: Editing and Animation Sound Interface</A></LI></B><BR>
+<I>Mills, Rusty - PIMA</I><BR>
+EASI is a movieola-style CD-I system that allows you to edit sound to
+exact frames. By dispensing with the need to use real-time files, EASI
+dramatically reduces the time required to edit.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote052">TN #052 - Notes on QHYB: Base Case QHY</A></LI></B><BR>
+<I>Richards, Norman - PRL</I><BR>
+<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote054">TN #054 - Error Strategy for CD-I Final Product Deliverable</A></LI></B><BR>
+<I>van Luijt, Alty - PIMA .</I><BR>
+An earlier AIM technical note, #43.1, on recommended error tolerance
+strategy has been widely ignored by titles in production. The current
+note describes the preferred and minimum requirements for error
+tolerance for alpha tape deliverables to AIM. Non-compliance with at
+least the minimum strategy is reason for rejection of the alpha tape.<BR>
+<I>Supersedes and replaces AIM TN#43.1 by Robert Patton.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote056">TN #056 - CARLIE: Compressed AIM Run-Length Image Encoding</A></LI></B><BR>
+<I>Pferdner, Richard - Adaptive Design</I><BR>
+CARLIE is a technique for compressing run-length encoded images.
+The number of bytes required for a run-length encoded image is
+reduced by compressing the image in the vertical direction. CARLIE
+works best with cartoon-like images whose original size is under 20K.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote058">TN #058 - Notes from Charlie Golvin: SCCS Usage, Portation to SPARC, etc.</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This technical note is an informal compendium of issues and
+techniques of interest to CD-I developers. In includes discussion of
+non real-time sectors in real-time files, the use of error detection code
+in Form 2 sectors, the use of AIM "include" files, the portation of code
+to the SUN SPARC environment, the use of SCCS, error detection in
+PCLs, and two useful programs.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote060">TN #060 - Recommended Disc Building Pathways</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+In this technical note, disc building pathways that do not employ
+buildcd are recommended to AIM title engineers. These pathways will
+shorten the turnaround time required for disc building.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote061">TN #061 - Software Sprites in CD-I</A></LI></B><BR>
+<I>van Luijt, Alty - PIMA</I><BR>
+Architecturally, CD-i is not very similar to a "game machine."
+Characteristics, such as sprites and collision detection, are not
+supported by the hardware. Yet CD-i's powerful graphics capabilities,
+relatively powerful CPU, two-plane video display architecture, built-in
+run-length logic, and superior audio circuitry--all under the control of
+a real-time operation system--can provide substantial functionality in
+the domain of action games, albeit at a different level of sophistication.<BR>
+<I>No revisions.</I><BR>
+Download <A HREF="technote061.pdf">technote061.pdf</A> (PDF - 651 KB)
+</P>
+
+<P>
+<B><LI><A NAME="technote062">TN #062 - Living with Reality: Remaining Bugs in CD-RTOS 1.1</A></LI></B><BR>
+<I>van Luijt, Alty - PIMA</I><BR>
+In the state currently reached by CD-i players, many of the older
+problems have been resolved and a very workable situation has been
+achieved. However, a number of issues remain: the actual available
+implementation may deviate from Green Book definitions or the Green
+Book definitions are ambiguous. The time has come for title
+productions to face these items and plan strategies to work around
+them, rather than to rely on fixes in a future version of the player or
+its software. This note describes some of the points that have to be
+taken into account and suggests workarounds whenever possible. The
+notion of a workaround is such that the solution that is suggested is
+always upward compatible; that is, discs that utilize these
+workarounds will work well on future players, even after the player
+bugs have been fixed.<BR>
+<I>No revisions. Formerly PIMA TN#62.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote063">TN #063 - Display Synchronization in CD-I</A></LI></B><BR>
+<I>van Luijt, Alty - PIMA</I><BR>
+CD-i has a fairly elaborate display architecture and correspondingly
+complex system software support. The different functions are
+explained in this technical note, with the emphasis on setting up the
+display system in such a way that glitches can be avoided. This is
+probably not an issue for "simple titles," where the functionality as
+provided by UCM is already adequate. However, titles that rely on
+more complex imagery composited from both video planes need to pay
+attention to the problems raised in this note. Two solutions are
+described, one that relies on careful planning of transitions, while the
+other describes a more fundamental solution by properly
+synchronizing the transition with the display timing.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote064">TN #064 - Using the GNU Cross Compiler</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+Capitol Disc recently merged two implementations of GNU to produce a
+cross compiler that runs under the SunOS and produces OS-9 assembly
+code. The GUN cross compiler employs the Microware assembler (o68)
+and linker l68) to produce code executable on the CD-i player.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote065">TN #065 - High Resolution Graphics Tools</A></LI></B><BR>
+<I>Vitz, Frank</I><BR>
+The CD-i community needs techniques for capturing, converting, and
+displaying still images of the highest possible quality for inclusion in a
+variety of CD-i applications. The tools discussed here were developed
+to provide a production pathway to QHYB images; however, they may
+also be used wherever producers need to produce high resolution
+images.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote066">TN #066 - Accessing Audio Files on a CD-I Disc</A></LI></B><BR>
+<I>van Luijt, Alty - PIMA</I><BR>
+CD-i has inherited some addressing conventions from CD audio which
+are discussed in this note. A two-second off set exists between the
+"Absolute Time" base and the "Logical Block Numbers" used in
+accessing files.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote067.2">TN #067.2 - Tape Submission of Disc Images (revised)</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This document is intended to completely describe the format of a tape
+containing a CD-i disc image, whether the disc image is submitted for
+mastering by a disc replication facility or submitted to PIMA to
+produce a limited number of one-off (WORM) discs. IN addition, the
+process of making such a tape on the Macintosh using the standard
+PIMA-recommended tape writing utilities and on the Sun using a
+public domain tape-writing utility is described.<BR>
+<I>Revised 8/25/92. Supersedes PIMA TN#67.1 (PIMA internal distribution only) and PIMA TN#67.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote068">TN #068 - The CD-I Player and NVRUI</A></LI></B><BR>
+<I>Lediaev, Lucy - PIMA</I><BR>
+This document is a summary of the purpose and functions of the user
+interface to the CD-i player's non-volatile RAM. The information in this
+note was drawn from the AIM design document, "User Interface
+Design Criteria and Recommendations for NV-RAM," by Blake,
+Kaufman, van Luijt, and van Allen, and from a talk given to the AIM
+Product Test organization by Tyler Blake. The goal of this summary is
+to provide information on NVRUI to CD-i producers, designers, product
+testers, and other non-engineering personnel.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote069">TN #069 - Technical Status of the Philips 910 CD-I Player</A></LI></B><BR>
+<I>van Luijt, Alty - PIMA</I><BR>
+In the current state of CD-i players, many of the older problems have
+been resolved, and a very workable situation has been achieved.
+However, a number of issues remain in which the actual available
+implementations deviate from Green Book definitions, where Green
+Book definitions are somewhat ambiguous, or where timing aspects
+play a role. This note describes some of the issues that need to be
+taken into account and suggests workarounds whenever possible. The
+notion of a workaround implies that the suggested solution is always
+compatible. That is, discs that utilize these workarounds will work well
+on future players, even after the player bugs have been fixed or
+timing constraints have been relaxed.<BR>
+<I>No revisions.</I><BR>
+Download <A HREF="technote069.pdf">technote069.pdf</A> (PDF - 1224 KB)
+</P>
+
+<P>
+<B><LI><A NAME="technote070.1">TN #070.1 - Inhibiting the Replication of Global Data</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This technical note describes a method of inhibiting the double
+memory cost that applications pay for initialized data, initialized data
+references, and initialized code references.<BR>
+<I>Revised 8/20/92. Supersedes PIMA TN#70.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote057.1">TN #057.1 - Initializing a Player's Configurable Parameters (revised)</A></LI></B><BR>
+<I>van Allen, Philip; revised by Charles Golvin - PIMA</I><BR>
+The "CD-I Full Functional Specification" does not guarantee that the CD-i
+player will "boot" with a specific configuration. Therefore, the
+application must initialize the player's configurable parameters or risk
+unexpected behavior.<BR>
+<I>Revised and supersedes TN# 57.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote071.1">TN #071.1 - Resource Compiler/Manager for CD-I Applications (revised)</A></LI></B><BR>
+<I>Ellinwood, Ken - PIMA</I><BR>
+This technical note describes a method for loading and accessing pre-initialized
+data at run-time. This method is intended to aid in the
+development of data-driven CD-i applications. This technical note
+supersedes the note for the original version (1.0) Dated December 2,
+1991, and pertains to version 1.1 of the software.<BR>
+<I>Supersedes PIMA TN#71.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote072">TN #072 - Passing Open Paths Between Processes (revised)</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+CD-i applications may employ more than one process. It may be
+required that these processes share a path to an open device. This note
+describes the technique for passing open paths between processes, and
+for determining the type of CD-i device associated with a path number.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote073.2">TN #073.2 - Reading the Player Control Keys</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+A proposed addendum to the Green Book describes the
+implementation of the Player Control Keys (PCKs). This note gives
+concrete examples of how to actually implement these keys on both
+the Philips 910 player and, for debugging purposes, on the Philips 18x
+player. This note has been revised to describe the role of the ss_enable
+function in the use of the PCKs.<BR>
+<I>Supersedes PIMA TN#73.1 and 73.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote074">TN #074 - Abekas A60 Tape Utility</A></LI></B><BR>
+<I>Berson, Lisa - PIMA</I><BR>
+This utility allows you to extract frames from an Abekas A60 back-up
+tape in CD-I IFF RGB888 file format. It also allows you to create an
+Abekas A60 back-up tape from CD-I IFF RGB888 files. This utility
+runs on a Sun3 or Sun4 machine.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote075">TN #075 - Recommended Disc Labeling Conventions for PIMA Titles</A></LI></B><BR>
+<I>Topel, Drew - PIMA</I><BR>
+This note provides disc labeling conventions that take into account the
+features offered by various CD-i player manufacturers. For instance,
+some manufacturers will make volume and album identifiers
+accessible to the user. Thus, the information placed in these fields
+needs to be accurate and consistent with usage on other titles.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote076">TN #076 - Differences between the Philips 18x and 605 Development Platforms</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This note summarizes the major differences between the Philips 18x
+and 605 development platforms. This note is based on revision 1.1 of
+the 605 ROM.<BR>
+<I>No revisions.</I><BR>
+Download <A HREF="technote076.pdf">technote076.pdf</A> (PDF - 999 KB)
+</P>
+
+<P>
+<B><LI><A NAME="technote077">TN #077 - Implementing a Compass Cursor in CD-I</A></LI></B><BR>
+<I>Hunt, Kevin and Yoon, Douglas - PIMA</I><BR>
+This note lays out a method for implementing a compass cursor
+(frequently used in traditional arcade games) in CD-i. The method
+described here relies heavily on the Balboa System Cursor/Hotspot
+Manager. Thus, familiarity with the Balboa System is required for
+successful implementation of the compass cursor described here.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote078">TN #078 - A Technique for Menu Highlighting</A></LI></B><BR>
+<I>Senftner, Blake - PIMA</I><BR>
+This note reviews a simple method for menu highlighting that is also
+very flexible. It involves use of a DYUV background image with a
+series of run-length 7 (RL7) images. It can be used to highlight
+standard menu hotspots and can be adapted for use with slide bars
+and other graphical controls.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote079">TN #079 - Monitoring Audio Play from Memory</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This technical note summarizes the methods available for monitoring
+audio play from memory. In particular, this note describes differences
+between the Green Book description and current implementation for
+some of these methods.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote080">TN #080 - Using Sub-Routine Modules</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This technical note describes the use of OS-9 subroutine modules in
+order to dynamically load executable code on demand.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote081">TN #081 - Using SrcDbg to Debug CD-I Software</A></LI></B><BR>
+<I>Ellinwood, Ken - PIMA</I><BR>
+Microware's source level debugger, SrcDbg, is a very useful tool for
+debugging CD-I software. This document offers many hints and tricks
+that make the debugger easier to use. This document is not intended
+as a tutorial on SrcDbg commands or how to use debuggers.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote082">TN #082 - A Graphical Method for Hotspot Generation</A></LI></B><BR>
+<I>Trott, Graham - BEPL</I><BR>
+This note describes a graphical method for defining hotspots and an
+MPW script for generating resource compiler source or any other
+source that acts as input to the CD-I build. This method uses the
+depict tool, part of Palomar Software's PICT Detective.™<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote083">TN #083 - A Compression Algorithm for Monochrome Images</A></LI></B><BR>
+<I>Trott, Graham - BEPL</I><BR>
+A compression algorithm was developed during solution of the
+problem of putting up a graphical error screen which needed to be
+kept in memory at all times. The compression method discussed
+herein results in a considerable reduction of the image storage
+requirements for these error screens.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote084">TN #084 - ArtSpace Animation Conversion Pathway</A></LI></B><BR>
+<I>Senftner, Blake - PIMA</I><BR>
+This note describes the use of the program anim_converter. This is a
+UNIX-based program that takes a series of TGA or RGB888 images and
+converts them to a set of RL7 images suitable for compiling as an
+animation to be used as part of a CD-I title.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote085.1">TN #085.1 - Ensuring Title Compatibility Across Players</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This technical note describes potential issues to which a title developer
+must attend in order to assure compatibility with all CD-I players. In
+particular, some issues exposed by the introduction of the Philips 220
+player are discussed.<BR>
+<I>Supersedes TN#85.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote086">TN #086 - Improved DYUV Encoding Methods</A></LI></B><BR>
+<I>Burley, Brent - PIMA</I><BR>
+This note describes a DYUV encoding method which examines an
+entire scan line as opposed to the pixel-by-pixel method. This method
+can reduce error in the converted image and can meet the additional
+constraints required for DYUV "blitting." Two new tools, rgbdyuv and
+dyuvfit, have been developed to take advantage of this method.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote087">TN #087 - Memory Allocation in CD-RTOS</A></LI></B><BR>
+<I>Golvin, Charles - PIMA</I><BR>
+This technical note describes how memory is allocated in CD-RTOS. It
+also provides guidelines for how to best control memory allocations
+and, therefore, prevent fragmentation.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote088">TN #088 - Status of the Digital Video System</A></LI></B><BR>
+<I>Charles Golvin - PIMA</I><BR>
+This technical note describes reported problems with the initial CD-i
+Digital Video system. These reports consist of both confirmed and
+potential problems.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote089">TN #089 - A New Method for Video Scan Synchronization in CD-i</A></LI></B><BR>
+<I>Jon Piesing - PRL</I><BR>
+This technical note describes three methods of video scan
+synchronization in CD-i, two that are described in the Green Book and
+one recently discovered by the author. This is of particular significance
+to highly interactive action games, since the two Green Book methods
+fall far short of what is available on other platforms.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote090">TN #090 - Improved Seek Times with I$Seek</A></LI></B><BR>
+<I>Luijks, Cor - IMS; and Golvin, Charles - PIMA</I><BR>
+This technical note describes the use of the function I$Seek to improve
+seek times.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote091">TN #091 - A Beginner's Guide to Balboa Edition 1</A></LI></B><BR>
+<I>Rolff, Jan - IMS; Maxfield, Andy - IMS; and Piesing, Jon - PRL</I><BR>
+This document provides a simple overview of Balboa and includes a
+simple slide-show application.<BR>
+<I>No revisions. Formerly IMS TSA#-001R to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote092">TN #092 - Audio Considerations in CD-I</A></LI></B><BR>
+<I>van Luijt, Alty - IMS</I><BR>
+In CD-i there are two mechanisms for audio playback, direct and
+through sound maps. Each of them, and especially the combination,
+have some caveats. This note describes what tradeoffs play a role in
+this area.<BR>
+<I>No revisions. Formerly IMS TSA#002 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote093">TN #093 - Image Formats for Compatibility</A></LI></B><BR>
+<I>van Luijt, Alty - IMS</I><BR>
+This application note describes the various CD-I screen considerations
+in 525, 625 line, and wide screen (16:9) television formats. It
+emphasizes what a producer can do when 625 line. production
+equipment is used. Refer to TECHNICAL NOTE 009 by the same author
+for a USA perspective.<BR>
+<I>No revisions. Formerly IMS TSA#003 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote094">TN #094 - Various Time Bases in CD-I</A></LI></B><BR>
+<I>van Luijt, Alty - IMS</I><BR>
+The CD-i player has three different time bases; the disc rate, the video
+filed rate, and the timer or system tick. This note describes the
+properties of these time bases and the pitfalls that an application has
+to avoid to achieve proper operations across a variety of players.<BR>
+<I>No revisions. Formerly IMS TSA#004 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote095">TN #095 - Media Mogul Script-to-Disc</A></LI></B><BR>
+<I>van der Meer, Sander - IMS</I><BR>
+The Media Mogul authoring software requires the Script-to-Disc
+software to create CD-i images to be tested out on an emulator. This
+note describes two options for Script-to-Disc: running it in-house or at
+Philips IMS in Eindhoven.<BR>
+<I>No revisions. Formerly IMS TSA#005 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote096">TN #096 - Emulator and Emulation</A></LI></B><BR>
+<I>van Vroonhoven, Joost - IMS</I><BR>
+Creating a CD-i application involves collecting and encoding of assets
+and the writing of application software to implement the interactivity.
+After premastering, the CD-i disc image can be tested on a CD-i player
+connected to an emulator. This note describes the various aspects of
+emulation on different hosts.<BR>
+<I>No revisions. Formerly IMS TSA#006 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote097">TN #097 - The Full Motion System for CD-I</A></LI></B><BR>
+<I>van der Meer, Jan - IMS</I><BR>
+The full motion system is defined to extend CD-i with the capability to
+play moving natural pictures on full screen with associated audio of
+compact disc quality. To play full motion sequences from CD-i disc
+requires compression of the audiovisual information to the CD-I bit
+rate. The full motion system applies a compression method based on
+the MPEG standard. This note describes the features of the CD-i full
+motion system, application of the MPEG standard for full motion and
+the architecture of a full motion CD-i player. Major parts of this
+application note have been published in the paper, "The Full Motion
+System for CD-i" in the November, 1992, issue of IEEE Transactions on
+Consumer Electronics."<BR>
+<I>No revisions. Formerly IMS TSA#007 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote098">TN #098 - Introduction to Programming the FMV System</A></LI></B><BR>
+<I>Ellinwood, Ken - PIMA</I><BR>
+This paper reveals the basic knowledge required to successfully
+implement simple FMV features, such as play, pause, slow motion, and
+scan. The build-time tools, run-time algorithms and data structures
+required to support these features are covered. Code examples are
+used to illustrate the techniques described.<BR>
+<I>No revisions. Formerly IMS TSA#008 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote099">TN #099 - Balboa Video Manager Insights 1</A></LI></B><BR>
+<I>Piesing, Jon - PRL; and Rolff, Jan - IMS</I><BR>
+This document contains an introduction to the Balboa video manager.
+It concludes with an example of a DYUV movie.<BR>
+<I>No revisions. Formerly IMS TSA#009 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote100">TN #100 - Balboa Video Manager Insights 2</A></LI></B><BR>
+<I>Piesing, Jon - PRL; and Rolff, Jan - IMS</I><BR>
+This document contains an introduction to the Balboa video manager.
+It concludes with an example of a scrolling CLUT screen.<BR>
+<I>No revisions. Formerly IMS TSA#010 to be re-released under this number.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote101">TN #101 - Extension Memory in CD-i</A></LI></B><BR>
+<I>Golvin, Charles - Philips Interactive Media</I><BR>
+This technical note describes how extension memory is provided in
+CD-i. It also provides guidelines for the specific instance of the one
+additional megabyte of system memory provided in the Philips Digital
+Video cartridge.<BR>
+<I>No revisions.</I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote102">TN #102 - EOS Problem in Current DV Cartridge</A></LI></B><BR>
+<I>Maris, Stefan</I><BR>
+Parallel processing of video material on several computers to create
+MPEG data streams may results in the creation of extraneous end of
+sequence (EOS) codes. Occasionally, the DV cartridge loses count of its
+frames after encountering an EOS code, which may result in read
+errors or system crashes. This note recommends removal of
+unnecessary EOS codes from the MPEG stream. and provides source
+code for the program "patcheos," which performs this removal
+operation.<BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote103">TN #103 - Flying Mattes with CD-i Digital Video</A></LI></B><BR>
+<I>Jean-Pierre Abello</I> (9 pages)<BR>
+One of the problems with the Digital VIdeo (DV) plane in CD-i is that it
+cannot be displayed in front of the base-case planes and, therefore, cannot be
+used in conjunction with transparency to display portions of a DV screen in
+the foreground of base-case images. However, an animated DV object or
+portion of the DV plane can be tracked by a base-case "flying matte" that is
+updated in synchronization with the DV pictures. This allows you to create
+the illusion of a DV object moving in front of a base-case plane (which may
+contain DYUV pictures, run-length animations, etc.).<BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote104">TN #104 - Aspect Ratios in CD-i</A></LI></B><BR>
+<I>Andrew Duncan</I> (10 pages)<BR>
+There is a great deal of misunderstanding about aspect ratios in creating
+graphics and video for use in CD-i applications. This note attempts to
+quantify these issues to provider guidelines for preparation of the visual assets
+used in a CD-i title.<BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote105">TN #105 - Seamless Branching with CD-i Digital Video</A></LI></B><BR>
+<I>Jean-Pierre Abello</I> (27 pages)<BR>
+This document explains the low-level seamless branching mechanisms that
+allow a CD-i player with the Digital Video cartridge to play non-linear
+interactive Digital Video. Seamless branching provides the ability to play
+MPEG data from different streams or different portions of streams without
+breaking the delivery and presentation continuity of video or audio. The
+build-time and run-time requirements of seamless branching are discussed,
+and the discussion is followed in the appendices by practical methods and
+examples. The buffering mechanisms necessary to ensure continuous data
+access from the storage medium are considered part of a different problem
+domain and are not covered in this paper.<BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

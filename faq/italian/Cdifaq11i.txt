@@ -1,0 +1,159 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 11. L'attuale situazione CD-i
+
+ 11.1 Il CD-i viene ancora usato?
+ Si, il CD-i e' ancora ampiamente usato da dozzine di compagnie per il loro
+ addestramento, o come punto di informazione o punto vendita. Molte compagnie
+ producono ancora o aggiornano attualmente i loro titoli CD-i e continueranno
+ ad usare il CD-i per parecchio tempo. Questo in parte a causa del fatto che
+ non esiste nessun vero sostituto del CD-i con lo stesso livello di interattivita'
+ (vedere "Che buone alternative ci sono al CD-i nel campo professionale?).
+ Naturalmente queste compagnie hanno gia' investito molto nel hardware del CD-i
+ e nelle utility di produzione, comunque ci si aspetta che il periodo CD-i
+ termini tra un paio di anni. Nel frattempo, il CD-i fa ancora quello che e'
+ capace di fare e cioe': fornire programmi video di alta qualita' altamente
+ interattivi ad un prezzo molto vantaggioso e con un'incredibile semplicita'
+ d'uso.
+
+ 11.2 I lettori CD-i vengono ancora fabbricati?
+ La maggior parte dei componenti critici usati nei lettori CD-i (cosi' come la
+ sua circuiteria audio e video) non sono piu' prodotti dai fabbricanti di semi-
+ conduttori corrispondenti. Quindi, i lettori CD-i non possono piu' essere
+ prodotti, specialmente non in basse quantita'. Philips ha prodotto la sua
+ ultima grossa partita di lettori CD-i nel Giugno 1999, e non ne riavviera' piu'
+ la produzione in futuro. Ci si aspetta che anche altri fabbricanti di lettori
+ CD-i (cosi' come LG Elettronica) soffrano gli stessi problemi, e che anch'essi
+ fermeranno totalmente la loro produzione di lettori.
+
+ 11.3 Il CD-i viene ancora venduto?
+ Si, alcune compagnie vendono ancora il CD-i, sia in versione professionale che
+ per utenti di consumo.
+
+ McNo Ltd. del UK vende lettori CD-i di consumo e professionali come pure
+ un'intera gamma di accessori, come dispositivi di puntamento e cartucce Digital
+ Video. Consegnano in tutto il mondo. (Quando si posiziona un ordine a McNo,
+ accertarsi di selezionare ICDIA come checkout della pagina sorgente. Questo
+ vi assicurera' di ricevere tramite posta elettronica il supporto di questo
+ sito.)
+
+ 11.4 I lettori CD-i si possono affittare?
+ L'affitto di lettori CD-i e' disponibile solo per lettori professionali dati
+ a programmatori per un tempo limitato; per ulteriori informazioni si puo'
+ contattare Videotronic che si occupa di questo tipo di affari.
+
+ 11.5 Dove posso comperare i titoli CD-i?
+ I titoli CD-i di consumo possono essere aquistati attraverso diverse compagnie
+ disponibili sul Web.
+
+ McNo Ltd. del UK vende centinaia di titoli CD-i, il loro catalogo e' online
+ al loro sito. La consegna e' mondiale. (Quando si posiziona un ordine a McNo,
+ accertarsi di selezionare ICDIA come checkout della pagina sorgente. Questo
+ vi assicurera' a ricevere tramite posta elettronica il supporto di questo sito.)
+
+ Da notare che ci sono dozzine di compagnie (nel mondo come pure sul web) che
+ vendono CD in Video-CD che possono essere eseguiti anche su un lettore CD-i.
+ Sebbene la compatibilita' CD-i sia una richiesta chiave per i titoli Video-CD,
+ alcuni dischetti (particolarmente i titoli illegali Asiatici) mancano della
+ importantissima applicazione CD-i e non possono essere riprodotti (vedere "Io
+ ho un Video-CD. Perche' non funziona sul mio CD-i?" per ulteriori informazioni).
+ Bisogna sempre controllare prima di comperare un disco Video-CD sul Web.
+ I Video-CD di McNo sono garantiti per essere conformi allo standard ufficiale
+ e sono CD-i compatibili.
+
+ 11.6 Che libri sono stati pubblicati a proposito del CD-i?
+ Negli anni scorsi sono stati pubblicati diversi libri che riguardano le diverse
+ caratteristiche del CD-i e i modi in cui puo' essere usato.
+ Questa lista certamente e' incompleta. Controllate nelle librerie o dagli
+ editori per cercare di procurarveli.
+
+ *Introducing CD-I
+ Addison-Wesley, 1992
+ *The CD-I Design Handbook
+ Addison-Wesley, 1992
+ *The CD-I Production Handbook
+ Addison-Wesley, 1992
+ *CD-I, A Designer's Overview
+ Kluwer, Seconda Edizione 1988
+ *Discovering CD-I
+ Microware System Corp., 1991
+ *The Producer's Handbook of Multimedia Authoring for CD-I
+ Philips Interactive Media System, 1992
+ *The Producer's Handbook of Multimedia Authoring for CD-I
+ Philips Interactive Media System, Seconda Edizione 1995
+ *CD-i, Een Introductie (Olandese)
+ Kluwer, 1992
+
+ 11.7 Dove posso trovare informazioni attinenti al CD-i su Internet?
+ Ci sono due siti Web molto buoni dedicati al CD-i. All'inizio naturalmente
+ :-) c'e' il sito ICDIA. Questo sito e' la casa del CD-i FAQ Edizione 2000 che
+ stai attualmente leggendo. L'ultima versione di questo FAQ puo' essere sempre
+ trovata su questo sito. Inoltre, esso ti fornisce una rassegne completa di
+ tutti i lettori CD-i e degli accessori prodotti, esso ti offre anche software
+ da usare su PC come pure su CD-i authoring system, il sito contiene vari articoli
+ di sfondo, rassegne di software e molto di piu'. Visita questo sito quando
+ stai ricercando qualsiasi informazione sul CD-i. Se la tua domanda non trova
+ risposta qui non esitare a contattare l'autore.
+
+ Allora, ci sono anche altri siti sul CD-i molto buoni, tra cui il francese
+ iPlanet e' una delle sorgenti piu' riconosciute per una corretta informazione
+ circa il CD-i e le piattaforme attinenti.
+
+ Per una rassegna piu' dettagliata dei siti CD-i vedere la sezione Web Link
+ CD-i su questo sito.
+
+ 11.8 Che buone alternative al CD-i ci sono per il consumatore?
+ Bene, se si vogliono i videogiochi bisogna procurarsi una console da gioco.
+ Se si vogliono vedere i film bisogna comprare un VCR o un lettore DVD.
+ Se si cercano titoli interattivi di riferimento probabilmente si necessita di
+ un PC. Se si vogliono vedere le immagini di famiglia su un grande schermo nel
+ salone, si potrebbe semplicemente aver bisogno di ritornare al vecchio sistema
+ che mostra le diapositive. E se si vuole ascoltare musica, si usa un lettore
+ CD-Audio.
+
+ Come si puo' vedere, nessuna vera alternativa che combini tutte le caratteristiche
+ del CD-i e' ancora stata attualmente introdotta, e certamente non in una maniera
+ standardizzata come con il CD-i. Il concetto del CD-i fu piuttosto unico e
+ avanzato per il suo tempo.
+ Oggi, il sistema migliore per vedere dei film (e nel prossimo futuro anche
+ registrandoli) si sta spostando verso il DVD-Video, che fornisce grande
+ qualita' di immagine e di audio (notare il miglioramento dal Video-CD CD-i).
+ Per i videogiochi, ci sono diversi grandi sistemi, la Sony PlayStation e' uno
+ dei piu' importanti. Parecchi titoli educativi e di riferimento, come pure
+ molti buoni titoli per ragazzi titoli sono stati pubblicati recentemente su
+ PC CD-ROM (i titoli CD-i Sesamestreet prodotti nel 1991 sono stati recentemente
+ convertiti in formato PC in Olanda e sono ora promossi come un unico nuovo
+ modo di divertente e insegnamento per bambini!).
+
+ Se si vuole avere un dispositivo che contenga tutto, allora semplicemente
+ lasciate il lettore CD-i nella vostra stanza (o accertatevi di prenderne uno!).
+ Il CD-i puo' sempre essere usato come un lettore CD-Audio, un lettore Photo-CD
+ o un lettore Video-CD. Riproduce anche tutti i titoli CD-i esistenti!
+
+ 11.9 Che buone alternative ci sono al CD-i nel campo professionale?
+ Il CD-i e' diventato molto popolare nell'area professionale. Fu ampiamente
+ usato in per varie applicazioni, in primis da notare l'utilizzo per addestrare
+ del personale, come punto-di-vendita o punto-di-informazione.
+ Il CD-i e' un dispositivo economico, non si richiede nessun addestramento
+ speciale su come usarlo, nessun settaggio o difficili procedure di installazione,
+ e funziona in modo piu' che accettabile con video e suono come da TV.
+
+ Sfortunatamente, per ora non esiste nessun possibile sostituto al CD-i. I PC
+ sono usati ora ma le compagnie hanno difficolta' nel prendere poi macchine
+ superiori e, piu' importante e' tenere il software aggiornato dopo uno dei
+ tanti malfunzionamenti di uno dei milioni di componenti in un PC, o dopo che
+ qualcuno ha cambiato parte dei settaggi, o dopo un messaggio preoccupante di
+ incompatibilita', o...
+ La tendenza si sta ampiamente spostando verso il DVD-Video, ma questo sistema
+ non supporta le caratteristiche interattive offerte dal CD-i. Philips ha un
+ lettore DVD professionale che offre caratteristiche extra cosi' come controllo
+ remoto, supporto al touch screen, porte seriali, NV-RAM, etc.
+ La compagnia attende anche di lavorare su una versione migliorata di lettore
+ DVD-Video per utenti professionali, controllate il loro sito web per gli
+ aggiornamenti piu' recenti.
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.

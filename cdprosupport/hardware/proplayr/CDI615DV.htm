@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+
+<TITLE>615 player and Digital Video</TITLE>
+
+
+</HEAD>
+<BODY>
+<PRE><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="proplayr.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></CENTER></PRE>
+<P>
+<HR>
+<P>
+<P>
+<P>
+<H2><CENTER>615 player and Digital Video</CENTER></H2>
+<P>
+<BR>
+<B>Background</B>
+<P>
+There were reports that certain CD-i titles containing MPEG assets exhibited a problem when played on the CDI615 DV player.  The symptom of the problem was a band of video noise appearing intermittently across the bottom 10% of the screen.
+<P>
+These discs can sometimes be played many times before the problem will appear, and even then the problem can be intermittent.  The same problem does not appear when these discs are played on other models of CD-i players.
+<P>
+<BR>
+<B>Analysis</B>
+<P>
+Discs exhibiting this problem were investigated by Philips Interactive Media Systems (PIMS), Industrial Activities, Hasselt, Belgium.  These investigations yielded the following:
+<P>
+<UL>
+<LI>An affected disc had MPEG streams of both PAL and NTSC formats;
+<LI>On this same disc, the MPEG stream of PAL format had no <CODE>end-of-ISO</CODE> and no <CODE>end-of-stream</CODE> signal;
+<LI>Based on the symptom and the above two factors, PIMS concluded that the parameters of the PAL stream are being used for the subsequent NTSC stream, since due to the missing <CODE>end-of-ISO</CODE> and <CODE>end-of-stream</CODE>, the decoder is not being re-initialized to NTSC window parameters.  In other words, the decoder decodes the NTSC stream while still in PAL mode.
+</UL>
+<P>
+<BR>
+<B>Conclusion</B>
+<P>
+It is the conclusion of PIMS that as a matter of practice, developers should try to avoid mixing NTSC and PAL assets in the same application.  Since this is not always possible, when such mixing of assets is necessary MPEG streams must always be properly terminated with an <CODE>end-of-ISO</CODE> and <CODE>end-of-stream</CODE>.  Indeed, MPEG streams should always be properly terminated.
+<P>
+PIMS has acknowledged that the affected discs will play correctly on other players.  While the exact reason is under investigation, it seems likely to be due to differing decoder chip sets.  Nonetheless, it is the position of PIMS that the problem in question is still an application issue, rather than the result of player hardware.
+<P>
+<BR>
+<BR>
+The information on this page is summarized from a Technical Information Bulletin issued 10/03/96 by Philips Professional Products.
+<P>
+<HR>
+<P>
+<PRE><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="proplayr.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></CENTER></PRE>
+<P>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.1 -->
+
+</BODY>
+</HTML>

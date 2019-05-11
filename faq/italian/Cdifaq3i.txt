@@ -1,0 +1,525 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 3. CD-i Schede Tecniche
+
+ 3.1 Quali sono le specifiche base del CD-i?
+ Un lettore CD-i si basa su una CPU 68000 che funzioni ad almeno 15 MHz, e'
+ equipaggiato con almeno 1 MB di RAM, un lettore CD a singola velocita',
+ audio dedicato e chip video di decodifica, almeno 8 KB di memoria non-volatile
+ di salvataggio e un sistema operativo dedicato chiamato CD-RTOS.
+ Le specifiche minime a cui ogni lettore CD-i dovrebbe attenersi sono scritte
+ nel Libro Verde, che e' descritto dettagliatamente nella sezione 1 delle FAQ.
+ Un lettore CD-i puo' avere un hardware esteso (cosi' come piu' RAM o piu' 
+ memoria non-volatile per i salvataggi), comunque e' sufficiente che le
+ richieste minime del Libro Verde siano rispettate.
+
+ 3.2 Quale CPU viene utilizzata nel CD-i?
+ Un lettore CD-i e' equipaggiato con un processore Motorola 68000, simile a
+ quelli usati dalla Apple nei Macintosh, dalla Atari per gli ST e dalla Commodore
+ per l'Amiga. Tutti i lettori CD-i Philips sono costruiti con un processore
+ 68070, che differisce dal 68000 per il sistema di controllo delle caratteristiche
+ interne. Il processore funziona a 15 MHz. Conformemente al Libro Verde, la
+ CPU 68000 dovrebbe avere almeno un percorso di dati esterno (DMA) a 16 bit,
+ ed un percorso di dati interno a 32 bit, molto simile a un processore Intel
+ 80386SX. Il CD-i standard e' piu' veloce di suddetta CPU e lo dimostra quando
+ traferisce i dati audio e video in realtime recuperandoli dal CD; l'esecuzione
+ sara' meno elevata quando piu' processi saranno in corso oppure nel caso che
+ la CPU abbia solo le caratteristiche minime. Questo avviene perche' le CPU di
+ tutti i lettori CD-i sono state costruite basandosi sulle richieste minime
+ del Libro Verde.
+
+ 3.3 Quale OS viene usato nel CD-i?
+ Il sistema operativo usato in un lettore CD-i e' chiamato CD-RTOS, che sta
+ per Compact Disc Real-Time Operating System. Si tratta di un codice compresso
+ in una ROM di almeno 512 KB con un lettore di software specifico e che nel
+ CD-i si trova nella shell di startup. CD-RTOS e' basato su una versione 2.4
+ del Microware OS-9/68K Operating System. OS-9 e' molto simile a Unix, e
+ supporta appieno operazioni multitasking e multi-utente. L'originale OS-9 fu
+ costruito nei primi anni '80 come un sistema operativo realtime per impieghi
+ in applicazioni industriali che lo trovarono molto funzionale per risparmiare
+ tempo, cosi' come con Robotics si parti' dalla produzione di automobili fino
+ alla creazione di set-top-box.
+ Comunque vi fu un leggero adattamento per il CD-i, per esempio includendo i
+ corretti descrittori di dispositivo per il drive CD, e con driver specifici
+ per CD-i per una corretta decodifica audio e video. Fin da quando OS-9 e' un
+ sistema operativo modulare con un kernel molto piccolo di circa solo 25 KB
+ solo le parti usate da uno specifico CD-i devono essere presettate in ROM.
+ Per esempio, un lettore CD-i con un floppy drive contiene moduli di drive
+ addizionali che i lettori di consumo non richiedono.
+
+ 3.4 Cos'e' un sistema real-time?
+ Un sistema true-time per un computer e' un sistema in cui la temporizzazione
+ di processi esegue una funzione critica nell'operazione. Per esempio,
+ nell'area Robotics, dove anche OS-9 e' largamente usato, esso e' di grande
+ importanza perche' differenti task vengono eseguite nell'esatto momento
+ specificato. Nel CD-i, il true-time e' molto importante, per la decodifica
+ dei dati audio e video da parte dei processori appropriati e poi l'invio di
+ questi agli appropriati output. Allo stesso tempo, il sistema deve sempre
+ assicurarsi gli input dall'utente.
+
+ 3.5 Cos'e' un settore interleaving?
+ Uno dei criteri dei progetti originali del "CD-i" era che il sistema avrebbe
+ dovuto  essere in grado di fornire informazioni audio e video in realtime dal
+ CD per poi spedirle direttamente all'appropriato decoder ICs, senza caricare
+ pesantemente la CPU. A causa di questo, un lettore CD-i non ha bisogno di
+ molta RAM o collassi energetici, fin quando tutta la decodifica audio e video
+ viene eseguita in realtime senza conservare grandi quantita' di dati in RAM
+ occupandola ma apprestandosi ad una decodifica successiva.
+
+ Per abilitare l'esecuzione simultanea di informazioni audio e video bisogna 
+ che i settori del CD siano messi di conseguenza l'uno vicino all'altro.
+
+ 3.1 - Esempio di audio interleaving e settori video
+ Il programmatore al momento di inserire i creator di un programma CD-i deve
+ essere consapevole del fatto che il CD viene letto ad una velocita' costante
+ e quindi deve calcolare il carico e la qualita' audio-video da riversare poi
+ sull'output del sistema.
+ Quando viene usata una qualita' di audio inferiore (rivedere 3.x per ulteriori
+ informazioni circa la codifica audio), i processori saranno meno occupati che
+ non usando una qualita' superiore. Per esempio, quando viene inserito un suono
+ stereo, solo meta' dei settori rimanenti possono essere usati per altre
+ informazioni come, poniamo caso, quelle video.
+
+ E' anche possibile leggere per esempio solo i settori appartenenti ad un
+ canale audio per volta, e poi muoverlo indietro all'inizio del CD e leggere i
+ settori di un altro canale audio. Fin quando la qualita' audio piu' bassa usa
+ da sola uno dei sedici settori, e un CD audio contiene 74 minuti, il tempo
+ totale per audio CD-i puo' consistere in (16 x 74 min = ) piu' di 19 ore!
+
+ A causa di questa lettura dei settori in realtime, ogni CD-i legge dati alla
+ stessa velocita' detta comunemente velocita' normale o "singola".
+ Non e' necessario creare un lettore CD-i con una velocita' del CD piu' alta,
+ fin quando i dati devono essere letti in realtime in accordo alle specifiche
+ (cosi' come la singola velocita') altrimenti audio, video e animazioni
+ sarebbero fuori sincronia nel caso vengano letti ad una velocita' piu' alta.
+ I disegnatori del sistema CD-i misero molta attenzione allo sviluppo delle
+ codifiche tecniche che abilitano l'audio ed il video di alta qualita'
+ all'interno della singola velocita' e facendone quindi risultare l'esecuzione
+ piu' lunga invece di utilizzare un drive di alta velocita' che ne avrebbe
+ ridotto il tempo di esecuzione.
+
+ 3.6 Cos'e' il settore CD-i formattato? Cosa significa formattazione 1 e 2?
+ Per CD-ROM, il Libro Giallo definisce il modo di formattare il settore 1.
+ Questo formato permette di usare 2048 byte di dati di utente in ogni settore,
+ con allegati 280 byte di informazione di correzione di errore in ogni settore.
+ Quando i dati sono letti a 75 settori per secondo (la normale velocita' CD),
+ vi risulta essere un datarate di 150 KB per secondo.
+
+ Per il CD-i non fu sempre necessario avere una correzione di errore in ogni
+ settore. Per esempio, audio e video hanno bisogno di un grado di correzione
+ molto inferiore che non i dati o i programmi. Cosi' i 280 byte usati per le
+ correzioni di errore in modo 1 hanno potuto essere aggiunti ai 2048 byte
+ di utente, risultando in 2324 byte di dati di utente per settore. Questa 
+ dimensione maggiore di settore si trasforma in un datarate di circa 170 KB
+ per secondo. Il nuovo formato di settore fu chiamato modo 2. Nel modo 2 sono
+ definite 2 formattazioni: la formattazione 1 incorpora la correzione di errore
+ originale ed e' usato per dati e programmi, e la formattazione 2 che manca
+ della correzione di errore deve essere usata per audio, video o altre
+ informazioni.
+
+ Il modo 2 ha aggiunto un subheader addizionale all'header di modo 1, che
+ contiene informazioni circa il tipo di dati contenuti in un settore
+ (audio, video, dati, etc.), il modo in cui esso e' codificato (per esempio il
+ livello di audio usato), e un'indicazione del settore utilizzato. Questo
+ subheader e' interpretato dal sistema CD-i per ogni settore, che viene allora
+ trattato dall'appropriato decoder. Entrambi le formattazioni di modo 2
+ possono essere interscambiabili, cosicche' i dati di programma e l'audio e il
+ video possono essere letti istantaneamente dal dischetto.
+ A causa del mixage di entrambe le formattazioni 1 e 2, e' impossibile dire la
+ capacita' di un CD CD-i. Quando tutti i settori sono formattati in 1, il
+ dischetto contiene 648 MB. Quando tutti i settori sono formattati in 2, la
+ capacita' e' di 744 MB.
+ Quindi la capacita' del CD CD-i sara' tra i 648 e i 744 MB.
+
+ Un dischetto per CD-i consta del solo modo a 2 settori mentre un sistema CD-i
+ deve essere in grado di leggere il modo a 1 settore su dischetti di CD-ROM,
+ e naturalmente i settori di CD-Audio che sono definiti nel Libro Rosso.
+
+ 3.7 Qual'e' la struttura di un CD per CD-i?
+ Come con tutti i CD-standard ufficiali, un CD CD-i e' diviso in tracce. Un CD
+ CD-i contiene almeno una traccia CD-i, e puo' opzionalmente contenere tracce
+ CD-Audio addizionali che possono essere riprodotte anche da un lettore CD-Audio.
+ La traccia CD-i deve essere la prima traccia sul dischetto seguita poi dalle
+ tracce CD-Audio desiderate. Un'eccezione a questa regola e' definita la
+ formattazione "CD-Ready", che viene descritta in dettaglio nella sezione 
+ "Tipi di CD".
+
+ I primi 166 settori della traccia CD-i vengono detti di messaggio, seguiti
+ dall'etichetta del CD. D'ora in poi vi sono 2250 settori di messaggio
+ addizionali. I settori di Messaggio contengono un messaggio parlato in formato
+ CD-Audio, che informa gli utenti che inserendo il CD in un lettore CD-Audio
+ possono arrecare danno all'impianto stereo nel caso il CD non venga estratto
+ immediatamente. Normalmente, un moderno lettore CD-Audio  riconoscera' il
+ CD-i come una traccia di dati e non lo eseguira', in questo caso non si potra'
+ sentire il messaggio. Questo sistema deve ritenersi compatibile solo con i
+ lettori CD-Audio piu' vecchi. L'etichetta del CD contiene alcuni campi
+ specificati che offrono parecchie informazioni circa il dischetto, cosi' come
+ il titolo, il creatore, la data di masterizzazione, ma anche il nome del file
+ di applicazione CD-i che e' stato inserito nella startup.
+ La maggior parte di questi campi non sono usati per i comuni lettori CD-i, ma
+ essi permettono per esempio al CD-i di mostrare il nome di un CD sul FTD
+ (scelta tracce audio) o nella shell del lettore.
+ Inoltre, l'Etichetta del CD contiene il Descrittore di Volume di Struttura
+ di File, che viene caricato in RAM durante la startup. Questo permette al
+ sistema di trovare un certo file su un CD CD-i in un sol colpo. Dopo questi
+ settori di messaggio e Etichette CD, il vero dato CD-i ha inizio.
+
+ 3.8 Che filesystem usa il CD-i? E' basato su ISO-9660?
+ Un vero CD CD-i usa il OS-9 filesystem, che e' incompatibile con ISO-9660.
+ Esso permette alcune informazioni addizionali circa i file conservati.
+ Questa informazione fa molto "Unix", e contiene dati circa l'esecuzione o il
+ sistema di lettura. I nomi dei file possono essere di lunghezza superiore a
+ 28 caratteri. Il sistema fornisce anche subdirectory di profondita'
+ illimitate da usare nel dischetto. I file possono anche contenere
+ caratteri maiuscoli e minuscoli, ma non possono esistere file con nomi in
+ maiuscolo e minuscolo (per esempio: quando un file "multimedia" e' presente,
+ il file "Multimedia" non puo' esistere).
+
+ Fin quando un CD CD-i usa un filesystem dedicato, non e' possibile vedere i
+ nomi dei file usando un regolare computer con un drive di CD-ROM. Tuttavia,
+ un driver per il filesystem CD-i e' gia' stato scritto per Windows 95/98 e
+ permette di accedere ad un CD CD-i nello stesso modo di un CD-ROM.
+ Ulteriori informazioni circa questo driver si possono trovare nella sezione 9
+ di questo FAQ: CD-i su altre piattaforme.
+
+ Un CD CD-i non e' ISO-9660, il Libro Verde definisce che un lettore CD-i deve
+ essere pero' in grado di leggere i CD ISO-9660, per esempio per leggere i dati
+ contenuti in un CD-ROM. E' anche possibile includere un'applicazione CD-i su
+ un disco standard ISO-9660 CD-ROM e abilitarne la riproduzione su un lettore
+ CD-i.
+ Questo e' definito nel Bridge format CD-i, come spiegato in ulteriore
+ dettaglio in sezione 5 di questo FAQ: tipi di Dischetto.
+
+ 3.9 Quanta RAM incorpora il CD-i?
+ Il Libro Verde definisce che un lettore CD-i dovrebbe avere almeno 1 MB di
+ memoria RAM. Questa memoria e' divisa in due banchi di 512 KB ognuno. Ognuno
+ di questi banchi contiene un'immagine video di CD-i di due video planes
+ (vedere Come fa' a lavorare il video del CD-i?) In base alla decodifica video
+ tipo, un'immagine prende circa 100 KB, lasciando la rimanente memoria per
+ programmi di applicazione, dati, effetti sonori, e tutti gli altri tipi di
+ informazione.
+
+ Tutti i lettori CD-i consumer contengono 1 MB di RAM da default, ma quando
+ una cartuccia Digital Video viene installata, viene aggiunta memoria
+ addizionale. Oltre ai 512 KB di RAM di decodifica, la cartuccia offre anche
+ un 1 MB di memoria extra. Quando non viene riprodotto nessun CD Digital Video
+ la RAM di decodifica puo' anche essere usata per scopi generali.
+ In un lettore CD-i equipaggiato con una cartuccia Digital Video la memoria
+ ammonta quindi a 2,5 MB di RAM e permette agli sviluppatori di software di
+ usare piu' RAM per programmi piu' complessi, audio addizionale e un frame rate
+ piu' veloce per le immagini che sono conservate in RAM e che non hanno bisogno
+ di essere caricate nuovamente dal CD.
+
+ La memoria addizionale di 1 MB di RAM contenuta nella cartuccia Digital Video
+ non e' definita nel Libro Verde, ne' nella estensione Digital Video ma fin
+ quando essa e' una parte standard di ogni Digital Video equipaggiata nel
+ lettore CD-i (da Philips e altri fabbricanti) uno sviluppatore di software
+ che progetta un'applicazione per un lettore CD-i con Digital Video puo'
+ essere piuttosto sicuro che questa memoria extra sia disponibile.
+
+ 3.10 Cos'e' il CSD?
+ Ogni lettore CD-i ha un pezzo di memoria non-volatile di immagazzinaggio
+ (NV-RAM) che deve essere di almeno 8 KB. Questa memoria rimane anche quando
+ il lettore e' spento. Sebbene non sembri molta, essa permette molte opzioni
+ di immagazzinaggio, cosi' come i punteggi dei giochi, testare i risultati,
+ nomi, settaggi di linguaggio preferiti, etc. La NV-RAM e' anche usata dal
+ sistema per conservare i CSD.
+
+ Quando un lettore CD-i e' acceso, il CD-RTOS kernel e' inizializzato. Una
+ delle routine di startup include la creazione del CSD, che rappresenta
+ il Descrittore di Stato di Configurazione. Il CSD contiene informazioni circa
+ un certo sistema CD-i, cosi' come la quantita' di NV-RAM disponibile, quale
+ tipo di dispositivo di puntamento e' collegato, la versione di CD-RTOS usata,
+ la disponibilita' di un floppy drive, se una stampante e' collegata, etc.
+ Tutte queste variabili sono conservate per tipo di dispositivo su una linea
+ del CSD, e sono definite nel Libro Verde. Ognuno di questi settaggi devicetype
+ sono chiamati DSD, che rappresenta il Descrittore di Stato di Dispositivo
+ (e non Diretto Flusso Digitale come per il Super Audio-CD!). Ogni volta che
+ il lettore e' acceso o resettato (che capita quando si espelle un CD o si esce
+ da un programma), il CSD viene ricompilato. Qualsiasi nuovo dispositivo
+ percio' sara' riconosciuto e inizializzato solo dopo un reset.
+ Non si deve mai inserire nessun dispositivo a cavo con il CD-i acceso.
+
+ Il CSD puo' essere letto da un programma di applicazione che riunisce
+ informazioni circa un certo lettore CD-i. Per esempio per caricare una versione
+ ottimizzata del programma PAL o NTSC, per offrire capacita' di immagazzinaggio
+ quando un floppy e' disponibile, per sapere la velocita' seek del drive CD,
+ per sapere la dimensione della NV-RAM o per mostrare le corrette percentuali
+ di uso nel momento in cui sta mostrando lo spazio usato da un certo file.
+ Il CSD e' conservato in un file ASCII chiamato 'csd'.
+
+ 3.11 Che tipo di CD-drive e' usato in un lettore CD-i?
+ Un lettore CD-i contiene un CD-drive che funziona a velocita' normale o
+ singola, per permettere la corretta temporizzazione quando i dati vengono
+ trasferiti in realtime. Aumentando la velocita' del drive risulterebbe una
+ richiesta extra di RAM di buffer per la conservazione di dati audio e video,
+ tutto cio' richiederebbe un lettore CD-i molto piu' complesso.
+ Inoltre, eseguendo i dati in realtime con un lettore piu' veloce vi sarebbe
+ una diminuzione della durata dell'esecuzione a confronto di un CD-i standard.
+
+ I CD CD-i sono CD normali, basati sulle definizioni fisiche come standard del
+ CD-Audio contenuto nel Libro Rosso. Non si tratta di un tipo speciale di CD ad
+ alta denista', come i GD-ROM del Sega Dreamcast, ne' viene usato uno strato
+ di riflesso colorato come accade con la Sony Playstation.
+
+ Il CD-drive in un lettore CD-i e' fisicamente in grado di leggere tutti i
+ normali tipi di CD, ma non il formato alta densita' dei DVD.
+
+ 3.12 Come fa' il CD-i a leggere un CD-audio?
+ Un lettore CD-i base dovrebbe essere in grado di decodificare lo standard PCM
+ audio come specificato per il CD-Audio, come pure uno schema di codificazione
+ di audio dedicato chiamato ADPCM, o Adaptive Delta Pulse Modulation of Code.
+ La differenza con PCM e' che l'audio non e' conservato individualmente per
+ segmento di tempo, ma cio' e' la sola differenza (Delta) dal precedente esempio
+ di registrazione. Questo permette una significativa diminuzione dello spazio
+ di immagazzinaggio usato sul CD, e quindi nel datastream letto dal dischetto.
+ Quando si dovesse usare un normale PCM CD-Audio (che occupa tutti i settori
+ succesivi), non vi sarebbe spazio per leggere dati video o animazioni senza
+ interrompere la riproduzione dell'audio.
+
+ Il CD-i fornisce 3 livelli di audio ADPCM e tutti possono essere usati in
+ mono o in stereo:
+ *CD-Audio PCM, 44.1 KHz, 16 bit, tutti i settori, piu' di 74 mintues
+ *ADPCM Livello A Stereo, 37.8 KHz, 8 bit, 1 in 2 settori, piu' di 2.4 ore
+ *ADPCM Livello A Mono, 37.8 KHz, 8 bit, 1 in 4 settori, piu' di 4.8 ore
+ *ADPCM Livello B Stereo, 37.8 KHz, 4 bit, 1 in 4 settori, piu' di 4.8 ore
+ *ADPCM Livello B Mono, 37.8 KHz, 4 bit, 1 in 8 settori, piu' di 9.6 ore
+ *ADPCM Livello C Stereo, 18.9 KHz, 4 bit, 1 in 8 settori, piu' di 9.6 ore
+ *ADPCM Livello C Mono, 18.9 KHz, 4 bit, 1 in 16 settori, piu' di 19.2 ore
+
+ Cosi', quando si usa ADPCM livello C, solo un settore ogni 16 ha bisogno
+ di essere usato per l'audio, lasciando tutti gli altri settori disponibili
+ per altri dati quali video o animazioni. E' anche possibile registrare
+ differenti canali audio in una volta, permettendone uno scambio perfetto come,
+ per esempio tra varie lingue.
+ Il dischetto puo' anche essere letto dall'inizio mentre decodifica un
+ differente canale audio, permettendo un aumento del tempo audio eseguendolo
+ piu' volte, come indicato nella tavola.
+
+ Un lettore CD-i equipaggiato con una cartuccia Digital Video e' anche in grado
+ di decodificare l'audio MPEG-1 I e II. L'MPEG e' il sistema di codificazione
+ audio piu' efficiente, fa risultare un minore spazio di immagazzinaggio dati
+ e fornisce un'alta qualita' audio nel caso di comparazione con ADPCM.
+ Questo avviene a causa del fatto che l'MPEG audio e' basato su PASC
+ (Precision Adaptive Subband Codification), la tecnica di codificazione
+ originalmente sviluppata per DCC, che usa le caratteristiche dell'orecchio
+ umano per conservare solamente quei segnali di audio che sono udibili, e
+ lasciando fuori gli altri. Il CD-i offre un modo molto flessibile di usare
+ l'audio MPEG (per esempio a varie velocita' di bit e vari livelli di qualita').
+ Il CD-i non puo' decodificare MPEG-1 livello III, o MP3 file. Uno sviluppatore
+ di software ha bisogno di essere consapevole del fatto che la decodifica MPEG
+ non e' supportata in un lettore base, e puo' essere eseguita solo da un
+ lettore equipaggiato con una cartuccia Digital Video.
+
+ 3.12.1 Il CD-i supporta il Dolby Surround, Dolby Digital o MPEG Multichannel?
+ Dolby Surround e' una tecnica di codifica analogica che permette di inserire
+ audio centrale e audio posteriore in aggiunta al normale segnale stereo di
+ sinistra e di destra. Ogni fonte audio stereo che fornisce un'alta frequenza
+ di riproduzione si puo' utilizzare per la codifica Dolby Surround.
+ Nel CD-i il Dolby Surround puo' essere usato solo nell'MPEG audio, fin quando
+ ADPCM non offre la gamma dinamica necessaria per la codificazione di canali
+ addizionali. Molti film usano il Dolby Surround, cosi' come accade ora in
+ diversi giochi come ad esempio "The Seventh Guest". Mi raccomando si deve fare
+ attenzione al fatto che il Dolby Surround e' una tecnica di matrice analogica
+ e che non aggiunge extra discreti ai canali audio.
+
+ Dolby Digital e MPEG Multichannel sono tecniche di codifica audio che
+ permettono discrete capacita' audio di circondamento e devono essere codificati
+ individualmente. Normalmente questo include due segnali anteriori, due segnali
+ posteriori, un segnale centrale ed un segnale a bassa-frequenza per i subwoofer.
+ Entrambe le tecniche sono ampiamente usate nei DVD-Video. Il CD-i non supporta
+ nessuna di esse.
+
+ 3.12.2 Il CD-i riproduce file MP3?
+ No. Il decodificatore MPEG contenuto nella cartuccia Digital Video e' solo
+ capace di decodifica l'MPEG  di I strato (usato per esempio nel precedente
+ Digital Compact Cassette - DCC) e strato II (usato per esempio nei Video-CD).
+ Esso e' incapace di decomprimere il III strato di decodifica, quello usato
+ nei popolari file MP3. Il CD-i usa normalmente una CPU (un 68000 a 15 MHz)
+ che non e' in grado di fare cio' via software, cosi' tutto questo e' da
+ ritenersi fuori questione :-(
+
+ 3.13 Come fa' il CD-i ad elaborare il segnale video?
+ L'immagine video di un lettore CD-i consiste in quattro 'planes', che sono
+ mostrati sulla cima l'uno dell'altro. Il primo plane e' usato da un cursore,
+ di dimensioni limitate a 16x16 pixel. Il secondo e terzo planes sono mostrati
+ sotto il cursore, e sono usati per immagini a pieno schermo. Il quarto plane
+ finalmente, e' usato per un singolo colore di sfondo o per MPEG video full
+ screen (o per mostrare video da una sorgente esterna). Il contenuto di ognuno
+ di essi e' mezzo planes ed e' messo in uno dei due banchi di memoria (vedere
+ "Quanta RAM incorpora il CD-i?").
+
+ Alcune parti di un'immagine su uno dei due plane centrali possono essere
+ trasparenti, cosicche' il plane basilare diventa visibile. Questo sistema puo'
+ essere usato per esempio per mostrare sottotitoli o barre di menu' su di
+ un'immagine. Entrambi i plane possono anche essere usati per dissolvenze da
+ un'immagine all'altra, usando variazioni illimitate di wipes, includendo un
+ fade professionale in un modo che e' virtualmente impossibile ottenere oggi
+ con i moderni adattatori VGA.
+
+ Ci sono varie tecniche di codifica video che possono essere usate nel CD-i:
+ *DYUV
+ DYUV o Delta YUV e' usato per la codifica di fotografie di alta qualita'
+ e altre immagini naturali. Questa si basa sul fatto che l'occhio umano e' piu'
+ sensibile per differenze di luminosita' che non per differenze di colore.
+ Percio' esso conserva un colore per una serie di pixel, e un valore di
+ luminosita' per ogni pixel. Il risultato e' un'immagine di poco piu' di 100
+ KB, che lascia abbastanza spazio in memoria per altre informazioni.
+ A causa della complessita' di un'immagine DYUV essa deve essere conservata
+ sul CD in anticipo, un'immagine DYUV non puo' essere creata ne' modificata
+ nel lettore. Il sistema DYUV e' usato molto spesso in titoli CD-i a causa
+ della sua alta qualita' e efficienza di immagazzinaggio.
+ *RGB 555
+ L'RGB 555 e' un formato dell'immagine professionale che permette ben 5 bit
+ per valore R, G e B, facendo risultare un'immagine con un massimo di piu' di
+ 32.000 colori. Fin quando RGB 555 usa entrambi i planes per mostrare
+ l'immagine non puo' essere combinato con altra grafica. Un'immagine RGB 555 e'
+ approssimativamente di 200 KB. L'immagine puo' essere modificata dal lettore
+ nel corso dell'esecuzione. RGB 555 non viene effettivamente mai usato in
+ nessun titolo CD-i a causa della sua inefficienza e limitazione di uso.
+ *CLUT
+ CLUT, o Color Look-Up Table, e' un modo semplice di codificare la grafica.
+ I colori che dovrebbero essere usati in una certa immagine sono conservati in
+ una CLUT-Table, che riduce eccezionalmente la dimensione dell'immagine perche'
+ i valori di colore rimandati all'appropriata CLUT-entry indicano per esempio
+ un valore di 24-bit di colore. Nel CD-i, un'immagine CLUT puo' essere un 8
+ bit (256 colori), 7 bit (128 colori), 4 bit (16 colori) o 3 bit (8 colori).
+ Il seguente 2 puo' essere usato in doppia risoluzione (vedere "Qual'e' la
+ risoluzione di schermo di un lettore CD-i?").
+ *Run Lenght Encoding
+ RLE o Run Lenght Encoding e' una variazione di CLUT. Conserva la CLUT-color
+ table di un'immagine e riduce la dimensione dell'immagine conservando un
+ certo 'run lenghts' di ripetizione pixel orizzontali con lo stesso colore.
+ I risultati sono normalmente immagini tra 10 e 30 KB di dimensione. Questo
+ fa' dei RLE l'ideale per le animazioni. La maggior parte delle animazioni
+ visibili su un CD-i base sono chiamate RLE.
+ *QHY
+ QHY o Quantized High Y e' una tecnica di codificazione che non e' in essenza
+ una parte delle specifiche base, ma viene descritta nel Libro Verde ed e'
+ supportata da tutti i lettori CD-i. Questa tecnica di codifica e' composta
+ dalla combinazione di DYUV e RLE, ne risulta un'alta qualita' ed un'immagine
+ molto naturale che viene mostrata dal CD-i in alta risoluzione (vedere
+ "Qual'e' la risoluzione di schermo di un lettore CD-i?"). Le dimensioni di
+ un'immagine QHY normalmente sono circa 130 KB. Fin quando il QHY consiste di
+ un componente DYUV non puo' essere modificato dal lettore. QHY viene usato
+ sui lettori CD-i per mostrare le immagini in alta risoluzione di un Photo-CD.
+
+ Oltre a queste opzioni sulle codifiche video di base un lettore equipaggiato
+ di una cartuccia Digital Video puo' mostrare MPEG in movimento o immagini fisse
+ in alta risoluzione sempre MPEG. Le tecniche di codifica MPEG sono molto piu'
+ avanzate rispetto a quelle descritte nel Case of Base di un CD-i base e non
+ possono essere visualizzate da nessun lettore che non abbia una cartuccia
+ Digital Video.
+
+ 3.13.1 Qual'e' la risoluzione di schermo di un lettore CD-i?
+ Il CD-i puo' mostrare entrambi i plane principali in risoluzione normale,
+ doppia o alta, che sono rispettivamente 384x280, 768x280 e 768x560. Alcune
+ tecniche di codifica sono limitate a una singola risoluzione, per esempio
+ un'immagine DYUV e' sempre di risoluzione standard. E' possibile, per le
+ immagini su ciascuno dei plane, essere mostrate tutte in una volta anche se
+ sono in risoluzioni diverse. Per esempio la doppia risoluzione CLUT4 della
+ barra di menu' puo' ricoprire una risoluzione standard di immagine DYUV.
+
+ La risoluzione piu' alta per un CD-i (768x560) viene usata in immagini QHY, si
+ tratta dell'ultima risoluzione che puo' essere resa visibile su una normale TV.
+ Si puo' affermare che il CD-i sfrutta la tecnologia televisiva fino ai suoi
+ margini.
+
+ 3.13.2 Il CD-i fa' differenze tra PAL e NTSC?
+ Un lettore CD-i di consumo e' normalmente dedicato per uno standard TV, cosi'
+ come PAL o NTSC. Alcuni lettori professionali hanno uno switch nel pannello
+ sul retro per selezionare lo standard TV appropriato. Un CD per CD-i e' creato
+ su uno standard TV indipendente: qualsiasi CD per CD-i puo' essere eseguito su
+ qualsiasi lettore CD-i dovunque nel mondo. Ma a causa delle caratteristiche di
+ entrambi i sistemi TV, si debbono prendere considerazioni speciali nel momento
+ in cui si sta progettando un titolo CD-i. Un televisore NTSC mostra normalmente
+ alcune linee di meno, come leggermente alcuni meno pixel su ogni linea.
+ Normalmente la schermata NTSC e' 720x480, comparata al 768x560 per PAL. Quando
+ un'immagine a pieno schermo viene mostrata su un televisore NTSC alcuni pixel
+ si troveranno fin sui bordi. Quando un'immagine NTSC e' mostrata su uno schermo
+ PAL appariranno delle piccole bande nere in basso e in alto dello schermo
+ (queste bande sono davvero piccole e non dovrebbero essere comparate alle
+ bande nere di un film letterboxed). Per questo motivo e' stata definita la
+ 'security area', la dimensione che un'immagine deve avere per essere correttamente
+ mostrata su tutti i televisori. Questa area di sicurezza e' 640x420, nessuna
+ informazione 'critica' o nera, cosi' come tasti di menu' non dovrebbero essere
+ mostrati fuori da questa area.
+
+ Le stesse limitazioni riguardo all'area di sicurezza sono applicate oggi a
+ titoli DVD-Video che vengono distribuiti nel mondo senza lockout.
+
+ 3.13.3 Il CD-i supporta lo schermo ampio come i televisori a 16:9?
+ Si, qualsiasi titolo CD-i puo' essere visto su un televisore a 16:9 usando o
+ una delle opzioni offerte dal TV stesso o dal menu CD-i.
+ Per il CD-i non e' stata definita nessuna risoluzione speciale per adattare i
+ titoli all'aspetto allargato dei 16:9, tuttavia un'immagine puo' essere
+ 'compressa' entro un normale schermo 4:3 e puo' essere 'de-compressa' nel
+ corso dell'esecuzione dal televisore.
+
+ Si deve fare attenzione al fatto che, in contrasto a qualsiasi lettore
+ DVD-Video, un lettore CD-i non ha nessuna capacita' di correggere la schermata
+ di un'immagine widescreen su un normale 4:3 riempiendo lo schermo con bande
+ nere sopra e sotto. Quando un titolo widescreen e' usato su una schermata 4:3
+ il contenuto dovrebbe anche essere conservato in questo rapporto di aspetto
+ sul CD.
+
+ Qualche lettore CD-i di consumo (come il Philips CDI-220/60 e superiori)
+ fornisce uno switch 16:9 nella shell di lettore. Questo switch registra il
+ settaggio nel CSD (Vedere cos'e' il CSD?), che permette alle applicazioni
+ video di trovare il formato del televisore collegato. Quando un tale lettore
+ e' settato in modo 16:9 la shell di startup viene mostrata in schermo allargato,
+ ma quando un CD-i si avvia, lo schermo viene commutato al modo 4:3.
+ Un'applicazione che interpreti il rapporto di aspetto settato nel CSD puo'
+ allora far tornare lo schermo indietro a 16:9. Questa entrata CSD e'
+ un'estensione che non e' specificata dal Libro Verde e ci sono solo alcune
+ applicazioni che la supportano.
+
+ 3.13.4 Come fa il Full Motion Video a lavorare su CD-i?
+ Quando viene usato il termine FMV, o Full Motion Video, spesso rimanda alla
+ schermata di MPEG Digital Video. Un lettore CD-i e' capace di varie opzioni
+ con animazioni a pieno schermo o movimenti parziali di schermo video, questa
+ capacita' puo' essere estesa con una cartuccia Digital Video. In alcuni lettori,
+ questa cartuccia e' gia' inserita in fabbrica. Digital Video e' considerata
+ un'estensione necessaria per un CD-i ma nel Libro Verde al capitolo 9 viene
+ descritta come un'opzione.
+
+ CD-i Digital Video e' basato sullo standard MPEG-1, che ora e' largamente
+ usato in un'ampia varieta' di applicazioni ma inizialmente fu sviluppato solo
+ per il CD-i. Questo standard permette al CD-i di mostrare filmati in Full
+ Screen video (384x280) e di spostare immagini in 24, 25 o 30 fotogrammi per
+ secondo. Il video non e' interlacciato, come nel MPEG-2 che viene usato nei
+ DVD-Video.
+ La qualita' video e' approssimativamente paragonabile ad una VHS standard.
+ Le caratteristiche audio del CD-i standard ADPCM possono essere usate in
+ congiunzione con MPEG video, ma questo e' molto improbabile fin quando la
+ cartuccia Digital Video fornisce anche alcuni schemi di decodifica di audio
+ extra basati su strato MPEG-1 I e II. Oltre all'alta qualita' CD-Audio MPEG
+ c'e' da considerare che l'audio prende solo una frazione dello spazio di
+ immagazzinaggio sul CD e l'altro puo' essere usato per tracce CD-Audio.
+
+ MPEG-1 video e' basato su una tecnica di codificazione chiamata DCT,
+ Discrete Coseno Trasformer. La base per questa codificazione e' la conoscenza
+ che la successiva immagine in un video normalmente non differisce molto l'una
+ dall'altra.
+ Invece di codificare e conservare ogni immagine dal suo proprio MPEG conserva
+ solo le differenze tra immagini. Ci sono tre differenti tipi di immagini MPEG:
+ I o fotogrammi Intra che consistono di una piena immagine che puo' essere
+ mostrata senza informazioni delle altre immagini - questo e' usato per
+ mostrare immagini nel momento in cui sta eseguendo un avanzamento veloce
+ avanti o indietro, P o fotogrammi Progressivi che hanno bisogno di informazioni
+ dalle precedenti immagini e B o fotogrammi Bi-direzionali che hanno bisogno
+ di informazioni sia da immagini precedenti che future per costruirne un'altra.
+ Come si puo' vedere, le immagini non sono conservate in ordine cronologico sul
+ CD: il decodificatore MPEG si prende cura di decodificare le informazioni e
+ di mettere tutte le immagini nel corretto ordine schermata per schermata.
+
+ Il Digital Video e' mostrato sullo sfondo plane (vedere Come lavora il video
+ del CD-i?), e puo' essere ricoperto con immagini dei codici video del CD-i in
+ Case of Base, cosi' come CLUT o RLE.
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.
+

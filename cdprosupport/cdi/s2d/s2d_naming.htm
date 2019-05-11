@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+   <TITLE>script2disc naming conflicts</TITLE>
+</HEAD>
+<BODY  BGCOLOR="#ffffff">
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+
+<CENTER><H2>script2disc naming conflicts</H2></CENTER>
+<P>
+
+script2disc can run into problems if unconventional naming practices are employed.  Potential problems include:
+<UL>
+<LI><B>Naming files/folders the same as OS9 device drivers</B><BR>
+Do not name a folder/directory "h1", for instance, whether on OS9, Sun, Mac, or PC platforms.  Names like these confuse
+script2disc and will often cause fatal errors.<BR><BR>
+<LI><B>Using the same name for different scripts/menus/assets</B><BR>
+Every file should have its own unique name, or bad things will happen.  So, even though 2 files are in different directories, do not name them the same since script2disc will ignore your hard drive directory structure when it assembles the disc image.<BR><BR>
+<LI><B>Improper aliasing</B><BR>
+Other errors can result from not properly aliasing hard drives, particularly in respect to digital video.<BR><BR> 
+<B>DV file aliasing in Script2disc</B><BR>
+<OL>
+<LI>In order to play digital video in<I>simulation</I> in Scriptwriter, you must green your mpeg file(s) and build it into a disc image.  Burning a disc from that image is optional.
+<LI>In the <CODE>cdi_dvpl</CODE> call in your script, you must call the file <I>off the cd (or disc image)</I> if you want to play dv in simulation. This means the path to the rtf file will be something like: <CODE>/cd/GREEN/stuff.rtf</CODE>.  If you are bypassing simulation (not recommended), this restriction does not apply.
+<LI>In order to build the title with script2disc, the rtf (or mmd,mpg) file must be <I>on the hard drive.</I> If you only have the rtf file in a green directory on a cd, you will need to use <I>coprtf</I> to copy it to a hard drive.   Non-greened files (mmd,mpg) can be copied from cd to hard drive in the normal manner.
+<LI>If you are using an rtf file in your title build, the script calling it must reference it off the <I>cd</I> in your script.  Script2disc assumes that anytime cdi_dvpl calls a file off of the cd, it is a <I>greened</I> file.   Remember, though, that although the script calls the file off the cd, it actually <B>must</B> be on the hard drive.  The aliasing syntax (Sun, OS9 platforms) or Find/Replace option(Mac,PC) in script2disc takes care of resolving this.  For example, if cdi_dvpl calls <CODE>/cd/GREEN/stuff.rtf</CODE> in your script, and the file is actually on <CODE>HD:Assets:Green:</CODE>, you would need to alias <CODE>/cd/GREEN/</CODE>to <CODE>HD:Assets:Green:</CODE>.   If you try to do a build with an rtf file, and your script's cdi_dvpl calls it off the hard drive, you will get an error like "Not a valid ISO stream".  This is because it has already been greened, and script2disc is expecting an ungreened file.
+<LI>If you are using an mmd or mpg (i.e. <I>not</I> &nbsp;greened) file in your title build, you <I>cannot</I> &nbsp;reference it off the cd in your script. If cdi_dvpl calls a file from anything other than the cd, it assumes the file is <I>not</I>  &nbsp;greened.  Therefore, the cdi_dvpl should call your file off the hard drive, e.g. <CODE>/h0/GREEN/stuff.mmd</CODE>.  Trying to build a title with an ungreened file referenced to the cd will give you an error like "Not a realtime file".</OL><BR><BR>
+
+<B><FONT COLOR="663333">Other aliasing considerations:</FONT></B><BR>
+<B>The trailing slash ....</B><BR>
+Be sure to include the trailing "/" (or ":" on a Mac, or "\" on a PC) for both sides of the aliasing equivalence.  For example, you should alias "<CODE>/cd/GREEN/</CODE>"  to "<CODE>/h0/GREEN/</CODE>", and not "<CODE>/h0/GREEN</CODE>".   Or, in the case of Macs, "<CODE>HD:Assets:Green:</CODE>", and not "<CODE>HD:Assets:Green</CODE>".
+
+<P>
+<B>Case-sensitive aliases...</B><BR>
+Unlike MediaMogul, the path in a script2disc alias is <B>case sensitive</B>.  This is most important when it comes to <I>/h0</I> itself, but also applies to aliases made of other directories.   The default alias in script2disc is <B>/h0</B> to the <B>MediaMogul directory</B>. &nbsp; To use the default aliasing scheme, do <B>not</B> use <CODE>/H0</CODE> instead of <CODE>/h0</CODE> in any menu or script.  Or, if you do, you'll need to alias <CODE>/H0</CODE> to the same MediaMogul directory as   <CODE>/h0</CODE> in script2disc.&nbsp; script2disc will not include in a disc image all scripts, menus, or assets unless it can resolve aliases properly.  
+
+<P>
+<B>Don't alias the root...</B><BR>
+Although script2disc should not have a problem with this, CDi Playback does not like to alias an entire drive, but rather a folder/directory on the drive.  Thus <I>simulation</I> would not work.
+
+</UL>
+
+<P><HR></P>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="s2d.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+
+
+

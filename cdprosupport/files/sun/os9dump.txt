@@ -1,0 +1,30 @@
+                         os9dump for the Sun
+
+
+
+os9dump is substantially the same utility as dump on an OS-9 computer.
+
+It presents a raw hexadecimal/ASCII display of any file specified. It works
+
+equally well with OS-9 and Sun files of any type.
+
+
+
+Syntax and command help can be obtained by typing:
+
+
+
+                os9dump -\?
+
+
+
+
+
+See the "dump" utility in the OS-9 Technical manuals for further
+
+details.
+
+
+
+
+

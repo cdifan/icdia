@@ -1,0 +1,26 @@
+-tnx
+
+* This file(mm_customize) is executed at startup.
+
+* Add customization to this file(e.g. load.mac, startnet, etc.).
+
+
+
+* Following lines load OS-9 h3 device descriptor.  Make sure
+
+*    the file "h3" is located in the /h0/CMDS/BOOTOBJS 
+
+*    directory.  The lines that begin with "echo" are
+
+*    not required.
+
+echo
+
+echo loading h3 device descriptor...
+
+echo
+
+load /h0/CMDS/BOOTOBJS/h3
+
+iniz h3
+

@@ -1,0 +1,846 @@
+<HTML>
+
+<!-- Begin KennisOnline.com header -->
+<head>
+<title>The New International CD-i Association</title>
+<meta name="Title" content="The New International CD-i Association">
+<meta name="KeyWords" content="CD-i, CDi, cdi, CD-I, Compact Disc Interactive, cd-interactive, os-9, os9, multimedia, cdilist, dvd, web-dvd, dvd-i">
+<meta name="Robots" content="index">
+<meta name="Author" content="Jorg Kennis">
+
+<style type="text/css"><!--
+A:link {color:#BDCFEB} 
+A:visited {color:#BDCFEB} 
+A:active {color:#BDCFEB}
+A:hover {color:#CCCCFF}
+--></style>
+</head>
+
+<BODY BGCOLOR="#6583C3" TEXT="#ffffff" LINK="CCCCFF" VLINK="CCCCFF" BACKGROUND="/graphics/marmer_blauw.jpg">
+<P><CENTER>
+<IMG SRC="/graphics/newicdia.gif" width=600 height=110>
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com header -->
+
+
+<!-- Begin hoofd-tabel -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+
+<tr>
+<td bgcolor="#0F90EB" align=right valign=top width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial">        
+&nbsp;
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //
+Months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var ObjDatum = new Date();
+document.write(Months[ObjDatum.getMonth()],' ',ObjDatum.getDate(),'&nbsp;');
+// -->
+</SCRIPT>
+</FONT>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" width="100%">
+<FONT SIZE=-1 color="#ffffff" face="Arial"><BR>
+<B>OS-9 - Error numbers</B><BR><BR>
+
+<TABLE CELLSPACING=0 CELLPADDING=1 BORDER=1>
+
+<TR>
+	<TH>Error Code</TH>
+	<TH WIDTH=150>Description</TH>
+	<TH>Explanation</TH>
+</TR>
+
+<TR>
+	<TD>000:001</TD>
+	<TD><BR></TD>
+	<TD>Process has aborted </TD>
+</TR>
+<TR>
+	<TD>000:002 </TD>
+	<TD>S$Abort signal </TD>
+	<TD>Keyboard quit (^E) typed </TD>
+</TR>
+<TR>
+	<TD>000:003 </TD>
+	<TD>S$lntrptsignal </TD>
+	<TD>Keyboard interrupt (^C) typed </TD>
+</TR>
+<TR>
+	<TD>000:004 </TD>
+	<TD>S$HangUp signal </TD>
+	<TD>Modem hangup </TD>
+</TR>
+<TR>
+	<TD>000:064 </TD>
+	<TD>E$IIIFnc </TD>
+	<TD>Illegal function code (usually math) </TD>
+</TR>
+<TR>
+	<TD>000:065</TD>
+	<TD>E$FmtErr </TD>
+	<TD>ASCII to numeric format conversion error(math) </TD>
+</TR>
+<TR>
+	<TD>000:066 </TD>
+	<TD>E$NotNum </TD>
+	<TD>Number not found (math) </TD>
+</TR>
+<TR>
+	<TD>000:067 </TD>
+	<TD>E$IIIArg </TD>
+	<TD>Illegal argument (usually math) </TD>
+</TR>
+<TR>
+	<TD>000:102</TD>
+	<TD>E$BusErr </TD>
+	<TD>A bus trap error occurred </TD>
+</TR>
+<TR>
+	<TD>000:103 </TD>
+	<TD>E$AdrErr </TD>
+	<TD>An address trap error occurred </TD>
+</TR>
+<TR>
+	<TD>000:104 </TD>
+	<TD>E$llllns </TD>
+	<TD>An illegal instruction exception occurred </TD>
+</TR>
+<TR>
+	<TD>000:105 </TD>
+	<TD>E$ZerDiv </TD>
+	<TD>An integer zero divide exception occurred </TD>
+</TR>
+<TR>
+	<TD>000:106 </TD>
+	<TD>E$Chk </TD>
+	<TD>A chk or chk2 instruction trap occurred </TD>
+</TR>
+<TR>
+	<TD>000:107 </TD>
+	<TD>E$TrapV </TD>
+	<TD>A trapv, trapcc, or ftrapcc instruction occurred </TD>
+</TR>
+<TR>
+	<TD>000:108 </TD>
+	<TD>E$Violat </TD>
+	<TD>A privileged instruction violation occurred </TD>
+</TR>
+<TR>
+	<TD>000:109 </TD>
+	<TD>E$Trace </TD>
+	<TD>An uninitialized Trace exception occurred. </TD>
+</TR>
+<TR>
+	<TD>000:110 </TD>
+	<TD>E$1010 </TD>
+	<TD>A 1010 instruction exception occurred </TD>
+</TR>
+<TR>
+	<TD>000:111 </TD>
+	<TD>E$1111 </TD>
+	<TD>A 1111 instruction exception occurred </TD>
+</TR>
+<TR>
+	<TD>000:112 </TD>
+	<TD>E$Resrvd </TD>
+	<TD>An invalid exception occurred </TD>
+</TR>
+<TR>
+	<TD>000:113 </TD>
+	<TD><BR></TD>
+	<TD>Coprocessor protocol violation </TD>
+</TR>
+<TR>
+	<TD>000:114 </TD>
+	<TD><BR></TD>
+	<TD>System stack frame format error </TD>
+</TR>
+<TR>
+	<TD>000:115 </TD>
+	<TD><BR></TD>
+	<TD>An uninitialized interrupt occurred </TD>
+</TR>
+<TR>
+	<TD>000:116 - 000:123 </TD>
+	<TD><BR></TD>
+	<TD>An invalid exception occurred </TD>
+</TR>
+<TR>
+	<TD>000:124 </TD>
+	<TD><BR></TD>
+	<TD>Spurious interrupt occurred </TD>
+</TR>
+<TR>
+	<TD>000:133 </TD>
+	<TD>E$Trap </TD>
+	<TD>An uninitialized user TRAP (1-15) was executed </TD>
+</TR>
+<TR>
+	<TD>000:148 </TD>
+	<TD>E$FPUnordC </TD>
+	<TD>Floating point unordered condition </TD>
+</TR>
+<TR>
+	<TD>000:149 </TD>
+	<TD>E$FPlnxact </TD>
+	<TD>Floating point inexact result </TD>
+</TR>
+<TR>
+	<TD>000:150 </TD>
+	<TD>E$FPDivZer </TD>
+	<TD>Floating point divide by zero </TD>
+</TR>
+<TR>
+	<TD>000:151 </TD>
+	<TD>E$FPUndrFI </TD>
+	<TD>Floating point underflow </TD>
+</TR>
+<TR>
+	<TD>000:152 </TD>
+	<TD>E$FPOprErr </TD>
+	<TD>Floating point operand error </TD>
+</TR>
+<TR>
+	<TD>000:153 </TD>
+	<TD>E$FPOverFI </TD>
+	<TD>Floating point overflow</TD>
+</TR>
+<TR>
+	<TD>000:154 </TD>
+	<TD>E$FPNotNum </TD>
+	<TD>Floating point not a number </TD>
+</TR>
+<TR>
+	<TD>000:155 </TD>
+	<TD>E$FPUnData </TD>
+	<TD>Floating point unimplemented data type </TD>
+</TR>
+<TR>
+	<TD>000:156 </TD>
+	<TD>  </TD>
+	<TD>PMMU configuration exception </TD>
+</TR>
+<TR>
+	<TD>000:157 </TD>
+	<TD>  </TD>
+	<TD>PMMU illegal operation exception </TD>
+</TR>
+<TR>
+	<TD>000:158 </TD>
+	<TD>  </TD>
+	<TD>PMMU access level violation exception </TD>
+</TR>
+<TR>
+	<TD>000:159 - 000:163 </TD>
+	<TD><BR></TD>
+	<TD>An invalid exception occurred </TD>
+</TR>
+<TR>
+	<TD>000:164 </TD>
+	<TD>E$Permit </TD>
+	<TD>No permission </TD>
+</TR>
+<TR>
+	<TD>000:165 </TD>
+	<TD>E$Differ </TD>
+	<TD>The arguments to F$ChkNam do not match </TD>
+</TR>
+<TR>
+	<TD>000:166 </TD>
+	<TD>E$StkOvf </TD>
+	<TD>System stack overflow </TD>
+</TR>
+<TR>
+	<TD>000:167 </TD>
+	<TD>E$EvntlD </TD>
+	<TD>Invalid/illegal event ID no. specified </TD>
+</TR>
+<TR>
+	<TD>000:168 </TD>
+	<TD>E$EvNF </TD>
+	<TD>Event name not found </TD>
+</TR>
+<TR>
+	<TD>000:169 </TD>
+	<TD>E$EvBusy </TD>
+	<TD>The event is busy and cannot be deleted </TD>
+</TR>
+<TR>
+	<TD>000:170 </TD>
+	<TD>E$EvParm </TD>
+	<TD>Impossible event parameters supplied </TD>
+</TR>
+<TR>
+	<TD>000:171 </TD>
+	<TD>E$Damage </TD>
+	<TD>System data structures have been damaged</TD>
+</TR>
+<TR>
+	<TD>000:172 </TD>
+	<TD>E$BadRev </TD>
+	<TD>Module revision is not compatible with operating system </TD>
+</TR>
+<TR>
+	<TD>000:173 </TD>
+	<TD>E$PthLost </TD>
+	<TD>Path was lost because network node was down</TD>
+</TR>
+<TR>
+	<TD>000:174 </TD>
+	<TD>E$BadPart </TD>
+	<TD>Bad (disk) partition data, or no active partition</TD>
+</TR>
+<TR>
+	<TD>000:175 </TD>
+	<TD>E$Hardware </TD>
+	<TD>Hardware damage has been detected </TD>
+</TR>
+<TR>
+	<TD>000:176 </TD>
+	<TD>E$SectSize </TD>
+	<TD>Invalid sector size</TD>
+</TR>
+<TR>
+	<TD>000:200 </TD>
+	<TD>E$PthFul </TD>
+	<TD>The user's (or system) path table is full </TD>
+</TR>
+<TR>
+	<TD>000:201 </TD>
+	<TD>E$BPNum </TD>
+	<TD>Bad path number </TD>
+</TR>
+<TR>
+	<TD>000:202 </TD>
+	<TD>E$Poll </TD>
+	<TD>The system IRQ table is full </TD>
+</TR>
+<TR>
+	<TD>000:203 </TD>
+	<TD>E$BMode </TD>
+	<TD>Bad I/O mode</TD>
+</TR>
+<TR>
+	<TD>000:204 </TD>
+	<TD>E$DevOvf </TD>
+	<TD>The system's device table is full</TD>
+</TR>
+<TR>
+	<TD>000:205 </TD>
+	<TD>E$BMID </TD>
+	<TD>Bad module ID </TD>
+</TR>
+<TR>
+	<TD>000:206 </TD>
+	<TD>E$DirFul </TD>
+	<TD>The module directory is full</TD>
+</TR>
+<TR>
+	<TD>000:207 </TD>
+	<TD>E$MemFul </TD>
+	<TD>Memory full </TD>
+</TR>
+<TR>
+	<TD>000:208 </TD>
+	<TD>E$UnkSvc </TD>
+	<TD>Unknown service code </TD>
+</TR>
+<TR>
+	<TD>000:209 </TD>
+	<TD>E$ModBsy </TD>
+	<TD>The module is busy </TD>
+</TR>
+<TR>
+	<TD>000:210 </TD>
+	<TD>E$BPAddr </TD>
+	<TD>Bad page address </TD>
+</TR>
+<TR>
+	<TD>000:211 </TD>
+	<TD>E$EOF </TD>
+	<TD>The end of file has been reached</TD>
+</TR>
+<TR>
+	<TD>000:212 </TD>
+	<TD>E$VctBsy </TD>
+	<TD>IRQ vector is busy</TD>
+</TR>
+<TR>
+	<TD>000:213 </TD>
+	<TD>E$NES </TD>
+	<TD>Non-existing segment</TD>
+</TR>
+<TR>
+	<TD>000:214 </TD>
+	<TD>E$FNA </TD>
+	<TD>File not accessible</TD>
+</TR>
+<TR>
+	<TD>000:215 </TD>
+	<TD>E$BPNam </TD>
+	<TD>Bad pathlist specified </TD>
+</TR>
+<TR>
+	<TD>000:216 </TD>
+	<TD>E$PNNF </TD>
+	<TD>File not found </TD>
+</TR>
+<TR>
+	<TD>000:217 </TD>
+	<TD>E$SLF </TD>
+	<TD>File segment list is full </TD>
+</TR>
+<TR>
+	<TD>000:218 </TD>
+	<TD>E$CEF </TD>
+	<TD>Tried to create a file that already exists </TD>
+</TR>
+<TR>
+	<TD>000:219 </TD>
+	<TD>E$IBA </TD>
+	<TD>Illegal memory block specified </TD>
+</TR>
+<TR>
+	<TD>000:220 </TD>
+	<TD>E$HangUp </TD>
+	<TD>Telephone (modem) connection terminated </TD>
+</TR>
+<TR>
+	<TD>000:221 </TD>
+	<TD>E$MNF </TD>
+	<TD>Module not found </TD>
+</TR>
+<TR>
+	<TD>000:222 </TD>
+	<TD>E$NoClk </TD>
+	<TD>No system clock</TD>
+</TR>
+<TR>
+	<TD>000:223 </TD>
+	<TD>E$DelSP </TD>
+	<TD>Deleting stack memory lllegal process</TD>
+</TR>
+<TR>
+	<TD>000:224 </TD>
+	<TD>E$IPrclD </TD>
+	<TD>Illegal Process ID </TD>
+</TR>
+<TR>
+	<TD>000:225 </TD>
+	<TD>E$Param </TD>
+	<TD>Bad parameter </TD>
+</TR>
+<TR>
+	<TD>000:226 </TD>
+	<TD>E$NoChld </TD>
+	<TD>No children</TD>
+</TR>
+<TR>
+	<TD>000:227 </TD>
+	<TD>E$ITrap </TD>
+	<TD>Invalid trap number </TD>
+</TR>
+<TR>
+	<TD>000:228 </TD>
+	<TD>E$PrcAbt </TD>
+	<TD>The process has been aborted </TD>
+</TR>
+<TR>
+	<TD>000:229 </TD>
+	<TD>E$PrcFul </TD>
+	<TD>Too many active processes </TD>
+</TR>
+<TR>
+	<TD>000:230 </TD>
+	<TD>E$IForkP </TD>
+	<TD>Illegal fork parameter (not currently used)</TD>
+</TR>
+<TR>
+	<TD>000:231 </TD>
+	<TD>E$KwnMod </TD>
+	<TD>Known module</TD>
+</TR>
+<TR>
+	<TD>000:232 </TD>
+	<TD>E$BMCRC </TD>
+	<TD>Bad module CRC </TD>
+</TR>
+<TR>
+	<TD>000:233 </TD>
+	<TD>E$Signal </TD>
+	<TD>Signal error (not currently used)</TD>
+</TR>
+<TR>
+	<TD>000:234 </TD>
+	<TD>E$NEMod </TD>
+	<TD>Non executable module </TD>
+</TR>
+<TR>
+	<TD>000:235 </TD>
+	<TD>E$BNam </TD>
+	<TD>Bad name </TD>
+</TR>
+<TR>
+	<TD>000:236 </TD>
+	<TD>E$BMHP </TD>
+	<TD>Bad module header parity </TD>
+</TR>
+<TR>
+	<TD>000:237 </TD>
+	<TD>E$NoRAM </TD>
+	<TD>No RAM available </TD>
+</TR>
+<TR>
+	<TD>000:238 </TD>
+	<TD>E$DNE </TD>
+	<TD>The directory is not empty </TD>
+</TR>
+<TR>
+	<TD>000:239 </TD>
+	<TD>E$NoTask </TD>
+	<TD>No available task number </TD>
+</TR>
+<TR>
+	<TD>000:240 </TD>
+	<TD>E$Unit </TD>
+	<TD>Illegal unit (drive) number </TD>
+</TR>
+<TR>
+	<TD>000:241 </TD>
+	<TD>E$Sect </TD>
+	<TD>Bad disk sector number </TD>
+</TR>
+<TR>
+	<TD>000:242 </TD>
+	<TD>E$WP </TD>
+	<TD>Media is write protected </TD>
+</TR>
+<TR>
+	<TD>000:243 </TD>
+	<TD>E$CRC </TD>
+	<TD>Bad module cyclic redundancy check value </TD>
+</TR>
+<TR>
+	<TD>000:244 </TD>
+	<TD>E$Read </TD>
+	<TD>Read error </TD>
+</TR>
+<TR>
+	<TD>000:245 </TD>
+	<TD>E$Write </TD>
+	<TD>Write error </TD>
+</TR>
+<TR>
+	<TD>000:246 </TD>
+	<TD>E$NotRdy </TD>
+	<TD>Device not ready </TD>
+</TR>
+<TR>
+	<TD>000:247 </TD>
+	<TD>E$Seek </TD>
+	<TD>Seek error </TD>
+</TR>
+<TR>
+	<TD>000:248 </TD>
+	<TD>E$Full</TD>
+	<TD>Media full </TD>
+</TR>
+<TR>
+	<TD>000:249 </TD>
+	<TD>E$BTyp </TD>
+	<TD>Bad type (incompatible media) </TD>
+</TR>
+<TR>
+	<TD>000:250 </TD>
+	<TD>E$DevBsy </TD>
+	<TD>Device busy </TD>
+</TR>
+<TR>
+	<TD>000:251 </TD>
+	<TD>E$DIDC </TD>
+	<TD>Disk ID change </TD>
+</TR>
+<TR>
+	<TD>000:252 </TD>
+	<TD>E$Lock </TD>
+	<TD>Record is busy </TD>
+</TR>
+<TR>
+	<TD>000:253 </TD>
+	<TD>E$Share </TD>
+	<TD>Non-sharable file/device is busy </TD>
+</TR>
+<TR>
+	<TD>000:254 </TD>
+	<TD>E$DeadLk </TD>
+	<TD>I/O deadlock error </TD>
+</TR>
+<TR>
+	<TD>000:255 </TD>
+	<TD>E$Format </TD>
+	<TD>Device is format protected </TD>
+</TR>
+<TR>
+	<TD>001:000 </TD>
+	<TD>ERANGE </TD>
+	<TD>ANSI C number out of range</TD>
+</TR>
+<TR>
+	<TD>006:000 </TD>
+	<TD>E$IIIPrm </TD>
+	<TD>Illegal parameter </TD>
+</TR>
+<TR>
+	<TD>006:001 </TD>
+	<TD>E$ldFull </TD>
+	<TD>Identifier (ID) table full </TD>
+</TR>
+<TR>
+	<TD>006:002 </TD>
+	<TD>E$BadSiz </TD>
+	<TD>Bad size error </TD>
+</TR>
+<TR>
+	<TD>006:003 </TD>
+	<TD>E$RgFull </TD>
+	<TD>Region definition full (overflow)</TD>
+</TR>
+<TR>
+	<TD>006:004 </TD>
+	<TD>E$UnlD </TD>
+	<TD>Unallocated identifer number </TD>
+</TR>
+<TR>
+	<TD>006:005 </TD>
+	<TD>E$NullRg </TD>
+	<TD>Null region</TD>
+</TR>
+<TR>
+	<TD>006:006</TD>
+	<TD>E$BadMod </TD>
+	<TD>Bad drawmap/pattern mode </TD>
+</TR>
+<TR>
+	<TD>006:007 </TD>
+	<TD>E$NoFont </TD>
+	<TD>No active font </TD>
+</TR>
+<TR>
+	<TD>006:008 </TD>
+	<TD>E$NoDM </TD>
+	<TD>No drawmap </TD>
+</TR>
+<TR>
+	<TD>006:009 </TD>
+	<TD>E$NoPlay </TD>
+	<TD>No audio play in progress </TD>
+</TR>
+<TR>
+	<TD>006:010 </TD>
+	<TD>E$Abort </TD>
+	<TD>Asynchronous operation aborted </TD>
+</TR>
+<TR>
+	<TD>006:011 </TD>
+	<TD>E$aFull </TD>
+	<TD>Audio queue is full </TD>
+</TR>
+<TR>
+	<TD>006:012 </TD>
+	<TD>E$Busy </TD>
+	<TD>Audio processor is busy</TD>
+</TR>
+<TR>
+	<TD>007:001 </TD>
+	<TD>EWOULDBLOCK </TD>
+	<TD>I/O operation would block </TD>
+</TR>
+<TR>
+	<TD>007:002 </TD>
+	<TD>EINPROGRESS </TD>
+	<TD>I/O operation now in progress</TD>
+</TR>
+<TR>
+	<TD>007:003</TD>
+	<TD>EALREADY </TD>
+	<TD>Operation already in progress </TD>
+</TR>
+<TR>
+	<TD>007:004 </TD>
+	<TD>EDESTADDRREQ </TD>
+	<TD>Destination address required </TD>
+</TR>
+<TR>
+	<TD>007:005 </TD>
+	<TD>EMSGSIZE </TD>
+	<TD>Message too long</TD>
+</TR>
+<TR>
+	<TD>007:006</TD>
+	<TD>EPROTOTYPE </TD>
+	<TD>Protocol wrong type for socket </TD>
+</TR>
+<TR>
+	<TD>007:007 </TD>
+	<TD>ENOPROTOOPT </TD>
+	<TD>Bad protocol option </TD>
+</TR>
+<TR>
+	<TD>007:008 </TD>
+	<TD>EPROTONOSUPPORT </TD>
+	<TD>Protocol not supported </TD>
+</TR>
+<TR>
+	<TD>007:009 </TD>
+	<TD>ESOCKNOSUPPORT </TD>
+	<TD>Socket type not supported </TD>
+</TR>
+<TR>
+	<TD>007:010 </TD>
+	<TD>EOPNOTSUPP </TD>
+	<TD>Operation unsupported on socket</TD>
+</TR>
+<TR>
+	<TD>007:011 </TD>
+	<TD>EPFNOSUPPORT </TD>
+	<TD>Protocol family not supported </TD>
+</TR>
+<TR>
+	<TD>007:012 </TD>
+	<TD>EAFNOSUPPORT </TD>
+	<TD>Addr family unsupported by protocol </TD>
+</TR>
+<TR>
+	<TD>007:013 </TD>
+	<TD>EADDRINUSE </TD>
+	<TD>Address already in use </TD>
+</TR>
+<TR>
+	<TD>007:014 </TD>
+	<TD>EADDRNOTAVAIL </TD>
+	<TD>Cannot assign requested address </TD>
+</TR>
+<TR>
+	<TD>007:015 </TD>
+	<TD>ENETDOWN </TD>
+	<TD>Network is down</TD>
+</TR>
+<TR>
+	<TD>007:016 </TD>
+	<TD>ENETUNREACH </TD>
+	<TD>Network is unreachable </TD>
+</TR>
+<TR>
+	<TD>007:017 </TD>
+	<TD>ENETRESET </TD>
+	<TD>Network lost connection on reset </TD>
+</TR>
+<TR>
+	<TD>007:018 </TD>
+	<TD>ECONNABORTED </TD>
+	<TD>Software caused connection abort </TD>
+</TR>
+<TR>
+	<TD>007:019 </TD>
+	<TD>ECONNRESET </TD>
+	<TD>Connection reset by peer </TD>
+</TR>
+<TR>
+	<TD>007:020 </TD>
+	<TD>ENOBUFS </TD>
+	<TD>No buffer space available </TD>
+</TR>
+<TR>
+	<TD>007:021 </TD>
+	<TD>EISCONN </TD>
+	<TD>Socket is already connected </TD>
+</TR>
+<TR>
+	<TD>007:022 </TD>
+	<TD>ENOTCONN </TD>
+	<TD>Socket is not connected </TD>
+</TR>
+<TR>
+	<TD>007:023 </TD>
+	<TD>ESHUTDOWN </TD>
+	<TD>Cannot send after socket shutdown </TD>
+</TR>
+<TR>
+	<TD>007:024 </TD>
+	<TD>ETOOMANYREFS </TD>
+	<TD>Too many references </TD>
+</TR>
+<TR>
+	<TD>007:025 </TD>
+	<TD>ETIMEDOUT </TD>
+	<TD>Connection timed out </TD>
+</TR>
+<TR>
+	<TD>007:026 </TD>
+	<TD>ECONNREFUSED </TD>
+	<TD>Connection refused by target </TD>
+</TR>
+<TR>
+	<TD>007:027</TD>
+	<TD>EBUFTOOSMALL </TD>
+	<TD>Buffer too small for F$MBuf operation </TD>
+</TR>
+<TR>
+	<TD>007:028 </TD>
+	<TD>ESMODEXISTS </TD>
+	<TD>Socket module already attached </TD>
+</TR>
+<TR>
+	<TD>007:029 </TD>
+	<TD>ENOTSOCK </TD>
+	<TD>Path is not a socket </TD>
+</TR>
+</TABLE>
+
+
+</FONT>
+</td>
+</tr>
+
+</table>
+</FONT>
+</center>
+</P>
+<!-- Einde hoofd-tabel -->
+
+
+<!-- Begin KennisOnline.com footer -->
+<P>
+<CENTER>
+<table border="0" cellspacing="0" width="600">
+<tr>
+<td bgcolor="#005B9A" width="100%">
+<CENTER><font face="Arial" SIZE=-1><A HREF="#" onClick="history.back()">Back to previous page</A> | <A HREF="/index.html">Main screen</A> | <A HREF="/contact/index.html">E-mail & Contact</A></FONT></CENTER>
+</td>
+</tr>
+</table>
+
+<font face="Arial" SIZE=-2 color=000000>
+<A HREF="http://www.cdinteractive.co.uk"><IMG SRC="/graphics/cdint.gif" width=240 height=15 vspace=4 border=0></A><BR>
+&copy Copyright 2005 CDinteractive.co.uk and ICDIA<BR>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+<!-- //verberg script voor loerders die javascript niet snappen
+document.write("Last update: " + document.lastModified)
+//stop met verbergen-->
+</SCRIPT>
+</FONT>
+
+</CENTER>
+</P>
+<!-- Einde KennisOnline.com footer -->
+
+</body>
+</html>

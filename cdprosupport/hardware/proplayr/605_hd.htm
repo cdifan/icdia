@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>605 Hard Drive Compatibility Issues</TITLE>
+</HEAD>
+<BODY>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="proplayr.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+
+<H2>605 Hard Drive Compatibility Issues</H2><P>
+<BR>
+<BR>
+<B> 605s and termination power</B><BR><P>
+<HR>
+Q: (Customer) reports that DV playback is affected by when the hard drive is<BR>
+powered up vis-a-vis the 605.  If the hard drive is powered up before the 605:<BR>
+DV problems.  Powering up the hard drive last solves it.   Has anyone else heard of this?  <P>
+
+<FONT COLOR="8F0B34">A:<Q>" It's the TERMPWR isolation problem.  If an external drive provides +5v for<BR>
+TERMPWR, it feeds back into the SCSI interface and fouls up the power-on<BR>
+reset logic.  Remember, for a while the expansion board SCSI connectors had<BR>
+the TERMPWR tooth removed from the connector.  I suppose that it was assumed<BR>
+that something else would supply TERMPWR in this case.<BR>
+I've noticed reset problems on the 602 where if the external SCSI drive is<BR>
+on and the 602 is off (the 602's front panel power LED is glowing but you<BR>
+might not see it if there's a lot of ambient light) if you power on the 602<BR>
+sometimes the CD controller does not get reset and gives 244 errors or<BR>
+hangs.  Also the console startup messages report "CD software release 0.0"<BR>
+when this happens.  I've seen the floppy act flakey, too.  (A customer's)<BR>
+605/FMV will not work either if the hard drive is powered before the 605.<BR>
+I thought that cutting the TERMPWR tooth off was a reasonable solution since<BR>
+there was no isolation on the +5v.  Now is looks like the tooth is back, but<BR>
+I noticed no obvious change to the board to isolate TERMPWR.  It's obviously<BR>
+not since reset is a problem."</Q><BR></FONT>
+<P>
+
+<B>Summary of  hard drive models and the 605:</B><BR>
+<FONT COLOR="7C1816">Known to work:</FONT><BR>
+Quantum 40, 80, 100, 210, 240mb<BR>
+Seagate Wren series <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hawk series (11200, 31200, 12400)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barracuda series (12550, 15150,etc)<BR>
+Syquest (all)<BR>
+Fujitsu (M2266, others)<BR>
+Conner (some models)<BR><BR>
+<FONT COLOR="7C1816">Untried:</FONT><BR>
+Maxtor, DEC<BR>
+<BR>
+<FONT COLOR="7C1816">Known to be problematic:</FONT><BR>
+HP 975448, 975449<BR>
+</BODY>
+</HTML>
+

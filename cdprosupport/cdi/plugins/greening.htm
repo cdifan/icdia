@@ -1,0 +1,58 @@
+
+<HTML>
+
+<HEAD>
+<TITLE>Sample master script for creating MPEG .rtf files</TITLE>
+
+</HEAD>
+
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<P>
+Back to <A HREF="digital_video.htm">Digital Video</A> Plug-In supplement page<BR>
+<A HREF="dvxampl2.htm#example">Return</A> to &quot;Creating a CD for simulation of digital video on OS-9 Emulators.&quot;
+<HR>
+<P>
+<H2><CENTER>Sample master script for creating MPEG .rtf files</CENTER></H2>
+<P>
+<P>
+If you have only multiplexed (<CODE>.mmd/.mpg</CODE>) files,the following procedure describes how to make Real TIme FIles (<CODE>.rtf's</CODE>) of them.  Making these MPEG <CODE>.rtf</CODE> files is also referred to as &quot;greening&quot; the files.  The procedure here is for use on the OptImage Emulator.  If you are using a Macintosh or a PC to &quot;green&quot; the files, please see <B>NOTE</B> below.  This procedure assumes <CODE>script2disc</CODE> has been installed on your /h2 drive.
+<P>
+1.) Copy the multiplexed file(s) and delta file(s) to a directory on the 605 /h0 or the emulator /h2 hard drive, wherever you have the room.
+<P>
+2.) Use a text editor to write an MPEG Real TIme File script for <CODE>master</CODE>, following the directions below.  This text file must be as ASCII file.  Name this file &quot;mpegrtf.msc&quot;.
+<P>
+You cannot prepare multiple multiplexed files using one <CODE>master</CODE> script.  You must write a seperate script for each Real Time File to be created.
+<P>
+<B>Example script:</B>
+<P>
+<BLOCKQUOTE><CODE>options: &quot;/h2/DV/homevideo1.rtf&quot;</CODE>(pathname of the .rtf file you will create)<CODE><BR>
+record<BR>
+real_time mpeg in channel 0 from &quot;/h2/DV/homevideo1.mmd&quot;</CODE>(pathname of the .mmd/.mpg file to create the .rtf file from><CODE><BR>
+delta_file &quot;h2/DV/homevideo1.dlt&quot;</CODE>(pathname of the delta file. See &Yacute; below)<CODE><BR>
+ep_list off</CODE></BLOCKQUOTE><P>
+<P>
+<P>
+The quotation marks (&quot;) in the above script must be in the actual script(s) you write.  
+<P>
+3.) In order to use the script, first chd to the directory where you have saved mpegrtf.msc and then enter the following command line at the EMU: prompt:
+<P>
+<BLOCKQUOTE>master mpegrtf.msc</BLOCKQUOTE>
+<P>
+<CODE>master</CODE> will process the file according to the script, and will return you to the EMU prompt when it is finished.  Please note that this can take quite a long time, depending on the size of the <CODE>.mmd/.mpg</CODE> file being processed.
+<P>
+<BLOCKQUOTE><B>NOTE:</B>The pathnames in this example are for OS-9.  If you are processing these on a Macintosh, forward slashes &quot;/&quot; in the pathnames should be colons &quot;:&quot;.  For PC's, instead of forward slashes &quot;/&quot; use backslashes &quot;\&quot;.</BLOCKQUOTE>
+<P>
+<P>
+<BLOCKQUOTE>&Yacute; Macintosh and PC versions of <CODE>master</CODE> do not require the delta_file line, OS-9 versions do.
+</BLOCKQUOTE>
+<P>
+<HR>
+Back to <A HREF="digital_video.htm">Digital Video</A> Plug-In supplement page<BR>
+<A HREF="dvxampl2.htm#example">Return</A> to &quot;Creating a CD for simulation of digital video on OS-9 Emulators.&quot;
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit Lite 3.5.1 -->
+</BODY>
+
+</HTML>
+

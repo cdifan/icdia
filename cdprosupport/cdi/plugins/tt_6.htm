@@ -1,0 +1,344 @@
+<HTML>
+
+<HEAD>
+
+
+
+<TITLE>Tech Note : TT-6</TITLE>
+
+
+
+
+
+</HEAD>
+
+<BODY>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<HR>
+
+<P>
+
+<BR>
+
+<BR>
+
+					<CENTER><H2>Tech Note : TT-6</H2></CENTER>
+
+					  <CENTER>11/3/94</CENTER>
+
+<P>
+
+<BR>
+
+<B>TOPIC:</B>
+
+<P>
+
+How MediaMogul and Script2Disc 2.1 handle Call and Call_bg commands in 
+
+scripts.
+
+<P>
+
+<B>OVERVIEW:</B>
+
+<P>
+
+Terminology -
+
+<P>
+
+<DL>
+
+	<DT>MM -
+
+		<DD>MediaMogul
+
+	
+
+	<DT>s2d -
+
+		<DD>Script2Disc
+
+
+
+	<DT>Call -
+
+		<DD>start foreground process in OS-9
+
+		
+
+	<DT>Call_bg -
+
+		<DD>start background process in OS-9
+
+		
+
+	<DT>Module -
+
+		<DD>any file having the appropriate header and internal data arrangement required by OS-9
+
+		
+
+	<DT>Executable Module -
+
+		<DD>any OS-9 file that can be run as a subroutine or program.  This includes Plugin items in the SUBROUTINES directory, utilities in the CMDS directory, etc.
+
+</DL>
+
+<P>
+
+<BR>	
+
+OS-9 is a multitasking system, meaning it can run many programs, or what it 
+
+calls PROCESSES, at the same time. In a broad sense, BACKGROUND processes are 
+
+those that don't require attention from the person at the keyboard/display 
+
+(like programs that update the time, or mouse drivers that monitor the mouse, 
+
+etc.).  FOREGROUND processes DO hold captive the display and keyboard (like 
+
+word processors, spread sheets...). Foreground processes can be moved to the 
+
+background (like when re-calculating a spreadsheet), or background processes 
+
+moved to the foreground (like when you want the time and date).
+
+<P>
+
+MediaMogul can start other foreground processes (Call) or background processes 
+
+(Call_bg) from within scripts.  The rules are:
+
+<OL>
+
+	<LI>If a Call is executed, it becomes foreground, MediaMogul background.
+
+	<LI>If a Call_bg is executed, it goes to the background, MediaMogul stays 
+
+		in the foreground.
+
+	<LI>MediaMogul regulates background processes to assure multiple copies 
+
+		of the same module are not running SIMULTANEOUSLY.
+
+</OL>
+
+<P>
+
+For example, you cannot (should not) have two copies of cdi_display_strvar 
+
+(displays string variables) running simultaneously in the background and 
+
+fighting for the display.  MediaMogul would start the first one, wait for it 
+
+to finish, then start the second one.  Both would be run in the background.
+
+ <P>
+
+<B>DISCUSSION:</B>
+
+<P>
+
+MediaMogul and Script2Disc have changed their Call and Call_bg handling 
+
+slightly in version 2.1.  
+
+<P>
+
+<CENTER>**** Generalities ****</CENTER>
+
+<P>
+
+<UL TYPE=DISC>
+
+
+
+	<LI>Prior to playing a script (or in s2d a real time file) the script is scanned for all Call and Call_bg commands.  Plugin or other OS-9 modules specified in those calls are loaded into memory, but are NOT executed.  They are executed at the appropriate time stamp in the script.
+
+<P> 
+
+	<LI>When a branch (br_ifeq, br_alwys....) occurs, or if you fall of the end of the script, all modules related to Call commands are removed from memory. Modules used via Call_bg or that have the Sticky bit set (SEE TT-5) are left alone.
+
+<P>
+
+	<LI>If a Call does the branch, like with the cdi_branch_strvar Plugin, that module is removed from memory when the branch occurs.
+
+</UL>
+
+<P>
+
+
+
+
+
+			<CENTER>**** Call commands ****</CENTER>
+
+<P>
+
+<UL TYPE=DISC>
+
+	<LI>the script timer freezes at the Call is executed.
+
+<P> 
+
+	<LI>any ADPCM audio, or NON-MPEG video that was playing when the Call occurred, 
+
+continue to play DURING the Call.  The Call, of course, may interfere with the 
+
+ongoing play as required.
+
+<P>
+
+	<LI>If the ongoing audio or video has not completed when the Call has finished, 
+
+the audio or video play will be terminated at that point.
+
+<P>
+
+	<LI>no NEW script lines will be executed until the Call finishes.
+
+<P>
+
+	<LI>If video or audio commands occur immediately after a Call, there may be a slight hesitation to begin them, as they will not be pre-loaded during before 
+
+or during the Call (MM and s2d pre-load audio/video when possible to reduce 
+
+playback delays).
+
+</UL>
+
+
+
+
+
+			<CENTER>**** Call_bg commands ****</CENTER>
+
+<P>
+
+<UL TYPE=DISC>
+
+<LI>script timer continues to run
+
+<P>
+
+<LI>script lines after the Call_bg execute at stamped times.
+
+</UL>
+
+<P>
+
+			<CENTER>-EXCEPT-</CENTER>
+
+<P>
+
+<UL TYPE=DISC>
+
+<LI>MM and s2d modules that are running in the background.  If a Call_bg occurs 
+
+to a module and that module is already running in the background (from a 
+
+previous Call_bg), the first Call_bg must finish before the second Call_bg is 
+
+done.  Multiple Call_bg to different modules are unaffected by the "monitor".
+
+ <P>
+
+<LI>branches will not occur until the LAST Call_bg in a script BEGINS execution.
+
+</UL>
+
+
+
+<P>
+
+
+
+An example to explain the last two points:
+
+
+
+
+
+<PRE>	00:00 Dissolve    /h0/VIDEO/marina.d  2:00
+
+	00:00 Play	  /h0/AUDIO/cool_storm.cm  00:00  00:00
+
+	00:00 Call_bg     /h0/SUBROUTINES/dir >/term
+
+	00:00 Call_bg     /h0/SUBROUTINES/dir >/term
+
+	00:00 Call_bg     /h0/SUBROUTINES/dir >/term
+
+	03:00 Br_alwys_nr /h0/SCRIPTS/help.scr</PRE>
+
+<P>
+
+Below is chart illustrating the various actions, and the order (but not time 
+
+at which) they occur. The only noticeable interference the foreground process 
+
+will likely receive from the background processes is to when the Br_alwys_nr 
+
+happens.  If the dir processes take a lot of time to complete (directory of 
+
+entire /h0), the branch may be delayed way past 03:00.  MediaMogul will not 
+
+allow the branch to occur until the LAST background dir has BEGUN.  The last 
+
+dir can continue listing to the terminal during and even after the next script 
+
+has begun.
+
+
+
+
+
+<PRE>	BACKGROUND QUEUE			FOREGROUND
+
+--------------------------------------    ----------------------------------
+
+Call_bg     /h0/SUBROUTINES/dir >/term	Dissolve    /h0/VIDEO/marina.d
+
+Call_bg     /h0/SUBROUTINES/dir >/term	Play	    /h0/AUDIO/cool_storm.cm
+
+Call_bg     /h0/SUBROUTINES/dir >/term	Br_alwys_nr /h0/SCRIPTS/help.scr</PRE>
+
+							
+
+<P>
+
+In its background queue, MediaMogul WAITS until one dir process has completed 
+
+before issuing the next Call_bg to dir. The Dissolve and Play will begin in 
+
+the foreground together as scheduled.
+
+<P>
+
+Remember that MediaMogul is managing both a background process queue and 
+
+foreground processes SIMULTANEOUSLY (like chewing gum and walking).
+
+<P>
+
+<BR>
+
+<HR>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<!-- Page by Chuck Hildebrand -->
+
+<!-- BBEdit 4.0.4 -->
+
+<!-- Original Tech Note by OptImage Support -->
+
+</BODY>
+
+</HTML>
+

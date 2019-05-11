@@ -1,0 +1,51 @@
+                                DOS GED Notes
+                                   11/28/94
+
+GED for DOS is a FREEware utility that can be distributed at will.  You
+cannot not, however, SELL this utility either by itself or with any other
+product.  GED for DOS uses the 32 bit run-time utility dos4gw.exe, that can
+be downloaded from this file area also. GED for DOS will run on 386, 486
+or Pentium class machines.
+
+GED reads through a MPEG multiplex file (.mmd file) and generates the
+following files with various "extensions":
+
+.dlt - the delta file, used by master versions 4.1 and previous for
+creating a real time file from the multiplex file.
+
+.pkl - the pink list, which contains selected entry points in the format
+that the multiplexing utility PINK generates, which is also the format
+master requires for including entry points in the real time file
+(ep_list internal   keywords).
+
+.ir - the entry point list (sometimes called scan list) in MediaMogul DV
+format (DV Plugin version 2.0 and later).  This .ir file is loaded using a
+Background video command in ScriptWriter.
+
+.pil - the entry point list in the Philips VCD application (versions
+3.00 and later) format.
+
+
+If not otherwise specified, the root name of the multiplex (.mmd) file
+is used, with the extensions above.  For example:
+
+        ged nasa01.mmd
+
+would generate:  nasa01.dlt, nasa01.pkl, nasa01.ir, and nasa01.pil.
+
+Notes:
+
+1. Specifying 0 for the -s option finds ALL reference I frames
+preceded by a sequence header.  Many encoders space the I frames at 1/2
+second intervals, which would create an entry point list excessively
+large. Entry points in an entry point list are reccomended to be no closer
+than every 2 seconds (the default for ged).
+
+2. For MediaMogul users: if you use ged, there is no longer a need for
+running ep_extract.  You will need to run ep_print to generate an "English"
+listing of SMPTE time stamps, related sector numbers, and the buffer size
+number needed by the DV plugin.
+
+3. Abbreviated command line help can be invoked by the -h option
+(ged -h).
+

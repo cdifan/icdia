@@ -1,0 +1,188 @@
+<HTML>
+<HEAD>
+   <TITLE>Splitting Multi-Track PC VCD Disc Images for Recording</TITLE>
+</HEAD>
+<BODY BGCOLOR="FFFFFF">
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="vcd2x.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+<P><HR></P>
+<H2 ALIGN=Center><FONT COLOR="660033">Splitting Multi-Track PC VCD Disc Images for Recording</FONT></H2>
+
+<P>
+<FONT SIZE=+2>In order to use Gear or WinOnCD to burn a Multi-track VCD disc, a utility, splitter.exe, must be used to split the <A HREF="vcd_burn.htm">disc image file</A> into its multiple constituent tracks:</FONT>
+
+<P>
+<A NAME="procedure"></A><FONT SIZE=+2><U>Procedure:</U></FONT><BR>
+<OL>
+<LI> <FONT SIZE=+1>D</FONT>ownload the <A HREF="../../files/pc/splitter.exe">splitter.exe</A> utility.  
+<LI><FONT SIZE=+1>O</FONT>pen the <A HREF="#toc_file"><B>&#60;<CODE>discimage</CODE>&#62;.toc</B> file</A>.  This will list the sector offsets for all the tracks in the disc image.  You will need to notate the beginning of each numbered track after the first one.
+      <LI><FONT SIZE=+1>L</FONT>aunch the splitter.exe utility by double-clicking it.
+A command window will appear which will prompt for the disc image file as shown <A HREF="#splitter.gif">here</A>.<BR>
+<LI><FONT SIZE=+1>E</FONT>nter the full path to the .cd Disc image file, and the start sector for each of the MPEGAV tracks.  Hit a return on the line after the last track, which inserts the default value "0", and starts the splitting process.  Each of the resulting Track image files will be consecutively numbered: File1, File2, File3, etc.
+<LI><FONT SIZE=+1>I</FONT>f using Gear, create a <A HREF="#cue_file"><B>Cue Sheet</B> file</A>. This file is used by Gear to burn a disc from all the track file images.
+<LI><FONT SIZE=+1>F</FONT>ollow the procedures outlined on the <A HREF="vcd_burn.htm" TARGET="Burning VCD Discs">burning VCD discs page</A>.
+</OL>
+<FONT SIZE=+2><U>Sample TOC file, <B>Multi_1.toc</B>:</U></FONT><BR>
+
+<TABLE BORDER=0 CELLSPACING=2 CELLPADDING=1 WIDTH=600>
+<TR>
+	<TD>!@opts: runout=2<BR></TD>
+</TR>
+<TR>
+	<TD>!@opts: imagetype=cdromxa<BR></TD>
+</TR>
+<TR>
+	<TD>!@opts: imageformat=scrambled<BR></TD>
+</TR>
+<TR>
+	<TD>!<BR></TD>
+</TR>
+<TR>
+	<TD>! Disc Building Utility - Version 4.4 02/09/96<BR></TD>
+</TR>
+<TR>
+	<TD>!</TD>
+</TR>
+<TR>
+	<TD>! Album &nbsp;&nbsp;MULTI</TD>
+</TR>
+<TR>
+	<TD>! Publisher</TD>
+	
+</TR>
+<TR>
+	<TD>! Preparer
+</TR>
+<TR>
+	<TD>!</TD>
+</TR>
+<TR>
+	<TD>! Volume &nbsp;&nbsp;MULTI_1</TD>
+</TR>
+<TR>
+	<TD>! Disc name &nbsp;&nbsp;C:/TEMP/MULTI_1.cd</TD>
+</TR>
+<TR>
+	<TD>!</TD>
+</TR>
+<TR>
+	<TD>!  Track 00 (Data Mode 2 Form 2)</TD>
+</TR>
+<TR>
+	<TD>!</TD>
+</TR>
+<TR>
+	<TD>&nbsp;leadin data</TD>
+</TR>
+<TR>
+	<TD>!</TD>
+</TR>
+<TR>
+	<TD>!  Track 01 (Data Mode 2 Form 1/2, scrambled)</TD>
+</TR>
+<TR>
+	<TD>!<BR></TD>
+</TR>
+<TR>
+	<TD>&nbsp;track data</TD>
+</TR>
+<TR>
+	<TD>&nbsp;index 00&nbsp;&nbsp;00:00:00 ! 00:01:74 (150 sectors from 0 to 149)</TD>
+</TR>
+<TR>
+	<TD>&nbsp;index 01&nbsp;&nbsp;00:02:00 ! 00:16:74 (1125 sectors from 150 to 1274)</TD>
+</TR>
+<TR>
+	<TD>!</TD>
+</TR>
+<TR>
+	<TD>!  Track <B>02</B> (Data Mode 2 Form 1/2, scrambled)</TD><TD><FONT COLOR="CC0000">The second track is the first MPEGAV track.</FONT><BR></TD>
+</TR>
+<TR>
+	<TD>!</TD>
+</TR>
+<TR>
+	<TD>&nbsp;track data</TD>
+</TR>
+<TR>
+	<TD>&nbsp;index 00 &nbsp;00:17:00 ! 00:18:74 (150 sectors from <B>1275</B> to 1424)</TD><TD><FONT COLOR="CC0000"><B>1275</B> is the start of the second track.</FONT></TD>
+</TR>
+<TR>
+	<TD>&nbsp;index 01 &nbsp;00:19:00 ! 02:27:39 (9640 sectors from 1425 to 11064)</TD>
+</TR>
+<TR>
+	<TD>!</TD>
+</TR>
+<TR>
+	<TD>!  Track <B>03</B> (Data Mode 2 Form 1/2, scrambled)</TD><TD><FONT COLOR="CC0000">This is the last <B>numbered</B> track, therefore it is </FONT></TD>
+</TR>
+<TR>
+	<TD>!</TD><TD><FONT COLOR="CC0000">the last MPEGAV track.</TD>
+</TR>
+<TR>
+	<TD>&nbsp;track data</TD>
+</TR>
+<TR>
+	<TD>&nbsp;index 00 &nbsp;02:27:40 ! 02:29:39 (150 sectors from <B>11065</B> to 11214)</TD><TD><FONT COLOR="CC0000"><B>11065</B> is the start of the third track.</FONT></TD>
+</TR>
+<TR>
+	<TD>&nbsp;index 01 &nbsp;02:29:40 ! 05:07:29 (11840 sectors from 11215 to 23054)</TD>
+</TR>
+<TR>
+	<TD>!<BR></TD>
+</TR>
+<TR>
+	<TD>!  Track AA (Data Mode 2 Form 2, scrambled)<BR></TD>
+</TR>
+<TR>
+	<TD>!<BR></TD>
+</TR>
+<TR>
+	<TD> &nbsp;leadout data</TD>
+</TR>
+<TR>
+	<TD> &nbsp;index 01 &nbsp;05:07:30</TD>
+</TR>
+</TABLE>
+<HR WIDTH=75%>
+
+<P>
+<A NAME="splitter.gif"></A><B>Enter in the start values of the MPEGAV tracks from the TOC file as shown below.</B>
+<P>
+<BR>
+<CENTER><IMG SRC="splitter.gif"></CENTER><BR>
+
+<P>
+ 
+
+<P>
+
+<A NAME="cue_file"></A><FONT SIZE=+2><U>Cue Sheet file(<B>Gear</B> only) for the sample TOC file above:</U></FONT><BR>
+C:\TEMP\Data_trk XA 2352S +P:150<BR>
+C:\TEMP\Track_2 XA 2352S +P:150<BR>
+C:\TEMP\Track_3 XA 2352S +P:150<BR>
+<BR>
+There should be one line for every track file created by the splitter utility.  
+Extra lines should be removed or added as necessary, with the only difference between them being the filename.  
+Commenting out unused lines does not work, so there should be exactly the same number of lines as there are Track Image files. 
+Since the track files that splitter.exe creates always follow the same naming scheme, a long cuefile template can be used, 
+shortened appropriately for the number of tracks in the particular project, any pathing differences found/replaced, and saved under a new name.  <A HREF="splitter.cue.txt">Here</A> is a 99
+track cue sheet template.
+Now, go to the <A HREF="vcd_burn.htm" TARGET="Recording VCD Discs">recording VCD discs page.</A>
+
+
+<BR>
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="vcd2x.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+<!-- TRW -->
+

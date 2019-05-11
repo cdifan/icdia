@@ -1,0 +1,130 @@
+<HTML><HEAD>
+<TITLE>Common OS9 Errors and Solutions</TITLE>
+</HEAD>
+<BODY BGCOLOR="FFFFFF">
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="s2d.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<H2><CENTER>Common OS9 Errors and Solutions</CENTER></H2>
+
+<CENTER>Not listed here? Try: <A HREF="os9_errors.htm" TARGET="OS9 Errors -- Full listing">Full listing of OS9 Errors</A></CENTER>
+<P>
+
+
+<CENTER><TABLE CELLSPACING=2 CELLPADDING=1 BORDER>
+<TR>
+	<TH WIDTH=80 VALIGN=TOP><U>Error Code</U> </TH>
+	<TH WIDTH=250><U>Explanation</U> </TH>
+	<TH VALIGN=TOP><U>Remedy</U></TH>
+</TR>
+<TR>
+	<TD  WIDTH=80 VALIGN=TOP ALIGN=CENTER>000:002 </TD>
+	<TD VALIGN=TOP>Keyboard quit (^E) typed </TD>
+	<TD VALIGN=TOP>Ignore.  Just indicates a Control-E was typed.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:003 </TD>
+	<TD VALIGN=TOP>Keyboard interrupt (^C) typed </TD>
+	<TD VALIGN=TOP>Ignore.  Just indicates a Control-C was typed.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:214 </TD>
+	<TD VALIGN=TOP>File not accessible</TD>
+	<TD VALIGN=TOP>Typically read problems.  Check hardware, reboot.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:215 </TD>
+	<TD VALIGN=TOP>Bad pathlist specified </TD>
+	<TD VALIGN=TOP>Check the path the error references. </TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:216 </TD>
+	<TD VALIGN=TOP>File not found </TD>
+	<TD VALIGN=TOP>Check the path the error references, particularly the filename.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:218 </TD>
+	<TD>Tried to create a file that already exists </TD>
+	<TD VALIGN=TOP>Use <CODE>-fr</CODE> with <CODE>copy</CODE> or <CODE>dsave</CODE> to overwrite old file, or ignore if 	
+	current file is ok.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:221 </TD>
+	<TD VALIGN=TOP>Module not found </TD>
+	<TD VALIGN=TOP>Check the execution path or module directory for missing module. </TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:231 </TD>
+	<TD VALIGN=TOP>Known module</TD>
+	<TD VALIGN=TOP>Module is already in memory.  Usually innocuous: just ignore.  If 			desired, use <CODE>unlink</CODE> to unload it.  Use multiple <CODE>unlink</CODE> commands, until a 000:221 error indicates the module is no longer in memory.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:232 </TD>
+	<TD VALIGN=TOP>Bad module CRC </TD>
+	<TD VALIGN=TOP>Use <CODE>fixmod -u</CODE> to repair, or install a new copy of the module.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:235 </TD>
+	<TD VALIGN=TOP>Bad name </TD>
+	<TD VALIGN=TOP>Check filename, especially adherence to OS9 naming rules.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:240 </TD>
+	<TD VALIGN=TOP>Illegal unit (drive) number </TD>
+	<TD VALIGN=TOP>Check drive name. </TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:244 </TD>
+	<TD VALIGN=TOP>Read error </TD>
+	<TD VALIGN=TOP>Check hardware, driver setup. </TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:245 </TD>
+	<TD VALIGN=TOP>Write error </TD>
+	<TD VALIGN=TOP>Check hardware, driver setup. </TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:246 </TD>
+	<TD VALIGN=TOP>Device not ready </TD>
+	<TD VALIGN=TOP>Check hardware, especially power.  Reboot drive.</TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:247 </TD>
+	<TD VALIGN=TOP>Seek error </TD>
+	<TD VALIGN=TOP>Check hardware, driver setup. </TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:248 </TD>
+	<TD VALIGN=TOP>Media full </TD>
+	<TD VALIGN=TOP>Put the hard drive/floppy on a diet. </TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:249 </TD>
+	<TD VALIGN=TOP>Bad type (incompatible media) </TD>
+	<TD VALIGN=TOP>Use different device driver to access device. </TD>
+</TR>
+<TR>
+	<TD VALIGN=TOP ALIGN=CENTER>000:250 </TD>
+	<TD VALIGN=TOP>Device busy </TD>
+	<TD VALIGN=TOP>Check hardware, cycle power, reboot. </TD>
+</TR>
+</TABLE>
+</CENTER>
+
+
+<P>
+<ADDRESS>This listing reprinted courtesy Microware Systems Corporation.</ADDRESS>
+
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="s2d.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+</BODY>
+</HTML>

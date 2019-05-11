@@ -1,0 +1,132 @@
+<HTML>
+
+<HEAD>
+
+<TITLE> Ethernet Primer</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="FFFFFF">
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="proplayr.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+<P><HR></P>
+
+<P><B> <FONT SIZE=-1>This document is intentionally limited in scope; meaning I include or eliminate any details I feel necessary for clarity and brevity.</FONT></B></P>
+
+<P><B><FONT SIZE=+6><CENTER>Ethernet Primer
+</B></FONT> 3/94</CENTER></P>
+<UL TYPE=DISC>
+    <LI><A HREF="#Ethernet">  Ethernet</A>
+    <LI><A HREF="#Ethernet addresses">  Ethernet addresses</A>
+    <LI><A HREF="#Internet addresses">  Internet addresses</A>
+    <LI><A HREF="#Summary">  Summary</A>
+    <LI><A HREF="#User Data">  User Data</A>
+    <LI><A HREF="#The CD-i 605 Network Connection">  The CD-i 605 Network Connection</A>
+</UL>
+
+
+        For many reading this article, networking is a new concept, or a new-age term meaning &quot;to talk&quot;. As
+    applied to computers, networking means;<I> getting two or more computers to exchange information,</I><I> willingly</I> . As with people it's easier when all are speaking the same language, and more difficult, although not impossible, when they are not.
+
+
+<P> Here, we are concerned with computers tied together with coax cable or other electrical means, on which<I> packets</I> of information flow. We will also limit the discussion to TCP/IP type Ethernet packets, although the electrical cable where the packets travel does not prefer these over any other transmission type.</P>
+
+<HR>
+
+<A NAME="Ethernet"><FONT SIZE=+2 COLOR="FF3366"><B>Ethernet:</FONT></B></A>
+
+
+<P> Ethernet describes how each packet of information is assembled for transmission, but does NOT describe the electrical aspect of transmission. Ethernet packets can be broadcast over coaxial cable of many types, fiber optic lines, satellites, phone lines...etc. We will focus on coaxial cable transmission.
+
+<P> Ethernet breaks files you might send into small pieces, called <I> packets. </I> The basic Ethernet packet consists of (substantially simplified):
+
+<P> <I><DD>Ethernet addresses + IP addresses + User data packet</I>
+
+<HR>
+
+<A NAME="Ethernet addresses"><FONT SIZE=+2 COLOR="FF3366"><B>Ethernet addresses:</B></FONT></A>
+<P> On a global scale there could be billions of machines (called HOSTS), all attempting to communicate to each other. For our discussion we'll assume the norm of two machines in mutual contact. The problem is to assure that each machine has a unique address, and that there are enough spare addresses to cover future expansion.Accordingly, a 48 bit address scheme was created, allowing 281 trillion machines unique identification. A given manufacturer of machines or networks cards would be assigned a block of numbers - enough to cover a lifetime of production. When transmitting between machines, eventually the Ethernet address must be known or acquired.  The address takes the form of:
+
+<P><CODE><DD>hh:hh:hh:hh:hh</CODE></P>
+
+<P> each set of hh represents an octet or 8 bits of the total address. An address example would be: 3d:f4:01:77:3c, uniquely identifying a machine.</P>
+
+<HR>
+
+<A NAME="Internet addresses"><FONT SIZE=+2 COLOR="FF3366"><B>Internet addresses:</B></FONT></A>
+<P>The Internet address allows easier control over smaller isolated networks and their machines, like your company or college computer network. It also allows one machine - a server for example - to take on many Internet addresses, which reference a single Ethernet address. There are many other obscure reasons why this second address is present, none of which apply for our discussion.<I> Most of time you will only know or must acquire the Internet address</I> . The Ethernet address is usually hidden from the user. The 32 bit Internet address takes the form of: 
+<P>
+<CODE><DD>d.d.d.d</CODE>
+<P>
+ where each d is a decimal number from 0 to 255. The address does not translate directly to a given machine, but according to CLASS rules, where:</P>
+
+<UL>
+<LI><P> <FONT COLOR="0779B2">Class A</FONT> describes a isolated network where there can be up to 16.7 million machines. The octet describes the network number, the last three octets the number of machines in the network. The address form:</P>
+
+<P ALIGN=CENTER><FONT COLOR="22612F"> <B>network.</B><I>machine<B>.</B>machine<B>.</B>machine</I></FONT></P>
+
+<LI><P> <FONT COLOR="0779B2">Class B</FONT> describes a network where there can be up to approx. 65,000 machines. The first two octets indicate the network, the last two octets the machine. The address form:</P>
+
+<P ALIGN=CENTER> <FONT COLOR="22612F"><B>network.network.</B><I>machine<B>.</B>machine</I></FONT></P>
+
+<LI><P> <FONT COLOR="0779B2">Class C</FONT> describes a network, where there can be up to 256 machines. The first three octets indicate the network, the last octet the machine. The address form:</P>
+
+<P ALIGN=CENTER><FONT COLOR="22612F"> <B>network.network.network.</B><I>machine</I></FONT></P></UL>
+
+
+ The address class is noted in the first three bits of the first octet.Internet software detects the class, then decodes the 4 octet address accordingly. Generally speaking, only machines on the same NETWORK can communicate, unless there is an intermediate routing device.  There are methods for circumventing this, but beyond the scope of this article. For your information, the class bits have been translated to a series of address ranges, which you can use to identify the address class. They are:
+
+<CENTER><TABLE BORDER=5  WIDTH=100% CELLSPACING=2 CELLPADDING=1  BGCOLOR=DDDDDD><CAPTION><B><FONT COLOR="663300">Network Classes</FONT></B></CAPTION>
+<TR>
+	<TH><B>From:</B><TH><B>To:</B><TH><B>Class</B><TH><B>Machines(per net)</B><TH><B>Networks</B>
+<TR>
+	<TD><FONT COLOR="B23E08"> 0.0.0.0 <TD><FONT COLOR="B23E08">127.255.255.255</FONT><TD><FONT COLOR="B23E08"><B>Class A</B><TD><FONT COLOR="B23E08">Up to 16.7 million machines<TD><FONT COLOR="B23E08">128 nets
+<TR>
+	<TD> <FONT COLOR="B23E08"> 128.0.0.0 <TD><FONT COLOR="B23E08">191.255.255.255 <TD><FONT COLOR="B23E08"><B>Class B</B><TD><FONT COLOR="B23E08">Up to 65,536 machines<TD><FONT COLOR="B23E08">16,383  nets
+<TR>
+	<TD> <FONT COLOR="B23E08"> 192.0.0.0 <TD><FONT COLOR="B23E08">223.255.255.255 <TD><FONT COLOR="B23E08"><B>Class C</B><TD><FONT COLOR="B23E08">Up to 256 machines<TD><FONT COLOR="B23E08">2.1 million nets
+<TR>
+	<TD> <FONT COLOR="B23E08"> 224.0.0.0<TD><FONT COLOR="B23E08"> 239.255.255.255  <TD><FONT COLOR="B23E08"><B>Class D</B><TD COLSPAN=2><FONT COLOR="B23E08">Multicasting
+<TR>
+	<TD> <FONT COLOR="B23E08"> 240.0.0.0 <TD><FONT COLOR="B23E08"> 247.255.255.255  <TD><FONT COLOR="B23E08"><B>Class E</B><TD COLSPAN=2><FONT COLOR="B23E08">Reserved for future use
+</TABLE></FONT></CENTER>
+<P>
+
+Most networks, obviously, are Class B or Class C, with Class B nets being mostly used by  large companies, universities, government, etc., and Class C nets by everybody else.  Tying classes and the Internet address together; the Internet address 192.1.1.5 is a Class C address. It decodes as a network ID = 192.1.1, and a machine ID on that network of 5. In a simple system, only those machines with addresses beginning in 192.1.1 could communicate with the example machine.
+<HR>
+
+<A NAME="Summary"> <FONT SIZE=+2 COLOR="FF3366"><B>Summary:</B></FONT></A>
+
+<P> Any two machines wishing to network over a simple system must have the SAME Internet network number, but must have UNIQUE Internet machine numbers.</P>
+
+<HR>
+
+<A NAME="User Data"> <FONT SIZE=+2 COLOR="FF3366"><B>User Data:</B></FONT></A>
+
+<P> The user data portion of each packet contains some other system information, then, of course, a portion of the file you are sending or receiving. Since your file has been broken into small chunks (usually 1024 byte chunks), a portion of the system information is for tracking which packet of which file is being sent/received. It is possible that packets can be lost or transmitted out of order, requiring the receiving host to assemble the data in the correct order.</P>
+
+<HR>
+
+<A NAME="The CD-i 605 Network Connection"> <FONT SIZE=+2 COLOR="FF3366"><B>The CD-i 605 Player Network Connection (Thin coax only):</B></FONT></A>
+
+<P> The 605 sends Ethernet packets via 50 ohm coaxial cable. A coaxial system may have many &quot;legs&quot; or runs from a central distribution box, forming a star-like network. The general rules for coaxial:</P>
+
+<OL TYPE=1 START=1>
+    <LI> There must be at least 20&quot; of cable between each machine.
+    <LI> In a given leg, machines should be daisy chained via T-connectors.
+    <LI> ONLY the machines at the beginning and end of the daisy chain should have a 50 ohm  terminator attached to the cable.
+</OL>
+<BR>
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="proplayr.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+<!-- TRW -->
+

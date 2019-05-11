@@ -1,0 +1,187 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Player Types and ADPCM Volume</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR=#FFFFFF>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="mm.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+<CENTER><TABLE BORDER  BGCOLOR="#CC66CC">
+<TR>
+	<TD><FONT SIZE=6><B>Player Types and ADPCM Volume</B></FONT></TD>
+</TR>
+</TABLE></CENTER>
+
+<P>
+<FONT SIZE=4>
+ Recently, Philips discovered an anomaly in how various models of CD-i players<BR>
+respond to volume level adjustment.  The anomaly only effects ADPCM volume, and<BR>
+effects CD-i applications made under MediaMogul, ShowMaster and &quot;C&quot; programming<BR>
+tools.</FONT></P>
+
+<P>
+
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#3399CC">
+<TR>
+	<TD><FONT SIZE=5><B>Player Background:</B></FONT></TD>
+</TR>
+</TABLE></P>
+<FONT SIZE=4>
+Since the first CD-i players were available, Philips has continually sought to further<BR>
+reduce production costs and increase reliability.  Their efforts were concentrated at<BR>
+reducing circuit complexity as newer player models were designed.  Philips tracks these<BR>
+complexity reductions via levels of &quot;monolithicness&quot; of the main circuit board.  For<BR>
+example; The first player models, like the 910, were termed &quot;maxiMMC&quot;.  The first<BR>
+U.S. 220 model (220/17) was &quot;miniMMC&quot;, the second generation 220/37 was &quot;Mono I&quot;,<BR>
+the third generation 220/57 was &quot;Mono II&quot; and so on.  The 220/97--the newest 220--is<BR>
+&quot;Mono IV&quot;.  The professional and portable CD-i players also carry similar monolithic<BR>
+designations.  A complete chart of model versus board level follows later in this article.</FONT></P>
+
+<P>
+<FONT SIZE=4>
+Over the many board changes, the ADPCM attenuator unit has inadvertently been<BR>
+altered and thus does not respond to application volume commands in the same<BR>
+manner across the many Philips player models.</FONT></P>
+
+<P>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#3399CC">
+<TR>
+	<TD><FONT SIZE=5><B>ADPCM Attenuator Background:</B></FONT></TD>
+</TR>
+</TABLE></P>
+<FONT SIZE=4>
+The CD-i player attenuator unit design is regulated by the Green Book specification for<BR>
+CD-i as follows:</FONT></P>
+
+<BR>
+<FONT SIZE=5>
+There are FOUR separately controllable attenuators in the unit:</FONT></P>
+
+<P>
+<FONT SIZE=4>
+<UL>
+<LI>R-R - manipulates signal passing from unit RIGHT input to unit RIGHT output<BR>
+<LI>L-L - manipulates signal passing from unit LEFT input to unit LEFT output (<BR>
+<LI>R-L - manipulates how much signal passes from unit RIGHT input to unit LEFT output<BR>
+<LI>L-R - manipulates how much signal passes from unit LEFT input to unit RIGHT output</UL>
+</FONT></P>
+
+<P>
+<FONT SIZE=4>
+Each attenuator is adjustable in 1 dB increments from NO attenuation (0 dB<BR>
+attenuation) up to MAXIMUM attenuation (128 dB attenuation).  Thus, there are 128<BR>
+discrete settings for each of the four attenuators.</FONT></P>
+
+<P>
+<FONT SIZE=4>
+Note: The R-L and L-R attenuators in most applications are set to maximum<BR>
+attenuation (128 dB) so that no left/right signal mixing occurs.  MediaMogul does not<BR>
+permit R-L or L-R attenuator adjustment.  MediaMogul permits R-R and L-L adjustment<BR>
+together through its VOLUME command.</FONT></P>
+
+<P>
+<FONT SIZE=4>
+The anomaly is manifested as a departure from the 1 dB per increment behavior described<BR>
+above.  None of the players exhibit linear (1 increment yields 1 dB change) attenuator<BR>
+response over their entire range, and some of the players do not follow the<BR>
+1dB/increment spec over any of their range.</FONT></P>
+
+<P>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#3399CC">
+<TR>
+	<TD><FONT SIZE=5><B>CD-i Player Grouping:</B></FONT></TD>
+</TR>
+</TABLE></P>
+<FONT SIZE=4>
+The attenuator anomaly divides the players among &quot;Mono&quot; versions.  Mono III and<BR>
+Mono IV machines deviate the most, while Mono II and previous versions are closer to<BR>
+the spec.  For the Groups below, assume if no /xx number is specified that it applies to<BR>
+all machines of that model.  The list below is only for U.S. players, and is current as of<BR>
+this document.</FONT></P>
+
+<P>
+
+<TABLE BORDER=1><TR><TH><FONT SIZE=5><B>Group 1 Players (maxiMMC, miniMMC, Mono I, Mono II):</B></FONT></TH></TR>
+
+<TR>
+	<TD><FONT SIZE=4>180, 601, 602, 604, 605, 605T<BR>
+	200/17, 200/37, 205/17, 210/17, 210/37, 220/37, 220/57, 350, 360, 910, Memorex 2200</FONT></TD>
+</TR>
+</TABLE></P>
+
+<P>
+<TABLE BORDER=1><TR><TH><FONT SIZE=5>
+<B>Group 2 Players (Mono III, Mono IV):</B></FONT></TH></TR>
+
+	<TR>
+		<TD ALIGN=LEFT>
+		<FONT SIZE=4>
+		200/57, 210/57, 220/77, 220/97, 370, 380/17, 450, 470, 550, 615, 740, Goldstar GDI-1000</TD>
+	</TR>
+</TABLE>
+
+<P>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#3399CC">
+<TR>
+	<TD><FONT SIZE=5><B>Player Vs. Attenuator Response:</B></FONT></TD>
+</TR>
+</TABLE></P>
+<FONT SIZE=4>
+<B>Group 1 players have the following response:</B></FONT></P>
+
+<FONT SIZE=4>
+<UL>
+<LI>For each increment change in attenuation (a setting of 255 -&gt; 254 in Mogul), there will<BR>
+be a 1dB change until you reach 53 dB attenuation (a setting of 185 in Mogul).
+<LI>Any attenuation settings greater than 53 dB yield NO further attenuation--i.e. it bottoms<BR>
+out at -53 dB.
+<LI>A setting of 128 dB attenuation will not fully attenuate or mute the signal.</FONT>
+</UL>
+
+<P>
+<FONT SIZE=4>
+<B>Group 2 players have the following response:</B></FONT></P>
+
+<UL>
+<FONT SIZE=4>
+<LI>For each increment change in attenuation (i.e. 255 -&gt; 254 in Mogul), there will be a 0.5<BR>
+dB change until you reach 28 dB attenuation (Mogul setting of 191).
+<LI>Attenuation bottoms out at 31.5 dB until an attenuator setting of 126 (129 in Mogul) is<BR>
+reached.  
+<LI>At attenuator settings of 127 and 128 (128/127 in Mogul) the attenuation<BR>
+jumps to 100 dB (essentially muted).
+</UL>
+<B>Graphically, player response looks like this:</B><BR>
+<IMG SRC="adpcm_atten.gif">
+<P>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=1 BGCOLOR="#3399CC">
+<TR>
+	<TD><FONT SIZE=5><B>Conclusions:</B></FONT></TD>
+</TR>
+</TABLE></P>
+<FONT SIZE=4>
+Both Groups have irregular response, though Group 1 players are not available for sale<BR> 
+any longer.  This leaves the highly aberrant Group 2 players.<P>
+
+
+In light of the attenuator response, we recommend that developers simply produce<BR>
+ADPCM assets carefully--monitoring levels closely between all ADPCM clips in the<BR>
+title, and also taking care to match levels to the MPEG assets.  The second part of the<BR>
+recommendation is to leave the attenuator settings at NO attenuation (255 in Mogul).<BR>
+This is the ONLY setting that produces the same attenuation (albeit NO attenuation) across ALL player groups.</FONT></P>
+
+
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="mm.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,2 @@
+AddType application/zip .zip
+AddType application/exe .exe

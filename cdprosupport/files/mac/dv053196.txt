@@ -1,0 +1,76 @@
+***************************************************************************
+*******************************READ ME*************************************
+***************************************************************************
+This is the latest (and hopefully greatest) version of the DV Plug-in. It is 
+NOT a released version, and is therefore NOT supported.  (We are interested
+in any problems you have with it, of course).  The problems it fixes are 
+described below.  
+
+In order to install it, either:
+1) untar the file (Sun, OS9)
+2) unzip the file (PC)
+3) Double-click the .sea file (Mac)
+
+This will create a directory(folder) called DV053196.  Inside of this directory are all the pieces of the new plugin. To install them:
+Mac/PC authoring board systems:
+1) Copy the DV053196 directory to your MediaMogul directory.
+2) Assuming your CDIMAGES directory is within your script2disc directory, set your /dd directory to the script2disc directory (using the Set MediaMogul Directory menu option in CDi Playback).
+3) At the "$" prompt in CDi Playback, type the following lines:
+chd /h0/DV053196
+attr install -peeprrpww
+install
+
+Sun/OS9 Systems:
+1) Copy the DV053196 directory to your MediaMogul hard drive.
+2) Type:
+chd /h0/DV053196
+attr install_os9 -peeprrpww
+install_os9
+3) Copy cdi_dv in the DV053196/CDIMAGES directory to the CDIMAGES directory on your script2disc directory or drive.
+4) First, change directory to your script2disc CDIMAGES directory. Then:
+OS9 users should type:
+attr cdi_dv -peepwwprr
+Sun users should type: 
+chmod 777 cdi_dv
+
+
+Changes since DV Plug-in 2.2.1 Release
+-------------------------------------------------
+FIXED
+    o  The latest engine-player combination is not working at all!!
+       01/23/97 -- aa
+       The library files were out of sync with the play plug-in. -aa
+--------------------------------------------------
+FIXED:
+    o  If the first play is in STILL mode, centering is not carried out. 
+       12-26-95 -- aa
+--------------------------------------------------
+OPEN
+    o  If DVPro is in STILL, a $DV_CONTINUE restarts video but does not
+       start audio.  A $DV_NORMAL restarts both video and audio.
+       02/16/96 -ach
+-------------------------------------------------
+FIXED
+    o  When scanned past the end of the file, dvpro was going to play
+       mode and playing the chunk between the last entry point and the 
+       end of the file.
+       02/20/96 -- aa
+-------------------------------------------------
+FIXED
+    o  Sequential DV plays show black between clips if 
+       no INTIME is specified.
+       If the user starts play from an entry point, no black is displayed.
+       However, DV had a problem where if start time was 00:00.., 
+       no checks were done to see if 00:00.. is an entry point. This
+       fix, makes sure that if EPD is loaded, and if 00 is an entry point,
+       the screen is not blanked. 
+       03/07/96 -- aa
+-------------------------------------------------
+FIXED
+    o  When run in TEST mode, with no DV card present, the dvpro module and
+       the dvplay module miscomunicated. The result was that an error of
+       168 was returned by dvplay. This indicated, falsely, that dvpro was 
+       not running. A side effect of this problem was some memory trashing.
+       This problem has now been fixed. 
+       05-30-96-aa
+      

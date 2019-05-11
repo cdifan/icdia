@@ -1,0 +1,85 @@
+<HTML><HEAD>
+<TITLE>Recent History of Master</TITLE>
+</HEAD>
+<BODY bgcolor=#ffffff>
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="cpro.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+<H2><CENTER>Recent History of Master</CENTER></H2><BR>
+<P>
+
+<B>4.1.1:</B> this was the first version capable of handling MPEG. <P>
+
+
+<B>4.1.2:</B> this version was cranked out in a hurry to handle Karaoke CD1.0 spec.
+It saw limited/restricted distribution - on a as-is basis.<P>
+
+
+<B>4.1.3:</B> this version cleaned up the worst of 4.1.2 problems,
+and even some 4.1.1 problems, and was be White Book 1.1 compliant.  <P>
+
+
+<B>4.2:</B> White Book 1.1 support. Eliminates the nuisance of the delta file.
+Obsolete and superceded keywords made illegal or optional; new script syntax.<P>
+
+
+<BLOCKQUOTE>The "delta_file from <FILE>" syntax is obsolete and ignored by 4.2 and
+became alien syntax (read: will stop with an error) in subsequent rev. of vcdmaster.<P>
+
+
+"non_real_time" has been added as an alternative to "real_time mpeg"
+streams. This option defeats the sectorization of the mpeg data as
+normally prescribed by the SCR values in the data.<P>
+
+
+4.2 release of master and vcdmaster take the scrambled state of a rtf into consideration when including it in the disc image.<P>
+
+<PRE><BLOCKQUOTE><CODE>           \          final disc
+            \
+   rtf       \  scrambled   | unscrambled
+  --------------------------------------
+   scrambled  | no change   | unscramble
+              |             |
+  unscrambled | scamble     | no change
+              |             |</CODE></BLOCKQUOTE></PRE>
+
+
+Also, vcdmaster 4.2 did support chapter marks through the .pkl file
+mechanism. The problem was that there was no simple method to connect a
+byte offset in the .pkl with a real-live-timecode. </BLOCKQUOTE><P>
+
+
+<B>4.3:</B> vcdmaster 4.3 allowed chapter marks to be identified using smpte
+timecodes in the master script. Integrated Philips scan-list generation
+capability (generates the scan list as the a/v sequence is copied into
+image).<P>
+
+
+<B>4.3.1:</B> Bugs repaired, no new features.<P>
+
+
+
+
+
+<B>4.3.2:</B>  A few bug fixes.<P>
+
+<B>4.4:</B>  Most current version.  PC, Mac only. White Book 2.0, Windows 95/NT compatible.<P>
+<BR>
+<B>Note:</B>  There have been some instances where obscure features have been broken in new releases. For example, the internal (included in green file as
+pre-amble) entrypoint data feature was broken between 4.1 and 4.2. As
+far as we know, all the "obscure" features in 4.4 are 100%
+operational. If you rely upon some obscure feature, especially a
+undocumented feature, we recommend that you build an image with 4.4,
+and test the result before you delete each and every copy of the
+previous version.<P>
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="cpro.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+
+</BODY>
+</HTML>

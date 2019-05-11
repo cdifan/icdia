@@ -1,0 +1,30 @@
+Installing DV8025.TAR
+
+
+
+1. Copy tar file to /h0/SUBROUTINES
+
+2. type:  tar -xvf DV8025.TAR
+
+3. type:  attr -peepwwprr cdi_dv*
+
+4. Store floppy with tar file in a safe place.
+
+
+
+
+
+
+
+
+
+** The utility "tar" can be found on the "OS-9 System Diskette". Copy
+
+"tar" from the floppy to /h0/CMDS, then change its attributes by:
+
+
+
+attr -peepwwprr tar
+
+
+

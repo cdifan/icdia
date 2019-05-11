@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+    <TITLE></TITLE>
+</HEAD>
+<BODY>
+<BR>
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> | <A HREF="mm.htm">Up
+One Level</A> | <A HREF="/cdprosupport/sitemap.htm">Site Map </A>| <A HREF="mailto:cdprosupport@icdia.org">Send
+Us email</A> </CENTER>
+<HR>
+
+
+
+
+
+<H2><CENTER><BR>
+What a CD-i Color Look Up Table looks like:</CENTER>
+</H2>
+<BR>
+<A HREF="cluts.htm">CLUT Image Formats </A><BR>
+<BR>
+The CLUT (also called pallete) maps each pixel in the picture to a particular
+entry in the table. Each entry in the table stores an RGB color--one of
+17 million colors in the player's pallete. For example, a CLUT 7 image has
+128 table entries, permitting 128 possible colors in the picture. It is
+up to the picture designer and the paint application to map each pixel to
+a table entry (color). If the original picture contains more colors than
+there are table entries (128 in our example), then most paint packages will
+peform &quot;color reduction&quot;. Pixels of similar hue and brightness
+will be homogenized to some comprimise color, and that color (and associated
+pixels) assigned to a CLUT entry. This process continues until all pixels
+in the picture (up to 107,520) are mapped to one of 128 CLUT entries. At
+best, the resulting picture is visually identical or at least estehtically
+similar to the original. At worst, there is severe &quot;banding&quot;,
+where suble color gradations in the original, like sky or flesh, become
+a few rainbow-like color bands.<BR>
+<BR>
+There are five CD-i <A HREF="cluts.htm">picture formats </A>that use a
+CLUT. They are: 
+<UL>
+  <LI>CLUT 8 - 256 CLUT entries 
+  <LI>CLUT 7 - 128 CLUT entries 
+  <LI>CLUT 4 - 16 CLUT entries 
+  <LI>Run Length 7 - 127 CLUT entries 
+  <LI>Run Length 3 - 8 CLUT entries 
+</UL>
+<BR>
+Note: that for special effects on a CD-i player, desired transparent or
+text colors must be placed in certain table entries. Your desired transparent
+color must be in table entry 0, while the primary text color (for presenting
+changing text in a title) must be in entry 1. Use a paint application or
+video conversion tool, like DeBabelizer, to arrange the palette accordingly.
+<DL>
+  <DD><I>The graphic below was designed to fit horizontally on an 8.5x11
+page. Use landscape print mode to make a hard copy.</I> 
+</DL>
+<IMG ALIGN=bottom SRC="cluttable1.gif">
+<HR>
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> | <A HREF="mm.htm">Up
+One Level</A> | <A HREF="/cdprosupport/sitemap.htm">Site Map </A>| <A HREF="mailto:cdprosupport@icdia.org">Send
+Us email</A> </CENTER>
+
+
+</BODY>
+</HTML>
+

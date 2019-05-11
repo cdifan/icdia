@@ -1,0 +1,368 @@
+CHANGES MADE FOR VERSION 2.5.1:
+ ===============================
+
+
+ SOFTWARE UPDATE
+ 
+ - CD-i and CD-DA formats now correctly work on the Yamaha CDR100.
+ 
+ - Preferences are now correctly saved to disk.
+ 
+ - The EJECT command now works with the Kodak PCD600.  Consequently, you can
+   use the Kodak PCD600 with the Kodak disc transporter.
+ 
+ - The compare files feature now works correctly.  Previously, it occasionally
+   crashed CD-IT!ALL when analyzing files of different sizes.
+ 
+ The following updates are applicable to System 7.5 systems only:
+ 
+ - The Drag Manager now correctly highlights the main window.
+ 
+ - The Drag Manager now correctly handles inappropriate items that were dropped
+   on the main window.
+ 
+ 
+ DOCUMENTATION NOTES
+ 
+ The following information is provided as update notes to the revision C
+ CD-IT!ALL manual:
+ 
+ - On a JVC XR-W1001, "write disc" is equivalent to "write session."
+ 
+ - You cannot write more than three sessions with a Ricoh RS-9200CD.
+ 
+ - If you get verification and/or read errors with the Philips CDD522 recorder,
+   you need to upgrade to the CDD522 firmware version 1.02 or higher.
+ 
+ - Version 1.0 of the Reflection Systems RF4100 firmware does not always
+   correctly report the available space on a multisession disc.  Consequently,
+   the software allows you to write more data than actually fits on the disc.
+   The resulting disc cannot be used.  This firmware will be fixed in an
+   upcoming release.
+ 
+ - To create a CD-DA disc, select AUDIO TRACKS from the CD-ROM pulldown menu.
+   Regardless of the currently displayed CD format, the AUDIO button appears.
+   Click on the AUDIO button to add tracks.  To make an audio only disc, do not
+   use the DATA button.
+ 
+ - Yamaha CDR100 players take a long time to eject a disc when recording is
+   complete.  The Mac is virtually frozen until the disc ejects.
+ 
+ - Use certified 4x discs in the Yamaha CDR100.  Using other disc types
+   increases the likelihood of recording failure due to media.
+ 
+ - Yamaha CDR100 firmware prior to version 1.03 is known at times to return the
+   wrong data during verification.  To properly verify the disc, place it in
+   another CD-ROM drive and use the COMPARE command.
+ 
+ - If you check USE TEXT MARKERS or USE NUMERIC MARKERS indexes for CD-DA
+   tracks, any SoundDesigner II index marks in the files are automatically
+   placed on the disc so an audio player that understands indexes can use them.
+   Markers placed in SoundDesigner II files can be either in text or numeric
+   format.
+ 
+ - A 22M overhead is associated with the first session, and a 13M overhead is
+   associated with each additional session.
+ 
+ - Always run a disk optimizer on your source volume before you write.  Even
+   when you know that none of your files are fragmented, the volume's catalog
+   files and/or the desktop database might be fragmented.
+ 
+ 
+ ALIASES
+ 
+ The following information is provided to clarify the use of aliases when
+ making disc images:
+ 
+ - If you check the RESOLVE ALIASES check box in the select folder dialog for
+   creating ISO or hybrid images, all file aliases are replaced with the actual
+   file in the disc image.  If not checked, only the file alias is included in
+   the disc image.
+ 
+ - The CHECK ALIASES function in the OPTIONS pulldown menu scans the selected
+   partition/image for aliases and determines if there are aliases that point
+   outside of that partition/image.  Before checking an ISO image for aliases,
+   you must mount the ISO image.  It is not enough to select the folder from
+   which you built it.
+ 
+ Also, on page 4-4 of the manual, please replace step 3 with the following:
+ 
+ 3. Create the alias for each shared data file in the Macintosh volume and drag
+    the alias icons to the ISO folder.
+ 
+ You can also alias folders, as well as files.
+ 
+ 
+ CUSTOMIZING HFS ICONS
+ 
+ You can customize the icon for an HFS or hybrid disc when mounted on a
+ Macintosh by following these steps:
+ 
+ 1. Create and mount the temporary HFS partition.
+ 
+ 2. Do a GET INFO on the application whose icon you wish to use.
+ 
+ 3. Click on the icon in the GET INFO window to highlight it.
+ 
+ 4. Use APPLE-C to copy the icon to the clipboard.
+ 
+ 5. Do a GET INFO on the HFS partition icon.
+ 
+ 6. Click on the icon to highlight it.
+ 
+ 7. Use APPLE-V to paste the new icon.
+ 
+ The mounted partition should now have the new icon.  At this point you can
+ record the disc.  When you mount the disc in your CD-ROM drive, the new icon
+ appears instead of the default icon.
+ 
+ 
+ CHANGING A VOLUME'S ALLOCATION BLOCK SIZE
+ 
+ The allocation block size for the source volume should be a multiple of 2K.
+ To check the allocation block size, click the INFO button in the SELECT VOLUME
+ window.
+ 
+ To change a volume's allocation block size, you need to reinitialize the
+ volume.  Most SCSI formatting software allows you to specify the allocation
+ block size.  If your software does not have this option, you can force a
+ specific block size by using one of these volume sizes:
+ 
+    Volume size        Default block size
+    -------------------------------------
+       96 - 127M              2K
+      224 - 225M              4K
+      352 - 383M              6K
+      480 - 511M              8K
+      608 - 639M             10K
+      736 - 767M             12K
+      864 - 895M             14K
+     992 - 1023M             16K
+    1120 - 1152M             18K
+    1248 - 1279M             20K
+    1376 - 1407M             22K
+    1504 - 1535M             24K
+    1632 - 1663M             26K
+    1760 - 1792M             28K
+    1888 - 1919M             30K
+    2016 - 2047M             32K
+ 
+ Volumes created with the CREATE TEMPORARY PARTITION command will always have
+ the optimum block size.
+ 
+ 
+ COPYING A CD-ROM DIRECTLY
+ 
+ CD-IT!ALL allows you to copy a CD-ROM directly.  To do this, insert the CD-ROM
+ into your CD-ROM player.
+ 
+ If the CD-ROM is a Macintosh HFS CD-ROM, you can use the MACINTOSH HFS disc
+ type and select the volume as usual.
+ 
+ If the CD-ROM is an ISO 9660 or a hybrid CD-ROM, use the GENERIC CD-ROM disc
+ type and select the CD-ROM drive.
+ 
+ If your Macintosh rejects the CD-ROM, turn off the extensions and restart.
+ 
+ Note:  CD-IT!ALL cannot check whether the disc is in fact a CD-ROM.  Also, you
+ cannot copy a CD-i, CD-DA, or a CD-ROM XA disc.
+ 
+ 
+ 
+ CHANGES MADE FOR VERSION 2.5.2:
+ ===============================
+ 
+ 
+ SOFTWARE UPDATE
+ 
+ The following changes have been made for CD-IT!ALL version 2.5.2:
+ 
+ - Support was added for Video CD disc images.  This is covered more fully in
+   the ñVideo CD Capabilityî section.
+ 
+ - Changes were made to the Generic CD-ROM format options and the ISO 9660
+   Builder window.  These changes are covered more fully in the ñGeneric CD-ROM
+   Format Optionsî and The ñISO 9660 Builder Windowî sections, respectively.
+ 
+ - CD-IT!ALL did not work properly when used with a Philips CDD522/Kodak PCD225
+   and certain older Macintosh models.  This has been fixed.  CD-IT!ALL
+   requires firmware 2.01 or higher; versions 1.0x are no longer supported.
+ 
+ - Support for the JVC XR-W2001 and the Pinnacle RCD-1000 has been added. 
+   ISRC and UPC codes currently do not work with the Pinnacle RCD-1000 and
+   other JVC-based writers.
+ 
+ - CD-IT!ALL supports CD Plus, which is the upcoming standard for interactive
+   albums.  CD Plus discs have audio in the first session and CD-ROM XA in the
+   second session.  CD-IT!ALLÍs hybrid capabilities have been enhanced to allow
+   for Hybrid/CD-ROM XA in the second session.  The HFS part of a hybrid second
+   session cannot be access with the currently shipping version of AppleÍs CD
+   ROM driver.
+ 
+ - Some writers, such as the Yamaha CDR100, Ricoh RS-9200CD, Kodak PCD600, and
+   Philips CDD521 with firmware prior to 2.0, do not support audio indexes. 
+   CD-IT!ALL did not always remind you that your audio indexes would be
+   ignored.  This has been fixed.
+ 
+ - CD-IT!ALL 2.5.2 requires that you have System 7.5 or System Update 3.0
+   installed.
+ 
+ 
+ VIDEO CD CAPABILITY
+ 
+ You can now use Video CD disc images in CD-IT!ALL.  To record a Video CD
+ image, you need to select the Video CD option from the CD-ROM menu.  
+ 
+ To load a Video CD image, use the following procedure:
+ 
+ 1. Click on Data in the main window to display a standard Macintosh open file
+    window.
+ 
+ 2. Click on the name of the Video CD image that you want to display.
+ 
+ 3. Click on the OPEN button.  Clicking on CANCEL returns you to the main
+    window without loading any data.
+ 
+ The name of the selected Video CD disc image should now be displayed in the
+ DATA field of the main window.
+ 
+ 
+ GENERIC CD-ROM FORMAT OPTIONS
+ 
+ A new dialog window was added to the Generic CD-ROM format options when
+ copying from SCSI devices which allows you to copy only part of a hard disc or
+ CD-ROM.  Now when you select your SCSI device from the SELECT SCSI DEVICE
+ window and click on OK, the SCSI device descriptor window is displayed.
+ 
+ The SCSI device descriptor window provides information about the SCSI device
+ such as the capacity, block size, and number of blocks.  The SCSI device
+ descriptor window allows you to specify the following information:
+ 
+ - COPY
+   Enter the number of either blocks or megabytes of the SCSI device to copy.
+   Then, select whether you are specifying blocks or megabytes by using the
+   pulldown menu.
+ 
+ - START AT BLOCK
+   Enter the number of the block at which to begin the copy.  If you specify 0,
+   CD-IT!ALL copies from the start of the device.
+ 
+ 
+ THE ISO 9660 BUILDER WINDOW
+ 
+ The ISO 9660 BUILDER window has been changed and provides the following fields
+ and check boxes:
+ 
+ - VOLUME NAME
+   Enter the name that you want the volume to be called. 
+ 
+ - FORMAT
+   Select the image format that you want to use for the ISO 9660 image.  The
+   following options are available from the pulldown menu:
+ 
+   - CD-ROM
+     Select CD-ROM if you want to use CD-ROM as the image format.  If you
+     select CD-ROM, you cannot create a multisession disc.
+ 
+   - CD-ROM XA
+     Select CD-ROM XA if you want to use CD-ROM XA as the image format.  If you
+     want to use a multisession disc, you need to select CD-ROM XA.
+ 
+   - ELECTRONIC BOOK
+     Select ELECTRONIC BOOK if you want to use the Electronic Book image
+     format.  If you select ELECTRONIC BOOK, you also need to select the
+     language to use for the format.  The following languages are available
+     from the pullright menu:
+     
+            English   French   German   Italian   Japanese   Spanish
+ 
+ - NAMING
+   Select the naming convention set that you want to use:
+ 
+   - ISO 9660 LEVEL 1
+     Select ISO 9660 LEVEL 1 if you want CD-IT!ALL to adhere to the ISO 9660
+     Level 1 naming conventions.  If you use ISO 9660 naming, all file and
+     folder names are converted to contain only uppercase A-Z, the digits 0-9,
+     and the underscore (_) character.  To create a fully ISO 9660 Level 1
+     conformant disc, you should also check APPEND VERSION NUMBERS.  If you
+     select ISO 9660 LEVEL 1, directory names cannot have extensions.
+ 
+   - ALLOW MS-DOS NAMES
+     Select ALLOW MS-DOS NAMES if you want CD-IT!ALL to allow MS-DOS file
+     naming conventions.  The ISO builder allows non-ISO 9660 naming
+     conventions to be used when you select ALLOW MS-DOS NAMES.  However,
+     selecting ALLOW MS-DOS MANES causes CD-IT!ALL to create a disc that does
+     not fully conform to ISO 9660.  Directory names may have extensions.
+ 
+   - ALLOW MACINTOSH NAMES
+     Select ALLOW MACINTOSH NAMES if you do not want any file name conversion
+     to take place.  Discs created with ALLOW MACINTOSH NAMES selected most
+     likely will not conform to the ISO 9660 standard, but will work without
+     any problems on Macintosh computers and most UNIX systems.  You cannot use
+     discs created with this options on systems running the MS-DOS/Windows
+     operating systems.  If you select ALLOW MACINTOSH NAMES, you cannot select
+     APPEND VERSION NUMBERS (;1).
+ 
+   - APPEND VERSION NUMBERS (;1)
+     If your filenames do not contain version numbers, check APPEND VERSION
+     NUMBERS (;1) to append a version number to each filename while building
+     the disc image.  This saves you the time of manually changing each
+     filename to include a version number.
+ 
+   - USE APPLE EXTENSIONS
+     Check USE APPLE EXTENSIONS if you want CD-IT!ALL to allow Apple extension
+     to ISO 9660.  If you do not check USE APPLE EXTENSIONS, only the data
+     forks of Macintosh files can be written to and read from CD-ROM.
+ 
+ 
+ 
+ CHANGES MADE FOR VERSION 2.5.3:
+ ===============================
+ 
+ 
+ - Support for the Sony CDU920S/CDU921S.
+ 
+ - Support for the Ricoh RS-1060C.  This should be considered "beta", as it has
+   not been tested with a production version of the drive.
+ 
+ - Support for Eastman-Kodak bar coding (Kodak writers only).
+ 
+ - VERIFY calculates a CRC checksum for the disc.  The checksum is displayed
+   in the VERIFICATION COMPLETED SUCCESSFULLY window, and is automatically
+   placed on the clipboard.  AstartÚ's CD-Copy product uses the same algorithm
+   to create a checksum for a given disc, thus enabling you to verify the
+   integrity of the disc at a later date.
+ 
+ - Improved compatibility with Powerbooks and 68030-based Macintosh computers.
+ 
+ - Version 2.0 of CD-IT! CD Reader automatically mounts all volumes of a
+   multivolume HFS disc on the desktop.  
+ 
+ 
+ 
+ CHANGES MADE FOR VERSION 2.5.6:
+ ===============================
+ 
+ 
+ - The final version of the Ricoh RS-1060C is now supported.
+ 
+ - The Philips CDD2000 is now supported.
+ 
+ - The image driver now updates the modification date and time of the HFS image
+   file when the contents of the respective temporary partition is changed. 
+   The update only takes place after dragging the mounted temporary partition
+   icon from the desktop to the trash.
+ 
+ - Hidden directories are now supported in the ISO format.  Previously, only
+   hidden files were allowed.
+ 
+ - CD-IT! CD Reader version 2.0.3 supports the new recorders.
+ 
+ - A trash folder and a desktop folder are now automatically created on
+   bootable CDs.
+ 
+ - In the Generic CD-ROM format, option-click on the DATA button directly
+   displays the SCSI dialog. Option-click on the OK button in the OPTIONS
+   dialog saves the current settings as default.
+ 
+ 

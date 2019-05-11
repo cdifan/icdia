@@ -1,0 +1,82 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>  MACINTOSH SCSI HARDWARE ISSUES</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="cditmac.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+<HR>
+
+<H2 ALIGN=CENTER> MACINTOSH SCSI HARDWARE ISSUES</H2>
+
+<P> No single item may affect the reliable performance of the Apple Macintosh as much as its SCSI components. Near the top of the list (if not the top) are the external SCSI cables.</P>
+
+<UL TYPE=DISC>
+    <LI> They MUST be double-shielded (proper shielding eliminates electromagnetic and radio frequency interference.
+    <LI> They MUST allow for the proper impedance value to be maintained on the chain through proper bus termination.
+    <LI> The system SCSI cable (the one connected directly to the Mac) MUST NOT EXCEED 30 inches long. Apple recommends 18 to 24&quot;.
+    <LI> The device SCSI cable (the one running from device to device) MUST NOT EXCEED 40 inches long.
+    <LI> The total length of the external SCSI bus SHOULD NOT EXCEED 18 ft. length. The shorter the better!
+</UL>
+
+<P> <FONT SIZE=4><B><FONT COLOR="0000DD">SCSI termination</FONT></B></FONT><BR>
+ A good rule of thumb is to terminate the first and last physical device in a SCSI chain. With some exceptions, this is a good rule. The most obvious exceptions are the Quadra 900 and 950. These two Macs require that NO internal device be terminated, and that the logic board be terminated by placing a terminator at the end of the internal ribbon cable. Middle-of-the-chain termination on the external SCSI bus should NOT be necessary if you use: <BR>
+ <UL><LI> quality cables,<BR>
+  <LI>don't exceed the recommended cable length,<BR>
+ <LI> order the devices according to buffer size and speed, and<BR>
+ <LI>use a high quality active terminator.</P>
+</UL>
+<P> External terminators should be used on the last external device on the chain, due in part to the nature of Apple's hardware reset signal which travels on pin 40 of the 50-pin internal SCSI ribbon cable. Quality is critical when using active, pass-through termination. When using a scanner (or other high random noise devices like SCSI printers), only the Apple active, pass-through terminator should be used. Many scanners require the capacitance level of such a terminator to achieve the proper impedance level on the SCSI chain. The black Apple passive, pass- through terminator is excellent and works on most Macintosh models from the IIci through the Quadra 950. Models starting with the Quadra 800 require active terminators to ensure the most stable SCSI chain.</P>
+
+<P><FONT SIZE=4> <B><FONT COLOR="0000DD">SCSI device order---it does matter!</FONT></B></FONT><BR>
+ <FONT SIZE="3" COLOR="#5511CC"><B>Address Order</B></FONT><BR>
+ The Macintosh loads or addresses the SCSI devices in the following SCSI ID order: 0, then 6-5-4-3-2-1.</P>
+
+<UL TYPE=DISC>
+    <LI> Fixed storage media (<B>Category 1</B>) devices (hard drives) are the most stable SCSI devices and should be the first devices that load on the Macintosh SCSI chain. Starting with the internal hard drive at SCSI address 0, successive internal or external fixed media devices should be set at SCSI address 6, then 5, and so on.
+</UL>
+
+<UL TYPE=DISC>
+    <LI> Read/write removable media (<B>Category 2</B>) devices are less stable the Category 1, with SyQuest being slightly more stable than 3.5 magneto optical devices, then 5.25 magneto optical devices, then most tape drives. Most CD-ROM drives, including the Sony Apple OEM drives, fall into this grouping also. Some CD-ROM devices, such as those made by NEC, are inherently much more unstable and fall into Category 3.
+</UL>
+
+<UL TYPE=DISC>
+    <LI> Remaining Tape drives and CD-ROM drives can be grouped into <B>Category 3</B> devices. Often a CD-ROM player works best at a particular SCSI address, most commonly ID 1 or 2. Generally whether a device falls in Category 2 or 3 or 4 is related to the size of its buffer: the larger the buffer, the more stable the device will be on the SCSI bus. Older devices may have 256K or less buffer, while newer ones can have 1MB or even more (depending on the device).
+</UL>
+
+<UL TYPE=DISC>
+    <LI> Least stable of all are <B>Category 4</B> devices: scanners and other non-media SCSI devices(SCSI scanners, SCSI Ethernet adapters, printers, monitors, film recorders, color proofers, etc). NOTE OF CAUTION: Category 4-type devices should ideally be the only SCSI device on the bus if you desire them to function relatively trouble free. Inexpensive flatbed scanners which do not have dual 50-pin ports should be avoided (the UMAX line is an exception).
+</UL>
+<P>
+<FONT SIZE="3" COLOR="#5511CC"><B>Physical Order</B></FONT><BR>
+ Physically, external devices should be connected to the Macintosh so that the most stable devices (Category 1) are last in the SCSI chain, and the least stable devices (Category 4) first (i.e. directly to the Mac). As an example, if you had a Macintosh IIci with an 80MB OEM internal drive, a 120MB external hard drive, a SyQuest drive, and a flat-bed scanner you would set the ID of the internal drive at 0, the external drive would be at 6, the SyQuest at 5, and the
+ scanner at 4. Physically, the chain would start with the Macintosh, then the scanner, the next device the SyQuest, and so on with the last device being the external hard drive. Internal termination of external devices should normally be avoided because of its tendency to not handle the hardware reset signal and the constant SCSI polling in place on all Macintoshes since the SE.</P>
+
+<P> Discussion of the idiosyncrasies of SCSI could go on forever. Let's summarize the proper load order for Macintosh SCSI devices:</P>
+
+<UL TYPE=DISC>
+    <LI> The physical order of external SCSI devices should be Macintosh, Category 4, Category 3, Category 2, and last Category 1.
+    <LI> If you use Category 4 devices, it's best if they are the only thing connected to the Mac. If you must have additional devices, connect as few as possible.
+    <LI> The SCSI device addresses available on the Macintosh are 0-6.
+    <LI> The Macintosh logic board is ALWAYS at address 7.
+    <LI> The internal boot drive, in general, should be at address 0.
+    <LI> The Mac loads SCSI devices in this order: 0 - 6 - 5 - 4 -3 - 2 -1.
+    <LI> Typically devices with larger SCSI buffers and faster SCSI transfer speeds should load first, with decreasing buffer size corresponding to a descending load order.
+</UL>
+
+<P> This document is an edited and modified version of an article (mostly based on Apple technical guidelines)  which originally appeared in <B>MacInformed</B><FONT SIZE="1"><SUP>TM</SUP></FONT> magazine . It is available on America Online, and subscriptions may be obtained by emailing <I>keithTRON@aol.com</I>.</P>
+<HR>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="cditmac.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+<!-- TRW -->

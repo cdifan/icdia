@@ -1,0 +1,160 @@
+<HTML>
+<HEAD>
+    <TITLE>Supplement for Course Map</TITLE>
+</HEAD>
+<BODY>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="plugins.htm">Up 1 Level</A></A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+
+
+<BR>
+<H2><CENTER>Supplement for: Course Map</CENTER>
+</H2>
+<P><CENTER></CENTER>
+<P><B>Overview:</B><BR>
+<BR>
+Course Map provides a method to track sections of a title that a user has
+been in. It does this by keeping track of which hotspots have been clicked
+on (actually keeps track of the &quot;branch to&quot; elements of the hotspots
+clicked). Optionally, when the menu is presented, the plugin can blitt a
+small picture into the Foreground picture at the hotspot(s) location, indicating
+that the section has already been played.<BR>
+<BR>
+Blitting is where a small picture (called a partial) is superimposed INTO
+another picture, somewhat like pasting a picture of someones face over the
+face of another in a group picture. <BR>
+<BR>
+<BR>
+<B>Plug-ins required for operation:</B> 
+<BLOCKQUOTE>cdi_sv - creates string variables that can be used in MediaMogul
+applications.<BR>
+cdi_stri - records a name into a string variable.<BR>
+cdi_cmap - compares &quot;branch to&quot; info for hotspots on the screen,
+the contents of the stored variable, then extracts partial pictures a &quot;mapped&quot;
+picture and blitts them onto the foreground picture in the appropriate hotspot
+areas. <BR>
+</BLOCKQUOTE>
+<B>MediaMogul utilities required to prepare assets:</B> 
+<BLOCKQUOTE><BR>
+NONE </BLOCKQUOTE>
+<BR>
+<B>Assets to create before using plug-in:</B> 
+<UL>
+  <LI>Foreground Picture for the menu -- must be <A HREF="../mm/cluts.htm">CLUT
+4 or 7</A> 
+  <LI>Background Picture for the menu -- must be <A HREF="../mm/cluts.htm">CLUT
+4 or 7</A> 
+  <LI>Menu file for the Foreground picture 
+  <LI>Map Picture where the partial pictures are extracted from-- must be
+CLUT 4 or 7 
+</UL>
+<A HREF="bogus.htm"><BR>
+</A>
+<P><CENTER><IMG SRC="coursemap13.gif" WIDTH="137" HEIGHT="94" ALIGN="BOTTOM"
+NATURALSIZEFLAG="3"><IMG SRC="coursemap14.gif" WIDTH="127" HEIGHT="100"
+ALIGN="BOTTOM" NATURALSIZEFLAG="3"><IMG SRC="coursemap15.gif" WIDTH="190"
+HEIGHT="100" ALIGN="BOTTOM" NATURALSIZEFLAG="3"><BR>
+<IMG SRC="coursemap16.gif" WIDTH="138" HEIGHT="94" ALIGN="BOTTOM" NATURALSIZEFLAG=
+"3"><BR>
+<BR>
+<BR>
+<BR>
+Note: because partial pictures are extracted and placed on the Foreground
+picture, the Map Picture and the Foreground Picture MUST have an identical
+<A HREF="../mm/cluttable.htm">CLUT table</A> -- same colors and ordering.<BR>
+<BR>
+<BR>
+</CENTER>
+<P><B>Special preparations:
+<P><CENTER></B>No additional preparation required. <BR>
+<BR>
+</CENTER>
+<P><B>How plug-in works:
+<P><CENTER></B>&#183; You must start up the string variable plugin, cdi_sv,
+and reserve sufficient string space to store the appended length of all
+hotspot &quot;branch to&quot; filenames you intend to track. In our example,
+I would have to reserve at LEAST 32 characters. That is, 7 characters for
+the name itself (like chap1.s) and one character for the colon separating
+the name. There are four names, so 4 x 8 = 32 characters. I would suggest
+rounding up to the nearest multiple of 25 (in this case, 50 characters).<BR>
+<BR>
+&#183; At the front of each script you wish to track, place a Call to cdi_stri,
+and include the name of the script itself (like chap1.s) and the string
+variable you chose earlier (like S0). cdi_stri stores that name in the variable.
+several variables can be used to store selection information for different
+sections of a title. Later in the title the stored name(s) can be compared
+to the hotspot names currently on the screen, and then be used to blitt
+partial pictures to the screen. An example of how the string is stored:</CENTER>
+<P>
+<P><CENTER><IMG SRC="coursemap17.gif" WIDTH="325" HEIGHT="33" ALIGN="BOTTOM"
+NATURALSIZEFLAG="3"></CENTER>
+<P>&#183; When the menu is to be presented, showing the user which sections
+have already been played, the following items need to be scripted:<BR>
+<BR>
+- Call cdi_cmap; you provide the variable to compare with (like S0) and
+the separator character used (:). 
+<UL>
+  <LI>Load the Foreground Picture. 
+  <LI>Load the Map picture in the Background. 
+  <LI>Load the Background picture in the Background. 
+  <LI>Load the menu file, with wait. 
+</UL>
+<BR>
+&#183; cdi_cmap then compares the &quot;branch to&quot; names of the hotspots
+currently on the screen, with the names stored in the variable. When it
+finds a hotspot name and matching variable stored name, it notes the hotspot
+size and location. It then goes to the Map Picture, extracts pixels from
+that area, and blitts them onto the Foreground picture, at the same coordinates.
+<BR>
+<BR>
+<BR>
+<B>Example:</B><BR>
+<BR>
+In the following example, only chap1.s is stored in the variable S0 by cdi_stri.
+When cdi_cmap compared the menu and the variable, it found a match for the
+hotspot having the &quot;branch to&quot; of chap1.s. It extracted a partial
+from the map picture, at the same coordinates of the hotspot, and blitted
+the partial into the Foreground picture. The foreground picture is now changed.
+<BR>
+<BR>
+<CODE>init.s<BR>
+00:00 Call_bg /h0/SUBROUT/cdi_sv 1 50 </CODE>(variable is created)<CODE><BR>
+00:00 Br_always_nr /h0/SCRIPTS/chap1.s<BR>
+<BR>
+chap1.s:<BR>
+00:00 Call /h0/SUBROUT/cdi_stri S0 chap1.s </CODE>(the string &quot;chap1.s&quot;
+is placed in S0)<CODE><BR>
+00:00 Cut /h0/VIDEO/bigpicture1.d<BR>
+04:00 Cut /h0/VIDEO/bigpicture2.d<BR>
+08:00 Br_alwys_nr /h0/SCRIPTS/mainmenu.s<BR>
+<BR>
+mainmenu.s:<BR>
+00:00 Call_bg /h0/SUBROUT/cdi_map S0 : (</CODE>contents of S0 chosen for
+compare)<CODE><BR>
+00:00 Cut /h0/VIDEO/menufore.cl7<BR>
+00:17 Background /h0/VIDEO/menumap.cl7<BR>
+01:04 Background /h0/VIDEO/menuback.cl7<BR>
+01:04 Wait /h0/MENUS/mainmenu.m (</CODE>hotspot names compared to S0--blitts
+on matches) 
+<BLOCKQUOTE>
+<P><CENTER><IMG SRC="coursemap18.gif" WIDTH="420" HEIGHT="105" ALIGN="BOTTOM"
+NATURALSIZEFLAG="3"></CENTER>
+</BLOCKQUOTE>
+Note: the foreground picture changes are temporary -- only altered in the
+video plane. The CD/Hard drive copy remains unchanged.<BR>
+<BR>
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="plugins.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+</BODY>
+</HTML>
+

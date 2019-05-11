@@ -1,0 +1,122 @@
+<HTML>
+
+<HEAD>
+
+
+
+<TITLE>Tech Note : TT-7</TITLE>
+
+
+
+</HEAD>
+
+<BODY>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<HR>
+
+<P>
+
+<P>
+
+<P>
+
+					<CENTER>Tech Note : TT-7</CENTER>
+
+
+
+<P>
+
+<B>TOPIC:</B>
+
+<P>
+
+Replacing the standard MediaMogul "click" sound.
+
+<P>
+
+<B>OVERVIEW:</B>
+
+<P>
+
+It is not documented how to make an audio file to replace <CODE>h0/AUDIO/click.cmono</CODE> or <CODE>/h2/CDIMAGES/click.cmono</CODE>.  The procedure assumes you are using (and know how to use) the Macintosh, AudioMedia II sound card with the Sound Designer II program, and the AudioStack conversion utility.  The same procedure can be easily implemented on other platforms and with other audio tools.
+
+<P>
+
+The file <CODE>click.cmono</CODE> is ONE sector of CMONO audio, which is loaded as a sound map (an audio clip in memory) when MediaMogul is started, or when a CD-i disc is started.  When hotspots are clicked on, or during some branch conditions, this sound map is played.  The "click" sound is 213 ms in length. 
+
+<P>
+
+<B>DISCUSSION:</B>
+
+<P>
+
+Note:  ms = milli-seconds
+
+<P>
+
+This procedure assumes you have already digitized (sampled) the appropriate 
+
+audio file to used as the "click".  This file can be of any length and the 
+
+portion used for the click can be anywhere in the file.
+
+<P>
+
+In Sound Designer, highlight 180 ms - 210 ms of the desired portion to be used 
+
+as the click.  If the audio file is stereo, only highlight a portion in EITHER 
+
+the left or right channel, but not both.  Copy the highlighted portion to the 
+
+"clipboard", open a new Sound Designer file as MONO, 16 Bit, Sound Designer 
+
+II, then paste the clipboard into the newly opened file.  Filter, compress, 
+
+alter amplitude, etc. as desired.
+
+<P>
+
+The peak amplitude should be 3-6 dB below maximum (0 dB or 100%) to prevent undue distortion when converting to CMONO. It is also recommended that you FADE OUT a small (10%) part of the trailing end to prevent a "pop" that is caused by suddenly going to digital silence (end of the file). 
+
+<P>
+
+Play the file in "loop" mode and assure it sounds as desired.  Save the file.
+
+<P>
+
+Open AudioStack, and select the file just saved.  Convert the file to CMONO.
+
+The CMONO file should be around 2390 bytes.  If it is substantially larger 
+
+(like 3000 bytes or more) go back to the Sound Designer version of the click 
+
+file and assure that it is less than 213 ms in length.
+
+<P>
+
+Replace the <CODE>click.cmono</CODE> file in <CODE>/h0/AUDIO</CODE> with your new one.  MediaMogul must be re-started before it will load the new <CODE>click.cmono</CODE> file.
+
+<P>
+
+Replace the <CODE>click.cmono</CODE> file in <CODE>/h0/CDIMAGES</CODE>, and any other build directories, with your new one.  The title must be, at minimum, re-mastered to include the new click file.  The title can, of course, be rebuilt from 'cdbuild' to include the new click file.
+
+<P>
+
+<BR>
+
+<HR>
+
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="mm.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+
+<!-- Page by Chuck Hildebrand -->
+
+<!-- BBEdit 4.0.4 -->
+
+<!-- Original Tech Note by OptImage Support -->
+
+</BODY>
+
+</HTML>
+

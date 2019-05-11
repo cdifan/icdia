@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+
+<TITLE>Tech Note: TT-10</TITLE>
+
+
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="vcd2x.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<BR>
+<BR>
+					   <H2><CENTER>Tech Note : TT-10</CENTER></H2>
+                          <CENTER>May 10, 1996</CENTER>
+
+<P>
+<B>TOPIC:</B>
+<P>
+Playing MPEG clip segments using Video CD 2.0 Toolkit
+<P>
+
+<B>OVERVIEW:</B>
+<P>
+The 2.0 Video CD specification allows for the use of chaptermarks for beginning play of MPEG clips.  These chaptermarks are merely entry points into the MPEG clip at the beginning and other user specified locations.  In most situations, the entire MPEG clip is played from beginning to end, or from one chaptermark to the end of the clip.  At times, however, it is desirable to play the clip from one chaptermark to a specified exit point in the clip, other than the end.  The 2.0 Video CD specification does not explicitly address this situation, but it can be accomplished using Video CD 2.0 Toolkit.
+<P>
+ 
+<B>SOLUTION:</B>
+<P>
+To play a portion of an MPEG clip that exits at a point other than the end of the file, you need to create a Video CD 2.0 Toolkit sequence.  The Sequence Editor has a feature that allows you to specify the length each event plays in that sequence.  The length of each MPEG clip will more than likely be different, so you should only specify one clip per sequence.
+<P>
+
+<B>PROCEDURE:</B>
+<P>
+The steps for creating the proper sequence are as follows:
+<P>
+<OL TYPE="1" START="1">
+	<LI>Use the Asset Manager to browse for your MPEG file.
+	<LI>Create a chaptermark for the starting point of each clip.
+	<LI>For each sequence you wish to build, create an event in the Event Manager, then drag the appropriate chaptermark from the Asset Manager onto this event.
+	<LI>Create a sequence for each clip segment using the Sequence Manager.
+	<LI>Using the Sequence Editor, drag one event from step 3 to the Event List window.  Remember that each sequence can only play back one clip segment.
+	<LI>Check the "Playing time per event" box and enter the total play time for the clip.  The MPEG file does not need to have an entry point defined at the stop point derived by the total play time.
+	<LI>Save your sequence.
+	<LI>Repeat steps 5 through 7 for each clip.
+</OL>
+Each of the sequences created can now be used in menus, or attached to nodes on the Volume Map.
+<P>
+<BR>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="vcd2x.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.4 -->
+<!-- Original Tech Note by Dave Crowe -->
+</BODY>
+</HTML>

@@ -1,0 +1,477 @@
+<HTML>
+<HEAD>
+   <TITLE>CD-i Player Serial Pinouts</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> 
+&#183; <A HREF="cables.htm">Up 1 Level</A> 
+&#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> 
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+
+<H2><CENTER><HR>CD-i Player Serial Cables &amp; Pinouts
+</CENTER></H2>
+
+<P><CENTER><IMG SRC="cdi_t2.gif" WIDTH=399 HEIGHT=158 ALIGN=bottom>
+</CENTER></P>
+
+<P><CENTER><TABLE BORDER=1 CELLPADDING=1 WIDTH="50%">
+<CAPTION><B>CD-i Player /t2 Serial Pinout</B></CAPTION>
+   <TR>
+      <TH>
+         <P><B>Pin</B>
+      </TH><TH>
+         <P><B>Signal</B>
+      </TH><TH COLSPAN=2>
+         <P><B>Description</B>
+      </TH></TR>
+   <TR>
+      <TD>
+         <P><CENTER>1</CENTER>
+      </TD><TD>
+         <P><CENTER>n.c.</CENTER>
+      </TD><TD COLSPAN=2>
+         <P><CENTER>not connected</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>2</CENTER>
+      </TD><TD>
+         <P><CENTER>RXD</CENTER>
+      </TD><TD COLSPAN=2>
+         <P><CENTER>Received Data</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>3</CENTER>
+      </TD><TD>
+         <P><CENTER>TXD</CENTER>
+      </TD><TD COLSPAN=2>
+         <P><CENTER>Transmitted Data</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>4</CENTER>
+      </TD><TD>
+         <P><CENTER>DTR*</CENTER>
+      </TD><TD COLSPAN=2>
+         <P><CENTER>Data Terminal Ready</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>5</CENTER>
+      </TD><TD>
+         <P><CENTER>GND</CENTER>
+      </TD><TD COLSPAN=2>
+         <P><CENTER>Ground</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>6</CENTER>
+      </TD><TD>
+         <P><CENTER>CTS</CENTER>
+      </TD><TD COLSPAN=2>
+         <P><CENTER>Clear to Send</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>7</CENTER>
+      </TD><TD>
+         <P><CENTER>RTS</CENTER>
+      </TD><TD COLSPAN=2>
+         <P><CENTER>Request to Send</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>8</CENTER>
+      </TD><TD>
+         <P><CENTER>+5V</CENTER>
+      </TD><TD COLSPAN=2>
+         <P><CENTER>&nbsp;</CENTER>
+      </TD></TR>
+</TABLE></CENTER></P>
+
+<P>*DTR is used as a power supply for some input devices and cannot
+be used as an active handshake signal.</P>
+
+<P>&nbsp;</P>
+
+<P>Cables on this page:</P>
+
+<UL>
+   <LI><A HREF="#printer">Serial Printer Cable</A>
+   
+   <LI><A HREF="#modem">Serial Modem Cable</A>
+   
+   <LI><A HREF="#host">Serial Player to Host Cable</A>
+
+   <LI><A HREF="#splitter">Serial Splitter Cable</A>
+   
+   <LI><A HREF="#dummy">Serial Dummy Plugs</A>
+</UL>
+
+<P><A NAME="printer"></A></P>
+
+<P><TABLE BORDER=1 CELLPADDING=1 WIDTH="60%">
+<CAPTION><B>Typical CD-i Player Serial Printer Cable</B></CAPTION>
+   <TR>
+      <TH>
+         <P>Player<BR>
+         
+         Mini Din-8
+      </TH><TH>
+         <P><B>Signals</B>
+      </TH><TH>
+         <P><B>Printer</B><BR>
+         
+         <B>DB-25M</B>
+      </TH></TR>
+   <TR>
+      <TD>
+         <P><CENTER>2</CENTER>
+      </TD><TD>
+         <P><CENTER>RXD &lt;-- TXD</CENTER>
+      </TD><TD>
+         <P><CENTER>2</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>3</CENTER>
+      </TD><TD>
+         <P><CENTER>TXD --&gt; RXD</CENTER>
+      </TD><TD>
+         <P><CENTER>3</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>5</CENTER>
+      </TD><TD>
+         <P><CENTER>GND</CENTER>
+      </TD><TD>
+         <P><CENTER>7</CENTER>
+      </TD></TR>
+   
+   <TR>
+      <TD>
+         <P><CENTER>6</CENTER>
+      </TD><TD>
+         <P><CENTER>CTS<--RTS</CENTER>
+      </TD><TD>
+         <P><CENTER>4</CENTER>
+      </TD></TR>
+<TR>
+      <TD>
+         <P><CENTER>7</CENTER>
+      </TD><TD>
+         <P><CENTER>RTS-->CTS</CENTER>
+      </TD><TD>
+         <P><CENTER>5,20(DTR)</CENTER>
+      </TD></TR>
+      
+</TABLE></P>
+
+<P>This cable works if the serial printer is DTE. If this cable
+doesn't work, try swapping pins 2 and 3 (RXD & TXD), and pins 4 and 5 (RTS & CTS). You can also
+short RTS & CTS together on the DB-25 side, and skip DTR altogether: it depends on the device.</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="modem"></A></P>
+
+<P><TABLE BORDER=1 CELLPADDING=1 WIDTH="60%">
+<CAPTION><B>Typical CD-i Player Serial Modem Cable</B></CAPTION>
+   <TR>
+      <TH>
+         <P>Player<BR>
+         
+         Mini Din-8
+      </TH><TH>
+         <P>Signal
+      </TH><TH>
+         <P>DB-25M Modem
+      </TH></TR>
+   <TR>
+      <TD>
+         <P><CENTER>2</CENTER>
+      </TD><TD>
+         <P><CENTER>RXD&lt;--TXD</CENTER>
+      </TD><TD>
+         <P><CENTER>3</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>3</CENTER>
+      </TD><TD>
+         <P><CENTER>TXD--&gt;RXD</CENTER>
+      </TD><TD>
+         <P><CENTER>2</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>5</CENTER>
+      </TD><TD>
+         <P><CENTER>GND</CENTER>
+      </TD><TD>
+         <P><CENTER>7</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>6</CENTER>
+      </TD><TD>
+         <P><CENTER>CTS<--RTS</CENTER>
+      </TD><TD>
+         <P><CENTER>5</CENTER>
+      </TD></TR>
+   <TR>
+      <TD>
+         <P><CENTER>7</CENTER>
+      </TD><TD>
+         <P><CENTER>RTS-->CTS</CENTER>
+      </TD><TD>
+         <P><CENTER>4,20(DSR)</CENTER>
+      </TD></TR>
+</TABLE></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="host"></A></P>
+
+<P><TABLE BORDER=1 CELLPADDING=1 WIDTH="100%">
+<CAPTION><B>CD-i Player to Host Serial Cable Pinouts</B></CAPTION>
+<TR ALIGN=Center>
+      <TH  COLSPAN=4>
+         <P><B>PLAYER</B><BR>
+      </TH>
+<TH  COLSPAN=1>
+         <P><B>   </B><BR>
+      </TH>
+<TH  COLSPAN=3>
+         <P><B>HOST</B><BR>
+      </TH>
+   <TR ALIGN=Center>
+      <TH>
+         <P>220/910/60x Player<BR>
+			Mini Din-8M<BR>
+<B>/t2</B>
+      </TH><TH>
+         <P><B>CD-i 6xx <BR>DB-9M</B><BR>
+<B>/t3 or /t4</B>
+      </TH>
+<TH>
+         <P><B>I2M Authoring Board <BR>(Dual-plane,<BR>ISA or NuBus) <BR>Mini Din-8M</B><BR>
+<B>/term</B>
+      </TH>
+<TH>
+         <P><B>I2M Authoring Board <BR>(Single-plane, <BR>ISA or PCI,<BR>Splitter Port 1), <BR>Mini Din-8M</B><BR>
+<B>/term</B>
+      </TH><TH>
+         <P>Signal
+      </TH><TH>
+         <P>Mac<BR>
+Mini Din-8M
+      </TH><TD>
+         <P><B>PC COM2 </B>(DB-25F)<BR>
+         <B>Sun,Terminal, <BR>
+              or Microtouch Touchscreen</B>
+         (DB-25M)
+      </TD>
+<TD>
+         <P><B>PC COM1 </B>(DB-9F)
+      </TD>
+</TR>
+   <TR ALIGN=Center>
+      <TD>
+         <P>2
+      </TD><TD>
+         <P>2
+      </TD>
+<TD>
+         <P>5
+      </TD>
+<TD>
+         <P>2
+      </TD><TD>
+         <P>RXD&lt;--TXD
+      </TD><TD>
+         <P>3
+      </TD><TD>
+         <P>2
+      </TD>
+     <TD>
+         <P>3
+      </TD></TR>
+   <TR ALIGN=Center>
+      <TD>
+         <P>3
+      </TD><TD>
+         <P>3
+      </TD>
+<TD>
+         <P>3
+      </TD>
+<TD>
+         <P>3
+      </TD><TD>
+         <P>TXD--&gt;RXD
+      </TD><TD>
+         <P>5
+      </TD><TD>
+         <P>3
+      </TD>
+<TD>
+         <P>2
+      </TD></TR>
+   <TR ALIGN=Center>
+      <TD>
+         <P>5
+      </TD><TD>
+         <P>5
+      </TD>
+<TD>
+         <P>4
+      </TD>
+<TD>
+         <P>5
+      </TD><TD>
+         <P>GND
+      </TD><TD>
+         <P>4
+      </TD><TD>
+         <P>7
+      </TD>
+<TD>
+         <P>5
+      </TD></TR>
+   <TR ALIGN=Center>
+      <TD>
+         <P>6
+      </TD><TD>
+         <P>8
+      </TD>
+<TD>
+         <P>6
+      </TD>
+<TD>
+         <P>6
+      </TD>
+<TD>
+         <P>CTS
+      </TD><TD ROWSPAN=2 COLSPAN=3 ALIGN=Left >
+         <P><B><FONT SIZE=6>}</FONT></B>(jumper together or tie RTS to DTR)
+      </TD></TR>
+   <TR ALIGN=Center>
+      <TD>
+         <P>7
+      </TD><TD>
+         <P>7
+      </TD>
+<TD>
+         <P>7
+      </TD>
+<TD>
+         <P>7
+      </TD>
+<TD>
+         <P>RTS
+      </TD></TR>
+</TABLE></P>
+
+<P>&nbsp;</P>
+<P><BR clear=All>
+<A NAME="splitter"></A>
+<TABLE BORDER CELLSPACING=2 CELLPADDING=20><CAPTION><B>CD-i Player Port Splitter Pinout</B></CAPTION>
+
+<TR ALIGN=Center><TH>Port 1<TH>Male 8-pin Connector<TH>Port 2
+<TR ALIGN=Center>
+        <TD>2
+        <TD>1 (rxd1)
+        <TD>-
+<TR ALIGN=Center>
+        <TD>-
+        <TD>2 (rxd2)
+        <TD>2
+<TR ALIGN=Center>
+        <TD>3
+        <TD>3 (txd)
+        <TD>-
+<TR ALIGN=Center>
+        <TD>7
+        <TD>4 (rts1)
+        <TD>-
+<TR ALIGN=Center>
+        <TD>5
+        <TD>5 (gnd)
+        <TD>5
+<TR ALIGN=Center>
+        <TD>6
+        <TD>6 (cts)
+        <TD>-
+<TR ALIGN=Center>
+        <TD>-
+        <TD>7 (rts2)
+        <TD>7
+<TR ALIGN=Center>
+        <TD>8
+        <TD>8 (+5V)
+        <TD>8
+</TABLE><P>
+
+<A NAME="dummy"></A><FONT COLOR="990099">_______________________________________________________________</FONT><BR>
+
+<B><U>DUMMY PLUGS</U></B></P>
+
+<P><B>Serial Dummy Plugs:</B> Certain titles may look for the CD-i
+Player's serial port, and crash if nothing is connected to it. In
+order to bypass this problem, a dummy plug can be made to fool the
+application.</P>
+
+<UL>
+   <LI>For consumer players(220, 450, 910) take a male mini-Din 8
+   plug and wire <B>pins 6 and 7</B> together. Plug the dummy plug
+   into /t2 on the back of the player and run the title.
+   
+   <LI>For a professional player (602,604,605,615) take a male DB-9
+   connector and wire <B>pins 7 and 8</B> together. Plug the dummy
+   plug into port /t3 on the back of the player and run the title.
+</UL>
+
+<P><B>605 Player Service Shell dummy plug:</B> Their are some
+diagnostic and other functions available on the 605 through the use
+of a special plug. You can get to the special "service shell" with
+the following procedure:</P>
+
+<UL>
+   <LI>Wire together pins 2 and 3 on a mini-Din-8 plug.
+   
+   <LI>Insert the plug into the front mouse port.
+   
+   <LI>Power cycle the player.
+   
+   <LI>After the shell comes up, remove the plug and reinsert the
+   mouse.
+</UL>
+
+<P>The service shell is oriented toward the service technician. There
+are tests for the cd mechanism, serial tests, CD-DA play, etc. 
+
+<P>
+There is also another shell called the Low Level shell. You do not need a
+special plug, but you will need to connect port /t2 of the 605 to a
+VT-100 compatible terminal or host running VT-100 emulation using one
+of the cables listed above. Then, power cycle the player <B>with the
+space key held down.</B> This shell has diagnostic utilities for
+DRAM, NVRAM, Slave Processor checks, etc.<BR>
+
+<P><HR></P>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> 
+&#183; <A HREF="cables.htm">Up 1 Level</A> 
+&#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> 
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+
+
+

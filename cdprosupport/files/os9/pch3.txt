@@ -1,0 +1,26 @@
+This message is can alos be downloaded as:  readme.1
+
+
+Installing descriptor to read a PC Syquest Cart. at SCSI ID3:
+
+1.) download the file pch3.tar
+
+2.) copy that file to a LOW DENSITY PC Floppy, so the 605 can read it.
+
+3.) From CD-RTOS type:
+
+	chd /pcd0
+	tar -xvf pch3.tar
+
+Two files will be extracted:
+
+	/h0/CMDS/BOOTOBJS/pch3_
+	/h0/Start_Application
+
+The first file is the descriptor for SCSI ID 3, the second is a modified startup script so pch3_ is loaded and usable whenever you use MediaMogul, or the CD-RTOS shell.
+
+4.) Put a PC formatted Syquest cart. in the drive (the drive is set for SCSI ID#3), and type:  dir /pch3_  at the CD-RTOS prompt.  A directory of the cart. should follow.  The cart. can now be referred to as /pch1_ (SCSI ID#1) or /pch3_ (SCSI ID#3).  
+
+This update was done to allow MacRead users with the drive set for SCSI ID#3, also read PC cart., without changing the drive ID back to #1.
+
+

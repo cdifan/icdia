@@ -1,0 +1,21 @@
+*****************************************************************************************************************************************USE OF p2init******************************************
+************************************************************************************************
+FOR EXPERT NFS MANIPULATION---NOT REQUIRED, OR DESIRABLE, FOR THE AVERAGE USER.
+
+p2init is a module which is used to initialize the .fpu module contained on the Microware NFS 1.3 Install Diskettes.  Unless this is done, the NFS install routine crashes with an 000:111 error.  This is because current generation Microware install routines expect an FPU (Floating Point Unit) to be installed.  The CD-i 605 player does not have an FPU, so this procedure is required. BE ADVISED, HOWEVER, THAT NONE OF THIS IS REQUIRED IF YOU ONLY USE THE OPTIMAGE NFS INSTALL DISKETTE.  You only have to do it if you are installing the MICROWARE NFS package, and you only need to install that if you are an expert user who needs to customize NFS sockets,etc.  In addition, the Microware NFS package is not CD-i specific.  If you are unsure if you need it, you don't need it.  FOR 99.99% OF CD-i 605 NFS USERS, THE OPTIMAGE NFS DISKETTE CONTAINS EVERYTHING NEEDED TO SET UP NFS ON A CD-i 605!
+
+Now that I've made things clear, here are the instructions on how to use p2init for those few brave souls who made it to the second paragraph.  After downloading the module, get it over to the 605 using a DOS diskette, or FTP, or whatever.  Assuming that /h0/CMDS exists, and that p2init is in your current directory, the install goes like so:
+
+copy p2init /h0/CMDS/p2init
+chx /h0/CMDS
+chd /h0/CMDS
+attr -pee p2init
+(put Microware NFS 1.3 Diskette 1 into CD-i 605 floppy drive)
+chd /d0uv
+load -d .fpu    (Notice that the file name is ".fpu" and the module "fpu".)
+p2init fpu
+install         (Answer 3 or 4 questions, and away it goes.)
+
+Congratulations.  Now you've got your MWOS directory on whatever hard drive you specified in the install procedure.  Good Luck.  Any questions concerning the Microware NFS package should be directed to MICROWARE!!
+     
+ 

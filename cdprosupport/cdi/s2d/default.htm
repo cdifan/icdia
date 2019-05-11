@@ -1,0 +1,43 @@
+<!doctype html public "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Macintosh script2disc Default Drive Problem</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+<HR>
+<P>
+<CENTER><H2>Macintosh script2disc Default Drive Problem</H2></CENTER>
+<P>
+
+At times, customers have scripted titles with /h1 (for example) being the drive that contained all the scripts, menus, and assets for the title.  By simply changing the default drive in the "Find/Replace" window of script2disc from /h0 to /h1, no script changes need to be made.  In all versions of script2disc on the Macintosh, a problem may be encountered if you change the default drive number.  script2disc assumes the SUBROUT directory is located on /h0, even after changing the default drive number.  This can cause problems with plug-ins like Popup Menu that require you to set the cdi_pops plug-in to SCRIPT in the "Subroutines" window of script2disc.
+<P>
+
+To see the problem for yourself, create a project in script2disc.  After setting all of the required folders, set the default drive number to /h1/ in the "Find/Replace" window.  Now add a plug-in (it doesn't matter which one) in the "Subroutines" window, selecting SCRIPT as the parameter file type.  Now click the  "Process later" button.  Select "Batch" from the "Options" menu.  Click on your build to select it and click the "Edit job" button.  Examine the command line that was built.  Note that the -ks option is looking for the plug-in you specified on /h0 instead of /h1.
+<P>
+
+The workaround is to leave the defualt drive number set to /h0/ and add an alias for /h1/ in the "Find/Replace" window.  This alias should be set explicitly to equal "/h0/" (without the quotes).  Do not browse for the MediaMogul directory.  Setting the alias this way will force every occurence of /h1/ in your scripts and menus to /h0/, thus allowing the Subroutine setting to work correctly.  The following example shows why this is necessary.
+
+If you were using the cdi_pops plug-in in a script, you would script it similar to the following:
+<P>
+<PRE>     00:00 Call /h1/SUBROUT/cdi_pops $POPMENU1,D,N /h1/SCRIPTS/myscript.scr</PRE>
+<P>
+By browsing for the alias in script2disc, you would be pointing at the correct directory, but the "Subroutines" option would skip this plug-in since it is still set to <B>/h1/SUBROUT/cdi_pops</B>.  Forcing the alias to an absolute /h0/ actually changes the file name path in the script to <B>/h0/SUBROUT/cdi_pops</B>, which gets the attention of the "Subroutines" setting.
+<P>
+
+<HR>
+<P>
+<CENTER>
+<A HREF="/cdprosupport/support.htm ">Home Page</A>  &#183;  <A HREF="s2d.htm">Up 1 Level</A>  &#183;  <A HREF="/cdprosupport/sitemap.htm">Site Map</A>  &#183;  <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A>
+</CENTER>
+<P>
+
+</BODY>
+</HTML>
+

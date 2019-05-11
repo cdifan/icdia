@@ -1,0 +1,278 @@
+<HTML>
+<HEAD>
+<TITLE>Supplement for File Access</TITLE>
+</HEAD>
+<BODY>
+<PRE><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></CENTER></PRE>
+<P>
+<HR>
+<P>
+<P>
+<P>
+<H2><CENTER>Supplement for: File Access</CENTER>
+</H2><P>
+<B>Overview:</B>
+<P>
+File Access provides a method for reading, writing, creating, and deleting
+text files while playing a CD-i title.  Additionally, files may be copied
+and simple string searches may be made of file contents.  The files accessed
+by the plug-in can be in non-volatile RAM, on a PC or OS-9 floppy diskette,
+on a PC or OS-9 hard disk, or on a CD-i disc.
+<P>
+<BLOCKQUOTE><B>NOTE:</B> The File Access Plug-In works only with text files.
+</BLOCKQUOTE><P>
+<B>Plug-ins required for operation:</B>
+<P>
+<BLOCKQUOTE><CODE>cdi_flen</CODE> - The &quot;File Engine&quot; plug-in.  It does the
+actual work of the File Access Plug-in<BR>
+<CODE>cdi_flac</CODE> - The &quot;File Access&quot; plug-in.  It provides the method
+for sending commands to cdi_flen.<BR>
+<CODE>cdi_flcp</CODE> - The &quot;File Copy&quot; plug-in.  It allows files to be
+copied.<BR>
+<CODE>cdi_flss</CODE> - The &quot;String Search&quot; plug-in.  It allows simple string
+searches of a files' contents.<BR>
+<CODE>cdi_sgmn</CODE> - The &quot;Signal Manager&quot; plug-in.  It provides communication
+between the other plug-ins.
+</BLOCKQUOTE>
+<P>
+
+<B>MediaMogul utilities required to prepare assets:</B>
+<P>
+<BLOCKQUOTE>NONE</BLOCKQUOTE>
+<P>
+
+<B>Assets to create before using the plug-in:</B>
+<P>
+<BLOCKQUOTE>None required, but depending on the application, text files may need to
+be prepared.  If so, text files are ASCII files and can be created with
+any text or most word processors.</BLOCKQUOTE>
+<P>
+
+<B>Special preparations:</B>
+<P>
+<BLOCKQUOTE>No additional required.</BLOCKQUOTE>
+<P>
+
+<B>How the plug-in works:</B>
+<P>
+&#183; You must start up the signal manager plug-in, <CODE>cdi_sgmn</CODE>,
+ first. 
+Then start the file engine, <CODE>cdi_flen</CODE>.  This creates a data module
+, <CODE>cdi_file_data</CODE>,
+in memory. This data module is used to store the names, locations, and attributes
+of open files.  In <CODE>cdi_flen</CODE> you need to specify the maximum
+number of open
+files, e.g. the files open at any one time, not the total number of files
+to be used.  There is a limit of 32 files open at one time, and there is
+no warning if a number larger than 32 is specified.  If memory usage in
+your title is a concern, the maximum size of <CODE>cdi_file_data</CODE> is
+4464 bytes.
+<P>
+&#183; You send most commands to the file engine via the file access,
+<CODE>cdi_flac</CODE>,
+plug-in.  The order of this is to open the file in the appropriate mode,
+perform the operation(s) on the file, and then close the file.  You must
+specify the filename and device when you open a file.  A file can only be
+accessed when it has been opened in the appropriate mode, e.g. you cannot
+write to a file opened in Read mode.
+<P>
+&#183; In order to read from  or write to a  file, you must open the file
+in the correct mode first.  This is done via <CODE>cdi_flac</CODE>.  There
+are three
+modes in which a file may be opened: Read (<CODE>OPEN_R</CODE>) which allows
+a file to
+be read from; Write (<CODE>OPEN_W</CODE>) which opens a new file for writing;
+Append
+(<CODE>OPEN_A</CODE>) which opens an existing file for writing additional
+information
+to the end of the file.  Opening a file  that does not exist in Write mode
+creates that file.  Opening an existing file in Write mode opens it with
+a size of 0 bytes, essentially erasing its contents.  To open an existing
+file for writing, and retain information already present in the file, open
+the file in Append mode.
+<P>
+&#183; Reads and Writes are done a line at a time.  Each subsequent read
+or write of an already open file reads from/writes to the next line of the
+file.  If you need to read from the beginning of a file that is already
+open, close the file and open it again in Read mode.
+<P>
+&#183; Once a file has been opened, its pathname, location, and attributes
+are stored in the data module created by <CODE>cdi_flen</CODE>.  Because
+of this, the
+location need not be specified again as long as the file is open.    However,
+each file is referenced by its filename only, which means that no two files
+with the same name should be opened simultaneously, even if they are in
+different directories or on different devices.
+<P>
+A representation of how the file information is stored in
+<CODE>cdi_file_data</CODE>
+would be:
+<P>
+<TABLE BORDER=1 CELLSPACING="5" CELLPADDING="2"><TR><TD><B>Reference</B>
+</TD><TD><B>Pathname</B>
+</TD><TD><B>Device (location)</B>
+</TD><TD><B>Attributes</B>
+</TD></TR><TR><TD>myfile.txt
+</TD><TD>myfile.txt
+</TD><TD>NVR (non-volatile RAM)
+</TD><TD>read, write
+</TD></TR><TR><TD>oldfile.txt
+</TD><TD>/YELLOW/oldfile.txt
+</TD><TD>CD (CD-i disc)
+</TD><TD>read (file on locked media)
+</TD></TR><TR><TD>myfile.txt
+</TD><TD>/TEXTFILES/myfile.txt
+</TD><TD>OS9_FD (OS-9 diskette)
+</TD><TD>read, write
+</TD></TR></TABLE>
+<P>
+<BLOCKQUOTE><B>NOTE:</B> The second file named &quot;myfile.txt&quot; would not be read from
+or written to, since the first file &quot;myfile.txt&quot; would always
+be found first by  <CODE>cdi_flen</CODE>.  If the second example of this file was instead
+named &quot;myfile2.txt&quot;, it would be found correctly by  <CODE>cdi_flen</CODE>.
+</BLOCKQUOTE>
+<P>
+&#183; Copying a file requires that 2 files be open, the original and the
+copy.  Make sure that you have specified at least 2 files to be open in
+<CODE>cdi_flen</CODE> if you need to copy a file.  Again, the files must
+have different
+names, otherwise an error is returned as <CODE>cdi_flen</CODE> opens the
+first file with
+the specified name in Read mode, and then tries to open in Write mode the
+file that already is open.
+<P>
+&#183; In order to open a file, the device it is on must be in the csd.
+ The csd is a file in non-volatile RAM that contains information about devices
+and other hardware descriptors used by the player.  It is created by every
+CD-i player when the player starts up.  SCSI hard drives, however, are not
+listed in the csd, so the csd must be edited to include the descriptor for
+a PC or OS-9 SCSI drive if you want to access files on these devices.  The
+entry for a PC drive is &quot;70:/hpc&quot; and the entry for an OS-9 drive
+is &quot;50:/h0&quot;.  These can be added to the csd by opening it via
+the File Access plug-in in Append mode and writing the entry.   The csd
+should then be closed before attempting to access a file on an attached
+SCSI device.
+<P>
+An shortened example of a csd from a 605T looks like this:
+<P>
+<BLOCKQUOTE>4:/nvr:<BR>
+1:/cd:<BR>
+20:/term:<BR>
+20:/t1:<BR>
+20:/t2:<BR>
+40:/d0:<BR>
+40:/d0h:<BR>
+40:/d0hd:<BR>
+60:/pcd0:<BR>
+60:/pcd0h:
+</BLOCKQUOTE><P>
+<P>
+<BLOCKQUOTE><B>NOTE:</B> The exact string to write to the csd for a PC SCSI
+drive is &quot;70:|hpc:\n&quot;
+and for an OS-9 drive it is &quot;50:|h0:\n&quot;.  The &quot;|&quot; is
+used instead of the &quot;/&quot; because the &quot;/&quot; may not be used
+as part of a string, the second &quot;:&quot; is used because each entry
+in the csd should end in a colon, and the &quot;\n&quot; is a carriage return,
+which is required for the last line of the csd.
+</BLOCKQUOTE><P>
+&#183; After every call to any of the File Access Plug-ins you should check
+the value of the Z variable for errors.  See the File Access Plug-In manual
+for a complete list of errors.
+<P>
+&#183; Files do not have to be at the root level of a device in order to
+be accessed.  If a file is in a directory, the path can be included as part
+of the filename.  Remember, the &quot;/&quot; character cannot be used in
+a string, so the &quot;|&quot; character should be used instead.
+<P>
+<BLOCKQUOTE><B>Example:</B>  To access a file
+<CODE>/h0/TEXTFILES/myfile.txt</CODE>  the name would be entered
+as "<CODE>TEXTFILES|myfile.txt</CODE>"  The rest of the path is implied by
+the device entered as a parameter.  In this case <CODE>/h0/</CODE> is implied,
+because
+<CODE>OS9_HD</CODE> is the device entered for a file located on drive
+<CODE>/h0</CODE>, and the second
+delimeter, &quot;/&quot; in this case, is implied as part of any device.
+</BLOCKQUOTE>
+<P>
+&#183; Placing the file(s) to be accessed on a CD-i disc requires editing
+of the master script or include files.  You should run
+<CODE>script2disc</CODE> and build
+a disc image.  This disc image may be discarded.  Then edit the master script,
+<CODE>mast_s</CODE>, or the include files <CODE>_master0</CODE>,
+<CODE>_master1</CODE>, and <CODE>_master2</CODE>, to include
+the file(s) in the disc image.  Once the edits are made, master should be
+run to create the disc image, which now will include the text files.  These
+can be read by  file access.  Remember, files on a disc cannot be written
+to or deleted.
+<P>
+<P>
+<B>Example:</B>
+<P>
+In the following example, the csd is edited to include the description for
+a PC hard drive.  A  file is created on the PC drive.  This file is written
+to, and then closed.  The file is copied and the original deleted.  Finally,
+the copy is searched for a text string.
+<P>
+<CODE>init.scr<BR>
+00:00	Call_bg		/h0/SUBROUT/cdi_sgmn	</CODE>	(signal manager is
+started)<BR><CODE>
+00:20	Call_bg		/h0/SUBROUT/cdi_flen	2  </CODE>(file engine is
+started)<BR><CODE>
+01:10	Call		/h0/SUBROUT/cdi_flac OPEN_A,csd NVR<BR> </CODE>(csd is opened
+in append mode)<BR><CODE>
+02:00	Call		/h0/SUBROUT/cdi_flac WRITE,csd	70:|hpc:\n<BR>
+			</CODE>(the descriptor for the PC SCSI drive is written to the
+csd)<BR><CODE>
+03:00	Call		/h0/SUBROUT/cdi_flac CLOSE,csd 	</CODE>(the csd is
+closed)<BR><CODE>
+03:00	Br_always_nr	/h0/SCRIPTS/newfile.scr</CODE>
+<P>
+
+newfile.scr<BR>
+00:00	Call		/h0/SUBROUT/cdi_flac OPEN_W,newfile DOS_HD<BR>
+				(the file "newfile" is opened in Write mode on the PC hard drive.<BR>
+		This creates the file.)<BR><CODE>
+01:00	Call		/h0/SUBROUT/cdi_flac WRITE,newfile  first line		</CODE>(write
+to file)<BR><CODE>
+02:00	Call		/h0/SUBROUT/cdi_flac WRITE,newfile  second line		</CODE>(write
+to file)<BR><CODE>
+03:00	Call		/h0/SUBROUT/cdi_flac WRITE,newfile  third line		</CODE>(write
+to file)<BR><CODE>
+04:00	Call		/h0/SUBROUT/cdi_flac CLOSE,newfile		</CODE>(the file is
+closed)<BR><CODE>
+04:20	Br_always_nr	/h0/SCRIPTS/copyfile.scr</CODE>
+<P>
+
+copyfile.scr<BR>
+00:00	Call		/h0/SUBROUT/cdi_flcp DOS_HD,newfile DOS_hd,copyfile<BR>
+					(copy newfile to copyfile)<BR><CODE>
+02:00	Br_always_nr	/h0/SCRIPTS/killfile.scr</CODE>
+<P>
+
+killfile.scr<BR>
+00:00	Call		/ho/SUBROUT/cdi_flac DELETE,newfile  DOS_HD	(delete
+newfile)<BR><CODE>
+01:00	Br_always_nr	/h0/SCRIPTS/search.scr</CODE>
+<P>
+
+search.scr<BR>
+00:00	Call		/h0/SUBROUT/cdi_flac OPEN_R,copyfile	DOS_HD<BR>
+						(open copyfile for reading)<BR><CODE>
+01:00	Call		/h0/SUBROUT/cdi_flss second copyfile<BR>
+						</CODE>(search copyfile for "second")<BR><CODE>
+02:00	Br_ifeq_nr	/h0/SCRIPTS/notfound.scr Z 0<BR>
+					</CODE>(branch to notfound.scr if string not found)<BR><CODE>
+02:00	Br_ifeq_nr	/h0/SCRIPTS/found.scr	 Z 1<BR>
+					</CODE>(branch to found.scr if the string was found)
+<P>
+<P>
+<BLOCKQUOTE><B>NOTE:</B> Times in the above example are approximate.
+</BLOCKQUOTE><P>
+<HR>
+<CENTER></CENTER>
+<PRE><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></CENTER>
+</PRE>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit Lite 3.5.1 -->
+</BODY></HTML>
+

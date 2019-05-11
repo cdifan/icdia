@@ -1,0 +1,267 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 8. Misteri del CD-i
+
+ 8.1 Posso collegare un lettore CD-i ad uno schermo terminale?
+ Si. Ogni lettore CD-i Philips e' equipaggiato con una porta seriale, come
+ un connettore mini-DIN disponibile sul retro del lettore, o puo' essere reso
+ disponibile collegando una porta splitter alla porta di input del lettore CD-i
+ con solo una porta di input (come CDI 450, CDI 550 e FW380i). Su lettori con
+ una sola porta per dispositivi di input davanti e uno sul retro, questa porta
+ sul retro puo' anche essere usata come una porta seriale.
+
+ La porta seriale puo' essere usata per agganciare tutti i tipi di dispositivi
+ al lettore CD-i, come un MODEM, un touchscreen, una stampante seriale o uno
+ schermo terminale. Si puo' collegare un 'vero' hardware video terminale
+ come un DEC VT220 o si puo' usare un'emulazione terminale sul PC (per esempio
+ Telix o HyperTerm). Una descrizione dettagliata sul layout del cavo che dovrebbe
+ essere usato puo' essere trovato nella sezione CD-i Technical Documentation
+ download in questo sito. Assegnare la velocita' di porta a 9600 baud, 8 databits,
+ 1 stopbits, nessuna parita' e il terminale emulation a standard ANSI.
+
+ OK, per cosa si puo' usare questa schermata terminale? Be', non per fare molto.
+ Alcuni lettori CD-i (solitamente i lettori professionali) mostrano un messaggio
+ di copyright e l'indicazione della versione di ROM sul terminale quando viene
+ acceso il lettore, ma i piu' non lo fanno. Qualche titolo CD-i mostra per
+ esempio sul terminale informazioni durante l'esecuzione del programma.
+ Principalmente le applicazioni CD-i sviluppate da CapDisc (cosi' come il CD-i
+ Flipper) sono conosciute per mostrare informazioni di stato, probabilmente
+ usate per la messa a punto durante la fase di sviluppo.
+
+ Non si possono dare comandi al lettore CD-i usando il terminale, a meno che non
+ si abbia accesso ad una shell di comandi (questa domanda viene risposta in
+ dettaglio nella prossima question: "Come posso accedere ad una shell CD-RTOS/
+ OS-9 usando un lettore CD-i?"). Comunque dipende totalmente dall'applicazione
+ il fatto che vi sia all'interno il supporto della schermata terminale.
+ Cio' non accade per la maggior parte dei titoli di consumo.
+
+ E' possibile usare questo collegamento seriale anche per trasferire i file
+ conservati in NV-RAM ad un PC, o posizionare NV-RAM file dal PC in un lettore
+ CD-i. Vedere "Posso trasferire dati dal CD-i al mio PC?" per ulteriori
+ informazioni.
+
+ 8.1.1 Come posso accedere al CD-RTOS/OS-9 richiesto usando un lettore CD-i?
+ Il sistema operativo CD-i e' chiamato CD-RTOS. E' basato sulla versione 2.4
+ del OS-9 Microware. Ogni lettore CD-i contiene il kernel di questo sistema
+ operativo in ROM, insieme ad altri componenti di sistema come drivers del
+ lettore e shell CD-Audio. Normalmente questa ROM ha una dimensione di 512 KB
+ (alcuni lettori professionali che contengono strumenti addizionali hanno una
+ Rom di dimensioni doppie).
+
+ Per accedere alle radici del sistema operativo si dovrebbe usare un comando
+ da shell. OS-9 supporta una tale shell, che sembra molto Unix, ma fin quando
+ un lettore CD-i di consumo non e' concepito per essere usato in congiunzione
+ con una schermata terminale questa shell non e' inclusa nella ROM dei lettori
+ destinati ai consumatori. Se si vuole accedere ad una shell usando un lettore
+ di consumo si ha bisogno di un disco CD-i che includa una shell che dovrebbe
+ essere eseguita durante la startup del dischetto, o dopo aver fornito una
+ tale opzione nell'applicazione CD-i (fin quando non si ha nessun altro mezzo
+ di iniziare la shell su un lettore di consumo).
+
+ Io non conosco nessun CD CD-i che attualmente fornisca la shell OS-9 oltre al
+ MediaMogul CD, ma se si hanno altri CD che avviano una shell la descrizione
+ e' la medesima. MediaMogul e' uno strumento authoring concepito per lettori
+ authoring ma puo' anche essere usato su qualsiasi altro sistema CD-i. Quando
+ il dischetto e' partito, selezionare 'CD-RTOS' dal menu' principale. Ora vedrai
+ una shell sul tuo TV-monitor. Per avviare una shell sulla schermata terminale,
+ tipo questo: ex shell<>>>/t1 (il nome t1 per il descrittore terminale potrebbe
+ essere differente, usare mdir -t=desc per controllare questo fuori). Prima
+ caricare alcuni moduli (programmi) che potrebbero essere utili e che sono
+ conservati sul CD, cosi' si possono usare dopo che il CD e' stato rimosso.
+ Fare questo con il comando di load, per esempio load dir eject. Ora si possono
+ eliminare tutti gli altri programmi che sta eseguendo il CD-i. Controllare
+ quali programmi sta eseguendo e come sta andando il loro processo ID. Allora
+ eliminare l'esecuzione apps, usando per esempio kill 3. Ora si puo' rimuovere
+ il CD con il comando eject. Accertarsi di non premere il tasto eject sul lettore,
+ perche' altrimenti si resettera' e le applicazioni di esecuzione (inclusa la
+ shell sul terminale) saranno terminate.
+
+ Le cose che si possono fare dipendono dai comandi caricati in memoria o che
+ sono disponibili in ROM. Usare il comando mdir -t=prog serve per vedere quelli
+ che sono disponibili. Si puo' avviare la startup della shell del lettore,
+ caricare un altro CD CD-i ed eseguirlo. Si ha ancora il pieno controllo del
+ sistema sul terminale. Per esempio e' possibile controllare quali moduli di
+ una particolare applicazione CD-i si stanno eseguendo usando procs. Qualche
+ disco CD-i contiene applicazioni extra che non possono essere visitate usando
+ il regolare programma CD-i che e' eseguito usando il dischetto all'avvio.
+ Vedere "Quali sono le informazioni nascoste disponibili nei titoli CD-i?".
+
+ Se si ha accesso ad un lettore CD-i professionale, le cose sono normalmente
+ meno complicate. I CDI 601, CDI 602 e CDI 605 hanno una shell di comando
+ costruita in ROM e la migliore di tutte, si puo' accedere nello schermo di
+ settaggi della shell dei lettori, semplicemente collegando una schermata
+ terminale e selezionando System Option nei Settaggi. Una richiesta sara'
+ mostrata sul terminale. Per usare qualsiasi comando vicino ai pochissimi che
+ sono interni alla shell, si ha ancora bisogno di una sorgente esterna per
+ caricarli. Se il lettore ha un drive di dischetto (CDI 602 e CDI 605) i comandi
+ si possono caricare da un Floppy Disc, altrimenti si ha bisogno di un CD con
+ comandi come MediaMogul. Se si ha un sistema CDI 180/181/182 si puo'
+ caricare il comando richiesto dalla shell del lettore, ma si ha bisogno di un
+ dischetto che li contenga se non sono disponibili in ROM; qui si puo' decidere
+ di terminare la shell del lettore o di lasciarla in esecuzione (differenzia
+ il cursore tra la Catena e la Forchetta). I lettori professionali CDI 615,
+ CDI 660 e CDI 670 non hanno nessun comando che apra l'accesso alla costruzione
+ della shell del lettore, la procedura per un lettore di consumo si applica come
+ descritta sopra.
+
+ Per una rassegna dei comandi di shell OS-9 e le loro (piu' ben note) controparti
+ Unix vedere la pagina "OS-9 and Unix commands" su questo sito web.
+
+ 8.1.2 Quali applicazioni nascoste sono inserite nella ROM dei lettori CD-i?
+ Diversi lettori CD-i hanno programmi addizionali e altri moduli conservati in
+ ROM che si possono visualizzare usando un collegamento terminale. Se si ha una
+ cartuccia Digital Video installata, che contiene la sua propria ROM, saranno
+ disponibili moduli maggiori.
+
+ Una delle cose che ho scoperto usando parte dei primi lettori CD-i basati sulla
+ scheda Mini-MMC(CDI 910, CDI 205 e CDI 220/00) e' che e' disponibile in ROM
+ uno strumento di manutenzione di servizio. Semplicemente iniziando scrivendo
+ sv alla shell(accertarsi che la shell del lettore e le altre applicazioni siano
+ state terminate, fin quando questo programma ha bisogno del video CD-i per
+ mostrarle). Apparira' lo schermo con un cursore dalla forma di una fine
+ forchetta! Si possono controllare le funzioni di sistema e le caratteristiche
+ audio e video. Questo programma e' usato probabilmente nella fabbrica per
+ testare un lettore. E' davvero divertente vedere apparire sullo schermo un
+ programma che e' letteralmente nascosto nel lettore!
+
+ Altre cose conosciute per essere disponibili nella ROM della cartuccia
+ Digital Video sono gli strumenti per eseguire un Video-CD usando un comando
+ di richiesta e alcuni strumenti di diagnosi. Da notare che la disponibilita'
+ di moduli in ROM varia tra i vari lettori CD-i e le cartucce Digital Video.
+
+ 8.1.3 Quali sono le informazioni nascoste disponibili nei titoli CD-i?
+ Qualche CD CD-i contiene applicazioni extra che non possono essere visitate
+ usando il regolare programma CD-i che viene eseguito usando un CD all'avvio.
+ Si possono controllare altri eseguibili fornendo un comando dir -e alla shell.
+ Ogni modulo che ha l'ultimo attributo assegnato a x (execute-esegue) puo'
+ essere eseguito. Accertarsi di cambiare la directory di programma attiva
+ all'appropriata directory sul CD usando chx /cd/xxx, dove xxx e' il nome della
+ directory. Ricordarsi che OS-9 fa' differenza tra lettere maiuscole e minuscole.
+
+ Per esempio usando il gioco Escape from Cybercity, c'e' una versione sul
+ disco che permette le vite illimitate.
+
+ 8.1.4 Posso trasferire dati dal CD-i al PC?
+ Si. Si puo' usare l'applicazione CD-i'nterlink (che e disponibile per il libero
+ download come un CD-i Disc Image nella sezione CD-i Disc Images su questo sito)
+ Per trasferire file che sono conservati nel lettore in NV-RAM ad un PC bisogna
+ accertarsi che l'emulatore terminale possa ricevere file usando il protocollo
+ X-MODEM o Z-MODEM. Semplicemente caricando il disco CD-i'nterlink nel lettore
+ CD-i e seguendo le istruzioni sullo schermo.
+
+ L'applicazione CD-i'nterlink puo' anche mostrare una shell di richiesta sulla
+ schermata terminale, ma questo non e' lo standard di richiesta comandi OS-9.
+ Viene fornita solo una limitata serie di istruzioni(usando il comando cmds
+ e' possibile vedere una rassegna dei comandi disponibili).
+
+ 8.2 Come posso abilitare/disabilitare la funzione apri/chiudi del cassetto?
+ Alcuni lettori CD-i sono equipaggiati con la prima generazione di shell(vedere
+ la pagina "CD-i Players comparison Overview" su questo sito per ulteriori
+ informazioni) e possono disabilitare la funzione di apertura/chiusura del
+ cassetto. Quando questa funzione e' attiva, il tasto apertura/chiusura posto
+ davanti al lettore non funzionera', e la funzione aperto non e' mostrata sullo
+ schermo. Ma attenzione: la funzione aperto/chiuso e' ancora disponibile nella
+ shell del lettore quando si punta il cursore alla posizione solita del hotspot!
+ Oltre questo, il modo lock (lucchetto) non e' molto conveniente in situazioni
+ critiche, perche' il cassetto puo' ancora essere "tirato" fuori dal lettore.
+ Per assegnare o disabilitare la funzione lock, accendere il lettore mentre si
+ sta tenendo premuto il tasto Stop davanti.
+
+ Sui CDI 660 e CDI 670 e' disponibile un modo lock quando si tengono premuti i
+ tasti Play e Open mentre si accende il lettore. In breve le stesse condizioni
+ si applicano con riguardo alla funzionalita' del tasto open/close come sopra-
+ descritto.
+
+ 8.3 Come posso inserire le caratteristiche del key-disc CDI 660/670?
+ I CDI 660 e 670 possono essere personalizzati in molti modi usando un disco
+ dedicato che fu sviluppato per questi lettori, il "Key Disc". Quando si ha
+ questo Key Disc (che e' disponibile per il libero download come un CD-i Image
+ Disc nella sezione "CD-i Disc Images" su questo sito), usate i seguenti PIN-code
+ per accedere alle caratteristiche speciali del lettore(i codici si applicano
+ alla versione 1.3 del Key Disc):
+
+ *2410
+ Ritardo nella partenza del lettore, cosicche' i dispositivi di puntamento
+ richiedono piu' tempo di inizializzazione(cosi' come per i touchscreen)per
+ assicurarsi di lavorare correttamente.
+ *8252
+ Assegnare al lettore il blocco della riproduzione dei CD-Audio o semplicemente
+ permettere la riproduzione di certi titoli CD-i che sono masterizzati in un
+ certo modo. Vedere il Manuale Tecnico per ulteriori informazioni circa questa
+ caratteristica.
+ *3094
+ Disabilitare o abilitare l'animazione di partenza della shell del lettore,
+ assegnarla come neutral (rimuove il logo 'Philips') o inserire un messaggio
+ personalizzato che apparira' ad ogni accensione del lettore.
+
+ 8.4 Come posso accedere ad un titolo CD-i X-rated?
+ Qualche titolo CD-i con materiale X-rated o materiale per adulti e' protetto
+ dall'uso non autorizzato dei bambini per mezzo di un codice di accesso.
+ Si ha bisogno di inserire questo codice, che normalmente e' scritto nell'opuscolo,
+ per accedere al dischetto. In alcune circostanze si puo' cambiare questo codice
+ che viene quindi conservato in NV-RAM.
+
+ Soltanto in caso abbiate nascosto l'opuscolo di un particolare titolo troppo
+ bene fate riferimento ai codici di accesso dei titoli CD-i che sono stati
+ prodotti e che pongo qui di seguito:
+
+ *Loving for a Lifetime (Olandese: Sex, je lust en je leven)
+ 6969
+ *Girls - Serge Jacques
+ 019
+ *Strip Poker Live
+ QQQQK
+ *Uncover featuring Tatjana
+ 1492 - D'ora in poi dovete inserire il vostro codice. Se lo dimenticate basta
+ semplicemente cancellare l'appropriato salvataggio nella NV-ram dallo schermo
+ di shell del lettore.
+ *Voyeur
+ 3333 - D'ora in poi si ha l'opzione di inserire un vostro codice. Se lo si ha
+ dimenticato basta semplicemente cancellare l'appropriata salcvataggio nella
+ NV-ram dallo schermo di shell del lettore.
+
+ 8.5 Ci sono altre caratteristiche nascoste nei titoli CD-i?
+ Qualche titolo CD-i e' stato costruito con caratteristiche nascoste. Alcune di
+ esse furono usate per testare i titoli; per esempio nel caso che il beta-tester
+ non dovesse farlo tutto per raggiungere un certo punto.
+ E' oltre la portata di questo FAQ poter menzionare tutte i cheats e le opzioni
+ nascoste nei titoli CD-i (specialmente quelli che danno vite illimitate e il
+ come), ma alcune di essi sono utili per mostrare un certo titolo.
+
+ *Hotel Mario
+ Iniziare un nuovo gioco e accertarsi di perdere tutte le vite in hotel 1,
+ livello 1. Quindi salvare come 'B_ ' (Bi, sottolineare, spazio). Quando si
+ ricarica il gioco si puo' accedere a tutti gli hotel, incluso lo spettacolare
+ fine-livello.
+ *Dark Castle
+ Iniziare un nuovo gioco, eseguire i seguenti movimenti con il pad nella 'Grande
+ Sala': giu', giu', giu', su, su, su, giu', giu'. Ora si ha accesso a tutti i
+ livelli. I numeri in fondo allo schermo significano: 0-2 'Trouble'-levels,
+ 3-6 'Fireball'-levels, 7-10 'Shield'-levels, 11-13 'Black Knight'-levels.
+ *The Seventh Guest
+ Quando si salva un gioco sotto il nome 'badger', si possono selezionare i
+ denti chattering in uno degli angoli dello schermo. Premendo un tasto di azione
+ si puo' vedere una rassegna di tutte le scene del gioco e a cui si puo'
+ saltare istantaneamente.
+ *Burn:Cycle
+ Salvare un gioco sotto il nome 'JOHN_WHO'. Immediatamente dopo che si ha
+ salvato con questo nome, tutte le sequenze video dal gioco saranno mostrate
+ una dopo l'altra.
+ *Lucky Luke
+ Interrompere il gioco, mettere in pausa e premere i seguenti tasti in questo
+ ordine: su, destra, giu', sinistra. Ora si puo' selezionare quale livello
+ giocare.
+ *Space Ace
+ Allo schermo "continue", muovere il cursore nell'angolo alto a sinistra e
+ premere il tasto di azione 2 per quattro volte. Allora muovere il cursore
+ nell'angolo alto a destra e premere tasto 2 per tre volte.
+ Finalmente, muovere il cursore nell'angolo alto a sinistra e premere tasto 1
+ una volta. Ora si puo' selezionare un qualsiasi livello.
+
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Tarduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.
+

@@ -1,0 +1,148 @@
+<HTML><HEAD>
+<TITLE>Emulating or Playing a CD from CD-RTOS</TITLE>
+</HEAD>
+<BODY>
+<P>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="mm.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<H2><CENTER>Emulating or Playing a CD from CD-RTOS</CENTER></H2>
+
+
+<B>Overview:</B>
+<P>
+
+
+You can start a CD-i title from an OS-9 <B>$</B> or <B>CD-RTOS</B> prompt, and still retain the ability to type commands, like MFREE, MDIR, PROCS and other useful items WHILE the title runs.  This allows the developer to run various OS-9 diagnostic utilites while the title emulates or the CD plays.  See other troubleshooting articles for useful diagnostic techniques and utilities that can be used in this mode.
+<P>
+
+
+<B>For Macs or PC's running CDIPlayback:</B>
+<P>
+<HR>
+<B>Before doing step 1:</B>
+<P>
+
+<BLOCKQUOTE>If testing an emulated image:
+<P>
+
+<BLOCKQUOTE>
+	* Put CDIPlayback into "CD-RTOS" mode.<BR>
+	* RESET CDIPlayback.<BR>
+	* Wait until you see a $ prompt in the terminal window.<BR>
+	* Under the File Menu, "open" a disc image (.cd file).<BR>
+</BLOCKQUOTE>
+<P>
+
+If testing a CD-i CD:
+<P>
+
+
+	<BLOCKQUOTE>* Put CDIPlayback into "CD-RTOS" mode.<BR>
+	* RESET CDIPlayback.<BR>
+	* Wait until you see a $ prompt in the terminal window.<BR>
+	* Be sure and wait until the CD icon or interface button indicates the CD is mounted.</BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<HR>
+
+<B>1</B>. In the terminal window (where the $ prompt is), type:
+<P>
+	<BLOCKQUOTE><CODE>chx /h0/cmds<BR>
+	chd /cd<BR>
+	dir  -e /cd/CDI<BR></CODE></BLOCKQUOTE>
+<P>
+
+
+Look for a file near the beginning of the listing with the suffix <CODE>.MM0</CODE>. The <CODE>.MM0</CODE> file is the script2disc built CD-i application.
+<P>
+
+
+<B>2.</B> You MUST be sitting at the root of /cd.  Run the command "pd" if you  are unsure.
+<P>
+
+
+<B>3.</B> Type the EXACT name of that file with its path (exact case and spelling) with an & at the end of the filename. 
+<P>
+
+
+			<CODE><BLOCKQUOTE>for example:<BR><BR>  /cd/cdprosupport/MY_SCRIPT.MM0&</BLOCKQUOTE></CODE>
+<P>
+
+  
+An <B>&</B> forces the application to run as a background process, permitting the <B>$</B> to re-appear. 
+<P>
+
+
+<B>4. </B>The system will return a number, like <CODE>+5</CODE>, the $ prompt will return, and then the title will begin to play on the CD-i monitor.
+<P>
+<B5.</B> Type any valid OS-9 command, like MFREE, to examine various aspects of title performance.
+<P>
+<BR>
+
+
+<B>For 605 Development Players:</B>	
+<P>
+		
+
+If testing a CD, then insert the CD into the 605 drive. If testing an emulated image, 
+start the emulation on the emulator (for example, emulate image.cd). Wait for the 
+emulation software to start and issue the "<CODE>stop at sector 0</CODE>" message, then proceed.  The 
+605 should be put into EXTERNAL/INTERNAL mode as appropriate for emulate or CD playback. 
+<P>
+
+
+<B>1.</B> With a terminal, or equivalent PC or Mac, connected to port 3, click on the SETTINGS icon, then SYSTEM icon (from the power on Philips screen).  A $ prompt will appear on the terminal screen.
+<P>
+
+
+Note: If the SYSTEM icon is not visible, assure that a terminal or 
+equivalent is connected to the 605 on port 3, and that the RAM setting is at least 0.5 
+Meg.  Power cycle the 605 to force it to look at port 3 again.  Try step 1 again.
+<P>
+
+
+<B>2.</B> On the terminal type:
+<P>
+	<CODE><BLOCKQUOTE>chx /h0/cmds<BR>
+	chd /cd<BR>
+	dir  -e /cd/CDI<BR></BLOCKQUOTE></CODE>
+<P>
+
+
+Look for a file near the beginning of the listing with the suffix <CODE>.MM0</CODE>.  Use CNTRL-S 
+and CNTRL-Q to pause/continue the display as necessary. The <CODE>.MM0</CODE> file is the CD-i 
+application.
+<P>
+
+
+<B>3.</B> Type the EXACT name of that file with its path (exact case and spelling) 
+with an & at the end of the filename.
+<P>
+
+
+			<BLOCKQUOTE><CODE>for example:<BR><BR>  /cd/cdprosupport/MY_SCRIPT.MM0&</CODE></BLOCKQUOTE>
+<P>
+
+  
+An <B>&</B> forces the application to run as a background process, permitting the <B>$</B> to re-appear.. 
+<P>
+
+
+<B>4. </B>The $ prompt will return, and the application will begin to play on the CD-i 
+screen.
+<P>
+<B>5.</B> Type any valid OS-9 command, like MFREE, to examine various aspects of title performance.
+<P>
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="mm.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+</BODY>
+</HTML>

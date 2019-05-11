@@ -1,0 +1,134 @@
+<HTML>
+<HEAD>
+
+<TITLE>Tech Note : TT-4</TITLE>
+
+
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="proplayr.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+<P>
+					<H2><CENTER>Tech Note : TT-4</CENTER></H2>
+					   <CENTER>11/11/94</CENTER>
+<P>
+<BR>
+<B>TOPIC:</B>
+<P>
+Determining the REAL IP address for the 605 Player, and Ethernet diagnostics.
+<P>
+<B>OVERVIEW:</B>
+<P>
+The ispmode module in the startnet script used to establish the Ethernet 
+backbone for the 605 has an inherent failure in reporting the true IP address.  
+The 605 has a module called IFSTAT can be used to determine the actual IP 
+address.
+<P>
+<B>DISCUSSION:</B>
+<P>
+The module ispmode simply reads the address parameter supplied when you edit 
+the startnet script.  The new address is copied to the le0 module in memory 
+which supposedly maintains the ENTIRE IP address.  Actually, the network 
+software uses only the first three octets from the le0 address, then reads the 
+expansion board switches for the last octet.  It is then possible for the 
+le0 address to be one value and the actual address to be another.  For 
+example:
+<P>
+the ispmode line in startnet might have specified an address of 192.7.45.100, 
+which is then copied to the le0 module in memory.  If the expansion board 
+switches were accidentally set to 110, the REAL address would be192.7.45.110.  
+<P>
+Since the startnet script only reports what was supplied to ispmode, a person 
+might think the machine address was correct, when indeed it was not.
+<P>
+The module IFSTAT, located in the 605 ROMS, determines the ACTUAL IP address 
+of the player, by  extracting the first three octets from le0, then reading 
+the last octet from the switch settings.
+<P>
+Note: an octet in Internet usage is one component of the address.  For 
+example, 192.7.45.100 has FOUR octets, separated by periods. 
+<P>
+<BR>
+<B>USING IFSTAT:</B>
+<P>
+<PRE><CODE>1. run:   startnet.
+
+2. run:  ifstat -a</PRE></CODE>
+<P>
+The typical screen output of ifstat -a follows.  Compare the last octet here 
+(the actual switch setting) with the last octet from the ispmode line in 
+startnet. They should match.  Change the switch settings and repeat steps 1 
+and 2 until they do match.
+<P>
+<PRE><CODE>
+ifdev(0).if_next = 009f52b0
+ifdev(0).if_prev = 009f63d0
+ifdev(0).if_mtu = 1500
+ifdev(0).if_flags = 0022
+ifdev(0).if_subnet =        0
+ifdev(0).if_addr = 192.7.45.118 &lt;---------  actual IP address
+ifdev(0).if_addr.family_type = 2
+ifdev(0).if_addr.port = 0
+ifdev(0).if_devnam = le0
+ifdev(0).if_dvrnam = am7990
+ifdev(1).if_next = 009f63d0
+ifdev(1).if_prev = 009f4f60
+ifdev(1).if_mtu = -1
+ifdev(1).if_flags = 00a0
+ifdev(1).if_subnet =        0
+ifdev(1).if_addr = 127.0.0.1
+ifdev(1).if_addr.family_type = 2
+ifdev(1).if_addr.port = 0
+ifdev(1).if_devnam = lo0
+ifdev(1).if_dvrnam = ifloop</PRE></CODE>
+<P>   
+<BR>
+<B>605 SELF CHECK:</B>
+<P>
+Most Ethernet machines (really, TCP/IP protocol) allow you to FTP to itself, in a type of loopback test.  The 605 supports this method of verifying a working system.  This can be especially useful in a network of say, two machines, where you can't tell who is at fault.  To perform the self test:
+<P>
+1. Power cycle the 605.
+<P>
+2. Use the Philips startup command shell, by clicking on SETTINGS, then SYSTEM icons.
+<P>
+3. When the $ prompt appears on your terminal (terminal, Mac or PC) screen, type:
+<PRE><CODE>		chx /h0/CMDS
+		chd /h0
+		startnet
+
+		Wait until the startnet script gives you the $ prompt back.</PRE></CODE>
+<P>
+4. To establish an FTP connection to itself:
+<PRE><CODE>	ftp machine_address
+
+		where:  machine_address is the address of your 605 (like 192.7.45.17)</PRE></CODE>
+
+ftp should respond with something similar to:
+<PRE><CODE>		connected to 192.7.45.17
+		220 OS-9 ftp server V1.0 ready
+		Name (192.7.45.17:user): _</PRE></CODE>
+<P>
+This means you have connected, and are being prompted to login.  If you've gotten this far, the basic hardware and software drivers are installed and running properly.  If you get a <CODE>"Connection failed"</CODE> or similar message, check the machine address, startnet script, assure there is a password file in <CODE>/h0/SYS</CODE>, and that you ran <CODE>"idbgen"</CODE>.
+<P>
+5. Where the cursor is flashing on the line  <CODE>"Name (192.7.45.17:user):"</CODE>, login with the name of <CODE>'super'</CODE>.
+<P>
+6. When it responds with  <CODE>"Password (192.7.45.17:super):"</CODE>, type <CODE>'user'</CODE>.
+<P>
+7. The system will respond with <CODE>"Connected to 192.7.45.17"</CODE> and a few status messages, then present an <CODE>"ftp>"</CODE> prompt.  If you get the message <CODE>"Login failed"</CODE> you probably typed the name or password incorrectly.  Retry the login by typing <CODE>'user'</CODE> at the <CODE>"ftp>"</CODE> prompt.  It will ask for your name (super) and password (user) again.
+<P>
+8. Use ? to get on-line assistance, or download the FTP.txt document from the <A HREF="../../ftp/os9/os9.htm">OS-9 files</A> section.
+<P>
+<BR>
+If you got this far, the 605 is fine.  All the hardware, drivers, and required 
+support files for FTP are in place and working.  If the 605 passes its self test, but can't establish a connection with another machine, the problem is MOST likely to exist with the other machine, or with the physical connections between them.
+<P>
+<BR>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="proplayr.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.4 -->
+<!-- Original Tech Note by OptImage Support -->
+</BODY>
+</HTML>

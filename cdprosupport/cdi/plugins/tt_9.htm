@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+
+<TITLE>Tech Note: TT-9</TITLE>
+
+
+</HEAD>
+<BODY>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<BR>
+<BR>
+					<H2><CENTER>Tech Note : TT-9</CENTER></H2>
+                        <CENTER>2/15/96</CENTER>
+<P>
+<BR>
+<B>TOPIC:</B>
+<P>
+File Access Plug-In
+<P>
+<B>OVERVIEW:</B>
+<P>
+The File Access Plug-In for MediaMogul allows the user to read/write/copy files on attached devices and do simple string searches.  The plug-in consists of four (4) modules, the File Engine module - cdi_flen, the File Access module - cdi_flac, the File Copy module - cdi_flcp, and the File String Search module - cdi_flss.  Each of these modules performs particular task(s), and needs to be called with certain options to perform these.
+<P>
+Further, the File Access Plug-In requires the Signal Manager module, cdi_sgmn.  If this has not already been called for use with another plug-in, it must be called in the background prior to calling cdi_flen.
+<P>
+Additionally, the File Access module uses the MediaMogul Z variable for reporting errors.  Checking the value of the Z variable is a great help in troubleshooting any difficulties experienced with using the plug-in.
+<P>
+<B>DISCUSSION:</B>
+<P>
+The File Engine module, cdi_flen, needs to be called in the background once, prior to any of the other modules.  When called, this module creates a data module (cdi_file_data) in memory that contains the filenames and descriptions of the files used by the File Access Plug-In, then the module goes to sleep and waits for commands from the other modules.
+<P>
+The user specifies the number of files that can be open simultaneously in Parameter one of cdi_flen.  There is a limit of 32 open files, and no error is returned if a greater number is specified.  It is recommended that 20 frames of time be allowed for the module to start up before calling any other module that requires the File Engine.
+<P>
+The File Access module, cdi_flac, is used for sending commands to OPEN, CLOSE, 
+READ, WRITE, and DELETE files to the File Engine module.  When a file is Opened, the user must specify what mode the file is to be opened in, Read, Write, or Append.  These are specified by appending _R, _W, or _A to the OPEN operation option, i.e. OPEN_R to open a file in read mode. In order to perform actions the file must have been opened in the correct mode, else an error is returned via the Z variable.  Additionally, when a file is opened the user must specify the device on which to open the file.  The module cdi_flac must open a file before doing anything with the file.  Call cdi_flac with: &lt;action&gt;,filename 
+device, e.g. OPEN_R,myfile NVR, to open the file "myfile" in NVR to read from it.
+<P>
+Reads are done a line at a time, beginning at the start of the file.  With each subsequent Read command the next line of the file is read in.  In order to proceed further into the file, multiple Read operations must be performed.  To go back to the start of a file, close the file and re-open it in "Read" mode.
+<P>
+Writes are also done a line at a time.  If you need to write additional data to an existing file, open the file in Append mode.  Opening a file in Write mode truncates the file to 0 bytes.
+<P>
+Please note that the cdi_flac module obtains the device descriptor from the csd, which is in NVR, and attaches it to the filename.  Thus if a device is not in the csd, even if it is an allowed device for cdi_flac, the call will fail.  An example of this is any SCSI device, for which descriptors are not listed in the csd.  In order to use cdi_flac with a device of types OS9_HD (OS-9 hard drive) or DOS_HD (DOS hard drive) the csd must be edited, or an edited csd must be copied into NVR.  The csd id number for an OS-9 hard drive is 50, and 
+the one for a PC hard drive is 70.  Typical entries in the csd would be:
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>50:/h0:</CODE><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>70:/hpc:</CODE>
+<P>
+where /h0 is an OS-9 SCSI hard drive, and /hpc is a DOS SCSI hard drive.
+<P>
+To add these descriptors, it is suggested you open the csd in APPEND mode with cdi_flac and append the appropriate device descriptor with a File Access WRITE, then close the csd.  The descriptors are the same for every player, so this should work with all models.  The csd must be modified prior to any attempt to access a file on a SCSI device, else an error will be returned via the Z variable.
+<P>
+The File Copy module, cdi_flcp, copies a file.  This allows the entire contents of a file to be written to another file.  Please note that there are two files open to do a copy, the original and the copy, and these cannot have the same name.  This is because the data module stores the file name and information in the order: filename;device;attr.  When File Engine searches its data module for a file, it searches on the filename.  If the same filename is used, even if 
+they are on different devices, File Engine finds the first one for the file to copy from, opens the file in Read mode, looks for a file to open to copy to, finds the first file again, and reports an error that the file is already open in Read mode.
+<P>
+The File String Search module, cdi_flss, matches the contents of a search string with the contents of a file.  The strings must be an EXACT match and the matching string must be on a line by itself in the file.
+<P>
+When using cdi_flss to search for a string, the string can be evaluated from a string variable, but the text of the filename must be entered.  The module cdi_flss will not evaluate a string variable for Parameter 2, "Filename."
+<P>
+When it is necessary to give paths to access a file in a subdirectory, use the pipe character "|" rather than the slash "/" to separate the path elements.  
+<P>
+Example - To access /d0/MYFILES/chuck enter MYFILES|chuck.  The |d0| is not required because it is inferred from the Device entered as a parameter in cdi_flac.
+<P>
+When troubleshooting, the first thing to check is the value of the Z variable.  Please see the File Access Plug-In manual for a complete listing of the values of the Z variable error codes.  The value of Z can be checked in Simulation by calling the "printvar" subroutine.  This sends the values of all MediaMogul variables to the mogul.log file when the script is played by using Play with Debug.
+<P>
+Remember: all calls to printvar must be removed before building a disc image of your title with script2disc.  Failure to do so will cause the application to freeze if there is no serial output device (terminal) attached for the error messages to be sent to.
+<P>
+Other things that can cause errors are: no signal manager; no file engine; no string variables (if used); and bad syntax.
+<P>
+Please refer to your File Access Plug-In manual for complete information on use of the plug-in and its' command syntax.
+<P>
+<B>MANUAL ERRATA:</B>
+<P>
+The File Access Plug-In manual states "To append text from a MediaMogul variable or a string variable, open the file then call the cdi_flac subroutine with these parameters:" and then specifies using APPEND in Parameter 1.  This is incorrect.  Rather the file should be opened in APPEND mode, then call the cdi_flac subroutine using WRITE in Parameter 1.
+<P>
+<BR>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.4 -->
+<!-- Original Tech Note by Chuck Hildebrand -->
+</BODY>
+</HTML>

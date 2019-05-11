@@ -1,0 +1,94 @@
+Installing:    Script2disc Edition 219, for the Macintosh
+
+
+
+Edition 219 fixes problems with flashing -- uncoordinated transprency
+
+control --  that can occur before and after Run-Length animations.
+
+
+
+The file s2d219.tar is in tar format and contains just the OS-9 modules
+
+used by the CD-i disc when running on a player.  To extract the modules
+
+from the tar file, you'll need an OS-9 copy of tar, which can be downloaded
+
+from this BBS, in the OS-9 File section.  tar must be copied to the CMDS
+
+folder in the MediaMogul folder, on your Mac.
+
+
+
+
+
+Installation:
+
+
+
+1. From your Mac Finder, make a duplicate of the CDIMAGES folder (located in
+
+the SCIPT2DISC folder).
+
+
+
+2. From your Mac, make a JUNK folder inside the MediaMogul folder.  Copy
+
+s2d219.tar into that folder.
+
+
+
+3. Start CDIPlayback, and select the CD-RTOS mode (be sure and reset
+
+CDIPlayback).  Hit 'return' a few times to assure a $ prompt is present.
+
+
+
+4. At the $ prompt, type:
+
+
+
+        chd /h0/JUNK
+
+        tar -xvf s2d219.tar
+
+
+
+Wait for tar to extract all the files...
+
+
+
+5. After tar finishes, verify that all the modules are intact, by
+
+typing:     ident -q cdi*
+
+
+
+All the modules should have a GOOD CRC.
+
+
+
+
+
+6. From the Mac Finder, open the JUNK folder in the MediaMogul folder.
+
+Select ALL the files there (command-A) and drag them to the CDIMAGES
+
+folder (not the COPY of CDIMAGES) in SCRIPT2DISC folder on your Mac,
+
+replacing the existing files there.
+
+
+
+7. Start Script2Disc and open your project file. Re-select the WORKING
+
+FOLDER so it points to the CDIMAGES folder, NOT the CDIMAGES COPY folder.
+
+Script2Disc tends to remember your OLD working folder even after it is
+
+renamed.
+
+
+
+Installation is complete.
+

@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+   <TITLE>Changing CDs in CD-i Playback for Windows</TITLE>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+<H2><CENTER>Changing CDs in CD-i Playback for Windows</CENTER></H2>
+
+When trying to change discs from the MediaMogul startup disc to a different disc or disc image containing, for example, mpeg assets, some PC's have a problem recognizing the second disc.  This problem has a workaround:
+The key factor is that you have to do a <CODE>dir</CODE> of the cd between ejecting the MM cd and opening the image file.  This clears things out somehow.  This problem is fixed in the new version, now called MediaAuthor 1.5.1. 
+<P>
+<B><FONT COLOR="#AA1177" SIZE="4">The workaround steps for CD-i Playback 2.2.x are as follows:</FONT></B>
+
+<OL>
+<B><LI></B>Start MediaMogul.
+<B><LI></B>At the MM shell, choose CD-RTOS.
+<B><LI></B>eject  the MM cd using the eject menu command or button in Playback. 
+<B><LI></B> type:<BR>
+<CODE>dir /cd</CODE><BR>
+ in CD-RTOS.  (No quotes.  Actually getting a directory of...nothing.) Repeat this command until you get a #000:244 error.  This error indicates that the MM cd has been cleared out of memory completely.
+<B><LI></B> Load the cd image with the Open command <B>or</B> ,if applicable,<BR>
+ replace the MediaMogul disc with the second disc and close the drawer. 
+<B><LI></B> Mount the second disc by clicking the mount button once (on some systems, twice).
+<B><LI></B> type:<BR>
+ <CODE>dir /cd/GREEN</CODE><BR>
+ (e.g.) to confirm that it's reading the disc/disc image properly.  When it's not working, it sees subdirectories as files, and won't open them or give a directory of them.
+</OL>
+
+<B><FONT COLOR="#AA1177" SIZE="4">For MediaAuthor 1.5.1, the steps for changing cd's are:</FONT></B>
+<OL>
+	<B><LI></B>Start MediaMogul
+	<B><LI></B>Click on <CODE>CD-RTOS</CODE> to get an OS9 shell.
+	<B><LI></B>At the MM shell <CODE>CD-i></CODE> prompt, type <CODE>mm_eject</CODE>. The MediaMogul cd should eject.
+	<B><LI></B>Replace the cd with the second disc or open an image file.  You should now have access to it.
+</OL>
+
+Neither of these procedures are strictly necessary, as it is now possible to boot off the hard drive without the MediaMogul cd present.  See the <A HREF="../mm/NO_CD.htm">No CD page.</A>
+<P><HR></P>
+
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A>
+&#183;<A HREF="playback.htm">Up 1 Level</A>
+&#183;<A HREF="/cdprosupport/sitemap.htm">Site Map</A>
+&#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A>
+</CENTER></P>
+</BODY>
+</HTML>
+
+
+

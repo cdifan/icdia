@@ -1,0 +1,64 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Common VCD 2.0 Toolkit Error Messages</TITLE>
+</HEAD>
+
+
+<BODY BGCOLOR=#FFFFFF>
+
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="vcd2x.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<CENTER><TABLE BORDER=2 BGCOLOR="#999999" VALIGN=Middle HEIGHT="10" WIDTH="500" ><TR>
+	<TD ALIGN=Center ><FONT SIZE=+3 COLOR="#000066">Common VCD 2.0 Toolkit Error Messages</FONT></TD>
+</TR>
+</TABLE></CENTER><P>
+<FONT SIZE=+1>Consult the manual for most errors.<P>
+Asset Import Errors:</FONT><BR>
+<UL>
+<LI><B>"This is not a valid MPEG file"</B><BR>
+This message is caused by the use of encoders/multiplexers which produce MPEG that is not adherant
+to the strict VCD standard, or sometimes by incorrect encoding parameters.  Check your encoding parameters.  If they are correct, it's likely that the encoder/muxer used is not VCD-compliant.
+<LI><B>"The file <FILENAME> is the wrong type."</B><BR>
+This is often caused when attempting to use MPEG wth the wrong bitrate.  For example, trying to use CD-i MPEG: the video bitrate of CD-i MPEG is 1.18kb/sec while the maximum video bitrate for the Toolkit is 1.15kb/sec.
+<LI><B>"The file <FILENAME> is the wrong size, the valid sizes are...."</B><BR>
+Still dimensions must be 704 x 576/480 or 352 x 288/240.  Crop or scale your native stills.
+</UL><P>
+
+<FONT SIZE=+1>Multiplexing Errors:</FONT>(Mac-only)<BR>
+<UL>
+<LI><B>"Underflow error for ... stream ... at...."</B><BR>
+This error is caused by a theoretical impossibility: the multiplexer detects that a certain access unit should be decoded but not all data has been delivered yet.  There could be a variety of causes.  Possible cures include:
+<UL>
+<LI>Use lower bitrates during the encoding process.
+<LI>Use our standalone multiplexer <FONT COLOR="#FF0066">pink</FONT>, or other VCD 
+	compliant multiplexer, to change multiplexing parameters.
+</UL>
+<LI><B>"Warning: throwing away last .. AU's"</B><BR>
+The multiplexer is throwing away one or more frames at the end of motion video in order to build a compliant VCD MPEG stream. This is normal and will occur half of the time when elementary video is used.  The amount thrown away amounts to a fraction of a second, and should not ordinarily be of concern.
+<LI><B><FILENAME>"Read past end of file;<BR>
+last I/P frame: x<BR>
+last audio frame: y"</B><BR>
+This error occurs when the multiplexer encounters improperly terminated elementary streams.   Possible fixes include: <UL>
+	<LI>Re-encode the video with a VCD compliant encoder which correctly terminates streams.  
+	<LI>Use our standalone multiplexer <FONT COLOR="#FF0066">pink</FONT>, or other VCD 
+	compliant multiplexer, to strip away the offending termination.
+	</UL>
+</UL><P>
+
+
+<FONT SIZE=+1>Build Errors/warnings:</FONT><BR>
+<UL>
+<LI><B>"White Book requires at least one MPEGAV track."</B><BR>
+If all MPEG assets are placed in the first data track, this warning will occur.  The disc should still build, but will not be playable in older VCD players.
+<LI><B>"Bad exit status from Master"</B><BR>
+This error occurs after the build process has already completed the analysis, multiplexing,  and asset conversion, and has gone on to the <I>Master</I> process itself, i.e. building the disc image.   The error can mean many different things, and generically just means that the build failed.  To troubleshoot further, look at the other build log messages around this one in the log file in order to determine what caused Master to fail.
+<LI><B>"Overran space for SCANDATA.DAT"</B>. <BR> This is caused by having too many entrypoints, in the disc's MPEG assets, for VCD Toolkit to handle.   The number of entrypoints exceeds the size allowed for the default scanlist file, SCANDATA.DAT.  The cure is to manually specify scanlist files for VCDMaster to use in the build process.  The procedure is described on the <A HREF="scan_err.htm">Scandata Error page</A>.
+</UL>
+</BODY>
+</HTML>

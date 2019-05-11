@@ -1,0 +1,153 @@
+<HTML><HEAD>
+<TITLE>Supplement for Digital Video</TITLE>
+</HEAD>
+<BODY>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<HR>
+<P>
+<P>
+<P>
+<H2><CENTER>Supplement for: Digital Video</CENTER>
+</H2><P><BR>
+<B>Overview:</B>
+<P>
+The Digital Video Plug-In provides a method for playing MPEG full motion
+video in a CD-i title created with MediaMogul.
+<P>
+
+<B>Plug-ins required for operation:</B>
+<P>
+<BLOCKQUOTE><CODE>cdi_sgmn</CODE> - The &quot;Signal Manager&quot; plug-in.<BR>
+<CODE>cdi_dvpl</CODE> - The &quot;Digital Video Play&quot; plug-in.  Allows playing of
+digital video.
+</BLOCKQUOTE><P>
+
+<B>MediaMogul Utilities required to prepare assets:</B>
+<P>
+<UL>
+<LI><A HREF="../../encoding/ep/epassist.htm"><CODE>Entrypoint Assist</CODE></A> (<CODE>epassist</CODE>) is used
+to make entrypoint files.  Entrypoint files are required to use some functions
+such as Scan (both forward and back), INTIME, OUTTIME, STILL, JUMP, Bookmarking,
+etc.  Functions which require entrypoint files are identified in the Digital
+Video Plug-In manual.
+<P>
+<LI>The <A HREF="../../avconv/imgmaker/imgmaker.htm"><CODE>ImageMaker</CODE></A> utility software for Macintosh and Windows is
+used to make <CODE>.rtf</CODE> files and disc images of MPEG
+files for playing scripts using the Digital Video Plug-In in Simulation from
+Script Writer.  <CODE>ImageMaker</CODE> requires <CODE>master</CODE> software,
+</UL>available as part of <CODE>script2disc</CODE>, in order to work.
+<P>
+<BLOCKQUOTE>If you are using a Philips development CD-i player and/or an OS-9 Emulator,
+you will need to create a <CODE>master</CODE> script for converting each
+<CODE>.mmd/.mpg</CODE> file to an <CODE>.rtf</CODE> file
+(<A HREF="greening.htm">Example script</A>) and also to build a disc image
+(<A HREF="dvxampl2.htm">Example script</A>).  Then a disc must be written
+prior to Simulation.
+</BLOCKQUOTE>
+<P>
+
+<B>Assets to create before using plug-in:</B>
+<P>
+<UL>
+<LI>MPEG <CODE>.mmd (.mpg)</CODE> files of the required video must be
+encoded and multiplexed.
+<LI>Entrypoint files may need to be created for use of some functions.
+<LI>Foreground and background pictures may need to be created for use with
+ menus.
+<LI>Menu file(s) need to be created if menus will be used with the Digital
+Video.
+<LI>MPEG <CODE>.rtf</CODE> (Real Time Files) must be made if you wish to
+play the MPEG in Simulation from the Script Writer.
+<LI>A disc containing the <CODE>.rtf</CODE> files of the MPEG will need to
+be created if you wish to play scripts using the plug-in in Simulation from
+the Script Writer.
+</UL>
+<P>
+<BLOCKQUOTE><B>NOTE:</B> For additional information on creating MPEG
+<CODE>.rtf</CODE> files and on building a disc image of these, see &quot;Preparing
+MPEG for MediaMogul 2.2 Applications&quot;, available from pmpro
+Professional Support. You can also consult the pages immediately below:
+</BLOCKQUOTE>
+<MENU>
+
+	<A HREF="../../encoding/verifier/ver_errors.htm">Error message anomalies with the Philips MPEG Verifier</A><BR>
+	<A HREF="../../encoding/pink/mpeg_bytes.htm">VCD-Compliant MPEG files:FAQ & specs</A><BR>
+	<A HREF="../../encoding/pink/mpeg1_specs.htm">Comparison table of MPEG1 Specs in VCD & CD-i</A>
+</MENU>
+<P>
+
+<B>Special preparations:</B>
+<P>
+<BLOCKQUOTE>No additional preparation required.</BLOCKQUOTE>
+<P>
+
+<B>How plug-in works:</B>
+<P>
+&#183; You should call the digital video plug-in, <CODE>cdi_dvpl</CODE>,
+in TEST mode early in your title.  The plug-in will check for the presence
+of a digital video card, and set the Z variable to 500 if none is found.
+ Then have a <CODE>Br_ifeq_nr</CODE> if Z is 500 to a script that alerts the
+user that the title requires a digital video card.
+<P>
+&#183; Calling the digital video plug-in will automatically start the signal
+manager plug-in, <CODE>cdi_sgmn</CODE>, so make sure you do not call this
+more than once.
+<P>
+&#183; Digital Video is displayed on the background video plane in CD-i.
+ The foreground video planes must be made transparent, either partially or
+completely, in order for it to be seen.  Use the <CODE>DV_Transp</CODE> video
+command to set up the type of transparency you want, and then use a Cut,
+Curtain, or Wipe video transition with the DV checkbox checked to establish
+the defined transparency once decoding of the digital video starts.
+<P>
+&#183; After the digital video has been played, you must turn off the
+transparency that had been established by using a Cut, Curtain, or Wipe video
+transition without the DV checkbox checked.
+<P>
+&#183; If you want to change transparency parameters, e.g. go from a CLUT
+0 to a matte transparency, or vice versa, you must first turn off the existing
+transparency before establishing the new one.
+<P>
+<P>
+<B>Example:</B>
+<P>
+In the following example, the digital video plug-in is called in TEST mode
+to check for the presence of a Digital Video card.  Then an entrypoint file
+is loaded and a 9 second portion of MPEG is played at full screen CLUT 0 transparency
+ with a hidden, toggleable menu.
+<P>
+
+<CODE>dvtest.scr<BR>
+00:00	Skip_off		</CODE>(Skip off ensures that the user cannot skip over anything
+required for the plug-in.)<CODE><BR>
+00:00	Call	/h0/SUBROUT/cdi_dvpl	TEST 	</CODE>(Check for presence of a DV
+card.)<CODE><BR>
+00:20	Br_ifeq_nr	/h0/SCRIPTS/nodv.scr	Z	500 </CODE>(Branch if no DV card
+present.)<CODE><BR>
+00:20	Br_always_nr	/h0/SCRIPTS/playdv.scr<CODE>
+<P>
+
+playdv.scr<BR>
+00:00	EPLoad	/h0/DVFILES/mympeg.mm		</CODE>(Entrypoint file is loaded.)<CODE><BR>
+00:00	DV_Transp	ck3/HIDE		0 0 0 0 	</CODE>(Transparency is
+defined.)<CODE><BR>
+00:20	DV_Cut	/h0/VIDEO/dvmnufg.cl7	</CODE>(Foreground image is loaded and
+transition defined)<CODE><BR>
+01:10	Background	/h0/VIDEO/dvmnubg.cl7		</CODE>(Background image for menu
+is loaded.)<CODE><BR>
+01:10	Menu	/h0/MENUS/dv.mnu		</CODE>(Menu is loaded.)<CODE><BR>
+01:10	Call	/h0/SUBROUT/cdi_dvpl	/cd/DV/mympeg.rtf
+	INTIME=00:00:01:15,OUTTIME=00:00:10:15	</CODE>(Digital video is
+played.)<CODE><BR>
+01:10	Cut		/h0/VIDEO/mystill.cl7	</CODE>(Transparency is cleared.)<CODE><BR>
+01:10	Br_always_nr	/h0/SCRIPTS/nextscr.scr</CODE>
+<P>
+<BLOCKQUOTE><B>NOTE:</B> Times in the above example are approximate.
+</BLOCKQUOTE><P>
+<HR>
+<CENTER><PRE><A HREF="/cdprosupport/support.htm ">Home Page</A>        <A HREF="plugins.htm">Up one Level</A>        <A HREF="/cdprosupport/sitemap.htm">Site Map</A>        <A HREF="mailto:cdprosupport@icdia.org">Send us mail</A></PRE></CENTER>
+<!-- Page by Chuck Hildebrand -->
+<!-- BBEdit 4.0.2 -->
+</BODY>
+</HTML>
+

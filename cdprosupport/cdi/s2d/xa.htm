@@ -1,0 +1,35 @@
+<!doctype html public "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Problem Building CD-i/XA Disc Image</TITLE>
+</HEAD>
+
+<BODY>
+<P><CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="s2d.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us email</A></CENTER>
+<P>
+<HR>
+<P>
+
+<CENTER><H2>Problem Building CD-ROM XA Disc Images with script2disc</H2></CENTER>
+<P>
+It is possible to create a CD-ROM XA compatable disc image using script2disc.  The "CD-ROM XA disc image" option is located under the MODES menu.  By checking this option, script2disc builds a disc image that can be played on a CD-i player, as well as a file system that can be viewed on a CD-ROM XA compatable computer.  This could be used to add DOS executable files and assets to the disc so it could be played on a PC as well as a CD-i player.  The CD-ROM XA file system, however, requires an 8.3 file naming scheme, which can cause problems for script2disc.
+<P>
+If you have ever done a DIR command on a CD-i disc authored with MediaMogul, you will notice that the files in the CDI directory bear little resemblence to the original script names in the title.  That is because script2disc renames all of the files as they are processed.  script2disc first adds a character to the beginning of the name.  For a script, it adds "R".  Any periods in the file name are changed to the underscore character.  A file name extension is added of the form ".MMx" where the "x" is a digit which denotes the type of file.  Also, all characters are converted to uppercase.  As en example, the script name Myscript.scr is stored on the CD as RMYSCRIPT_SCR.MM3.  The period was changed to an underscore, the letter R was added to the name, all characters were converted to uppercase, and the .MM3 extension was added to denote that this is a real-time file built from a script.
+<P>
+When you tell script2disc to build an XA disc image, it still wants to add its own character to the beginning of the file and add its own extension.  The problem is that the file can only have eight characters before the period and three after.  Therefore, all but the first seven characters of the original file name are excluded.  So in our earlier example, Myscript.scr gets converted to RMYSCRIP.MM3.
+<P>
+As you can see, all script names used in a CD-ROM XA disc built with script2disc must have their first seven characters unique.  Otherwise, the files Myscript1.scr and Myscript2.scr both get converted to RMYSCRIP.MM3.  script2disc outputs a WARNING message whenever it encounters a file name problem of this type.  IT DOES CONTINUE PROCESSING AND WILL BUILD A DISC IMAGE.  However, this disc image will not contain everything you expected.  Make sure you check the log file closely for these warnings.
+<P>
+This situation can also cause problems with plug-ins.  One example is the Pop-up Menu plug-in.  It has files named cdi_popm and cdi_pops that have their first seven characters in common.  Therefore, only one will make it on the CD.  A workaround for plug-ins is to use the "Load subroutines and fonts" option of script2disc (for the OS-9 version, use the -d option).  This places a copy of the plug-ins that are used by a script in the real-time file created for that script.  Doing so keeps the the plug-in file from having to reside by itself on the CD.
+<P>
+To summarize, if you plan on using the "CD-ROM XA disc image" option of script2disc, make sure all scripts, plug-ins and fonts have the first seven characters of their file names unique.
+<P>
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="s2d.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us email</A></CENTER>
+<P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,23 @@
+Things to do on ICDIA
+---------------------
+
+Review FAQ for currency
+
+Review site for links and emails
+
+Add many scanned documents
+- TechNotes
+- CD-I System Libs
+- CD-I MPEG Audio Bindings
+- CD-i MPEG Video Bindings
+
+Separate out chip documentation
+
+Add more chip documentation
+
+Add service manuals
+
+Add OS-9 Insights books
+
+Add authoring documentation
+

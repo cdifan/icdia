@@ -1,0 +1,115 @@
+<HTML><HEAD>
+<TITLE>MediaMogul Volume Command</TITLE>
+</HEAD>
+<BODY BGCOLOR="FFFFFF">
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="../avconv.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+<HR>
+
+<H2><CENTER>Volume Control in MediaMogul</CENTER></H2>
+
+
+Volume can be adjusted in both MediaMogul (A/B/C audio) and in Digital Video playback (MPEG audio).   Unfortunately, both volume commands do NOT work the same way.  Here is a compiled list of trivia for both:<P>
+
+
+For a brush up on how the ear works, deciBels and all that stuff, see "<A HREF="ears_hear.htm">How  Ears Hear</A>".<P>
+<P>
+
+
+<B>MediaMogul Volume Command:</B><P>
+
+
+MediaMogul permits for both non-MPEG and MPEG audio an ATTENUATION range of 0 (loudest) to 120 dB attenuation (softest).  Admittedly, 120 dB attenuation is certainly a technical marvel, but darn near useless from a practical matter.  Here's why:<P>
+
+
+Even in a quiet room, the noise level is substantial (called the "noise floor"), and we won't hear coherent sound that is much softer than this "floor".  If the attenuation is set in Mogul for 0 dB (the default), and one adjusts the speaker volume for a comfortable level, it takes about 40 dB attenuation from that point until we no longer hear the desired sounds.  In other words, 40 dB attenuation moves the coherent sound BELOW the noise floor.<P>
+
+
+Most audio folks allow an extra 10 dB fudge factor, and the rule becomes;  50 dB attenuation before the average person considers it "silent".  Any further attenuation is not perceived, although the machine IS faithfully lowering the volume.  This is where the USEFUL attenuation rating comes from.<P>
+
+
+
+<UL><LI>ONLY attenuates the audio from whatever volume it was recorded at
+	<LI>The MediaMogul variable "A", $ Hotspots and the VOLUME command can adjust volume
+	<LI>The volume command has settings from 0 - 255
+	<LI>255 = no attenuation = loudest = 0 dB
+	<LI><FONT COLOR="000033"><B>MediaMogul Setting/dB attenuation:</B></FONT><BR>
+		Type 1 Players: One unit = volume change of rougly 1dB (a change from 255 to 252 is 3 dB)<BR>
+		Type 2 Players: One unit = volume change of roughly .5dB (a change from 255 to 245 is 3 dB)  See the <A HREF="adpcm_volume.htm">ADPCM volume page</A> for more specific information.
+	<LI><FONT COLOR="000033"><B>Attenuation range:</B></FONT><BR>
+		Type 1 Players: Settings from 185 - 255 are useful    (53 dB attenuation range)<BR>
+		Type 2 Players: Settings from 160 - 255 are useful  (31.5 dB attenuation range)
+	<LI><FONT COLOR="000033"><B>Maximum attenuation:</B></FONT><BR>
+		Type 1 Players: 185 = maximum attenuation = -53 dB<BR>
+		Type 2 Players: 160 = maximum attenuation = -31.5 dB*
+	<LI>0 - Maximum attenuation = no further attenuation* (i.e. not very useful)</UL><P>
+
+* For Type 2 Players, volume jumps to a constant -100dB below a setting of 127.<P> <P> 
+
+
+
+ <IMG SRC="../../trans_pixel.gif" WIDTH="50" HEIGHT="1"><IMG ALIGN=Middle SRC="mogul_volume1.gif" WIDTH=215 HEIGHT=170>
+<P>
+
+Differences have been found between player types in how they respond to differing MediaMogul volume settings.  This is not a function of MediaMogul itself, but of the player.  The volume variation between player types is described on <A HREF="adpcm_volume.htm">another page, in more detail</A>.<P>
+
+
+For Type 1 players there is roughly a one-to-one (1 unit = 1 dB) correlation in setting versus attenuation down to a setting of 185.  Settings below 185 have NO effect on the volume.<P>
+For Type 2 players there is roughly a two-to-one (1 unit = .5 dB) correlation in setting versus attenuation down to a setting of 160.  Settings from 160 to 127 have NO effect on the volume.  Below 127, the volume jumps to -100dB.<P>
+<P>
+<P>
+
+
+
+
+<B>Digital Video Plug-in Volume:</B><P>
+
+
+	<UL><LI>ONLY attenuates the audio from whatever volume it was encoded at
+	<LI>A MediaMogul variable may be assigned to permit hard coded manipulation
+ <LI>$DV hotspots, or a Parameter 2 option of cdi_dvpl can be used to change the volume	
+	<LI>Has adjustment range from 0 - 255
+	<LI>Two units = volume change of 1 dB       (254/255 = 0 dB,  252/253 = -1 dB)
+<LI>	Settings from 154 - 255 are useful          (50 dB attenuation range)
+<LI>	255 = no attenuation = loudest = 0 dB
+	<LI>14/15 = maximum attenuation = silence = -120 dB
+<LI> NOTE: 0 = same as a setting of 255</UL><P>
+
+
+ <IMG ALIGN=Middle SRC="mogul_volume2.gif" WIDTH=235 HEIGHT=177>
+
+<P>
+
+There is NOT a one-to-one (1 units = 1 dB) correlation in setting versus attenuation for MPEG audio.  The plugin utilizes the entire 0-255 setting range.   To correlate this to a 120 dB attenuation range, the setting units were mapped in PAIRS to each decibel of attenuation.  This means that a setting of 255 OR 254 is no attenuation, while 253 or 252 is 1 dB attenuation.   A procedure for calculating this is:<P>
+
+
+<BLOCKQUOTE>1. multiple desired dB attenuation by 2<P>
+
+2. subtract result found in step 1, from the max setting of 255.<P>
+
+3. Set MPEG volume to the result from step 2.</BLOCKQUOTE><P>
+
+
+For you math wizards, the equation is:  <P>
+<CODE><BLOCKQUOTE>required setting = 255 - (2 x desired dB atten.)</BLOCKQUOTE></CODE><P>
+
+
+Lastly, note the little quirk with the DV plugin for a setting of "0".   Volume jumps back to MAXIMUM.  Our advice:  don't use a setting of 0.
+<P>
+
+
+<HR>
+<P>
+
+<CENTER><A HREF="/cdprosupport/support.htm ">Home Page</A> &#183; <A HREF="../avconv.htm">Up 1 Level</A> &#183; <A HREF="/cdprosupport/sitemap.htm">Site Map</A> &#183; <A HREF="mailto:cdprosupport@icdia.org">Send Us Mail</A> &#183; <A HREF="/index.html">ICDIA Main</A></CENTER>
+<P>
+
+
+
+
+
+</BODY>
+</HTML>
+

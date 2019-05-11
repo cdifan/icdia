@@ -1,0 +1,134 @@
+
+ CD-i FAQ Edizione 2000
+
+ Sezione 10. Copiare i dischetti CD-i
+
+ 10.1 Ci sono titoli CD-i ancora brevettati?
+ Si, certamente ci sono. E' una incomprensione comune che il software per una
+ piattaforma che e' non piu' disponibile attraverso i canali di vendita regolari
+ non sia piu' coperta dal copyright. Questo non ne e' il caso. Lo stesso va
+ detto per altre piattaforme come Amiga, Atari o MSX. Tutti i titoli CD-i sono
+ brevettati e non vi puo' essere copia per scopi illegali cosi' come prestito,
+ rivendita, o affitto finche' il proprietario del copyright non abbia ufficialmente
+ dichiarato che un particolare titolo e' stato rilasciato in 'pubblico dominio'.
+ Philips ha venduto il suo intero catalogo CD-i di consumo a Infogrames
+ Multimedia Francia nel 1998, che ora possiede virtualmente i diritti di tutti
+ i titoli di consumo del CD-i.
+
+ I titoli CD-i di consumo sono ancora in vendita per posta attraverso diverse
+ compagnie. Vedere "Dove posso comprare titoli CD-i?" per ulteriori informazioni.
+
+ Tuttavia, potrebbe ancora essere una buona idea fare il backup di qualche o
+ di tutti i vostri titoli CD-i, dato che potrebbe essere sempre piu' difficile
+ sostituirli una volta che si fossero graffiati o rotti. Percio' questa sezione
+ del FAQ vi da' qualche informazione su come fare cio'.
+
+ 10.2 Ci sono dischetti CD-i protetti dalla copia? (copy-protect)
+ No, non c'e' nessun meccanismo di protezione della copia implementato nel CD-i
+ o nel software (titoli CD-i) o hardware (lettori CD-i). Quindi tutti i titoli
+ CD-i possono essere copiati, e qualsiasi copia di un titolo CD-i puo' essere
+ eseguito su qualsiasi lettore CD-i. Un lettore CD-i puo' leggere i dischetti
+ CD-R come se fossero normali CD, il lettore non ha bisogno di essere modificato
+ per accettare questi dischetti cosi' come invece accade nel caso della Sony
+ Playstation.
+
+ Occasionalmente puo' tuttavia accadere che un dischetto non possa essere copiato.
+ Questo non ha niente a che fare con una possibile protezione dalla copia, ma e'
+ il risultato del layout del dischetto. Vedere "Perche' non posso copiare un
+ particolare titolo CD-i?" per ulteriori informazioni.
+
+ 10.3 Ogni CD-Recorder e' in grado di masterizzare i dischetti CD-i?
+ I CD-Recorder piu' moderni possono masterizzare un CD CD-i senza problemi.
+ Fin quando il CD-i usa il modo a 2 settori, che e' una formattazione a settori
+ comune in ambienti di elaborazione (usata anche nei Video-CD e Photo-CD), molti
+ masterizzatori supportano la scrittura di modo 2 settori (vedere "Che genere di
+ formattazione usa il CD-i?" Riguardo ai modi 1 e 2, formattazione 1 e 2? per
+ ulteriori informazioni circa la formattzaione per settori usata dal CD-i)
+
+ E' possibile controllare i tipi di masterizzazioni possibili del CD-Recorder
+ controllando sulla sua confezione o nel suo manuale per una delle seguenti
+ indicazioni:
+ Modo 2, CD-ROM/XA, CD-XA, Photo-CD o Video-CD. Se il masterizzatore supporta
+ uno di questi formati, puo' scrivere nel modo a 2 settori e quindi puo'
+ masterizzare i dischetti CD-i.
+
+ 10.4 Che software si puo' usare per copiare un titolo CD-i?
+ Si possono usare diversi programmi di CD-Recorder che permettono di fare copie
+ one-to-one dei CD (settore per settore - copie perfette), finche' questo
+ software puo' fare un'esatta riproduzione per settore di un CD e supporta la
+ lettura e la scrittura in modo 2 settori le copie CD-i sono perfette. A causa
+ del comportamento in realtime del CD-i e della stretta connessione di audio,
+ video e dati di programma e' molto importante che il software crei una copia
+ esatta e che non riformatti i dati ex-novo.
+
+ Non e' possibile copiare solo alcune parti di un particolare titolo CD-i, ne'
+ e' possibile combinare  diversi titoli CD-i su un solo CD CD-R. Questo e'
+ dovuto al fatto che il software di un disco CD-i rimanda ad indirizzi di
+ settore assoluti e non ricercabili altrove sul dischetto che deve avere i
+ dati contenuti nell'esatta posizione per eseguire correttamente il programma.
+
+ Un software molto popolare che ho usato con successo per copiare titoli CD-i
+ e' CDRWin, che e' disponibile gratuitamete da Goldenhawk. Da notare che CDRWin
+ indica la traccia CD-i con un cerchio verde, indicante il modo 2, e non con
+ un cerchio blu che, conformemente alla spiegazione del programma, "dovrebbe"
+ indicare la traccia CD-i. Non c'e' differenza tra un modo 2 e una traccia CD-i,
+ e non e' chiaro perche' il programma menzioni il CD-i come una traccia di
+ formatto diverso.
+
+ Quando si inserisce un CD CD-i non viene mostrata nessuna traccia come se il
+ dischetto fosse vuoto, e solo in "rosso" del CD-Audio vengono mostrate le tracce,
+ in questo caso vi trovereste davanti al problema che e' spiegato nel capitolo
+ "Perche' non posso copiare un particolare titolo CD-i?".
+
+ 10.5 Perche' non posso copiare un particolare titolo CD-i?
+ In alcune circostanze potrebbe essere impossibile copiare un titolo CD-i
+ particolare. Questo fatto potrebbe avere molte ragioni, ma le due piu' comuni
+ sono:
+ *Il disco e' leggermente 'fuori spec'. A causa di alcune omissioni tecniche,
+ lo strumento di CD-Recorder e' incapace di leggere i contenuti del dischetto
+ (per esempio la sessione e' stata chiusa come CD-Audio invece di CD-i, cosi'
+ il drive di CD-ROM non trova i dati nel modo corretto).
+ *Il disco contiene tracce CD-Audio.
+
+ Specialmente CD-i con tracce CD-Audio possono causare parecchi problemi nel
+ momento in cui sta tentando di copiarle. Ma ecco due metodi diversi per riuscire
+ ad includere tracce CD-Audio su un disco CD-i. Il primo e' aggiungendo le tracce
+ CD-Audio dopo la traccia iniziale dei dati CD-i, il secondo e' conforme al
+ formato CD-i Ready (Vedere "cos'e' un CD-i Ready?"). Nel secondo metodo e' piu'
+ difficile copiare, fin quando i dati CD-i sono inclusi nel pre-gap (i settori
+ di pausa) precedenti la traccia di audio 1. Questo rende i dati CD-i come
+ invisibili ai lettori CD-Audio, fin quando questi lettori saltano normalmente
+ la pausa precedente la traccia 1.
+ Tuttavia, la maggior parte degli strumenti di CD-Recorder controllano molto
+ semplicemente il TOC (Table Of Contents - Tavola dei Contenuti) di un CD per
+ controllare il tipo di contenuti di un particolare disco, e in tal modo essi
+ non vedono questa area CD-i "nascosta".
+
+ Ci sono degli strumenti che possono essere usati per leggere tutti i settori
+ di un dischetto dall'inizio alla fine in una maniera raw, e poi scriverne
+ un'esatta riproduzione(settore per settore). Uno di questi strumenti e' il
+ BlindRead, che produce un Disc Image File e un cuesheet che per esempio puo'
+ essere scritto con CDRWin.
+ Qualche titolo CD-i "difficile" puo' quindi essere copiato nel solito modo.
+
+ 10.6 Posso copiare un titolo CD-i su una videocassetta?
+ Si e' possibile. Il CD-i non incorpora uno schema di protezione della copia
+ come il Macrovision che viene usato in qualche videocassetta e nei DVD-Video.
+ Semplicemente basta agganciare l'output video del lettore CD-i all'input del
+ video del VCR, e premere record. Se si usa un registratore Hi-8 o Super-VHS,
+ e se il lettore CD-i e' fornito di S-Video o Y/C output, vi consiglio di usare
+ questo collegamento per risultati miglior. Altrimenti, usate l'output CVBS
+ del lettore.
+
+ Inutile dirlo, tutto l'interattivita' sara' sparita dopo la copia di un disco
+ CD-i su di una videocassetta. Mi raccomando di accertarsi di rimuovere il
+ menu' dallo schermo ogniqualvolta sia possibile e anche di porre il cursore
+ in una posizione fuori dallo schermo, o puntarlo completamente su uno dei lati
+ per fare in modo che la sua immagine "disturbi" il meno possibile.
+
+
+ © Copyright 2000 KennisOnline.com e ICDIA
+ Traduzione a cura di Parisio Marco markjr@libero.it
+ L'autore ed il traduttore non si assumono responsabilita' per eventuali errori
+ commessi.
+
