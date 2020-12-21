@@ -1,5 +1,15 @@
 icdia_xfer/
 oldICDIA/
+jorg/
+.gitnew/
+cdprosupport/files/mac/
+cdprosupport/files/os9/
+cdprosupport/files/pc/
+cdprosupport/files/sun/
+orig/
+*.jpg
+*.png
+*.gif
 *.pdf
 *.zip
 *.rar
