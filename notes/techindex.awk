@@ -1,5 +1,5 @@
-$8 ~ /^technote[0-9]*.*\.pdf$/ {
-	note = $8
+$9 ~ /^technote[0-9]*.*\.pdf$/ {
+	note = $9
 	gsub(/technote/, "", note)
 	gsub(/\.pdf/, "", note)
 	kb[note] = ($5 + 1023) / 1024

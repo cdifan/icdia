@@ -111,6 +111,14 @@ The number of bytes required for a run-length encoded image is
 reduced by compressing the image in the vertical direction. CARLIE
 works best with cartoon-like images whose original size is under 20K.
 No revisions.
+TECHNICAL NOTE #057.1
+Initializing a Player's Configurable Parameters (revised)
+van Allen, Philip; revised by Charles Golvin - PIMA
+The "CD-I Full Functional Specification" does not guarantee that the CD-i
+player will "boot" with a specific configuration. Therefore, the
+application must initialize the player's configurable parameters or risk
+unexpected behavior.
+Revised and supersedes TN# 57.
 TECHNICAL NOTE #058
 Notes from Charlie Golvin: SCCS Usage, Portation to SPARC, etc.
 Golvin, Charles - PIMA
@@ -243,14 +251,6 @@ This technical note describes a method of inhibiting the double
 memory cost that applications pay for initialized data, initialized data
 references, and initialized code references.
 Revised 8/20/92. Supersedes PIMA TN#70.
-TECHNICAL NOTE #057.1
-Initializing a Player's Configurable Parameters (revised)
-van Allen, Philip; revised by Charles Golvin - PIMA
-The "CD-I Full Functional Specification" does not guarantee that the CD-i
-player will "boot" with a specific configuration. Therefore, the
-application must initialize the player's configurable parameters or risk
-unexpected behavior.
-Revised and supersedes TN# 57.
 TECHNICAL NOTE #071.1
 Resource Compiler/Manager for CD-I Applications (revised)
 Ellinwood, Ken - PIMA
