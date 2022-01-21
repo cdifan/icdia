@@ -418,7 +418,7 @@ A Beginner's Guide to Balboa Edition 1
 Rolff, Jan - IMS; Maxfield, Andy - IMS; and Piesing, Jon - PRL
 This document provides a simple overview of Balboa and includes a
 simple slide-show application.
-No revisions. Formerly IMS TSA#-001R to be re-released under this
+No revisions. Formerly IMS TSA#001R to be re-released under this
 number.
 TECHNICAL NOTE #092
 Audio Considerations in CD-I

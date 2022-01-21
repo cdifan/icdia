@@ -714,7 +714,7 @@ Download <A HREF="technote090.pdf">technote090.pdf</A> (PDF - 77 KB)
 <I>Rolff, Jan - IMS; Maxfield, Andy - IMS; and Piesing, Jon - PRL</I><BR>
 This document provides a simple overview of Balboa and includes a
 simple slide-show application.<BR>
-<I>No revisions. Formerly IMS TSA#-001R to be re-released under this number.</I><BR>
+<I>No revisions. Formerly IMS TSA#001R to be re-released under this number.</I><BR>
 Download <A HREF="technote091.pdf">technote091.pdf</A> (PDF - 381 KB)
 </P>
 
@@ -850,7 +850,7 @@ Download <A HREF="technote102.pdf">technote102.pdf</A> (PDF - 175 KB)
 
 <P>
 <B><LI><A NAME="technote103">TN #103 - Flying Mattes with CD-i Digital Video</A></LI></B><BR>
-<I>Jean-Pierre Abello</I> (9 pages)<BR>
+<I>Abello, Jean-Pierre</I> (9 pages)<BR>
 One of the problems with the Digital VIdeo (DV) plane in CD-i is that it
 cannot be displayed in front of the base-case planes and, therefore, cannot be
 used in conjunction with transparency to display portions of a DV screen in
@@ -864,7 +864,7 @@ Download <A HREF="technote103.pdf">technote103.pdf</A> (PDF - 274 KB)
 
 <P>
 <B><LI><A NAME="technote104">TN #104 - Aspect Ratios in CD-i</A></LI></B><BR>
-<I>Andrew Duncan</I> (10 pages)<BR>
+<I>Duncan, Andrew</I> (10 pages)<BR>
 There is a great deal of misunderstanding about aspect ratios in creating
 graphics and video for use in CD-i applications. This note attempts to
 quantify these issues to provider guidelines for preparation of the visual assets
@@ -874,7 +874,7 @@ Download <A HREF="technote104.pdf">technote104.pdf</A> (PDF - 225 KB)
 
 <P>
 <B><LI><A NAME="technote105">TN #105 - Seamless Branching with CD-i Digital Video</A></LI></B><BR>
-<I>Jean-Pierre Abello</I> (27 pages)<BR>
+<I>Abello, Jean-Pierre</I> (27 pages)<BR>
 This document explains the low-level seamless branching mechanisms that
 allow a CD-i player with the Digital Video cartridge to play non-linear
 interactive Digital Video. Seamless branching provides the ability to play
