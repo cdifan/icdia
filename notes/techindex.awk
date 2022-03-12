@@ -43,7 +43,7 @@ state == 2 {
 	next
 }
 
-state == 3 && ($0 ~ /No revisions/ || $0 ~ /Revised/ || $0 ~ /Supersedes/) {
+state == 3 && ($0 ~ /No revisions/ || $0 ~ /Revised/ || $0 ~ /Supersedes/ || $0 ~ /Recovered/) {
 	printf "<BR>\n<I>%s", $0
 	state = 4
 	next
