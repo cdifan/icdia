@@ -145,6 +145,11 @@ These documents are more in the character of guides or tutorials.
 <A HREF="#technote103">TN #103 - Flying Mattes with CD-i Digital Video</A><BR>
 <A HREF="#technote104">TN #104 - Aspect Ratios in CD-i</A><BR>
 <A HREF="#technote105">TN #105 - Seamless Branching with CD-i Digital Video</A><BR>
+<A HREF="#technote106">TN #106 - Developing for the MonoII players</A><BR>
+<A HREF="#technote107">TN #107 - The new CD-i safety area</A><BR>
+<A HREF="#technote108">TN #108 - Full Motion Video and Video CD Centering in CD-i</A><BR>
+<A HREF="#technote109">TN #109 - Developing for the CD-i 450 players</A><BR>
+<A HREF="#technote110">TN #110 - Making MediaMogul titles conform to the FPD</A><BR>
 
 <BR>
 <HR WIDTH=100% SIZE=1 color=ffffff>
@@ -898,6 +903,46 @@ examples. The buffering mechanisms necessary to ensure continuous data
 access from the storage medium are considered part of a different problem
 domain and are not covered in this paper.<BR>
 Download <A HREF="technote105.pdf">technote105.pdf</A> (PDF - 769 KB)
+</P>
+
+<P>
+<B><LI><A NAME="technote106">TN #106 - Developing for the MonoII players</A></LI></B><BR>
+<I>De Krock, Marc - PIMC</I><BR>
+This technical note describes points that need special attention for the Mono II generation of CD-i consumer players.<BR>
+<I>No revisions. </I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote107">TN #107 - The new CD-i safety area</A></LI></B><BR>
+<I>De Krock, Marc - PIMC</I><BR>
+This document describes how safety areas should be used in combination with CD-i. It only describes SMPTE safety areas used for NTSC.<BR>
+<I>No revisions. </I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote108">TN #108 - Full Motion Video and Video CD Centering in CD-i</A></LI></B><BR>
+<I>De Krock, Marc - PIMC</I><BR>
+This document explains how different FMV and V-CD pixel clock frequencies affect the application programs with regard to centering. It also explains how the CD-i DV cartridge handles the two formats.<BR>
+<I>No revisions. </I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote109">TN #109 - Developing for the CD-i 450 players</A></LI></B><BR>
+<I>van de Laarschot, Richard - PIMC</I><BR>
+This Technical Note describes points that need special attention for the CDI450 generation of CD-i consumer players.<BR>
+<I>No revisions. </I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
+</P>
+
+<P>
+<B><LI><A NAME="technote110">TN #110 - Making MediaMogul titles conform to the FPD</A></LI></B><BR>
+<I>van Lieshout, Robert - PIMC</I><BR>
+This document discusses the actions that should be undertaken to create a CD-i with MediaMogul that conforms to the Final Production Delivery specifications. At present, one cannot simply run Script2Disc to create an FPD-conform disc image.<BR>
+<I>No revisions. </I><BR>
+<FONT COLOR="#a0a0a0">Not yet available for download</FONT>
 </P>
 
 </FONT>
