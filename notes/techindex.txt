@@ -93,6 +93,18 @@ TECHNICAL NOTE #052
 Notes on QHYB: Base Case QHY
 Richards, Norman - PRL
 No revisions.
+TECHNICAL NOTE #053
+UVLO: Motion-Video Encoding and Decoding
+Kirk Rader, Philips IMS and Stephen Tickell, PRL
+UVLO is a motion-video encoding tool developed at Philips
+Research Laboratory in England. The UVLO technique for video
+data compression is derived from DYUV. UVLO takes advantage
+of the fact that the human eye is more sensitive to differences in
+brightness than to variations in color. UVLO reduces the amount
+of stored UV information by a factor of 2 over DYUV, thus greatly
+compressing the image data and increasing the screen area that can
+be covered by the image.
+Recovered from the Engineering 5.0 disc.
 TECHNICAL NOTE #054
 Error Strategy for CD-I Final Product Deliverable
 van Luijt, Alty - PIMA .
